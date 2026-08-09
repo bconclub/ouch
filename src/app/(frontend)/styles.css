@@ -1,22 +1,21 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-bg: #0d0817;
-  --color-surface: #171029;
-  --color-surface-2: #211737;
-  --color-line: #322350;
-  --color-ink: #f7f5ff;
-  --color-muted: #a89fc4;
+  /* Warm near-black base so the fire colors pop */
+  --color-bg: #120805;
+  --color-surface: #1d0f08;
+  --color-surface-2: #2a160b;
+  --color-line: #452511;
+  --color-ink: #fff8f0;
+  --color-muted: #c4a78f;
 
-  /* Vibrant multi-color palette */
-  --color-accent: #ff2e63;
-  --color-accent-hover: #ff5c84;
-  --color-violet: #8b5cf6;
-  --color-cyan: #22d3ee;
-  --color-lime: #a3e635;
-  --color-sun: #fbbf24;
-  --color-tangerine: #fb923c;
-  --color-success: #2cb67d;
+  /* Fire & Rasta-leaning vibrant palette */
+  --color-accent: #ff2d1a;
+  --color-accent-hover: #ff5540;
+  --color-tangerine: #ff7a00;
+  --color-sun: #ffc300;
+  --color-lime: #3ddc55;
+  --color-success: #3ddc55;
 
   --font-display: var(--font-unbounded), system-ui, sans-serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
@@ -34,29 +33,27 @@ body {
 }
 
 ::selection {
-  background: var(--color-violet);
-  color: #fff;
+  background: var(--color-tangerine);
+  color: #120805;
 }
 
-/* Gradient text for headline moments */
+/* Fire gradient text for headline moments */
 .text-rainbow {
   background: linear-gradient(
     100deg,
     var(--color-accent) 0%,
-    var(--color-tangerine) 25%,
-    var(--color-sun) 45%,
-    var(--color-lime) 65%,
-    var(--color-cyan) 85%,
-    var(--color-violet) 100%
+    var(--color-tangerine) 38%,
+    var(--color-sun) 68%,
+    var(--color-lime) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Primary CTA gradient */
+/* Primary CTA gradient — molten red → orange → gold */
 .btn-vibrant {
-  background: linear-gradient(100deg, var(--color-accent), var(--color-violet) 55%, var(--color-cyan));
+  background: linear-gradient(100deg, var(--color-accent), var(--color-tangerine) 55%, var(--color-sun));
   background-size: 160% 100%;
   background-position: 0% 0%;
   transition: background-position 0.4s ease, transform 0.15s ease;
@@ -68,7 +65,7 @@ body {
   transform: scale(0.98);
 }
 
-/* Animated gradient bar (announcement / footer trim) */
+/* Animated fire bar (announcement / footer trim) */
 .bar-rainbow {
   background: linear-gradient(
     90deg,
@@ -76,12 +73,12 @@ body {
     var(--color-tangerine),
     var(--color-sun),
     var(--color-lime),
-    var(--color-cyan),
-    var(--color-violet),
+    var(--color-sun),
+    var(--color-tangerine),
     var(--color-accent)
   );
   background-size: 300% 100%;
-  animation: rainbow-slide 12s linear infinite;
+  animation: rainbow-slide 10s linear infinite;
 }
 @keyframes rainbow-slide {
   from {

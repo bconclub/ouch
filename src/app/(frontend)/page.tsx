@@ -22,13 +22,13 @@ export default async function HomePage() {
       <section className="relative overflow-hidden border-b border-line">
         <div
           aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,46,99,0.28),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(34,211,238,0.22),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(139,92,246,0.25),transparent_55%),radial-gradient(ellipse_at_top_left,rgba(163,230,53,0.12),transparent_45%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,45,26,0.35),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(255,122,0,0.28),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(255,195,0,0.22),transparent_55%),radial-gradient(ellipse_at_top_left,rgba(61,220,85,0.14),transparent_45%)]"
         />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32">
           <p className="mb-4 text-xs font-semibold tracking-[0.35em] uppercase">
             <span className="text-accent">Piercings</span>
             <span className="text-muted"> · </span>
-            <span className="text-cyan">Jewelry</span>
+            <span className="text-sun">Jewelry</span>
             <span className="text-muted"> · </span>
             <span className="text-lime">Supplies</span>
           </p>
@@ -46,7 +46,7 @@ export default async function HomePage() {
               Shop all
             </Link>
             <Link
-              className="rounded-md border border-cyan/60 px-8 py-3.5 text-sm font-bold tracking-widest text-cyan uppercase transition-colors hover:bg-cyan hover:text-black"
+              className="rounded-md border border-lime/60 px-8 py-3.5 text-sm font-bold tracking-widest text-lime uppercase transition-colors hover:bg-lime hover:text-black"
               href="/category/aftercare"
             >
               Aftercare
@@ -103,7 +103,7 @@ export default async function HomePage() {
             <h2 className="font-display text-2xl font-bold tracking-tight uppercase">
               <span className="text-rainbow">Featured</span>
             </h2>
-            <Link className="text-sm text-muted hover:text-cyan" href="/shop">
+            <Link className="text-sm text-muted hover:text-sun" href="/shop">
               View all →
             </Link>
           </div>
@@ -119,7 +119,7 @@ export default async function HomePage() {
       <section className="border-y border-line bg-surface">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 text-center sm:px-6 md:grid-cols-3">
           <div>
-            <h3 className="font-display text-sm font-semibold tracking-widest text-cyan uppercase">
+            <h3 className="font-display text-sm font-semibold tracking-widest text-tangerine uppercase">
               ✦ Implant-grade only
             </h3>
             <p className="mt-2 text-sm text-muted">

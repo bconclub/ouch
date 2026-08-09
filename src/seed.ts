@@ -16,12 +16,12 @@ const ADMIN_EMAIL = 'admin@ouch.store'
 const ADMIN_PASSWORD = 'OuchAdmin@123'
 
 const PALETTES: [string, string][] = [
-  ['#1a1a2e', '#e94560'],
-  ['#16161d', '#7f5af0'],
-  ['#101418', '#2cb67d'],
-  ['#1b1421', '#ff8906'],
-  ['#0f1a20', '#3da9fc'],
-  ['#1e1418', '#ef4565'],
+  ['#20080a', '#ff2d1a'],
+  ['#211004', '#ff7a00'],
+  ['#211a04', '#ffc300'],
+  ['#08200e', '#3ddc55'],
+  ['#1f0c04', '#ff5540'],
+  ['#1c1206', '#ffaa00'],
 ]
 
 const richText = (text: string) => ({

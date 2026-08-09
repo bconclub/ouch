@@ -11,25 +11,11 @@ export const ACCENTS = [
     glow: 'from-accent/25',
   },
   {
-    text: 'text-cyan',
-    hoverText: 'hover:text-cyan',
-    border: 'hover:border-cyan',
-    cardBorder: 'border-cyan/50',
-    glow: 'from-cyan/25',
-  },
-  {
-    text: 'text-lime',
-    hoverText: 'hover:text-lime',
-    border: 'hover:border-lime',
-    cardBorder: 'border-lime/50',
-    glow: 'from-lime/25',
-  },
-  {
-    text: 'text-violet',
-    hoverText: 'hover:text-violet',
-    border: 'hover:border-violet',
-    cardBorder: 'border-violet/50',
-    glow: 'from-violet/25',
+    text: 'text-tangerine',
+    hoverText: 'hover:text-tangerine',
+    border: 'hover:border-tangerine',
+    cardBorder: 'border-tangerine/50',
+    glow: 'from-tangerine/25',
   },
   {
     text: 'text-sun',
@@ -39,11 +25,11 @@ export const ACCENTS = [
     glow: 'from-sun/25',
   },
   {
-    text: 'text-tangerine',
-    hoverText: 'hover:text-tangerine',
-    border: 'hover:border-tangerine',
-    cardBorder: 'border-tangerine/50',
-    glow: 'from-tangerine/25',
+    text: 'text-lime',
+    hoverText: 'hover:text-lime',
+    border: 'hover:border-lime',
+    cardBorder: 'border-lime/50',
+    glow: 'from-lime/25',
   },
 ] as const
 
