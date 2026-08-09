@@ -34,7 +34,9 @@ export default async function ShopPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <h1 className="font-display mb-2 text-3xl font-bold tracking-tight uppercase">Shop All</h1>
+      <h1 className="font-display mb-2 text-3xl font-bold tracking-tight uppercase">
+        <span className="text-rainbow">Shop All</span>
+      </h1>
       <p className="mb-8 text-sm text-muted">
         {result.totalDocs} product{result.totalDocs === 1 ? '' : 's'}
       </p>

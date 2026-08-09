@@ -1,14 +1,21 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-bg: #0a0a0f;
-  --color-surface: #14141c;
-  --color-surface-2: #1d1d28;
-  --color-line: #26263a;
-  --color-ink: #f5f5f7;
-  --color-muted: #9b9ba8;
-  --color-accent: #e94560;
-  --color-accent-hover: #ff5c77;
+  --color-bg: #0d0817;
+  --color-surface: #171029;
+  --color-surface-2: #211737;
+  --color-line: #322350;
+  --color-ink: #f7f5ff;
+  --color-muted: #a89fc4;
+
+  /* Vibrant multi-color palette */
+  --color-accent: #ff2e63;
+  --color-accent-hover: #ff5c84;
+  --color-violet: #8b5cf6;
+  --color-cyan: #22d3ee;
+  --color-lime: #a3e635;
+  --color-sun: #fbbf24;
+  --color-tangerine: #fb923c;
   --color-success: #2cb67d;
 
   --font-display: var(--font-unbounded), system-ui, sans-serif;
@@ -27,6 +34,60 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-violet);
   color: #fff;
+}
+
+/* Gradient text for headline moments */
+.text-rainbow {
+  background: linear-gradient(
+    100deg,
+    var(--color-accent) 0%,
+    var(--color-tangerine) 25%,
+    var(--color-sun) 45%,
+    var(--color-lime) 65%,
+    var(--color-cyan) 85%,
+    var(--color-violet) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Primary CTA gradient */
+.btn-vibrant {
+  background: linear-gradient(100deg, var(--color-accent), var(--color-violet) 55%, var(--color-cyan));
+  background-size: 160% 100%;
+  background-position: 0% 0%;
+  transition: background-position 0.4s ease, transform 0.15s ease;
+}
+.btn-vibrant:hover {
+  background-position: 100% 0%;
+}
+.btn-vibrant:active {
+  transform: scale(0.98);
+}
+
+/* Animated gradient bar (announcement / footer trim) */
+.bar-rainbow {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--color-tangerine),
+    var(--color-sun),
+    var(--color-lime),
+    var(--color-cyan),
+    var(--color-violet),
+    var(--color-accent)
+  );
+  background-size: 300% 100%;
+  animation: rainbow-slide 12s linear infinite;
+}
+@keyframes rainbow-slide {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 300% 0%;
+  }
 }

@@ -9,7 +9,7 @@ import { ProductGallery } from '@/components/ProductGallery'
 import { ProductPurchase } from '@/components/ProductPurchase'
 import { MATERIALS } from '@/collections/Products'
 import { getProductBySlug, queryProducts } from '@/lib/queries'
-import { mediaAlt, mediaUrl } from '@/lib/utils'
+import { accentFor, mediaAlt, mediaUrl } from '@/lib/utils'
 
 export async function generateMetadata({
   params,
@@ -72,7 +72,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         <div>
           {category && (
-            <div className="mb-2 text-xs tracking-widest text-accent uppercase">{category.name}</div>
+            <div className={`mb-2 text-xs tracking-widest uppercase ${accentFor(category.id).text}`}>
+              {category.name}
+            </div>
           )}
           <h1 className="font-display mb-4 text-3xl font-bold tracking-tight">{product.title}</h1>
 

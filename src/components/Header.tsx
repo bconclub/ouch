@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { getCategories, getSiteSettings } from '@/lib/queries'
+import { accentFor } from '@/lib/utils'
 import { CartButton } from './CartButton'
 import { MobileNav } from './MobileNav'
 
@@ -12,7 +13,7 @@ export async function Header() {
   return (
     <>
       {settings.announcement && (
-        <div className="bg-accent px-4 py-1.5 text-center text-xs font-semibold tracking-widest text-white uppercase">
+        <div className="bar-rainbow px-4 py-1.5 text-center text-xs font-bold tracking-widest text-black uppercase">
           {settings.announcement}
         </div>
       )}
@@ -29,7 +30,7 @@ export async function Header() {
               ]}
             />
             <Link className="font-display text-2xl font-bold tracking-tight" href="/">
-              {settings.storeName.toUpperCase()}
+              <span className="text-rainbow">{settings.storeName.toUpperCase()}</span>
               <span className="text-accent">.</span>
             </Link>
           </div>
@@ -40,7 +41,7 @@ export async function Header() {
             </Link>
             {navCategories.map((c) => (
               <Link
-                className="text-muted transition-colors hover:text-ink"
+                className={`text-muted transition-colors ${accentFor(c.id).hoverText}`}
                 href={`/category/${c.slug}`}
                 key={c.id}
               >

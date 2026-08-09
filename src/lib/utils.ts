@@ -1,3 +1,55 @@
+/**
+ * Rotating accent styles so grids read multi-color. Literal class strings only —
+ * Tailwind's scanner must see them. Index with `i % ACCENTS.length`.
+ */
+export const ACCENTS = [
+  {
+    text: 'text-accent',
+    hoverText: 'hover:text-accent',
+    border: 'hover:border-accent',
+    cardBorder: 'border-accent/50',
+    glow: 'from-accent/25',
+  },
+  {
+    text: 'text-cyan',
+    hoverText: 'hover:text-cyan',
+    border: 'hover:border-cyan',
+    cardBorder: 'border-cyan/50',
+    glow: 'from-cyan/25',
+  },
+  {
+    text: 'text-lime',
+    hoverText: 'hover:text-lime',
+    border: 'hover:border-lime',
+    cardBorder: 'border-lime/50',
+    glow: 'from-lime/25',
+  },
+  {
+    text: 'text-violet',
+    hoverText: 'hover:text-violet',
+    border: 'hover:border-violet',
+    cardBorder: 'border-violet/50',
+    glow: 'from-violet/25',
+  },
+  {
+    text: 'text-sun',
+    hoverText: 'hover:text-sun',
+    border: 'hover:border-sun',
+    cardBorder: 'border-sun/50',
+    glow: 'from-sun/25',
+  },
+  {
+    text: 'text-tangerine',
+    hoverText: 'hover:text-tangerine',
+    border: 'hover:border-tangerine',
+    cardBorder: 'border-tangerine/50',
+    glow: 'from-tangerine/25',
+  },
+] as const
+
+/** Deterministic accent for an entity id, stable across pages. */
+export const accentFor = (id: number) => ACCENTS[Math.abs(id) % ACCENTS.length]
+
 const inr = new Intl.NumberFormat('en-IN', {
   style: 'currency',
   currency: 'INR',

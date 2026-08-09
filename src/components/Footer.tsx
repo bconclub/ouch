@@ -7,11 +7,12 @@ export async function Footer() {
   const [settings, categories] = await Promise.all([getSiteSettings(), getCategories()])
 
   return (
-    <footer className="mt-20 border-t border-line bg-surface">
+    <footer className="mt-20 bg-surface">
+      <div aria-hidden className="bar-rainbow h-1" />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <div className="font-display text-2xl font-bold">
-            {settings.storeName.toUpperCase()}
+            <span className="text-rainbow">{settings.storeName.toUpperCase()}</span>
             <span className="text-accent">.</span>
           </div>
           {settings.tagline && <p className="mt-3 max-w-xs text-sm text-muted">{settings.tagline}</p>}

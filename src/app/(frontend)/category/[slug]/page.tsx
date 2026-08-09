@@ -7,6 +7,7 @@ import { ProductCard } from '@/components/ProductCard'
 import { ShopFilters } from '@/components/ShopFilters'
 import { MATERIALS } from '@/collections/Products'
 import { getCategoryBySlug, queryProducts, type ProductQuery } from '@/lib/queries'
+import { accentFor } from '@/lib/utils'
 
 type SearchParams = { [key: string]: string | string[] | undefined }
 
@@ -51,7 +52,7 @@ export default async function CategoryPage({
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <h1 className="font-display mb-2 text-3xl font-bold tracking-tight uppercase">
-        {category.name}
+        <span className={accentFor(category.id).text}>{category.name}</span>
       </h1>
       {category.description && <p className="mb-2 max-w-2xl text-muted">{category.description}</p>}
       <p className="mb-8 text-sm text-muted">

@@ -47,8 +47,8 @@ export function ProductPurchase({ product }: { product: Product }) {
                 <button
                   className={`rounded border px-4 py-2 text-sm transition-colors ${
                     isActive
-                      ? 'border-accent bg-accent/10 text-accent'
-                      : 'border-line text-ink hover:border-accent/60'
+                      ? 'border-cyan bg-cyan/10 text-cyan'
+                      : 'border-line text-ink hover:border-cyan/60'
                   } ${outOfStock ? 'opacity-40 line-through' : ''}`}
                   disabled={outOfStock}
                   key={variant.id ?? i}
@@ -87,7 +87,7 @@ export function ProductPurchase({ product }: { product: Product }) {
           </button>
         </div>
         <button
-          className="flex-1 bg-accent px-8 py-3.5 text-sm font-bold tracking-widest text-white uppercase transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
+          className="btn-vibrant flex-1 rounded-md px-8 py-3.5 text-sm font-bold tracking-widest text-white uppercase disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
           disabled={!available}
           onClick={() =>
             addItem(

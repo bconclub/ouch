@@ -18,7 +18,7 @@ export default function CartPage() {
         <div className="rounded-lg border border-line bg-surface py-20 text-center">
           <p className="mb-6 text-muted">Your cart is empty.</p>
           <Link
-            className="bg-accent px-8 py-3 text-sm font-bold tracking-widest text-white uppercase hover:bg-accent-hover"
+            className="btn-vibrant rounded-md px-8 py-3 text-sm font-bold tracking-widest text-white uppercase"
             href="/shop"
           >
             Shop now
@@ -87,7 +87,7 @@ export default function CartPage() {
             </div>
             <p className="text-xs text-muted">Shipping & final total confirmed on WhatsApp.</p>
             <Link
-              className="bg-accent px-10 py-3.5 text-sm font-bold tracking-widest text-white uppercase hover:bg-accent-hover"
+              className="btn-vibrant rounded-md px-10 py-3.5 text-sm font-bold tracking-widest text-white uppercase"
               href="/checkout"
             >
               Checkout
