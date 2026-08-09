@@ -68,7 +68,7 @@ export async function Footer() {
       <div className="bg-ink text-white">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-4 py-6 sm:px-6">
           <Link aria-label={`${settings.storeName} home`} className="text-white" href="/">
-            <Logo className="h-7 w-auto" />
+            <Logo className="h-7 w-auto" variant="white" />
           </Link>
           <nav className="flex flex-wrap gap-5 text-[11px] font-semibold tracking-[0.18em] uppercase">
             <Link className="text-white/70 hover:text-white" href="/shop">

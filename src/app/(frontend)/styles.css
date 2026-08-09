@@ -63,6 +63,12 @@ body {
   font-weight: 600;
 }
 
+/* Big calligraphic script for hero headlines — "Pierce Your Story" */
+.text-script-big {
+  font-family: var(--font-dancing), cursive;
+  font-weight: 700;
+}
+
 /* Primary CTA — black pill, mockup style */
 .btn-vibrant {
   background: var(--color-ink);

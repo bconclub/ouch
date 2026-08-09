@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-08-09 21:45 IST · v2 mockup sections + real logo + stock photos
+
+- Rebuilt the first three home sections one-to-one with the second mockup: "Pierce Your Story" calligraphic hero with yellow swoosh, crown/heart/star/scratch doodle vectors, "CURATED PIERCINGS. TIMELESS YOU." eyebrow, black pill "Explore Collection →"
+- Values strip: Premium Materials / Skin-Safe / Styled for You / Hygienic & Professional with colored line icons, per-item swoosh underlines, divider lines, and script "Feel good. Look great."
+- "OUR PIERCING STUDIO" scrollable card carousel with paint-swash script chips (Ear Curations, Nose, Face, Body, Curated Sets)
+- "THE OUCH VIBE — Safe. Stylish. Yours." band matching the mockup's fourth section
+- Header now matches the mockup nav (Piercings · Jewellery · Studio · Journal · About + search/heart/bag icons)
+- The user's exact OUCH logo wordmark processed (white background removed; ink + white variants) and used in header, footer, and favicon
+- Real licensed stock photos (Openverse, commercial-use) pulled for products and categories; pastel placeholder retained only where no photo was found
+- User-facing: home page now mirrors the approved mockup with real branding
+
 ## 2026-08-09 21:20 IST · Rebrand to the mockup: light cream theme + brand assets
 
 - Full pivot from dark theme to the user's mockup: warm cream base, watercolor gradient washes, confetti-dot OUCH logo (SVG recreation), Fraunces serif + Caveat script + Inter type system

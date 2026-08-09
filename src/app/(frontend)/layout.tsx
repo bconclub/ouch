@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Caveat, Fraunces, Inter } from 'next/font/google'
+import { Caveat, Dancing_Script, Fraunces, Inter } from 'next/font/google'
 import React from 'react'
 
 import { CartProvider } from '@/lib/cart'
@@ -26,6 +26,12 @@ const caveat = Caveat({
   weight: ['500', '600', '700'],
 })
 
+const dancing = Dancing_Script({
+  subsets: ['latin'],
+  variable: '--font-dancing',
+  weight: ['600', '700'],
+})
+
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
   return {
@@ -41,7 +47,10 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
   const { children } = props
 
   return (
-    <html className={`${inter.variable} ${fraunces.variable} ${caveat.variable}`} lang="en">
+    <html
+      className={`${inter.variable} ${fraunces.variable} ${caveat.variable} ${dancing.variable}`}
+      lang="en"
+    >
       <body>
         <CartProvider>
           <Header />
