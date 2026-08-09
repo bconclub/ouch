@@ -12,7 +12,7 @@ export default function NotFound() {
       </h1>
       <p className="mt-3 text-muted">The page you&apos;re looking for doesn&apos;t exist.</p>
       <Link
-        className="mt-8 inline-block btn-vibrant rounded-md px-8 py-3 text-sm font-bold tracking-widest text-white uppercase"
+        className="mt-8 inline-block btn-vibrant px-8 py-3 text-sm font-bold tracking-widest text-white uppercase"
         href="/shop"
       >
         Back to shop

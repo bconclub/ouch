@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Unbounded } from 'next/font/google'
+import { Caveat, Fraunces, Inter } from 'next/font/google'
 import React from 'react'
 
 import { CartProvider } from '@/lib/cart'
@@ -14,20 +14,26 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const unbounded = Unbounded({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-unbounded',
-  weight: ['500', '600', '700', '800'],
+  variable: '--font-fraunces',
+  weight: ['400', '500', '600', '700'],
+})
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  variable: '--font-caveat',
+  weight: ['500', '600', '700'],
 })
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
   return {
     title: {
-      default: `${settings.storeName} — Piercings & Supplies`,
+      default: `${settings.storeName} — Piercings & Ornaments`,
       template: `%s — ${settings.storeName}`,
     },
-    description: settings.tagline ?? 'Piercing jewelry and professional supplies.',
+    description: settings.tagline ?? 'Self-expression, curated. Piercings, ornaments, you.',
   }
 }
 
@@ -35,7 +41,7 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
   const { children } = props
 
   return (
-    <html className={`${inter.variable} ${unbounded.variable}`} lang="en">
+    <html className={`${inter.variable} ${fraunces.variable} ${caveat.variable}`} lang="en">
       <body>
         <CartProvider>
           <Header />

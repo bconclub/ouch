@@ -15,7 +15,7 @@ export const SiteSettings: GlobalConfig = {
     {
       name: 'tagline',
       type: 'text',
-      defaultValue: 'Piercings & supplies that hit different.',
+      defaultValue: 'Self-expression, curated.',
     },
     {
       name: 'whatsappNumber',

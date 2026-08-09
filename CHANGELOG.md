@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-09 21:20 IST · Rebrand to the mockup: light cream theme + brand assets
+
+- Full pivot from dark theme to the user's mockup: warm cream base, watercolor gradient washes, confetti-dot OUCH logo (SVG recreation), Fraunces serif + Caveat script + Inter type system
+- Hero rebuilt: logo, script "Self-expression, curated." with gradient + squiggle underline, portrait photo cropped from the mockup, black pill CTAs
+- New home sections: values strip (Express/Curate/Craft/Energize/Elevate icon columns), curated-collection category tiles using jewelry crops from the mockup, studio band with neon-sign photos, gradient footer wash + dark base bar
+- Product/category cards restyled light with pastel image tiles and rounded corners; all CTAs now black pills
+- Placeholder catalogue images regenerated in light pastel style; DB reseeded; `/brand/**` added to next/image localPatterns
+- Fixed: gradient text + squiggle underline conflict made script words invisible; stale Next dev image cache served old dark images
+- User-facing: the whole site now matches the shared brand mockup
+
 ## 2026-08-09 20:35 IST · Fire/Rasta palette (more vibrant, no rainbow)
 
 - Palette shifted from rainbow (pink/cyan/violet) to fire & Rasta tones: hot red, orange, gold, green on a warm near-black base

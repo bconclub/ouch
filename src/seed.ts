@@ -16,12 +16,12 @@ const ADMIN_EMAIL = 'admin@ouch.store'
 const ADMIN_PASSWORD = 'OuchAdmin@123'
 
 const PALETTES: [string, string][] = [
-  ['#20080a', '#ff2d1a'],
-  ['#211004', '#ff7a00'],
-  ['#211a04', '#ffc300'],
-  ['#08200e', '#3ddc55'],
-  ['#1f0c04', '#ff5540'],
-  ['#1c1206', '#ffaa00'],
+  ['#fdeef5', '#f43f8e'],
+  ['#fdefe2', '#f97316'],
+  ['#fdf6dc', '#f5b81c'],
+  ['#e5f6f3', '#14b8a6'],
+  ['#efe9fb', '#8b5cf6'],
+  ['#fdeaea', '#ef4444'],
 ]
 
 const richText = (text: string) => ({
@@ -51,17 +51,18 @@ async function makePlaceholder(label: string, index: number, outDir: string): Pr
     .join('')
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200">
   <defs>
-    <radialGradient id="g" cx="50%" cy="42%" r="75%">
-      <stop offset="0%" stop-color="${accent}" stop-opacity="0.55"/>
-      <stop offset="55%" stop-color="${bg}"/>
-      <stop offset="100%" stop-color="#0a0a0f"/>
+    <radialGradient id="g" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="${bg}"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="1200" fill="url(#g)"/>
-  <circle cx="600" cy="520" r="230" fill="none" stroke="${accent}" stroke-width="14" opacity="0.9"/>
+  <circle cx="600" cy="520" r="230" fill="none" stroke="${accent}" stroke-width="16" opacity="0.85"/>
   <circle cx="600" cy="282" r="34" fill="${accent}"/>
-  <text x="600" y="560" font-family="Helvetica, Arial, sans-serif" font-size="150" font-weight="700" fill="#f5f5f7" text-anchor="middle" dominant-baseline="middle">${initials}</text>
-  <text x="600" y="1080" font-family="Helvetica, Arial, sans-serif" font-size="52" letter-spacing="14" fill="#f5f5f7" opacity="0.55" text-anchor="middle">OUCH</text>
+  <circle cx="806" cy="412" r="16" fill="#f5b81c"/>
+  <circle cx="398" cy="640" r="12" fill="#8b5cf6"/>
+  <text x="600" y="560" font-family="Georgia, serif" font-size="150" font-weight="600" fill="#1c1410" text-anchor="middle" dominant-baseline="middle">${initials}</text>
+  <text x="600" y="1080" font-family="Helvetica, Arial, sans-serif" font-size="48" letter-spacing="16" fill="#1c1410" opacity="0.45" text-anchor="middle">OUCH</text>
 </svg>`
   const file = path.join(outDir, `${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`)
   await sharp(Buffer.from(svg)).png().toFile(file)
@@ -311,7 +312,7 @@ async function run() {
     slug: 'site-settings',
     data: {
       storeName: 'Ouch',
-      tagline: 'Piercings & supplies that hit different.',
+      tagline: 'Self-expression, curated.',
       whatsappNumber: '+917259956780',
       announcement: 'Free shipping on orders over ₹999',
       currencySymbol: '₹',

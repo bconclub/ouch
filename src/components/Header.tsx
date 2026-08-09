@@ -4,6 +4,7 @@ import React from 'react'
 import { getCategories, getSiteSettings } from '@/lib/queries'
 import { accentFor } from '@/lib/utils'
 import { CartButton } from './CartButton'
+import { Logo } from './Logo'
 import { MobileNav } from './MobileNav'
 
 export async function Header() {
@@ -13,7 +14,7 @@ export async function Header() {
   return (
     <>
       {settings.announcement && (
-        <div className="bar-rainbow px-4 py-1.5 text-center text-xs font-bold tracking-widest text-black uppercase">
+        <div className="bar-rainbow px-4 py-1.5 text-center text-[11px] font-bold tracking-[0.2em] text-ink uppercase">
           {settings.announcement}
         </div>
       )}
@@ -29,19 +30,18 @@ export async function Header() {
                 })),
               ]}
             />
-            <Link className="font-display text-2xl font-bold tracking-tight" href="/">
-              <span className="text-rainbow">{settings.storeName.toUpperCase()}</span>
-              <span className="text-accent">.</span>
+            <Link aria-label={`${settings.storeName} home`} className="text-ink" href="/">
+              <Logo className="h-8 w-auto" />
             </Link>
           </div>
 
-          <nav className="hidden items-center gap-6 text-sm md:flex">
-            <Link className="text-muted transition-colors hover:text-ink" href="/shop">
+          <nav className="hidden items-center gap-7 text-[12px] font-semibold tracking-[0.18em] uppercase md:flex">
+            <Link className="text-ink/70 transition-colors hover:text-ink" href="/shop">
               Shop All
             </Link>
             {navCategories.map((c) => (
               <Link
-                className={`text-muted transition-colors ${accentFor(c.id).hoverText}`}
+                className={`text-ink/70 transition-colors ${accentFor(c.id).hoverText}`}
                 href={`/category/${c.slug}`}
                 key={c.id}
               >

@@ -1,24 +1,28 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Warm near-black base so the fire colors pop */
-  --color-bg: #120805;
-  --color-surface: #1d0f08;
-  --color-surface-2: #2a160b;
-  --color-line: #452511;
-  --color-ink: #fff8f0;
-  --color-muted: #c4a78f;
+  /* Warm cream base — light, airy, editorial */
+  --color-bg: #faf4ec;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3e9dc;
+  --color-line: #e7d9c8;
+  --color-ink: #1c1410;
+  --color-muted: #8a7a6b;
 
-  /* Fire & Rasta-leaning vibrant palette */
-  --color-accent: #ff2d1a;
-  --color-accent-hover: #ff5540;
-  --color-tangerine: #ff7a00;
-  --color-sun: #ffc300;
-  --color-lime: #3ddc55;
-  --color-success: #3ddc55;
+  /* Confetti palette from the brand mockup */
+  --color-accent: #f43f8e; /* pink */
+  --color-accent-hover: #e12578;
+  --color-tangerine: #f97316; /* orange */
+  --color-sun: #f5b81c; /* golden yellow */
+  --color-lime: #14b8a6; /* teal */
+  --color-violet: #8b5cf6; /* purple */
+  --color-coral: #ef4444; /* red-coral */
+  --color-success: #14b8a6;
 
-  --font-display: var(--font-unbounded), system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-script: var(--font-caveat), cursive;
   --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
 }
 
 html {
@@ -33,17 +37,19 @@ body {
 }
 
 ::selection {
-  background: var(--color-tangerine);
-  color: #120805;
+  background: var(--color-sun);
+  color: var(--color-ink);
 }
 
-/* Fire gradient text for headline moments */
+/* ---------- Brand utilities ---------- */
+
+/* Multicolor text — used word-by-word for playful emphasis */
 .text-rainbow {
   background: linear-gradient(
-    100deg,
-    var(--color-accent) 0%,
-    var(--color-tangerine) 38%,
-    var(--color-sun) 68%,
+    95deg,
+    var(--color-tangerine) 0%,
+    var(--color-accent) 30%,
+    var(--color-violet) 60%,
     var(--color-lime) 100%
   );
   -webkit-background-clip: text;
@@ -51,40 +57,77 @@ body {
   color: transparent;
 }
 
-/* Primary CTA gradient — molten red → orange → gold */
-.btn-vibrant {
-  background: linear-gradient(100deg, var(--color-accent), var(--color-tangerine) 55%, var(--color-sun));
-  background-size: 160% 100%;
-  background-position: 0% 0%;
-  transition: background-position 0.4s ease, transform 0.15s ease;
-}
-.btn-vibrant:hover {
-  background-position: 100% 0%;
-}
-.btn-vibrant:active {
-  transform: scale(0.98);
+/* Handwritten script accent */
+.text-script {
+  font-family: var(--font-script);
+  font-weight: 600;
 }
 
-/* Animated fire bar (announcement / footer trim) */
+/* Primary CTA — black pill, mockup style */
+.btn-vibrant {
+  background: var(--color-ink);
+  color: #fff;
+  border-radius: 9999px;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+.btn-vibrant:hover {
+  background: #33261c;
+}
+.btn-vibrant:active {
+  transform: scale(0.97);
+}
+
+/* Secondary pill */
+.btn-outline {
+  border: 1.5px solid var(--color-ink);
+  color: var(--color-ink);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-outline:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+/* Soft watercolor wash — hero */
+.wash-hero {
+  background:
+    radial-gradient(ellipse 60% 55% at 8% 12%, rgba(249, 115, 22, 0.5), transparent 65%),
+    radial-gradient(ellipse 55% 50% at 2% 85%, rgba(239, 68, 68, 0.55), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 45% 100%, rgba(139, 92, 246, 0.4), transparent 60%),
+    radial-gradient(ellipse 55% 65% at 98% 80%, rgba(20, 184, 166, 0.45), transparent 60%),
+    radial-gradient(ellipse 45% 50% at 75% 5%, rgba(245, 184, 28, 0.35), transparent 60%),
+    radial-gradient(ellipse 40% 45% at 30% 40%, rgba(244, 63, 142, 0.25), transparent 65%),
+    var(--color-bg);
+}
+
+/* Footer wash — orange → pink → violet sweep */
+.wash-footer {
+  background:
+    radial-gradient(ellipse 70% 90% at 5% 50%, rgba(245, 184, 28, 0.75), transparent 65%),
+    radial-gradient(ellipse 60% 90% at 40% 50%, rgba(249, 115, 22, 0.7), transparent 65%),
+    radial-gradient(ellipse 60% 90% at 70% 40%, rgba(244, 63, 142, 0.6), transparent 70%),
+    radial-gradient(ellipse 70% 100% at 100% 60%, rgba(139, 92, 246, 0.75), transparent 70%),
+    linear-gradient(90deg, #fcd34d, #f9a8d4, #c4b5fd);
+}
+
+/* Thin multicolor trim bar */
 .bar-rainbow {
   background: linear-gradient(
     90deg,
+    var(--color-sun),
+    var(--color-tangerine),
     var(--color-accent),
-    var(--color-tangerine),
-    var(--color-sun),
-    var(--color-lime),
-    var(--color-sun),
-    var(--color-tangerine),
-    var(--color-accent)
+    var(--color-violet),
+    var(--color-lime)
   );
-  background-size: 300% 100%;
-  animation: rainbow-slide 10s linear infinite;
 }
-@keyframes rainbow-slide {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 300% 0%;
-  }
+
+/* Hand-drawn underline squiggle for script words */
+.underline-squiggle {
+  background-image: linear-gradient(90deg, var(--color-accent), var(--color-violet));
+  background-repeat: no-repeat;
+  background-size: 100% 3px;
+  background-position: 0 96%;
+  padding-bottom: 0.12em;
 }

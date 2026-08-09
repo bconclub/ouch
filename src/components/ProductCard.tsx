@@ -14,10 +14,10 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <Link
-      className={`group block overflow-hidden rounded-lg border border-line bg-surface transition-all hover:-translate-y-1 ${accent.border}`}
+      className={`group block overflow-hidden rounded-2xl border border-line bg-surface transition-all hover:-translate-y-1 hover:shadow-lg ${accent.border}`}
       href={`/products/${product.slug}`}
     >
-      <div className="relative aspect-square overflow-hidden bg-surface-2">
+      <div className={`relative aspect-square overflow-hidden ${accent.tile}`}>
         {url && (
           <Image
             alt={mediaAlt(firstImage, product.title)}
@@ -28,19 +28,19 @@ export function ProductCard({ product }: { product: Product }) {
           />
         )}
         {onSale && (
-          <span className="absolute top-3 left-3 rounded bg-sun px-2 py-0.5 text-[11px] font-bold tracking-widest text-black uppercase">
+          <span className="absolute top-3 left-3 rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-bold tracking-[0.15em] text-white uppercase">
             Sale
           </span>
         )}
         {!product.inStock && (
-          <span className="absolute top-3 right-3 bg-surface-2/90 px-2 py-0.5 text-[11px] font-semibold tracking-widest text-muted uppercase">
+          <span className="absolute top-3 right-3 rounded-full bg-ink/80 px-2.5 py-0.5 text-[11px] font-semibold tracking-[0.15em] text-white uppercase">
             Sold out
           </span>
         )}
       </div>
       <div className="p-4">
         {category && (
-          <div className={`mb-1 text-[11px] tracking-widest uppercase ${accent.text}`}>
+          <div className={`mb-1 text-[11px] font-bold tracking-[0.18em] uppercase ${accent.text}`}>
             {category.name}
           </div>
         )}

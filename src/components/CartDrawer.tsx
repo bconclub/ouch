@@ -43,7 +43,7 @@ export function CartDrawer() {
           <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
             <p className="text-muted">Your cart is empty.</p>
             <Link
-              className="btn-vibrant rounded-md px-6 py-3 text-sm font-semibold tracking-wide text-white uppercase"
+              className="btn-vibrant px-6 py-3 text-sm font-semibold tracking-wide text-white uppercase"
               href="/shop"
               onClick={closeCart}
             >
@@ -116,7 +116,7 @@ export function CartDrawer() {
                 <span className="font-display text-lg">{formatPrice(subtotal)}</span>
               </div>
               <Link
-                className="btn-vibrant block w-full rounded-md py-3 text-center text-sm font-semibold tracking-widest text-white uppercase"
+                className="btn-vibrant block w-full py-3 text-center text-sm font-semibold tracking-widest text-white uppercase"
                 href="/checkout"
                 onClick={closeCart}
               >

@@ -92,7 +92,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           )}
 
           {product.description && (
-            <div className="prose prose-invert mt-8 max-w-none border-t border-line pt-6 text-sm leading-relaxed text-muted [&_p]:mb-3">
+            <div className="prose mt-8 max-w-none border-t border-line pt-6 text-sm leading-relaxed text-muted [&_p]:mb-3">
               <RichText data={product.description} />
             </div>
           )}
