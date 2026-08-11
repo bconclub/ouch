@@ -11,6 +11,7 @@ import {
   DoodleSun,
   Swoosh,
 } from '@/components/Doodles'
+import { PhotoFan, type FanPhoto } from '@/components/PhotoFan'
 import { ProductCard } from '@/components/ProductCard'
 import { StudioCarousel, type StudioCard } from '@/components/StudioCarousel'
 import { getCategories, getFeaturedProducts, getSiteSettings } from '@/lib/queries'
@@ -57,6 +58,18 @@ const VALUES = [
       </svg>
     ),
   },
+]
+
+// Hero deck — shuffles through the studio shoot, craft first.
+const HERO_PHOTOS: FanPhoto[] = [
+  {
+    src: '/brand/covers/hero-earstack.png',
+    alt: 'A curated ear stack — helix, conch, rook and lobe piercings in gold',
+  },
+  { src: '/brand/covers/cat-hoops.png', alt: 'Gold and silver hoops and segment rings' },
+  { src: '/brand/covers/cat-studs.png', alt: 'Gemstone, pearl and charm studs' },
+  { src: '/brand/covers/cat-barbells.png', alt: 'Curved and straight barbells in gold and steel' },
+  { src: '/brand/covers/cat-sets.png', alt: 'Curated jewellery sets and charms' },
 ]
 
 // Studio carousel — founder's branded studio photography.
@@ -121,16 +134,7 @@ export default async function HomePage() {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="relative mx-auto aspect-[600/820] max-w-sm rotate-2 overflow-hidden rounded-3xl border-[6px] border-[#fff8f0] shadow-[0_24px_60px_rgba(90,10,0,0.45)]">
-              <Image
-                alt="A curated ear stack — helix, conch, rook and lobe piercings in gold"
-                className="object-cover"
-                fill
-                priority
-                sizes="40vw"
-                src="/brand/covers/hero-earstack.png"
-              />
-            </div>
+            <PhotoFan photos={HERO_PHOTOS} />
             <DoodleCrown className="absolute -top-6 left-[14%] h-14 w-20 -rotate-6 text-[#ffd23f]" />
             <DoodleScratch className="absolute top-[16%] -right-4 h-9 w-11 text-white" />
             <DoodleHeart className="absolute -bottom-5 left-[18%] h-9 w-9 text-white" />

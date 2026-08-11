@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-11 17:15 IST · Hero image is now a fanned, shuffling photo deck
+
+- Replaced the single hero card with a collage of five overlapping photo cards, fanned at different angles and depths (ear stack, hoops, studs, barbells, curated sets)
+- The deck auto-shuffles every ~4s, pauses on hover, and advances on click; respects prefers-reduced-motion
+- New `PhotoFan` component drives it, so photos can be swapped in one list
+
 ## 2026-08-11 17:00 IST · Hero switched to a craft-focused ear-stack close-up
 
 - The previous hero used a portrait of a model from the brand shoot, which read as though it were the founder. Replaced with a tight close-up of a curated ear stack (helix, conch, rook, lobe) from the same shoot — shows the work itself, no identity question
