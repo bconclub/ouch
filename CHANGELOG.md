@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-11 17:25 IST · Transparent header, borderless photo cards, first real product photo
+
+- Header is now fully transparent over the hero: no white bar, the gradient runs straight up behind it, with the logo, nav and icons in white
+- On scroll (and on every other page) it fades to the cream blurred bar with the dark logo so it stays readable over light content
+- Removed the white polaroid borders from the hero photo cards — images now sit edge to edge
+- Founder's first real product photo (flat-back labret with bezel-set CZ) attached to "Titanium Flat Back Labret Stud"
+
 ## 2026-08-11 17:15 IST · Hero image is now a fanned, shuffling photo deck
 
 - Replaced the single hero card with a collage of five overlapping photo cards, fanned at different angles and depths (ear stack, hoops, studs, barbells, curated sets)

@@ -12,7 +12,7 @@ export function MobileNav({ links }: { links: NavLink[] }) {
     <div className="md:hidden">
       <button
         aria-label="Open menu"
-        className="rounded p-1.5 text-ink hover:text-accent"
+        className="rounded p-1.5 text-current opacity-90 transition-opacity hover:opacity-100"
         onClick={() => setOpen(true)}
         type="button"
       >

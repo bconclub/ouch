@@ -64,7 +64,7 @@ export function PhotoFan({
             type="button"
           >
             <span
-              className="block h-full w-full overflow-hidden rounded-3xl border-[6px] border-[#fff8f0]"
+              className="block h-full w-full overflow-hidden rounded-3xl"
               style={{ boxShadow: pos.shadow }}
             >
               <span className="relative block h-full w-full">

@@ -103,7 +103,8 @@ export default async function HomePage() {
   return (
     <div>
       {/* ============ 1 · Hero — "Pierce Your Story" ============ */}
-      <section className="wash-hero relative overflow-hidden">
+      {/* -mt-20 slides the gradient up behind the transparent header */}
+      <section className="wash-hero relative -mt-20 overflow-hidden pt-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:py-20">
           <div className="relative">
             <DoodleSparkle className="absolute -top-6 left-0 h-8 w-8 text-[#ffd23f]" />

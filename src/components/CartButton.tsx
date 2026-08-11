@@ -10,7 +10,7 @@ export function CartButton() {
   return (
     <button
       aria-label={`Open cart (${count} items)`}
-      className="relative rounded p-2 text-ink transition-colors hover:text-accent"
+      className="relative rounded p-2 text-current opacity-90 transition-opacity hover:opacity-100"
       onClick={openCart}
       type="button"
     >
