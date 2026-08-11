@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-10 00:15 IST · Full-saturation hero
+
+- Hero background changed from pale wash to a saturated color statement: deep red → orange → gold gradient with green and violet glows
+- "Pierce Your Story" now in cream-white script with gold swoosh and doodles, soft warm drop shadow
+- Portrait re-cut with +35% saturation and framed as a rotated white-border sticker card with deep shadow
+- User-facing: the first screen is now unmistakably vibrant instead of white/cream
+
 ## 2026-08-09 23:40 IST · Rasta hero: fine-art braids portrait + red-gold-green wash
 
 - Hero image replaced with a dramatic B&W fine-art braids portrait (David Rosen Photography, CC BY 2.0, credited)

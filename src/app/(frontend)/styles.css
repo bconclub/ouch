@@ -95,16 +95,13 @@ body {
   color: #fff;
 }
 
-/* Watercolor wash — hero. Rasta warmth: deep red, gold, green. */
+/* Hero — full-saturation color statement. Deep red → orange → gold, green + violet glows. */
 .wash-hero {
   background:
-    radial-gradient(ellipse 60% 55% at 8% 12%, rgba(216, 36, 24, 0.65), transparent 65%),
-    radial-gradient(ellipse 55% 50% at 2% 85%, rgba(255, 122, 0, 0.6), transparent 60%),
-    radial-gradient(ellipse 50% 60% at 45% 100%, rgba(250, 190, 10, 0.6), transparent 60%),
-    radial-gradient(ellipse 55% 65% at 98% 80%, rgba(34, 160, 62, 0.55), transparent 60%),
-    radial-gradient(ellipse 45% 50% at 75% 5%, rgba(250, 176, 5, 0.5), transparent 60%),
-    radial-gradient(ellipse 40% 45% at 30% 40%, rgba(230, 80, 30, 0.35), transparent 65%),
-    var(--color-bg);
+    radial-gradient(ellipse 70% 85% at 88% 110%, rgba(20, 150, 70, 0.55), transparent 60%),
+    radial-gradient(ellipse 55% 65% at 100% 0%, rgba(255, 214, 0, 0.5), transparent 65%),
+    radial-gradient(ellipse 45% 55% at 0% 105%, rgba(120, 20, 130, 0.4), transparent 60%),
+    linear-gradient(115deg, #d81a3c 0%, #f0391f 30%, #ff7a00 62%, #ffb400 100%);
 }
 
 /* Footer wash — turmeric → marigold → rani → violet sweep */

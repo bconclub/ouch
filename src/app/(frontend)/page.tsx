@@ -91,48 +91,50 @@ export default async function HomePage() {
     <div>
       {/* ============ 1 · Hero — "Pierce Your Story" ============ */}
       <section className="wash-hero relative overflow-hidden">
-        <div className="mx-auto grid max-w-7xl items-center lg:grid-cols-[1fr_1.1fr]">
-          <div className="relative px-4 py-16 sm:px-6 lg:py-24">
-            <DoodleSparkle className="absolute top-8 left-4 h-8 w-8 text-tangerine" />
-            <DoodleStar className="absolute right-6 bottom-10 hidden h-10 w-10 text-ink lg:block" />
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:py-20">
+          <div className="relative">
+            <DoodleSparkle className="absolute -top-6 left-0 h-8 w-8 text-[#ffd23f]" />
+            <DoodleStar className="absolute right-6 -bottom-8 hidden h-10 w-10 text-white/80 lg:block" />
 
-            <h1 className="text-script-big relative text-6xl leading-[0.95] text-ink sm:text-7xl lg:text-8xl">
+            <h1 className="text-script-big relative text-6xl leading-[0.95] text-[#fff8f0] drop-shadow-[0_2px_12px_rgba(120,20,0,0.35)] sm:text-7xl lg:text-8xl">
               Pierce
               <br />
               <span className="relative inline-block">
                 Your Story
-                <Swoosh className="absolute -bottom-2 left-2 h-3 w-4/5" color="#f5b81c" />
+                <Swoosh className="absolute -bottom-2 left-2 h-3 w-4/5" color="#ffd23f" />
               </span>
-              <DoodleHeart className="absolute top-1/2 -right-2 h-9 w-9 text-ink sm:right-4" />
+              <DoodleHeart className="absolute top-1/2 -right-2 h-9 w-9 text-[#ffd23f] sm:right-4" />
             </h1>
 
-            <p className="mt-10 text-[13px] leading-relaxed font-semibold tracking-[0.3em] text-ink/85 uppercase">
+            <p className="mt-10 text-[13px] leading-relaxed font-semibold tracking-[0.3em] text-white/90 uppercase">
               Curated piercings.
               <br />
               Timeless you.
             </p>
 
             <Link
-              className="btn-vibrant mt-8 inline-flex items-center gap-3 px-7 py-3.5 text-[13px] font-semibold"
+              className="btn-vibrant mt-8 inline-flex items-center gap-3 px-7 py-3.5 text-[13px] font-semibold shadow-lg"
               href="/shop"
             >
               Explore Collection <span aria-hidden>→</span>
             </Link>
           </div>
 
-          <div className="relative hidden aspect-[554/453] lg:block">
-            <Image
-              alt="Curated ear piercings"
-              className="object-cover object-top"
-              fill
-              priority
-              sizes="55vw"
-              src="/brand/hero-portrait.png"
-            />
-            <DoodleCrown className="absolute top-6 left-[12%] h-12 w-16 text-sun" />
-            <DoodleScratch className="absolute top-[22%] right-[28%] h-8 w-10 text-white" />
-            <DoodleHeart className="absolute top-[48%] right-[30%] h-6 w-6 text-ink" />
-            <DoodleStar className="absolute right-6 bottom-8 h-10 w-10 text-ink" />
+          <div className="relative hidden lg:block">
+            <div className="relative aspect-[554/453] rotate-2 overflow-hidden rounded-3xl border-[6px] border-[#fff8f0] shadow-[0_24px_60px_rgba(90,10,0,0.45)]">
+              <Image
+                alt="Curated ear piercings"
+                className="object-cover object-top"
+                fill
+                priority
+                sizes="45vw"
+                src="/brand/hero-portrait.png"
+              />
+            </div>
+            <DoodleCrown className="absolute -top-8 left-[10%] h-14 w-20 -rotate-6 text-[#ffd23f]" />
+            <DoodleScratch className="absolute top-[16%] -right-4 h-9 w-11 text-white" />
+            <DoodleHeart className="absolute -bottom-6 left-[16%] h-9 w-9 text-white" />
+            <DoodleStar className="absolute -right-6 bottom-[20%] h-11 w-11 text-[#ffd23f]" />
           </div>
         </div>
       </section>
