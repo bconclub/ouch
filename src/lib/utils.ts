@@ -70,7 +70,7 @@ export type MediaLike =
   | undefined
   | {
       url?: string | null
-      alt?: string
+      alt?: string | null
       sizes?: {
         thumbnail?: { url?: string | null } | null
         card?: { url?: string | null } | null

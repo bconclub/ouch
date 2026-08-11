@@ -19,8 +19,11 @@ export const Orders: CollectionConfig = {
     delete: ({ req: { user } }) => Boolean(user),
   },
   admin: {
+    group: 'Shop',
     useAsTitle: 'orderNumber',
+    description: 'Orders placed on the site. Customers confirm them with you on WhatsApp.',
     defaultColumns: ['orderNumber', 'customerName', 'total', 'status', 'createdAt'],
+    listSearchableFields: ['orderNumber', 'customerName', 'customerPhone'],
   },
   fields: [
     {

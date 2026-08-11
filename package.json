@@ -12,6 +12,8 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "seed": "node --env-file=.env --import tsx src/seed.ts",
+    "covers": "node --env-file=.env --import tsx scripts/set-category-covers.ts",
+    "clear-demo": "node --env-file=.env --import tsx scripts/clear-demo-catalogue.ts",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {

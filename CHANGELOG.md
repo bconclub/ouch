@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-08-11 15:45 IST · Admin set up for day-to-day product management
+
+- Photo uploads no longer block on alt text — it's auto-filled from the file name (still editable); focal point cropping enabled
+- Products list now shows a photo thumbnail, category, price, stock and status; searchable by title, category, gauge and size
+- Category column fixed: relationship columns don't resolve on draft-enabled collections, so the category name is now stored alongside the product (auto-maintained, sortable, searchable)
+- Plain-English hints on every product field, and a Preview button that opens the live product page
+- Admin sidebar grouped: Catalogue (Products, Categories, Media) · Shop (Orders) · Settings (Users)
+- `MANAGING-THE-SHOP.md` written for the founder — adding products, stock, orders, settings
+- New scripts: `npm run clear-demo` (dry-run by default) to remove the 17 sample products, `npm run covers` to re-apply brand category covers
+- Verified end-to-end: upload without alt → create → publish → appears on shop and in search
+
 ## 2026-08-11 15:45 IST · Founder's studio photography as category images
 
 - All ten "Ouch Skye" studio images added as tracked assets and mapped to categories: ear stack → Ear, septum portrait → Nose, labret portrait → Lip & Labret, barbell flat-lay → Barbells, hoops flat-lay → Rings & Hoops, jewellery flat-lay → Aftercare, studs flat-lay → Tools & Supplies

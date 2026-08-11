@@ -7,9 +7,19 @@ export const Categories: CollectionConfig = {
   access: {
     read: () => true,
   },
+  // Populate the name whenever a category is referenced, so relationship cells
+  // (e.g. the Category column on Products) show the name instead of a blank.
+  defaultPopulate: {
+    name: true,
+    slug: true,
+  },
   admin: {
+    group: 'Catalogue',
     useAsTitle: 'name',
-    defaultColumns: ['name', 'slug', 'displayOrder'],
+    description: 'Shop sections. The cover photo shows on the home page and category pages.',
+    defaultColumns: ['image', 'name', 'slug', 'displayOrder'],
+    listSearchableFields: ['name'],
+    preview: (doc) => (doc?.slug ? `/category/${doc.slug}` : null),
   },
   fields: [
     {

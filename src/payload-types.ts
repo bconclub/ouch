@@ -128,16 +128,33 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Everything you sell. Add photos, price and category, then hit Publish to put a product live.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products".
  */
 export interface Product {
   id: number;
+  /**
+   * The product name customers see, e.g. "Titanium Segment Ring".
+   */
   title: string;
   /**
    * URL identifier. Leave blank to auto-generate.
    */
   slug?: string | null;
+  /**
+   * First photo is the main one shown in listings. Add as many as you like — customers can swipe through them.
+   */
+  images?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * What it is, what it is made of, why someone would love it.
+   */
   description?: {
     root: {
       type: string;
@@ -153,12 +170,9 @@ export interface Product {
     };
     [k: string]: unknown;
   } | null;
-  images?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
+  /**
+   * Which section of the shop this belongs in.
+   */
   category: number | Category;
   material?: ('titanium' | 'surgical-steel' | 'gold' | 'niobium' | 'silicone' | 'other') | null;
   /**
@@ -170,15 +184,15 @@ export interface Product {
    */
   size?: string | null;
   /**
-   * Price in ₹ (INR)
+   * Selling price in ₹ (numbers only, no symbol)
    */
   price: number;
   /**
-   * Original price, shown struck-through when on sale
+   * Original price — shown struck-through to mark a sale. Leave blank if not on sale.
    */
   compareAtPrice?: number | null;
   /**
-   * Optional variants (e.g. sizes or colors). Leave empty for a single-option product.
+   * Sizes or colours of the same product (e.g. 6mm / 8mm / 10mm). Leave empty if there is only one version.
    */
   variants?:
     | {
@@ -187,13 +201,20 @@ export interface Product {
          */
         label: string;
         /**
-         * Overrides base price if set
+         * Only if this option costs more or less than the base price
          */
         price?: number | null;
         inStock?: boolean | null;
         id?: string | null;
       }[]
     | null;
+  /**
+   * Filled in automatically from the Category you pick.
+   */
+  categoryName?: string | null;
+  /**
+   * Untick to show "Sold out" and stop it being ordered.
+   */
   inStock?: boolean | null;
   /**
    * Featured products appear on the home page.
@@ -204,12 +225,17 @@ export interface Product {
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * Every photo used on the site. Drag images straight in — a description is filled in for you.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
   id: number;
-  alt: string;
+  /**
+   * Short description of the photo, read aloud by screen readers and shown if the image fails to load. Auto-filled from the file name — edit it if you want.
+   */
+  alt?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -249,6 +275,8 @@ export interface Media {
   };
 }
 /**
+ * Shop sections. The cover photo shows on the home page and category pages.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "categories".
  */
@@ -269,6 +297,8 @@ export interface Category {
   createdAt: string;
 }
 /**
+ * Orders placed on the site. Customers confirm them with you on WhatsApp.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "orders".
  */
@@ -307,6 +337,8 @@ export interface Order {
   createdAt: string;
 }
 /**
+ * People who can log in and manage the shop.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -424,13 +456,13 @@ export interface PayloadMigration {
 export interface ProductsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  description?: T;
   images?:
     | T
     | {
         image?: T;
         id?: T;
       };
+  description?: T;
   category?: T;
   material?: T;
   gauge?: T;
@@ -445,6 +477,7 @@ export interface ProductsSelect<T extends boolean = true> {
         inStock?: T;
         id?: T;
       };
+  categoryName?: T;
   inStock?: T;
   featured?: T;
   updatedAt?: T;
