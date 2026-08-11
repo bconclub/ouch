@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-11 15:30 IST · Founder's brand posters wired in
+
+- Six branded section covers (Piercing Guide, Face, Body, Nose, Ear Curations, Curated Sets) added as tracked assets and wired in: guide poster is the hero card, the other five drive the studio carousel
+- Real OUCH Piercing Studio ink-splat logo extracted from the posters — now in header, footer (white variant), and favicon
+- Hero rethemed to the posters' parchment/terracotta/olive palette with founder copy: "Express your story. Wear your energy." + "You do you."
+- Instagram set to @ouch_piercing in site settings
+- User-facing: home page now runs on the founder's actual brand system
+
 ## 2026-08-10 00:15 IST · Full-saturation hero
 
 - Hero background changed from pale wash to a saturated color statement: deep red → orange → gold gradient with green and violet glows

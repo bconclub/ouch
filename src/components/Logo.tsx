@@ -1,8 +1,8 @@
 import React from 'react'
 
 /**
- * The real OUCH wordmark (public/brand/logo*.png, 900×241), processed from the
- * user's logo file: white background removed, tinted ink / white.
+ * The OUCH Piercing Studio wordmark (public/brand/logo*.png, 900×275),
+ * extracted from the founder's brand posters: background removed, tinted ink / white.
  */
 export function Logo({
   className = 'h-8 w-auto',
@@ -16,7 +16,7 @@ export function Logo({
     <img
       alt="Ouch"
       className={className}
-      height={241}
+      height={275}
       src={variant === 'white' ? '/brand/logo-white.png' : '/brand/logo.png'}
       width={900}
     />
