@@ -95,26 +95,26 @@ body {
   color: #fff;
 }
 
-/* Soft watercolor wash — hero */
+/* Watercolor wash — hero. Marigold, rani pink, peacock, turmeric — full Indian vibrancy. */
 .wash-hero {
   background:
-    radial-gradient(ellipse 60% 55% at 8% 12%, rgba(249, 115, 22, 0.5), transparent 65%),
-    radial-gradient(ellipse 55% 50% at 2% 85%, rgba(239, 68, 68, 0.55), transparent 60%),
-    radial-gradient(ellipse 50% 60% at 45% 100%, rgba(139, 92, 246, 0.4), transparent 60%),
-    radial-gradient(ellipse 55% 65% at 98% 80%, rgba(20, 184, 166, 0.45), transparent 60%),
-    radial-gradient(ellipse 45% 50% at 75% 5%, rgba(245, 184, 28, 0.35), transparent 60%),
-    radial-gradient(ellipse 40% 45% at 30% 40%, rgba(244, 63, 142, 0.25), transparent 65%),
+    radial-gradient(ellipse 60% 55% at 8% 12%, rgba(255, 122, 0, 0.7), transparent 65%),
+    radial-gradient(ellipse 55% 50% at 2% 85%, rgba(236, 30, 90, 0.7), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 45% 100%, rgba(139, 92, 246, 0.55), transparent 60%),
+    radial-gradient(ellipse 55% 65% at 98% 80%, rgba(13, 148, 136, 0.6), transparent 60%),
+    radial-gradient(ellipse 45% 50% at 75% 5%, rgba(250, 176, 5, 0.5), transparent 60%),
+    radial-gradient(ellipse 40% 45% at 30% 40%, rgba(244, 63, 142, 0.4), transparent 65%),
     var(--color-bg);
 }
 
-/* Footer wash — orange → pink → violet sweep */
+/* Footer wash — turmeric → marigold → rani → violet sweep */
 .wash-footer {
   background:
-    radial-gradient(ellipse 70% 90% at 5% 50%, rgba(245, 184, 28, 0.75), transparent 65%),
-    radial-gradient(ellipse 60% 90% at 40% 50%, rgba(249, 115, 22, 0.7), transparent 65%),
-    radial-gradient(ellipse 60% 90% at 70% 40%, rgba(244, 63, 142, 0.6), transparent 70%),
-    radial-gradient(ellipse 70% 100% at 100% 60%, rgba(139, 92, 246, 0.75), transparent 70%),
-    linear-gradient(90deg, #fcd34d, #f9a8d4, #c4b5fd);
+    radial-gradient(ellipse 70% 90% at 5% 50%, rgba(250, 176, 5, 0.85), transparent 65%),
+    radial-gradient(ellipse 60% 90% at 40% 50%, rgba(255, 122, 0, 0.8), transparent 65%),
+    radial-gradient(ellipse 60% 90% at 70% 40%, rgba(236, 30, 90, 0.7), transparent 70%),
+    radial-gradient(ellipse 70% 100% at 100% 60%, rgba(139, 92, 246, 0.85), transparent 70%),
+    linear-gradient(90deg, #fcc419, #f783ac, #b197fc);
 }
 
 /* Thin multicolor trim bar */

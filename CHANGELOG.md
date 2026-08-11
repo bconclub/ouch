@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-09 23:05 IST · Real Indian vibe: real hero photo + hotter washes
+
+- Replaced the AI hero portrait with a real photograph: Indian bride with nath, jhumkas and gold choker (CC BY 2.0, credited in ATTRIBUTIONS.md)
+- Hero and footer watercolor washes boosted to full Indian vibrancy — marigold, rani pink, peacock teal, turmeric
+- Added ATTRIBUTIONS.md covering hero + Openverse catalogue photos
+- User-facing: home page reads unmistakably Indian and much more vibrant
+
 ## 2026-08-09 21:45 IST · v2 mockup sections + real logo + stock photos
 
 - Rebuilt the first three home sections one-to-one with the second mockup: "Pierce Your Story" calligraphic hero with yellow swoosh, crown/heart/star/scratch doodle vectors, "CURATED PIERCINGS. TIMELESS YOU." eyebrow, black pill "Explore Collection →"
