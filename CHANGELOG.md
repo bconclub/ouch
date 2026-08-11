@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-11 16:05 IST · Logo restored to the founder's original file
+
+- Reverted the logo to the exact file the founder supplied (`src/assets/logo-original.png`) — the previous one was a low-resolution crop lifted off a poster, where the tiny "PIERCING STUDIO" line was illegible at header size
+- Processed at native resolution (1411×378, transparent) instead of upscaled; ink and white variants
+- Header logo enlarged (h-9 / h-11 on desktop), footer to h-9, favicon rebuilt from the real mark
+- Poster version kept at `src/assets/logo-studio-poster.png` in case the studio lockup is wanted later
+
+
 ## 2026-08-11 15:45 IST · Admin set up for day-to-day product management
 
 - Photo uploads no longer block on alt text — it's auto-filled from the file name (still editable); focal point cropping enabled

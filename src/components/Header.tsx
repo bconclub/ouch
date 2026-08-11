@@ -29,7 +29,7 @@ export async function Header() {
           <div className="flex items-center gap-3">
             <MobileNav links={NAV_LINKS} />
             <Link aria-label={`${settings.storeName} home`} className="text-ink" href="/">
-              <Logo className="h-8 w-auto" />
+              <Logo className="h-9 w-auto sm:h-11" />
             </Link>
           </div>
 
