@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-11 16:50 IST · Hero uses the founder's own portrait; fake logo removed from the site
+
+- The hero was showing a poster image with an AI-generated "OUCH PIERCING STUDIO" mark printed on it — not the real brand logo. Replaced with a clean, logo-free portrait crop of the founder (nostril, septum, labret and full ear stack visible)
+- No poster image with the printed mark is used anywhere on the site now; the real logo appears only as the header/footer wordmark
+- Hero card reshaped to the new portrait crop (644x880)
+
 ## 2026-08-11 16:05 IST · Logo restored to the founder's original file
 
 - Reverted the logo to the exact file the founder supplied (`src/assets/logo-original.png`) — the previous one was a low-resolution crop lifted off a poster, where the tiny "PIERCING STUDIO" line was illegible at header size
