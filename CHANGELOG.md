@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-11 17:00 IST · Hero switched to a craft-focused ear-stack close-up
+
+- The previous hero used a portrait of a model from the brand shoot, which read as though it were the founder. Replaced with a tight close-up of a curated ear stack (helix, conch, rook, lobe) from the same shoot — shows the work itself, no identity question
+- Portrait crop removed from the project
+
 ## 2026-08-11 16:50 IST · Hero uses the founder's own portrait; fake logo removed from the site
 
 - The hero was showing a poster image with an AI-generated "OUCH PIERCING STUDIO" mark printed on it — not the real brand logo. Replaced with a clean, logo-free portrait crop of the founder (nostril, septum, labret and full ear stack visible)

@@ -121,14 +121,14 @@ export default async function HomePage() {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="relative mx-auto aspect-[644/880] max-w-sm rotate-2 overflow-hidden rounded-3xl border-[6px] border-[#fff8f0] shadow-[0_24px_60px_rgba(90,10,0,0.45)]">
+            <div className="relative mx-auto aspect-[600/820] max-w-sm rotate-2 overflow-hidden rounded-3xl border-[6px] border-[#fff8f0] shadow-[0_24px_60px_rgba(90,10,0,0.45)]">
               <Image
-                alt="Curated piercings — nostril, septum, labret and a full ear stack"
+                alt="A curated ear stack — helix, conch, rook and lobe piercings in gold"
                 className="object-cover"
                 fill
                 priority
                 sizes="40vw"
-                src="/brand/covers/hero-founder.png"
+                src="/brand/covers/hero-earstack.png"
               />
             </div>
             <DoodleCrown className="absolute -top-6 left-[14%] h-14 w-20 -rotate-6 text-[#ffd23f]" />
