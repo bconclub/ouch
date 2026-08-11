@@ -95,14 +95,13 @@ body {
   color: #fff;
 }
 
-/* Hero — parchment base with terracotta, blush and olive watercolor, matching the brand posters. */
+/* Hero — full-saturation color statement. Deep red → orange → gold, green + violet glows. */
 .wash-hero {
   background:
-    radial-gradient(ellipse 45% 55% at 100% 0%, rgba(196, 88, 48, 0.35), transparent 60%),
-    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(124, 138, 74, 0.35), transparent 60%),
-    radial-gradient(ellipse 40% 50% at 95% 90%, rgba(226, 118, 118, 0.3), transparent 60%),
-    radial-gradient(ellipse 35% 45% at 15% 10%, rgba(212, 148, 62, 0.3), transparent 60%),
-    linear-gradient(160deg, #f4e8d0 0%, #eedcbc 55%, #ecd6b4 100%);
+    radial-gradient(ellipse 70% 85% at 88% 110%, rgba(20, 150, 70, 0.55), transparent 60%),
+    radial-gradient(ellipse 55% 65% at 100% 0%, rgba(255, 214, 0, 0.5), transparent 65%),
+    radial-gradient(ellipse 45% 55% at 0% 105%, rgba(120, 20, 130, 0.4), transparent 60%),
+    linear-gradient(115deg, #d81a3c 0%, #f0391f 30%, #ff7a00 62%, #ffb400 100%);
 }
 
 /* Footer wash — turmeric → marigold → rani → violet sweep */

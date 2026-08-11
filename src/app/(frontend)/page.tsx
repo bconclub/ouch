@@ -59,13 +59,13 @@ const VALUES = [
   },
 ]
 
-// Studio carousel — founder's branded section covers.
+// Studio carousel — founder's branded studio photography.
 const STUDIO_TILES: { label: string; slug: string | null; cover: string; chipColor: string }[] = [
-  { label: 'Ear Curations', slug: 'ear', cover: '/brand/covers/cover-ear.png', chipColor: '#f9a8d4' },
-  { label: 'Nose', slug: 'nose', cover: '/brand/covers/cover-nose.png', chipColor: '#fcd34d' },
-  { label: 'Face', slug: 'lip-labret', cover: '/brand/covers/cover-face.png', chipColor: '#c4b5fd' },
-  { label: 'Body', slug: 'barbells', cover: '/brand/covers/cover-body.png', chipColor: '#6ee7c9' },
-  { label: 'Curated Sets', slug: null, cover: '/brand/covers/cover-sets.png', chipColor: '#f9a8d4' },
+  { label: 'Ear Curations', slug: 'ear', cover: '/brand/covers/cat-ear.png', chipColor: '#f9a8d4' },
+  { label: 'Nose', slug: 'nose', cover: '/brand/covers/cat-nose.png', chipColor: '#fcd34d' },
+  { label: 'Face', slug: 'lip-labret', cover: '/brand/covers/cat-face.png', chipColor: '#c4b5fd' },
+  { label: 'Body', slug: 'barbells', cover: '/brand/covers/cat-body.png', chipColor: '#6ee7c9' },
+  { label: 'Curated Sets', slug: null, cover: '/brand/covers/cat-sets.png', chipColor: '#f9a8d4' },
 ]
 
 export default async function HomePage() {
@@ -93,25 +93,24 @@ export default async function HomePage() {
       <section className="wash-hero relative overflow-hidden">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:py-20">
           <div className="relative">
-            <DoodleSparkle className="absolute -top-6 left-0 h-8 w-8 text-[#c45830]" />
-            <DoodleStar className="absolute right-6 -bottom-8 hidden h-10 w-10 text-[#7c8a4a] lg:block" />
+            <DoodleSparkle className="absolute -top-6 left-0 h-8 w-8 text-[#ffd23f]" />
+            <DoodleStar className="absolute right-6 -bottom-8 hidden h-10 w-10 text-white/80 lg:block" />
 
-            <h1 className="text-script-big relative text-6xl leading-[0.95] text-ink sm:text-7xl lg:text-8xl">
+            <h1 className="text-script-big relative text-6xl leading-[0.95] text-[#fff8f0] drop-shadow-[0_2px_12px_rgba(120,20,0,0.35)] sm:text-7xl lg:text-8xl">
               Pierce
               <br />
               <span className="relative inline-block">
                 Your Story
-                <Swoosh className="absolute -bottom-2 left-2 h-3 w-4/5" color="#c45830" />
+                <Swoosh className="absolute -bottom-2 left-2 h-3 w-4/5" color="#ffd23f" />
               </span>
-              <DoodleHeart className="absolute top-1/2 -right-2 h-9 w-9 text-[#c45830] sm:right-4" />
+              <DoodleHeart className="absolute top-1/2 -right-2 h-9 w-9 text-[#ffd23f] sm:right-4" />
             </h1>
 
-            <p className="mt-10 text-[13px] leading-relaxed font-semibold tracking-[0.3em] text-[#a0522d] uppercase">
-              Express your story.
+            <p className="mt-10 text-[13px] leading-relaxed font-semibold tracking-[0.3em] text-white/90 uppercase">
+              Curated piercings.
               <br />
-              Wear your energy.
+              Timeless you.
             </p>
-            <p className="text-script mt-4 text-3xl text-[#5f6b35]">You do you.</p>
 
             <Link
               className="btn-vibrant mt-8 inline-flex items-center gap-3 px-7 py-3.5 text-[13px] font-semibold shadow-lg"
@@ -122,7 +121,7 @@ export default async function HomePage() {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="relative mx-auto aspect-[1122/1402] max-w-md rotate-2 overflow-hidden rounded-3xl border-[6px] border-white shadow-[0_24px_60px_rgba(90,50,10,0.35)]">
+            <div className="relative mx-auto aspect-[1122/1402] max-w-md rotate-2 overflow-hidden rounded-3xl border-[6px] border-[#fff8f0] shadow-[0_24px_60px_rgba(90,10,0,0.45)]">
               <Image
                 alt="Your piercing guide — every placement, mapped"
                 className="object-cover"
@@ -132,9 +131,10 @@ export default async function HomePage() {
                 src="/brand/covers/cover-guide.png"
               />
             </div>
-            <DoodleCrown className="absolute -top-6 left-[14%] h-14 w-20 -rotate-6 text-[#c45830]" />
-            <DoodleHeart className="absolute -bottom-5 left-[18%] h-9 w-9 text-[#c45830]" />
-            <DoodleStar className="absolute -right-2 bottom-[22%] h-11 w-11 text-[#7c8a4a]" />
+            <DoodleCrown className="absolute -top-6 left-[14%] h-14 w-20 -rotate-6 text-[#ffd23f]" />
+            <DoodleScratch className="absolute top-[16%] -right-4 h-9 w-11 text-white" />
+            <DoodleHeart className="absolute -bottom-5 left-[18%] h-9 w-9 text-white" />
+            <DoodleStar className="absolute -right-2 bottom-[22%] h-11 w-11 text-[#ffd23f]" />
           </div>
         </div>
       </section>

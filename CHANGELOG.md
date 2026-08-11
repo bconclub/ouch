@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-11 15:45 IST · Founder's studio photography as category images
+
+- All ten "Ouch Skye" studio images added as tracked assets and mapped to categories: ear stack → Ear, septum portrait → Nose, labret portrait → Lip & Labret, barbell flat-lay → Barbells, hoops flat-lay → Rings & Hoops, jewellery flat-lay → Aftercare, studs flat-lay → Tools & Supplies
+- Studio carousel now uses the founder's photography (Ear Curations, Nose, Face, Body, Curated Sets)
+- Reverted hero colors to the vibrant red-orange-gold gradient — only the guide poster image was meant to change, not the palette
+- `scripts/set-category-covers.ts` added so covers can be re-applied any time
+
+
 ## 2026-08-11 15:30 IST · Founder's brand posters wired in
 
 - Six branded section covers (Piercing Guide, Face, Body, Nose, Ear Curations, Curated Sets) added as tracked assets and wired in: guide poster is the hero card, the other five drive the studio carousel
