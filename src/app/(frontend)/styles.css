@@ -95,15 +95,15 @@ body {
   color: #fff;
 }
 
-/* Watercolor wash — hero. Marigold, rani pink, peacock, turmeric — full Indian vibrancy. */
+/* Watercolor wash — hero. Rasta warmth: deep red, gold, green. */
 .wash-hero {
   background:
-    radial-gradient(ellipse 60% 55% at 8% 12%, rgba(255, 122, 0, 0.7), transparent 65%),
-    radial-gradient(ellipse 55% 50% at 2% 85%, rgba(236, 30, 90, 0.7), transparent 60%),
-    radial-gradient(ellipse 50% 60% at 45% 100%, rgba(139, 92, 246, 0.55), transparent 60%),
-    radial-gradient(ellipse 55% 65% at 98% 80%, rgba(13, 148, 136, 0.6), transparent 60%),
+    radial-gradient(ellipse 60% 55% at 8% 12%, rgba(216, 36, 24, 0.65), transparent 65%),
+    radial-gradient(ellipse 55% 50% at 2% 85%, rgba(255, 122, 0, 0.6), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 45% 100%, rgba(250, 190, 10, 0.6), transparent 60%),
+    radial-gradient(ellipse 55% 65% at 98% 80%, rgba(34, 160, 62, 0.55), transparent 60%),
     radial-gradient(ellipse 45% 50% at 75% 5%, rgba(250, 176, 5, 0.5), transparent 60%),
-    radial-gradient(ellipse 40% 45% at 30% 40%, rgba(244, 63, 142, 0.4), transparent 65%),
+    radial-gradient(ellipse 40% 45% at 30% 40%, rgba(230, 80, 30, 0.35), transparent 65%),
     var(--color-bg);
 }
 

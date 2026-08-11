@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-09 23:40 IST · Rasta hero: fine-art braids portrait + red-gold-green wash
+
+- Hero image replaced with a dramatic B&W fine-art braids portrait (David Rosen Photography, CC BY 2.0, credited)
+- Hero watercolor wash shifted to Rasta tones: deep red → marigold → gold → green
+- User-facing: first screen now carries a Rasta-vibe, artisanal energy
+
 ## 2026-08-09 23:05 IST · Real Indian vibe: real hero photo + hotter washes
 
 - Replaced the AI hero portrait with a real photograph: Indian bride with nath, jhumkas and gold choker (CC BY 2.0, credited in ATTRIBUTIONS.md)
