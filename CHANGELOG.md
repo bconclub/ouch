@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-11 17:40 IST · Catalogue rebuilt on the founder's own photography; all mockup imagery removed
+
+- Deleted the 17 sample products and every stock/mockup photo attached to them
+- Created five real products from the founder's images, using the brand's own copy: Flat Back Labret Stud — CZ, Hoop Set, Stud Set, Charm Set, Barbell Collection (prices are placeholders, to be set in the admin)
+- Every image on the site now comes from the founder's shoot: hero deck, studio carousel, category covers, product photos, and the Ouch-vibe band
+- Removed all mockup files from the project: brand mockups, poster covers (with the fake printed logo), tile/studio crops, and 32 orphaned stock photos from the media library
+- Only the real logo and the Ouch Skye photography remain in `public/brand/`
+
 ## 2026-08-11 17:25 IST · Transparent header, borderless photo cards, first real product photo
 
 - Header is now fully transparent over the hero: no white bar, the gradient runs straight up behind it, with the logo, nav and icons in white

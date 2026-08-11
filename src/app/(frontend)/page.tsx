@@ -187,11 +187,11 @@ export default async function HomePage() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]">
           <div className="relative aspect-[47/29] overflow-hidden rounded-3xl">
             <Image
-              alt="Ouch studio interior with neon sign"
+              alt="Curated labret and ear piercings styled in the studio"
               className="object-cover"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              src="/brand/studio-neon.png"
+              src="/brand/covers/cat-lip.png"
             />
           </div>
           <div className="relative">
