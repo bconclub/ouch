@@ -25,7 +25,9 @@ function StayRealStamp() {
           </text>
           <path
             d="M60 78S44 68.5 44 58.2A9.5 9.5 0 0160 50.5a9.5 9.5 0 0116 7.7C76 68.5 60 78 60 78z"
-            fill="currentColor"
+            fill="var(--color-bg)"
+            stroke="currentColor"
+            strokeWidth="2"
           />
         </g>
       </svg>

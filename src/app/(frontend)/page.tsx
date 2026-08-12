@@ -17,6 +17,7 @@ import {
   BrushStroke,
   HeroPaint,
   PageSplashes,
+  PaintDrip,
   SpraySplash,
 } from '@/components/Paint'
 import { getCategories, getSiteSettings } from '@/lib/queries'
@@ -24,6 +25,15 @@ import { mediaAlt, mediaUrl } from '@/lib/utils'
 
 // Always render fresh so catalogue changes made in the admin appear immediately.
 export const dynamic = 'force-dynamic'
+
+// Colour-washed tile photos matching the mockup's monochrome tiles, keyed by slug.
+const TILE_IMAGES: Record<string, string> = {
+  'dainty-nostrils': '/brand/covers/tile-dainty-nostrils.png',
+  'ear-stacks': '/brand/covers/tile-ear-stacks.png',
+  'septum-vibes': '/brand/covers/tile-septum-vibes.png',
+  'body-sparks': '/brand/covers/tile-body-sparks.png',
+  'studs-gems': '/brand/covers/tile-studs-gems.png',
+}
 
 const TILE_COLORS = ['bg-pink', 'bg-purple', 'bg-cyan', 'bg-orange', 'bg-lime']
 const LABEL_COLORS = ['text-pink', 'text-purple', 'text-cyan', 'text-orange', 'text-lime']
@@ -104,17 +114,22 @@ export default async function HomePage() {
             </h1>
 
             <p className="mt-10 text-[15px] leading-relaxed text-ink sm:text-base">
-              Bold pieces. Good vibes.
+              <span className="dark:text-cyan">Bold pieces. Good vibes.</span>
               <br />
               Made to <span className="mark-highlight font-semibold">stand out</span>, just like you.
             </p>
 
             <Link
-              className="text-poster relative mt-8 inline-flex items-center gap-3 px-9 py-4 text-[15px] tracking-wide text-bg uppercase transition-transform hover:scale-[1.04] active:scale-95 dark:text-[#0c0a10]"
+              className="text-poster relative mt-8 inline-flex items-center gap-3 px-9 py-4 text-[15px] tracking-wide text-bg uppercase transition-transform hover:scale-[1.04] active:scale-95 dark:text-cyan"
               href="/shop"
             >
               <BrushPill className="absolute inset-0 h-full w-full dark:hidden" color="var(--color-ink)" seed={5} />
-              <BrushPill className="absolute inset-0 hidden h-full w-full dark:block" color="var(--color-cyan)" seed={6} />
+              <BrushPill
+                className="absolute inset-0 hidden h-full w-full dark:block"
+                color="var(--color-cyan)"
+                outline
+                seed={6}
+              />
               <span className="relative">Our Collection</span>
               <span aria-hidden className="relative">→</span>
             </Link>
@@ -123,6 +138,8 @@ export default async function HomePage() {
           {/* Painted cutout portrait over hard-edged brush strokes */}
           <div className="relative order-1 lg:order-2">
             <HeroPaint className="absolute -inset-x-6 top-0 bottom-0" />
+            <PaintDrip className="absolute top-[8%] right-[-3%] z-10 hidden h-6 w-24 dark:block" color="var(--color-purple)" />
+            <DoodleSmiley className="absolute -top-4 right-[12%] z-10 hidden h-8 w-8 text-yellow dark:block" />
             <DoodleTicks className="absolute -top-2 right-0 z-10 h-8 w-9 text-ink" />
             <DoodleLightning className="absolute top-[16%] -right-1 z-10 hidden h-10 w-8 text-yellow sm:block" />
             <DoodleHeart className="absolute right-0 bottom-[18%] z-10 h-9 w-9 text-pink" />
@@ -164,7 +181,7 @@ export default async function HomePage() {
 
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
           {categories.map((cat, i) => {
-            const url = mediaUrl(cat.image, 'card')
+            const url = (cat.slug && TILE_IMAGES[cat.slug]) || mediaUrl(cat.image, 'card')
             return (
               <Link className="group" href={`/category/${cat.slug}`} key={cat.id}>
                 <div

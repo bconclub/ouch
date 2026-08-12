@@ -137,10 +137,12 @@ export function BrushPill({
   className = '',
   color,
   seed = 5,
+  outline = false,
 }: {
   className?: string
   color: string
   seed?: number
+  outline?: boolean
 }) {
   const id = `pill-${seed}-${(filterCounter = (filterCounter + 1) % 1000)}`
   return (
@@ -160,8 +162,10 @@ export function BrushPill({
       </defs>
       <path
         d="M30 8 C80 3 200 3 252 8 C270 11 276 20 276 32 C276 44 270 53 252 56 C200 61 80 61 30 56 C12 53 5 44 5 32 C5 20 12 11 30 8 Z"
-        fill={color}
+        fill={outline ? 'none' : color}
         filter={`url(#${id})`}
+        stroke={outline ? color : undefined}
+        strokeWidth={outline ? 5 : undefined}
       />
     </svg>
   )

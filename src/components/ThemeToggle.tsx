@@ -7,14 +7,14 @@ export type Theme = 'light' | 'dark'
 const STORAGE_KEY = 'ouch-theme'
 
 /** Runs before paint so the page never flashes the wrong theme. */
-export const themeInitScript = `(function(){try{var t=localStorage.getItem('${STORAGE_KEY}');if(t!=='light'&&t!=='dark'){t='light'}document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','light')}})()`
+export const themeInitScript = `(function(){try{var t=localStorage.getItem('${STORAGE_KEY}');if(t!=='light'&&t!=='dark'){t='dark'}document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})()`
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>('dark')
 
   useEffect(() => {
     const current = document.documentElement.getAttribute('data-theme')
-    setTheme(current === 'dark' ? 'dark' : 'light')
+    setTheme(current === 'light' ? 'light' : 'dark')
   }, [])
 
   const toggle = () => {

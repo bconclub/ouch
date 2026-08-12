@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-12 15:10 IST · Dark version is now THE site; tiles colour-washed like the mockup
+
+- Dark is the default for every new visitor (light remains one smiley-click away)
+- Collection tiles now use colour-washed monochrome photos per the mockup — pink studs, purple ear, teal rings, orange barbells, lime gems (two-pass greyscale+tint pipeline)
+- Dark CTA corrected to a cyan brush OUTLINE with cyan text; "Bold pieces. Good vibes." line cyan in dark
+- Purple paint drips + extra smiley on the hero's right edge per the mockup; stamp heart now reads dark-on-light like the mock
+
 ## 2026-08-12 14:40 IST · Dark-mode splash fix, true black, no transition flash
 
 - Fixed: page-edge neon splashes were painting behind the page background (stacking-context bug) — dark mode looked plain. Now visible as in the mockup

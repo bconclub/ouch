@@ -44,7 +44,7 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
   return (
     <html
       className={`${inter.variable} ${luckiest.variable} ${marker.variable}`}
-      data-theme="light"
+      data-theme="dark"
       lang="en"
       suppressHydrationWarning
     >
