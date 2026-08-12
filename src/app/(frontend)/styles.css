@@ -43,10 +43,10 @@
 
 /* ---------- Dark ---------- */
 [data-theme='dark'] {
-  --color-bg: #0c0a10;
-  --color-surface: #17141d;
-  --color-surface-2: #1f1b28;
-  --color-line: #2e2839;
+  --color-bg: #080808;
+  --color-surface: #141216;
+  --color-surface-2: #1d1a21;
+  --color-line: #2c2833;
   --color-ink: #ffffff;
   --color-muted: #a79fb4;
 }
@@ -61,7 +61,6 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {

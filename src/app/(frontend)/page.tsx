@@ -73,7 +73,7 @@ export default async function HomePage() {
   const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative isolate overflow-hidden">
       <PageSplashes />
 
       {/* ============ Hero ============ */}

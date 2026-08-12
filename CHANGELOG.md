@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-12 14:40 IST · Dark-mode splash fix, true black, no transition flash
+
+- Fixed: page-edge neon splashes were painting behind the page background (stacking-context bug) — dark mode looked plain. Now visible as in the mockup
+- Dark background corrected to true black (#080808) per the mockup
+- Removed the body colour transition that could freeze as a gray frame in embedded previews
+
 ## 2026-08-12 14:10 IST · Mockup-fidelity pass: painted cutout hero, brush pills, exact treatments
 
 - Hero photo is now an organic dry-brush cutout (SVG clip path) with strokes wrapping behind and a yellow stroke overlapping its lower edge — no more rectangular frame
