@@ -1,107 +1,70 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { CartButton } from './CartButton'
 import { Logo } from './Logo'
 import { MobileNav } from './MobileNav'
+import { PaintDrip } from './Paint'
+import { ThemeToggle } from './ThemeToggle'
 
 const NAV_LINKS = [
+  { href: '/', label: 'Home' },
   { href: '/shop', label: 'Piercings' },
-  { href: '/category/rings-hoops', label: 'Jewellery' },
-  { href: '/#studio', label: 'Studio' },
-  { href: '/#drops', label: 'Journal' },
+  { href: '/category/studs-gems', label: 'Studs' },
   { href: '/#vibe', label: 'About' },
+  { href: '/#journal', label: 'Journal' },
 ]
 
-export function SiteHeader({
-  storeName,
-  announcement,
-}: {
-  storeName: string
-  announcement?: string | null
-}) {
-  const pathname = usePathname()
-  const [scrolled, setScrolled] = useState(false)
-
-  // Only the home page has a full-bleed colour hero to sit on top of.
-  const onHero = pathname === '/'
-
-  useEffect(() => {
-    if (!onHero) return
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [onHero])
-
-  // Transparent, white-on-gradient while sitting over the hero.
-  const overlay = onHero && !scrolled
-
+export function SiteHeader({ storeName }: { storeName: string }) {
   return (
-    <>
-      {announcement && (
-        <div className="bar-rainbow px-4 py-1.5 text-center text-[11px] font-bold tracking-[0.2em] text-ink uppercase">
-          {announcement}
+    <header className="sticky top-0 z-30 bg-bg/95 backdrop-blur">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6">
+        <div className="flex items-center gap-3">
+          <MobileNav links={NAV_LINKS} />
+          <Link aria-label={`${storeName} home`} className="relative text-current" href="/">
+            <Logo className="h-8 w-auto sm:h-10" />
+            {/* Dripping paint under the logo — dark theme only, like the mockup */}
+            <PaintDrip
+              className="absolute top-[86%] left-0 hidden h-4 w-full dark:block"
+              color="#ffffff"
+            />
+          </Link>
         </div>
-      )}
-      <header
-        className={`sticky top-0 z-30 border-b transition-colors duration-300 ${
-          overlay
-            ? 'border-transparent bg-transparent text-white'
-            : 'border-line/60 bg-bg/90 text-ink backdrop-blur'
-        }`}
-      >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6">
-          <div className="flex items-center gap-3">
-            <MobileNav links={NAV_LINKS} />
-            <Link aria-label={`${storeName} home`} className="text-current" href="/">
-              <Logo className="h-9 w-auto sm:h-11" variant={overlay ? 'white' : 'ink'} />
-            </Link>
-          </div>
 
-          <nav className="hidden items-center gap-8 text-[14px] font-medium md:flex">
-            {NAV_LINKS.map((link) => (
-              <Link
-                className="text-current opacity-80 transition-opacity hover:opacity-100"
-                href={link.href}
-                key={link.label}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+        <nav className="hidden items-center gap-7 md:flex">
+          {NAV_LINKS.map((link, i) => (
+            <Link
+              className={`text-poster text-[15px] tracking-wide uppercase transition-colors ${
+                i === 0 ? 'text-pink dark:text-ink' : 'text-ink hover:text-pink'
+              }`}
+              href={link.href}
+              key={link.label}
+            >
+              {link.label}
+              {i === 0 && (
+                <span className="mt-0.5 block h-[3px] w-full rounded-full bg-pink dark:bg-yellow" />
+              )}
+            </Link>
+          ))}
+        </nav>
 
-          <div className="flex items-center gap-1">
-            <Link
-              aria-label="Search products"
-              className="rounded p-2 text-current opacity-90 transition-opacity hover:opacity-100"
-              href="/shop"
-            >
-              <svg fill="none" height="21" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" width="21">
-                <circle cx="11" cy="11" r="7" />
-                <path d="M20 20l-3.5-3.5" strokeLinecap="round" />
-              </svg>
-            </Link>
-            <Link
-              aria-label="Favourites"
-              className="hidden rounded p-2 text-current opacity-90 transition-opacity hover:opacity-100 sm:block"
-              href="/shop"
-            >
-              <svg fill="none" height="21" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" width="21">
-                <path
-                  d="M12 21S3 15.5 3 9.5A5.5 5.5 0 0112 5a5.5 5.5 0 019 4.5C21 15.5 12 21 12 21z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-            <CartButton />
-          </div>
+        <div className="flex items-center gap-2">
+          <Link
+            aria-label="Search products"
+            className="rounded p-2 text-ink transition-colors hover:text-pink"
+            href="/shop"
+          >
+            <svg fill="none" height="21" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24" width="21">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3.5-3.5" strokeLinecap="round" />
+            </svg>
+          </Link>
+          <CartButton />
+          <ThemeToggle />
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   )
 }

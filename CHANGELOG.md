@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-08-12 13:30 IST · "Check These Studs" homepage, pixel-close, light + dark
+
+- Homepage rebuilt to the founder's two mockups with a light/dark toggle (smiley button in the header; choice persists, no flash on reload)
+- Hand-built paint vector kit (`Paint.tsx`): hard-edged dry-brush strokes, spray splashes, paint drips — plus new doodles (smiley, lightning, peace, squiggle, ticks)
+- Hero: stacked HEY DUDE / CHECK / THESE / STUDS. headline with per-theme colors, marker-highlighted "stand out", portrait over layered brush strokes, black pill CTA (cyan outline in dark)
+- Collection: heading on a pink brush band; five painted tiles with the funky names — labels under tiles (light) / painted onto tiles (dark)
+- Stats row (1000+ / 3000+ / 5+ / Premium & Sterile) — clean with dividers in light, colored paint panels in dark
+- Vibe banner: peace sign + "Not just holes. It's a whole vibe." on a pink/yellow brush band (light) or neon spray (dark)
+- Footer per mockup: LET'S CONNECT (@ouch.piercings, hello@ouchjewellery.com, www.ouchjewellery.com — display values, confirm before launch), Journal, rotating STAY REAL stamp
+- Categories renamed to the brand's funky names: Dainty Nostrils, Ear Stacks, Septum Vibes, Body Sparks, Studs & Gems (Aftercare + Tools retired, products reassigned)
+- New fonts: Luckiest Guy (poster) + Permanent Marker (marker) + Inter
+- Dark-mode sweep across inner pages; nine new product photos added to tracked assets for future listings
+
 ## 2026-08-11 17:40 IST · Catalogue rebuilt on the founder's own photography; all mockup imagery removed
 
 - Deleted the 17 sample products and every stock/mockup photo attached to them

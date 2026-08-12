@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Caveat, Dancing_Script, Fraunces, Inter } from 'next/font/google'
+import { Inter, Luckiest_Guy, Permanent_Marker } from 'next/font/google'
 import React from 'react'
 
 import { CartProvider } from '@/lib/cart'
@@ -7,6 +7,7 @@ import { getSiteSettings } from '@/lib/queries'
 import { CartDrawer } from '@/components/CartDrawer'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { themeInitScript } from '@/components/ThemeToggle'
 import './styles.css'
 
 const inter = Inter({
@@ -14,32 +15,26 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const fraunces = Fraunces({
+const luckiest = Luckiest_Guy({
   subsets: ['latin'],
-  variable: '--font-fraunces',
-  weight: ['400', '500', '600', '700'],
+  variable: '--font-luckiest',
+  weight: '400',
 })
 
-const caveat = Caveat({
+const marker = Permanent_Marker({
   subsets: ['latin'],
-  variable: '--font-caveat',
-  weight: ['500', '600', '700'],
-})
-
-const dancing = Dancing_Script({
-  subsets: ['latin'],
-  variable: '--font-dancing',
-  weight: ['600', '700'],
+  variable: '--font-marker',
+  weight: '400',
 })
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
   return {
     title: {
-      default: `${settings.storeName} — Piercings & Ornaments`,
+      default: `${settings.storeName} — Piercings that hit different`,
       template: `%s — ${settings.storeName}`,
     },
-    description: settings.tagline ?? 'Self-expression, curated. Piercings, ornaments, you.',
+    description: settings.tagline ?? 'Bold pieces. Good vibes. Made to stand out, just like you.',
   }
 }
 
@@ -48,9 +43,14 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
 
   return (
     <html
-      className={`${inter.variable} ${fraunces.variable} ${caveat.variable} ${dancing.variable}`}
+      className={`${inter.variable} ${luckiest.variable} ${marker.variable}`}
+      data-theme="light"
       lang="en"
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <CartProvider>
           <Header />

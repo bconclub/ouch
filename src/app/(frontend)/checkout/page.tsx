@@ -50,7 +50,7 @@ export default function CheckoutPage() {
         <h1 className="font-display mb-4 text-3xl font-bold uppercase">Checkout</h1>
         <p className="mb-8 text-muted">Your cart is empty — add something first.</p>
         <Link
-          className="btn-vibrant px-8 py-3 text-sm font-bold tracking-widest text-white uppercase"
+          className="btn-vibrant px-8 py-3 text-sm font-bold tracking-widest uppercase"
           href="/shop"
         >
           Shop now
@@ -117,7 +117,7 @@ export default function CheckoutPage() {
           )}
 
           <button
-            className="btn-vibrant w-full py-4 text-sm font-bold tracking-widest text-white uppercase disabled:cursor-not-allowed disabled:opacity-50"
+            className="btn-vibrant w-full py-4 text-sm font-bold tracking-widest uppercase disabled:cursor-not-allowed disabled:opacity-50"
             disabled={submitting}
             type="submit"
           >

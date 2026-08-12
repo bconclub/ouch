@@ -87,7 +87,7 @@ export function ProductPurchase({ product }: { product: Product }) {
           </button>
         </div>
         <button
-          className="btn-vibrant flex-1 px-8 py-3.5 text-sm font-bold tracking-widest text-white uppercase disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
+          className="btn-vibrant flex-1 px-8 py-3.5 text-sm font-bold tracking-widest uppercase disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
           disabled={!available}
           onClick={() =>
             addItem(

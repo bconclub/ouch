@@ -1,32 +1,59 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
 @theme {
-  /* Warm cream base — light, airy, editorial */
-  --color-bg: #faf4ec;
+  /* Brand paint palette — identical in both versions */
+  --color-pink: #ff2e88;
+  --color-purple: #8b2fd6;
+  --color-yellow: #ffd21f;
+  --color-cyan: #22d3ee;
+  --color-orange: #ff7a1a;
+  --color-lime: #a3e635;
+  --color-accent: #ff2e88;
+  --color-accent-hover: #ff5ba3;
+  --color-success: #a3e635;
+
+  /* Surfaces — overridden per theme below */
+  --color-bg: #faf6f0;
   --color-surface: #ffffff;
-  --color-surface-2: #f3e9dc;
-  --color-line: #e7d9c8;
-  --color-ink: #1c1410;
-  --color-muted: #8a7a6b;
+  --color-surface-2: #f2ece4;
+  --color-line: #e2d9cd;
+  --color-ink: #17141a;
+  --color-muted: #6b6470;
 
-  /* Confetti palette from the brand mockup */
-  --color-accent: #f43f8e; /* pink */
-  --color-accent-hover: #e12578;
-  --color-tangerine: #f97316; /* orange */
-  --color-sun: #f5b81c; /* golden yellow */
-  --color-lime: #14b8a6; /* teal */
-  --color-violet: #8b5cf6; /* purple */
-  --color-coral: #ef4444; /* red-coral */
-  --color-success: #14b8a6;
-
-  --font-serif: var(--font-fraunces), Georgia, serif;
-  --font-script: var(--font-caveat), cursive;
+  --font-poster: var(--font-luckiest), system-ui, sans-serif;
+  --font-marker: var(--font-marker), cursive;
   --font-body: var(--font-inter), system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-display: var(--font-luckiest), system-ui, sans-serif;
+  --font-script: var(--font-marker), cursive;
+  --font-serif: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ---------- Light (cream) ---------- */
+:root,
+[data-theme='light'] {
+  --color-bg: #faf6f0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2ece4;
+  --color-line: #e2d9cd;
+  --color-ink: #17141a;
+  --color-muted: #6b6470;
+}
+
+/* ---------- Dark ---------- */
+[data-theme='dark'] {
+  --color-bg: #0c0a10;
+  --color-surface: #17141d;
+  --color-surface-2: #1f1b28;
+  --color-line: #2e2839;
+  --color-ink: #ffffff;
+  --color-muted: #a79fb4;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--color-bg);
 }
 
 body {
@@ -34,103 +61,121 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background: var(--color-sun);
-  color: var(--color-ink);
+  background: var(--color-pink);
+  color: #fff;
 }
 
-/* ---------- Brand utilities ---------- */
-
-/* Multicolor text — used word-by-word for playful emphasis */
-.text-rainbow {
-  background: linear-gradient(
-    95deg,
-    var(--color-tangerine) 0%,
-    var(--color-accent) 30%,
-    var(--color-violet) 60%,
-    var(--color-lime) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* ---------- Poster type ---------- */
+.text-poster {
+  font-family: var(--font-poster);
+  letter-spacing: 0.01em;
+  line-height: 0.92;
 }
 
-/* Handwritten script accent */
-.text-script {
-  font-family: var(--font-script);
-  font-weight: 600;
+.text-marker {
+  font-family: var(--font-marker);
 }
 
-/* Big calligraphic script for hero headlines — "Pierce Your Story" */
-.text-script-big {
-  font-family: var(--font-dancing), cursive;
-  font-weight: 700;
+/* Highlighter behind a word */
+.mark-highlight {
+  background: linear-gradient(transparent 12%, var(--color-yellow) 12%, var(--color-yellow) 88%, transparent 88%);
+  color: #17141a;
+  padding: 0 0.18em;
 }
 
-/* Primary CTA — black pill, mockup style */
+/* Black pill CTA with a paint-stroke feel */
 .btn-vibrant {
   background: var(--color-ink);
-  color: #fff;
+  color: var(--color-bg);
   border-radius: 9999px;
-  transition: transform 0.15s ease, background-color 0.2s ease;
+  transition: transform 0.15s ease, filter 0.2s ease;
 }
 .btn-vibrant:hover {
-  background: #33261c;
+  filter: brightness(1.15);
 }
 .btn-vibrant:active {
   transform: scale(0.97);
 }
 
-/* Secondary pill */
 .btn-outline {
-  border: 1.5px solid var(--color-ink);
+  border: 2px solid var(--color-ink);
   color: var(--color-ink);
   border-radius: 9999px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .btn-outline:hover {
   background: var(--color-ink);
-  color: #fff;
+  color: var(--color-bg);
 }
 
-/* Hero — full-saturation color statement. Deep red → orange → gold, green + violet glows. */
-.wash-hero {
+/* ---------- Paint ---------- */
+
+/* Multicolour paint sweep used behind the hero photo and the vibe banner */
+.paint-sweep {
   background:
-    radial-gradient(ellipse 70% 85% at 88% 110%, rgba(20, 150, 70, 0.55), transparent 60%),
-    radial-gradient(ellipse 55% 65% at 100% 0%, rgba(255, 214, 0, 0.5), transparent 65%),
-    radial-gradient(ellipse 45% 55% at 0% 105%, rgba(120, 20, 130, 0.4), transparent 60%),
-    linear-gradient(115deg, #d81a3c 0%, #f0391f 30%, #ff7a00 62%, #ffb400 100%);
+    radial-gradient(ellipse 38% 46% at 22% 30%, var(--color-pink) 0%, transparent 62%),
+    radial-gradient(ellipse 34% 42% at 62% 22%, var(--color-purple) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 82% 52%, var(--color-cyan) 0%, transparent 60%),
+    radial-gradient(ellipse 42% 40% at 40% 76%, var(--color-orange) 0%, transparent 62%),
+    radial-gradient(ellipse 32% 36% at 76% 84%, var(--color-yellow) 0%, transparent 60%);
+  filter: blur(2px);
 }
 
-/* Footer wash — turmeric → marigold → rani → violet sweep */
-.wash-footer {
-  background:
-    radial-gradient(ellipse 70% 90% at 5% 50%, rgba(250, 176, 5, 0.85), transparent 65%),
-    radial-gradient(ellipse 60% 90% at 40% 50%, rgba(255, 122, 0, 0.8), transparent 65%),
-    radial-gradient(ellipse 60% 90% at 70% 40%, rgba(236, 30, 90, 0.7), transparent 70%),
-    radial-gradient(ellipse 70% 100% at 100% 60%, rgba(139, 92, 246, 0.85), transparent 70%),
-    linear-gradient(90deg, #fcc419, #f783ac, #b197fc);
-}
-
-/* Thin multicolor trim bar */
-.bar-rainbow {
+.vibe-band {
   background: linear-gradient(
-    90deg,
-    var(--color-sun),
-    var(--color-tangerine),
-    var(--color-accent),
-    var(--color-violet),
-    var(--color-lime)
+    92deg,
+    var(--color-pink) 0%,
+    var(--color-purple) 28%,
+    var(--color-cyan) 55%,
+    var(--color-lime) 76%,
+    var(--color-yellow) 100%
   );
 }
 
-/* Hand-drawn underline squiggle for script words */
+/* Thin multicolour trim */
+.bar-rainbow {
+  background: linear-gradient(
+    90deg,
+    var(--color-yellow),
+    var(--color-orange),
+    var(--color-pink),
+    var(--color-purple),
+    var(--color-cyan)
+  );
+}
+
+/* Rough painted-square tile for the collection grid */
+.paint-tile {
+  border-radius: 14px 20px 16px 22px / 20px 14px 22px 16px;
+}
+
+/* Legacy helpers still used on inner pages */
+.text-rainbow {
+  background: linear-gradient(95deg, var(--color-orange), var(--color-pink) 40%, var(--color-purple) 70%, var(--color-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-script {
+  font-family: var(--font-marker);
+}
+.text-script-big {
+  font-family: var(--font-poster);
+}
 .underline-squiggle {
-  background-image: linear-gradient(90deg, var(--color-accent), var(--color-violet));
+  background-image: linear-gradient(90deg, var(--color-pink), var(--color-purple));
   background-repeat: no-repeat;
-  background-size: 100% 3px;
+  background-size: 100% 4px;
   background-position: 0 96%;
   padding-bottom: 0.12em;
+}
+.wash-hero {
+  background: var(--color-bg);
+}
+.wash-footer {
+  background: var(--color-bg);
 }

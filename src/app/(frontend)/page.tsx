@@ -3,252 +3,249 @@ import Link from 'next/link'
 import React from 'react'
 
 import {
-  DoodleCrown,
   DoodleHeart,
-  DoodleScratch,
-  DoodleSparkle,
+  DoodleLightning,
+  DoodlePeace,
+  DoodleSmiley,
+  DoodleSquiggle,
   DoodleStar,
-  DoodleSun,
-  Swoosh,
+  DoodleTicks,
 } from '@/components/Doodles'
-import { PhotoFan, type FanPhoto } from '@/components/PhotoFan'
-import { ProductCard } from '@/components/ProductCard'
-import { StudioCarousel, type StudioCard } from '@/components/StudioCarousel'
-import { getCategories, getFeaturedProducts, getSiteSettings } from '@/lib/queries'
-import { mediaUrl } from '@/lib/utils'
+import { BrushStroke, HeroPaint, SpraySplash } from '@/components/Paint'
+import { getCategories, getSiteSettings } from '@/lib/queries'
+import { mediaAlt, mediaUrl } from '@/lib/utils'
 
 // Always render fresh so catalogue changes made in the admin appear immediately.
 export const dynamic = 'force-dynamic'
 
-const VALUES = [
-  {
-    title: 'Premium Materials',
-    swoosh: '#f43f8e',
-    icon: (
-      <svg fill="none" height="34" stroke="#1c1410" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 40 36" width="38">
-        <path d="M10 3h20l7 10-17 20L3 13z M3 13h34 M10 3l10 10L30 3 M20 13l0 20" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Skin-Safe',
-    swoosh: '#f5b81c',
-    icon: (
-      <svg fill="none" height="34" stroke="#14b8a6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" viewBox="0 0 40 36" width="36">
-        <path d="M20 32S4 23 4 12A8 8 0 0120 7a8 8 0 0116 5c0 11-16 20-16 20z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Styled for You',
-    swoosh: '#8b5cf6',
-    icon: (
-      <svg fill="none" height="34" stroke="#8b5cf6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" viewBox="0 0 36 40" width="32">
-        <path d="M22 2L8 22h9l-3 16L30 16h-10z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Hygienic & Professional',
-    swoosh: '#14b8a6',
-    icon: (
-      <svg fill="none" height="34" stroke="#5cb85c" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 44 36" width="40">
-        <path d="M22 32c-4-2-7-6-7-11 0-6 3-11 7-15 4 4 7 9 7 15 0 5-3 9-7 11z" />
-        <path d="M22 32c-6 1-12-1-16-6 4-4 9-6 14-5M22 32c6 1 12-1 16-6-4-4-9-6-14-5" />
-      </svg>
-    ),
-  },
-]
+const TILE_COLORS = ['bg-pink', 'bg-purple', 'bg-cyan', 'bg-orange', 'bg-lime']
+const LABEL_COLORS = ['text-pink', 'text-purple', 'text-cyan', 'text-orange', 'text-lime']
+const PANEL_COLORS = ['dark:bg-pink', 'dark:bg-purple', 'dark:bg-cyan', 'dark:bg-yellow']
 
-// Hero deck — shuffles through the studio shoot, craft first.
-const HERO_PHOTOS: FanPhoto[] = [
+const STATS = [
   {
-    src: '/brand/covers/hero-earstack.png',
-    alt: 'A curated ear stack — helix, conch, rook and lobe piercings in gold',
+    value: '1000+',
+    label: 'Happy humans',
+    color: 'text-pink',
+    icon: <DoodleSmiley className="h-8 w-8" />,
   },
-  { src: '/brand/covers/cat-hoops.png', alt: 'Gold and silver hoops and segment rings' },
-  { src: '/brand/covers/cat-studs.png', alt: 'Gemstone, pearl and charm studs' },
-  { src: '/brand/covers/cat-barbells.png', alt: 'Curved and straight barbells in gold and steel' },
-  { src: '/brand/covers/cat-sets.png', alt: 'Curated jewellery sets and charms' },
-]
-
-// Studio carousel — founder's branded studio photography.
-const STUDIO_TILES: { label: string; slug: string | null; cover: string; chipColor: string }[] = [
-  { label: 'Ear Curations', slug: 'ear', cover: '/brand/covers/cat-ear.png', chipColor: '#f9a8d4' },
-  { label: 'Nose', slug: 'nose', cover: '/brand/covers/cat-nose.png', chipColor: '#fcd34d' },
-  { label: 'Face', slug: 'lip-labret', cover: '/brand/covers/cat-face.png', chipColor: '#c4b5fd' },
-  { label: 'Body', slug: 'barbells', cover: '/brand/covers/cat-body.png', chipColor: '#6ee7c9' },
-  { label: 'Curated Sets', slug: null, cover: '/brand/covers/cat-sets.png', chipColor: '#f9a8d4' },
+  {
+    value: '3000+',
+    label: 'Piercings done',
+    color: 'text-purple',
+    icon: <DoodleLightning className="h-8 w-8" />,
+  },
+  {
+    value: '5+',
+    label: 'Years of good vibes',
+    color: 'text-cyan',
+    icon: <DoodleHeart className="h-8 w-8" />,
+  },
+  {
+    value: 'Premium',
+    label: '& sterile',
+    color: 'text-orange',
+    icon: (
+      <svg fill="none" height="30" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 26" width="30">
+        <path d="M7 3h14l5 7-12 14L2 10z M2 10h24 M7 3l7 7 7-7 M14 10v14" />
+      </svg>
+    ),
+  },
 ]
 
 export default async function HomePage() {
-  const [settings, categories, featured] = await Promise.all([
-    getSiteSettings(),
-    getCategories(),
-    getFeaturedProducts(),
-  ])
-
+  const [settings, categories] = await Promise.all([getSiteSettings(), getCategories()])
   const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
 
-  const studioCards: StudioCard[] = STUDIO_TILES.map((tile) => {
-    const category = tile.slug ? categories.find((c) => c.slug === tile.slug) : undefined
-    return {
-      label: tile.label,
-      href: category ? `/category/${category.slug}` : '/shop',
-      image: tile.cover,
-      chipColor: tile.chipColor,
-    }
-  })
-
   return (
-    <div>
-      {/* ============ 1 · Hero — "Pierce Your Story" ============ */}
-      {/* -mt-20 slides the gradient up behind the transparent header */}
-      <section className="wash-hero relative -mt-20 overflow-hidden pt-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:py-20">
-          <div className="relative">
-            <DoodleSparkle className="absolute -top-6 left-0 h-8 w-8 text-[#ffd23f]" />
-            <DoodleStar className="absolute right-6 -bottom-8 hidden h-10 w-10 text-white/80 lg:block" />
+    <div className="overflow-hidden">
+      {/* ============ Hero ============ */}
+      <section className="relative">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pt-4 pb-14 sm:px-6 lg:grid-cols-[1fr_1.05fr] lg:pb-20">
+          <div className="relative order-2 lg:order-1">
+            <DoodleStar className="absolute -top-8 left-0 hidden h-9 w-9 text-purple lg:block" />
+            <DoodleHeart className="absolute top-[38%] -left-6 hidden h-8 w-8 text-pink xl:block" />
+            <DoodleSmiley className="absolute top-[24%] right-2 hidden h-9 w-9 text-cyan lg:block" />
 
-            <h1 className="text-script-big relative text-6xl leading-[0.95] text-[#fff8f0] drop-shadow-[0_2px_12px_rgba(120,20,0,0.35)] sm:text-7xl lg:text-8xl">
-              Pierce
-              <br />
-              <span className="relative inline-block">
-                Your Story
-                <Swoosh className="absolute -bottom-2 left-2 h-3 w-4/5" color="#ffd23f" />
+            <h1 className="text-poster text-5xl uppercase sm:text-6xl lg:text-7xl">
+              <span className="text-marker block text-[0.34em] normal-case tracking-wide">
+                Hey dude,
               </span>
-              <DoodleHeart className="absolute top-1/2 -right-2 h-9 w-9 text-[#ffd23f] sm:right-4" />
+              <span className="mt-2 block -rotate-1 text-pink">Check</span>
+              <span className="block -rotate-1 text-purple dark:text-ink">These</span>
+              <span className="relative block -rotate-1 text-yellow">
+                Studs
+                <span className="text-pink">.</span>
+                <BrushStroke
+                  className="absolute -bottom-3 left-0 h-4 w-[70%]"
+                  color="var(--color-pink)"
+                  seed={13}
+                />
+              </span>
             </h1>
 
-            <p className="mt-10 text-[13px] leading-relaxed font-semibold tracking-[0.3em] text-white/90 uppercase">
-              Curated piercings.
+            <p className="mt-9 text-[15px] leading-relaxed text-ink sm:text-base">
+              Bold pieces. Good vibes.
               <br />
-              Timeless you.
+              Made to <span className="mark-highlight font-semibold">stand out</span>, just like you.
             </p>
 
             <Link
-              className="btn-vibrant mt-8 inline-flex items-center gap-3 px-7 py-3.5 text-[13px] font-semibold shadow-lg"
+              className="text-poster mt-8 inline-flex items-center gap-3 rounded-full bg-ink px-8 py-3.5 text-[15px] tracking-wide text-bg uppercase transition-transform hover:scale-[1.03] active:scale-95 dark:border-2 dark:border-cyan dark:bg-transparent dark:text-cyan"
               href="/shop"
             >
-              Explore Collection <span aria-hidden>→</span>
+              Our Collection <span aria-hidden>→</span>
             </Link>
           </div>
 
-          <div className="relative hidden lg:block">
-            <PhotoFan photos={HERO_PHOTOS} />
-            <DoodleCrown className="absolute -top-6 left-[14%] h-14 w-20 -rotate-6 text-[#ffd23f]" />
-            <DoodleScratch className="absolute top-[16%] -right-4 h-9 w-11 text-white" />
-            <DoodleHeart className="absolute -bottom-5 left-[18%] h-9 w-9 text-white" />
-            <DoodleStar className="absolute -right-2 bottom-[22%] h-11 w-11 text-[#ffd23f]" />
-          </div>
-        </div>
-      </section>
-
-      {/* ============ 2 · Values strip — "Feel good. Look great." ============ */}
-      <section className="border-b border-line bg-bg">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-0 gap-y-10 px-4 py-12 sm:px-6">
-          <DoodleSun className="mr-6 hidden h-12 w-12 shrink-0 text-tangerine xl:block" />
-          <div className="grid flex-1 grid-cols-2 gap-y-10 lg:grid-cols-4">
-            {VALUES.map((v, i) => (
-              <div
-                className={`flex flex-col items-center px-4 text-center ${
-                  i > 0 ? 'lg:border-l lg:border-line' : ''
-                }`}
-                key={v.title}
-              >
-                <div className="mb-3">{v.icon}</div>
-                <h3 className="max-w-36 text-[15px] leading-snug font-medium text-ink">{v.title}</h3>
-                <Swoosh className="mt-2 h-2.5 w-16" color={v.swoosh} />
-              </div>
-            ))}
-          </div>
-          <div className="relative mx-auto shrink-0 pl-6 lg:border-l lg:border-line lg:pl-10">
-            <p className="text-script text-4xl leading-[1.05]">
-              <span className="text-coral">Feel good.</span>
-              <br />
-              <span className="text-tangerine">Look great.</span>
-            </p>
-            <DoodleHeart className="absolute top-0 -right-8 h-8 w-8 text-accent" />
-          </div>
-        </div>
-      </section>
-
-      {/* ============ 3 · Our piercing studio — carousel ============ */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6" id="studio">
-        <h2 className="mb-10 text-[15px] font-bold tracking-[0.35em] text-ink uppercase">
-          Our Piercing Studio
-        </h2>
-        <StudioCarousel cards={studioCards} />
-      </section>
-
-      {/* ============ 4 · The Ouch vibe ============ */}
-      <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6" id="vibe">
-        <DoodleScratch className="absolute top-10 left-2 h-10 w-12 -scale-x-100 text-accent" />
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]">
-          <div className="relative aspect-[47/29] overflow-hidden rounded-3xl">
-            <Image
-              alt="Curated labret and ear piercings styled in the studio"
-              className="object-cover"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              src="/brand/covers/cat-lip.png"
-            />
-          </div>
-          <div className="relative">
-            <DoodleHeart className="absolute -top-4 right-8 h-9 w-9 text-accent" />
-            <p className="mb-4 text-[13px] font-bold tracking-[0.3em] text-ink uppercase">
-              The Ouch vibe
-            </p>
-            <h2 className="text-script-big text-5xl leading-tight text-ink sm:text-6xl">
-              <span className="relative inline-block">
-                Safe. Stylish. Yours.
-                <Swoosh className="absolute -bottom-1 left-0 h-3 w-3/4" color="#f43f8e" />
-              </span>
-            </h2>
-            <p className="mt-6 max-w-md leading-relaxed text-ink/80">
-              A space where piercing meets personality — clean, calm and full of good vibes.
-            </p>
-            <a
-              className="btn-vibrant mt-7 inline-flex items-center gap-3 px-7 py-3.5 text-[13px] font-semibold"
-              href={whatsappHref}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Book Your Studio Visit <span aria-hidden>→</span>
-            </a>
-            <DoodleSun className="absolute -right-2 -bottom-10 hidden h-16 w-16 text-violet lg:block" />
-            <DoodleSparkle className="absolute right-16 -bottom-2 hidden h-6 w-6 text-sun lg:block" />
-          </div>
-        </div>
-      </section>
-
-      {/* ============ Fresh drops ============ */}
-      {featured.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6" id="drops">
-          <div className="mb-8 flex items-end justify-between">
-            <div>
-              <p className="mb-2 text-[11px] font-bold tracking-[0.28em] text-muted uppercase">
-                Fresh drops
-              </p>
-              <h2 className="font-serif text-3xl font-medium">
-                Wear the <span className="text-script text-rainbow text-4xl">sting</span>
-                <span className="text-accent">.</span>
-              </h2>
+          {/* Portrait over hard-edged brush strokes */}
+          <div className="relative order-1 lg:order-2">
+            <HeroPaint className="absolute inset-x-0 top-2 bottom-2" />
+            <DoodleTicks className="absolute -top-2 right-0 z-10 h-8 w-9 text-ink" />
+            <DoodleLightning className="absolute top-[16%] -right-1 z-10 hidden h-10 w-8 text-yellow sm:block" />
+            <DoodleHeart className="absolute right-0 bottom-[16%] z-10 h-9 w-9 text-pink" />
+            <DoodleSquiggle className="absolute bottom-2 left-[6%] z-10 h-6 w-14 text-purple" />
+            <div className="relative mx-auto aspect-[1122/1402] w-full max-w-md">
+              <Image
+                alt="Curated piercings — septum ring, nostril stud and a stacked ear"
+                className="rounded-2xl object-cover"
+                fill
+                priority
+                sizes="(max-width: 1024px) 80vw, 45vw"
+                src="/brand/covers/cat-nose.png"
+              />
             </div>
-            <Link
-              className="text-[12px] font-bold tracking-[0.18em] text-muted uppercase hover:text-ink"
-              href="/shop"
+          </div>
+        </div>
+      </section>
+
+      {/* ============ Our collection ============ */}
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6" id="collection">
+        <div className="relative mx-auto mb-12 w-fit">
+          <BrushStroke
+            className="absolute -inset-x-8 top-1/2 h-[150%] -translate-y-1/2"
+            color="var(--color-pink)"
+            seed={6}
+          />
+          <DoodleStar className="absolute -top-5 -right-10 h-7 w-7 text-yellow" />
+          <DoodleTicks className="absolute -top-4 -left-10 h-6 w-7 -scale-x-100 text-pink" />
+          <h2 className="text-marker relative px-6 py-2.5 text-3xl text-white sm:text-4xl">
+            Our Collection
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+          {categories.map((cat, i) => {
+            const url = mediaUrl(cat.image, 'card')
+            return (
+              <Link className="group" href={`/category/${cat.slug}`} key={cat.id}>
+                <div
+                  className={`paint-tile relative aspect-square overflow-hidden p-2.5 transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:rotate-1 dark:shadow-[0_0_18px_rgba(255,255,255,0.12)] ${
+                    TILE_COLORS[i % TILE_COLORS.length]
+                  }`}
+                >
+                  {url && (
+                    <Image
+                      alt={mediaAlt(cat.image, cat.name)}
+                      className="paint-tile object-cover"
+                      fill
+                      sizes="(max-width: 640px) 45vw, 18vw"
+                      src={url}
+                    />
+                  )}
+                  {/* Dark theme: label painted onto the tile */}
+                  <span className="text-marker absolute right-3 bottom-2.5 left-3 hidden items-center justify-between text-[15px] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] dark:flex">
+                    {cat.name} <span aria-hidden>→</span>
+                  </span>
+                </div>
+                {/* Light theme: label under the tile */}
+                <div className="mt-3 dark:hidden">
+                  <h3 className={`text-marker text-[16px] ${LABEL_COLORS[i % LABEL_COLORS.length]}`}>
+                    {cat.name}
+                  </h3>
+                  <span className="text-poster mt-0.5 inline-flex items-center gap-1.5 text-[12px] tracking-[0.15em] text-ink uppercase">
+                    Explore <span aria-hidden>→</span>
+                  </span>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ============ Stats ============ */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid grid-cols-2 gap-4 border-y border-line py-10 lg:grid-cols-4 dark:gap-3 dark:border-transparent dark:py-4">
+          {STATS.map((stat, i) => (
+            <div
+              className={`paint-tile flex flex-col items-center px-4 py-4 text-center dark:py-7 ${
+                i > 0 ? 'lg:border-l lg:border-line dark:lg:border-0' : ''
+              } ${PANEL_COLORS[i % PANEL_COLORS.length]}`}
+              key={stat.label}
             >
-              View all →
-            </Link>
+              <div className={`mb-2 ${stat.color} dark:text-white`}>{stat.icon}</div>
+              <div className={`text-poster text-2xl sm:text-3xl ${stat.color} dark:text-white`}>
+                {stat.value}
+              </div>
+              <div className="mt-1 text-[11px] font-bold tracking-[0.2em] text-ink uppercase dark:text-white">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ============ Vibe banner ============ */}
+      <section className="relative mx-auto mt-16 max-w-7xl px-4 sm:px-6" id="vibe">
+        <div className="relative px-2 py-12 sm:px-8">
+          {/* Light: painted pink band with yellow ends */}
+          <BrushStroke
+            className="absolute inset-x-0 top-1/2 h-[125%] w-full -translate-y-1/2 dark:hidden"
+            color="var(--color-pink)"
+            seed={16}
+          />
+          <BrushStroke
+            className="absolute top-1/2 -right-2 h-[80%] w-[26%] -translate-y-1/2 rotate-3 dark:hidden"
+            color="var(--color-yellow)"
+            seed={21}
+          />
+          {/* Dark: neon spray on black */}
+          <SpraySplash className="absolute top-0 left-[4%] hidden h-24 w-24 dark:block" color="var(--color-purple)" seed={14} />
+          <SpraySplash className="absolute right-[6%] bottom-0 hidden h-20 w-20 dark:block" color="var(--color-yellow)" seed={17} />
+
+          <div className="relative flex flex-col items-center gap-x-10 gap-y-6 sm:flex-row sm:justify-center">
+            <DoodlePeace className="h-16 w-16 shrink-0 text-cyan sm:h-20 sm:w-20" />
+            <div className="text-center sm:text-left">
+              <p className="text-marker text-2xl text-[#7a1436] sm:text-3xl dark:text-yellow">
+                Not just holes.
+              </p>
+              <p className="text-poster mt-1 text-3xl text-white uppercase sm:text-5xl dark:text-pink">
+                It&apos;s a whole vibe.
+              </p>
+            </div>
+            <DoodleStar className="absolute -top-6 right-0 h-8 w-8 text-pink sm:right-6" />
+            <DoodleSmiley className="absolute -right-2 -bottom-6 hidden h-9 w-9 text-yellow sm:block" />
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {featured.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+        </div>
+      </section>
+
+      {/* ============ Journal teaser ============ */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6" id="journal">
+        <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto]">
+          <div>
+            <h2 className="text-poster text-2xl uppercase sm:text-3xl">Journal</h2>
+            <p className="text-marker mt-3 text-xl text-muted">Real people. Real stories. Real vibes.</p>
           </div>
-        </section>
-      )}
+          <a
+            className="text-poster inline-flex w-fit items-center gap-2 rounded-full border-2 border-ink px-7 py-3 text-[14px] text-ink uppercase transition-colors hover:bg-ink hover:text-bg"
+            href={whatsappHref}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Say hello <span aria-hidden>→</span>
+          </a>
+        </div>
+      </section>
     </div>
   )
 }

@@ -52,6 +52,51 @@ export function DoodleSun({ className = '' }: { className?: string }) {
   )
 }
 
+export function DoodleSmiley({ className = '' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="3" viewBox="0 0 44 44">
+      <circle cx="22" cy="22" r="18" />
+      <circle cx="15.5" cy="17.5" fill="currentColor" r="2.2" stroke="none" />
+      <circle cx="28.5" cy="17.5" fill="currentColor" r="2.2" stroke="none" />
+      <path d="M14 26c2.4 3.4 5.2 5 8 5s5.6-1.6 8-5" />
+    </svg>
+  )
+}
+
+export function DoodleLightning({ className = '' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" viewBox="0 0 36 48">
+      <path d="M21 3L8 26h9l-3 19 14-24h-10z" />
+    </svg>
+  )
+}
+
+export function DoodlePeace({ className = '' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="4.5" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="27" />
+      <path d="M32 5v54M32 32L13 51M32 32l19 19" />
+    </svg>
+  )
+}
+
+export function DoodleSquiggle({ className = '' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="3.5" viewBox="0 0 64 24">
+      <path d="M3 18C11 6 17 6 24 12s13 8 21 2 11-8 16-4" />
+    </svg>
+  )
+}
+
+/** Marks like ” — short angled emphasis strokes. */
+export function DoodleTicks({ className = '' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="4" viewBox="0 0 36 32">
+      <path d="M8 26L14 6M20 26L26 6M30 22l4-12" />
+    </svg>
+  )
+}
+
 /** Marker underline swoosh — slightly curved stroke. */
 export function Swoosh({ className = '', color = 'currentColor' }: { className?: string; color?: string }) {
   return (
