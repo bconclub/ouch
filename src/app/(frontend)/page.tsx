@@ -146,12 +146,12 @@ export default async function HomePage() {
             <DoodleSquiggle className="absolute bottom-3 left-[4%] z-10 h-6 w-14 text-purple" />
             <BrushMaskedPhoto className="relative mx-auto aspect-[1122/1402] w-full max-w-md">
               <Image
-                alt="Curated piercings — septum ring, nostril stud and a stacked ear"
+                alt="A curated ear stack — helix, conch, rook and lobe piercings in gold"
                 className="object-cover"
                 fill
                 priority
                 sizes="(max-width: 1024px) 80vw, 45vw"
-                src="/brand/covers/cat-nose.png"
+                src="/brand/covers/hero-earstack.png"
               />
             </BrushMaskedPhoto>
             {/* A stroke overlapping the cutout's lower edge, like the mock */}
