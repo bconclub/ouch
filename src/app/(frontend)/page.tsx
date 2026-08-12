@@ -15,11 +15,11 @@ import {
   BrushMaskedPhoto,
   BrushPill,
   BrushStroke,
-  HeroPaint,
   PageSplashes,
-  PaintDrip,
+  PaintBurst,
   SpraySplash,
 } from '@/components/Paint'
+import { ParallaxHero } from '@/components/ParallaxHero'
 import { getCategories, getSiteSettings } from '@/lib/queries'
 import { mediaAlt, mediaUrl } from '@/lib/utils'
 
@@ -135,41 +135,28 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          {/* Painted cutout portrait over hard-edged brush strokes */}
+          {/* Cutout over the exploding paint burst, with subtle 3D parallax */}
           <div className="relative order-1 lg:order-2">
-            <HeroPaint className="absolute -inset-x-6 top-0 bottom-0" />
-            <PaintDrip className="absolute top-[8%] right-[-3%] z-10 hidden h-6 w-24 dark:block" color="var(--color-purple)" />
+            <ParallaxHero
+              back={<PaintBurst className="absolute -inset-x-16 -inset-y-10" />}
+              className="relative mx-auto aspect-[720/900] w-full max-w-md"
+              front={
+                <BrushMaskedPhoto blend className="relative h-full w-full">
+                  <Image
+                    alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
+                    className="object-cover"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 80vw, 45vw"
+                    src="/brand/covers/hero-founder.png"
+                  />
+                </BrushMaskedPhoto>
+              }
+            />
             <DoodleSmiley className="absolute -top-4 right-[12%] z-10 hidden h-8 w-8 text-yellow dark:block" />
             <DoodleTicks className="absolute -top-2 right-0 z-10 h-8 w-9 text-ink" />
             <DoodleLightning className="absolute top-[16%] -right-1 z-10 hidden h-10 w-8 text-yellow sm:block" />
             <DoodleHeart className="absolute right-0 bottom-[18%] z-10 h-9 w-9 text-pink" />
-            <DoodleSquiggle className="absolute bottom-3 left-[4%] z-10 h-6 w-14 text-purple" />
-            <BrushMaskedPhoto blend className="relative mx-auto aspect-[720/900] w-full max-w-md">
-              <Image
-                alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
-                className="object-cover"
-                fill
-                priority
-                sizes="(max-width: 1024px) 80vw, 45vw"
-                src="/brand/covers/hero-founder.png"
-              />
-            </BrushMaskedPhoto>
-            {/* Strokes crossing the photo so it melts into the paint */}
-            <BrushStroke
-              className="absolute bottom-[4%] left-[8%] z-10 h-[9%] w-[84%] rotate-2"
-              color="var(--color-yellow)"
-              seed={23}
-            />
-            <BrushStroke
-              className="absolute top-[6%] right-[2%] z-10 h-[7%] w-[46%] -rotate-6 opacity-90"
-              color="var(--color-purple)"
-              seed={27}
-            />
-            <BrushStroke
-              className="absolute top-[38%] -left-[2%] z-10 h-[7%] w-[34%] rotate-3 opacity-80"
-              color="var(--color-pink)"
-              seed={29}
-            />
           </div>
         </div>
       </section>

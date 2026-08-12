@@ -123,7 +123,7 @@ export function BrushMaskedPhoto({
 }) {
   const id = `mask-${(filterCounter = (filterCounter + 1) % 1000)}`
   const softMask =
-    'radial-gradient(ellipse 78% 72% at 50% 44%, black 58%, rgba(0,0,0,0.55) 74%, transparent 92%)'
+    'radial-gradient(ellipse 70% 66% at 50% 44%, black 52%, rgba(0,0,0,0.6) 68%, transparent 88%)'
   return (
     <div className={className} style={{ clipPath: `url(#${id})` }}>
       <svg aria-hidden height="0" width="0">
@@ -182,6 +182,106 @@ export function BrushPill({
         stroke={outline ? color : undefined}
         strokeWidth={outline ? 5 : undefined}
       />
+    </svg>
+  )
+}
+
+/** Thick curved arc swash — the white brush arcs framing the hero in the reference. */
+export function ArcSwash({
+  className = '',
+  color,
+  seed = 8,
+  sweep = 'right',
+}: {
+  className?: string
+  color: string
+  seed?: number
+  sweep?: 'left' | 'right'
+}) {
+  const id = `arc-${seed}-${(filterCounter = (filterCounter + 1) % 1000)}`
+  const d =
+    sweep === 'right'
+      ? 'M40 560 C60 380 200 240 400 250 C520 256 590 330 600 420'
+      : 'M560 560 C540 380 400 240 200 250 C80 256 10 330 0 420'
+  return (
+    <svg
+      aria-hidden
+      className={className}
+      fill="none"
+      preserveAspectRatio="none"
+      viewBox="0 0 600 600"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <filter id={id} x="-15%" y="-15%" width="130%" height="130%">
+          <feTurbulence baseFrequency="0.045 0.12" numOctaves="2" result="n" seed={seed} type="fractalNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="12" />
+        </filter>
+      </defs>
+      <path d={d} filter={`url(#${id})`} stroke={color} strokeLinecap="round" strokeWidth="30" />
+    </svg>
+  )
+}
+
+/**
+ * Dense paint explosion behind the hero cutout — recreates the reference art:
+ * purple/magenta burst upper-left, orange/yellow right, cyan lower-right,
+ * magenta lower-left, white framing arcs, drips and spatter on black.
+ */
+export function PaintBurst({ className = '' }: { className?: string }) {
+  return (
+    <div aria-hidden className={className}>
+      {/* Colour bursts */}
+      <SpraySplash className="absolute top-[2%] left-[8%] h-[38%] w-[52%]" color="var(--color-purple)" seed={41} />
+      <SpraySplash className="absolute top-[10%] left-[0%] h-[30%] w-[36%] opacity-90" color="var(--color-pink)" seed={42} />
+      <SpraySplash className="absolute top-[4%] right-[2%] h-[34%] w-[46%]" color="var(--color-orange)" seed={43} />
+      <SpraySplash className="absolute top-[16%] right-[-4%] h-[30%] w-[36%] opacity-90" color="var(--color-yellow)" seed={44} />
+      <SpraySplash className="absolute right-[0%] bottom-[16%] h-[30%] w-[40%]" color="var(--color-cyan)" seed={45} />
+      <SpraySplash className="absolute bottom-[6%] left-[2%] h-[32%] w-[42%]" color="var(--color-pink)" seed={46} />
+      <SpraySplash className="absolute bottom-[24%] left-[-4%] h-[24%] w-[28%] opacity-80" color="var(--color-purple)" seed={47} />
+      {/* White framing arcs */}
+      <ArcSwash className="absolute -bottom-[2%] left-[6%] h-[70%] w-[92%] opacity-90" color="#ffffff" seed={48} sweep="right" />
+      <ArcSwash className="absolute top-[8%] right-[0%] h-[46%] w-[56%] rotate-[24deg] opacity-70" color="#ffffff" seed={49} sweep="left" />
+      {/* Drips + spatter */}
+      <PaintDrip className="absolute top-[1%] left-[30%] h-[4%] w-[34%]" color="var(--color-pink)" />
+      <PaintDrip className="absolute top-[30%] right-[4%] h-[4%] w-[24%] opacity-80" color="var(--color-orange)" />
+      <SpraySplash className="absolute top-[46%] left-[4%] h-[10%] w-[12%]" color="var(--color-yellow)" seed={50} />
+      <SpraySplash className="absolute right-[10%] bottom-[4%] h-[9%] w-[11%] opacity-90" color="var(--color-pink)" seed={51} />
+      <DotSpray className="absolute top-[6%] right-[18%] h-[16%] w-[20%]" color="var(--color-yellow)" seed={52} />
+      <DotSpray className="absolute bottom-[12%] left-[16%] h-[14%] w-[18%]" color="var(--color-cyan)" seed={53} />
+    </div>
+  )
+}
+
+/** Loose spatter dots without a central blob. */
+export function DotSpray({
+  className = '',
+  color,
+  seed = 12,
+}: {
+  className?: string
+  color: string
+  seed?: number
+}) {
+  const id = `dots-${seed}-${(filterCounter = (filterCounter + 1) % 1000)}`
+  return (
+    <svg aria-hidden className={className} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id={id}>
+          <feTurbulence baseFrequency="0.9" numOctaves="1" result="n" seed={seed} type="fractalNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="6" />
+        </filter>
+      </defs>
+      <g fill={color} filter={`url(#${id})`}>
+        <circle cx="18" cy="22" r="3" />
+        <circle cx="46" cy="12" r="2" />
+        <circle cx="74" cy="28" r="3.6" />
+        <circle cx="30" cy="52" r="2.4" />
+        <circle cx="62" cy="58" r="2" />
+        <circle cx="86" cy="66" r="2.8" />
+        <circle cx="14" cy="78" r="2.2" />
+        <circle cx="50" cy="86" r="3" />
+      </g>
     </svg>
   )
 }

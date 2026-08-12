@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-12 16:40 IST · Hero paint explosion + 3D parallax per reference
+
+- New PaintBurst background recreating the reference art: purple/magenta burst left, orange/yellow right, cyan lower-right, white framing arc swashes, drips and spatter on black
+- Splashes break over the figure; photo mask tightened so paint shows through the corners
+- Subtle 3D parallax: paint drifts opposite the cursor, the portrait tilts toward it (disabled for reduced-motion)
+- Awaiting the transparent cutout PNG for the final 1:1 foreground
+
 ## 2026-08-12 16:10 IST · Hero blends into the paint
 
 - Founder photo now melts into the background: soft-dissolve mask on the cutout edges plus brush strokes crossing over the photo itself (pink through the hair, yellow across the chest, purple at the top corner)
