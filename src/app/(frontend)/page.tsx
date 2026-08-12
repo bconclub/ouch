@@ -144,14 +144,14 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-[16%] -right-1 z-10 hidden h-10 w-8 text-yellow sm:block" />
             <DoodleHeart className="absolute right-0 bottom-[18%] z-10 h-9 w-9 text-pink" />
             <DoodleSquiggle className="absolute bottom-3 left-[4%] z-10 h-6 w-14 text-purple" />
-            <BrushMaskedPhoto className="relative mx-auto aspect-[1122/1402] w-full max-w-md">
+            <BrushMaskedPhoto className="relative mx-auto aspect-[720/900] w-full max-w-md">
               <Image
-                alt="A curated ear stack — helix, conch, rook and lobe piercings in gold"
+                alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
                 className="object-cover"
                 fill
                 priority
                 sizes="(max-width: 1024px) 80vw, 45vw"
-                src="/brand/covers/hero-earstack.png"
+                src="/brand/covers/hero-founder.png"
               />
             </BrushMaskedPhoto>
             {/* A stroke overlapping the cutout's lower edge, like the mock */}

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-12 15:45 IST · The founder is the hero
+
+- Hero image is now the founder's own photo (from media/Ouch Skye), cropped headband-to-shoulders and cut out into the painted brush mask over the stroke fan — on both dark and light versions
+- Source preserved at src/assets/covers/hero-founder-src.jpeg
+
 ## 2026-08-12 15:10 IST · Dark version is now THE site; tiles colour-washed like the mockup
 
 - Dark is the default for every new visitor (light remains one smiley-click away)
