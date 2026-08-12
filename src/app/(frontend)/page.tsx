@@ -144,7 +144,7 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-[16%] -right-1 z-10 hidden h-10 w-8 text-yellow sm:block" />
             <DoodleHeart className="absolute right-0 bottom-[18%] z-10 h-9 w-9 text-pink" />
             <DoodleSquiggle className="absolute bottom-3 left-[4%] z-10 h-6 w-14 text-purple" />
-            <BrushMaskedPhoto className="relative mx-auto aspect-[720/900] w-full max-w-md">
+            <BrushMaskedPhoto blend className="relative mx-auto aspect-[720/900] w-full max-w-md">
               <Image
                 alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
                 className="object-cover"
@@ -154,11 +154,21 @@ export default async function HomePage() {
                 src="/brand/covers/hero-founder.png"
               />
             </BrushMaskedPhoto>
-            {/* A stroke overlapping the cutout's lower edge, like the mock */}
+            {/* Strokes crossing the photo so it melts into the paint */}
             <BrushStroke
-              className="absolute bottom-[2%] left-[10%] z-10 h-[9%] w-[80%] rotate-2"
+              className="absolute bottom-[4%] left-[8%] z-10 h-[9%] w-[84%] rotate-2"
               color="var(--color-yellow)"
               seed={23}
+            />
+            <BrushStroke
+              className="absolute top-[6%] right-[2%] z-10 h-[7%] w-[46%] -rotate-6 opacity-90"
+              color="var(--color-purple)"
+              seed={27}
+            />
+            <BrushStroke
+              className="absolute top-[38%] -left-[2%] z-10 h-[7%] w-[34%] rotate-3 opacity-80"
+              color="var(--color-pink)"
+              seed={29}
             />
           </div>
         </div>

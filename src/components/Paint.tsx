@@ -109,15 +109,21 @@ export function HeroPaint({ className = '' }: { className?: string }) {
 /**
  * Organic dry-brush mask for the hero photo — the photo reads as a painted
  * cutout instead of a rectangle, exactly like the mockups.
+ * With `blend`, the edges also dissolve softly into the page background so the
+ * photo melts into the paint instead of ending at a hard rim.
  */
 export function BrushMaskedPhoto({
   children,
   className = '',
+  blend = false,
 }: {
   children: React.ReactNode
   className?: string
+  blend?: boolean
 }) {
   const id = `mask-${(filterCounter = (filterCounter + 1) % 1000)}`
+  const softMask =
+    'radial-gradient(ellipse 78% 72% at 50% 44%, black 58%, rgba(0,0,0,0.55) 74%, transparent 92%)'
   return (
     <div className={className} style={{ clipPath: `url(#${id})` }}>
       <svg aria-hidden height="0" width="0">
@@ -127,7 +133,16 @@ export function BrushMaskedPhoto({
           </clipPath>
         </defs>
       </svg>
-      {children}
+      {blend ? (
+        <div
+          className="relative h-full w-full"
+          style={{ maskImage: softMask, WebkitMaskImage: softMask }}
+        >
+          {children}
+        </div>
+      ) : (
+        children
+      )}
     </div>
   )
 }

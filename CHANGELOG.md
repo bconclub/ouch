@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-08-12 16:10 IST · Hero blends into the paint
+
+- Founder photo now melts into the background: soft-dissolve mask on the cutout edges plus brush strokes crossing over the photo itself (pink through the hair, yellow across the chest, purple at the top corner)
+
 ## 2026-08-12 15:45 IST · The founder is the hero
 
 - Hero image is now the founder's own photo (from media/Ouch Skye), cropped headband-to-shoulders and cut out into the painted brush mask over the stroke fan — on both dark and light versions
