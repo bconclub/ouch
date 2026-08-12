@@ -11,7 +11,14 @@ import {
   DoodleStar,
   DoodleTicks,
 } from '@/components/Doodles'
-import { BrushStroke, HeroPaint, SpraySplash } from '@/components/Paint'
+import {
+  BrushMaskedPhoto,
+  BrushPill,
+  BrushStroke,
+  HeroPaint,
+  PageSplashes,
+  SpraySplash,
+} from '@/components/Paint'
 import { getCategories, getSiteSettings } from '@/lib/queries'
 import { mediaAlt, mediaUrl } from '@/lib/utils'
 
@@ -21,6 +28,14 @@ export const dynamic = 'force-dynamic'
 const TILE_COLORS = ['bg-pink', 'bg-purple', 'bg-cyan', 'bg-orange', 'bg-lime']
 const LABEL_COLORS = ['text-pink', 'text-purple', 'text-cyan', 'text-orange', 'text-lime']
 const PANEL_COLORS = ['dark:bg-pink', 'dark:bg-purple', 'dark:bg-cyan', 'dark:bg-yellow']
+const TILE_TILTS = ['-rotate-1', 'rotate-1', '-rotate-[1.5deg]', 'rotate-[0.5deg]', 'rotate-[1.5deg]']
+const TILE_GLOWS = [
+  'dark:shadow-[0_0_22px_rgba(255,46,136,0.5)]',
+  'dark:shadow-[0_0_22px_rgba(139,47,214,0.55)]',
+  'dark:shadow-[0_0_22px_rgba(34,211,238,0.5)]',
+  'dark:shadow-[0_0_22px_rgba(255,122,26,0.5)]',
+  'dark:shadow-[0_0_22px_rgba(163,230,53,0.5)]',
+]
 
 const STATS = [
   {
@@ -58,63 +73,76 @@ export default async function HomePage() {
   const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
 
   return (
-    <div className="overflow-hidden">
+    <div className="relative overflow-hidden">
+      <PageSplashes />
+
       {/* ============ Hero ============ */}
       <section className="relative">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pt-4 pb-14 sm:px-6 lg:grid-cols-[1fr_1.05fr] lg:pb-20">
           <div className="relative order-2 lg:order-1">
             <DoodleStar className="absolute -top-8 left-0 hidden h-9 w-9 text-purple lg:block" />
-            <DoodleHeart className="absolute top-[38%] -left-6 hidden h-8 w-8 text-pink xl:block" />
-            <DoodleSmiley className="absolute top-[24%] right-2 hidden h-9 w-9 text-cyan lg:block" />
+            <DoodleHeart className="absolute top-[42%] -left-7 hidden h-8 w-8 text-pink xl:block" />
+            <DoodleSmiley className="absolute top-[26%] right-2 hidden h-9 w-9 text-cyan lg:block" />
 
-            <h1 className="text-poster text-5xl uppercase sm:text-6xl lg:text-7xl">
-              <span className="text-marker block text-[0.34em] normal-case tracking-wide">
+            <h1 className="text-poster text-5xl uppercase sm:text-6xl lg:text-[5.2rem]">
+              <span className="text-marker relative block w-fit text-[0.32em] normal-case tracking-wide">
+                <DoodleTicks className="absolute top-0 -left-7 h-4 w-5 -scale-x-100 text-ink" />
                 Hey dude,
+                <DoodleTicks className="absolute -top-1 -right-7 h-4 w-5 text-ink" />
               </span>
-              <span className="mt-2 block -rotate-1 text-pink">Check</span>
-              <span className="block -rotate-1 text-purple dark:text-ink">These</span>
-              <span className="relative block -rotate-1 text-yellow">
+              <span className="mt-3 block w-fit -rotate-2 text-pink">Check</span>
+              <span className="block w-fit rotate-1 text-purple dark:text-ink">These</span>
+              <span className="relative block w-fit -rotate-2 text-[1.12em] text-yellow">
                 Studs
                 <span className="text-pink">.</span>
                 <BrushStroke
-                  className="absolute -bottom-3 left-0 h-4 w-[70%]"
+                  className="absolute -bottom-4 left-1 h-5 w-[105%] -rotate-1"
                   color="var(--color-pink)"
                   seed={13}
                 />
               </span>
             </h1>
 
-            <p className="mt-9 text-[15px] leading-relaxed text-ink sm:text-base">
+            <p className="mt-10 text-[15px] leading-relaxed text-ink sm:text-base">
               Bold pieces. Good vibes.
               <br />
               Made to <span className="mark-highlight font-semibold">stand out</span>, just like you.
             </p>
 
             <Link
-              className="text-poster mt-8 inline-flex items-center gap-3 rounded-full bg-ink px-8 py-3.5 text-[15px] tracking-wide text-bg uppercase transition-transform hover:scale-[1.03] active:scale-95 dark:border-2 dark:border-cyan dark:bg-transparent dark:text-cyan"
+              className="text-poster relative mt-8 inline-flex items-center gap-3 px-9 py-4 text-[15px] tracking-wide text-bg uppercase transition-transform hover:scale-[1.04] active:scale-95 dark:text-[#0c0a10]"
               href="/shop"
             >
-              Our Collection <span aria-hidden>→</span>
+              <BrushPill className="absolute inset-0 h-full w-full dark:hidden" color="var(--color-ink)" seed={5} />
+              <BrushPill className="absolute inset-0 hidden h-full w-full dark:block" color="var(--color-cyan)" seed={6} />
+              <span className="relative">Our Collection</span>
+              <span aria-hidden className="relative">→</span>
             </Link>
           </div>
 
-          {/* Portrait over hard-edged brush strokes */}
+          {/* Painted cutout portrait over hard-edged brush strokes */}
           <div className="relative order-1 lg:order-2">
-            <HeroPaint className="absolute inset-x-0 top-2 bottom-2" />
+            <HeroPaint className="absolute -inset-x-6 top-0 bottom-0" />
             <DoodleTicks className="absolute -top-2 right-0 z-10 h-8 w-9 text-ink" />
             <DoodleLightning className="absolute top-[16%] -right-1 z-10 hidden h-10 w-8 text-yellow sm:block" />
-            <DoodleHeart className="absolute right-0 bottom-[16%] z-10 h-9 w-9 text-pink" />
-            <DoodleSquiggle className="absolute bottom-2 left-[6%] z-10 h-6 w-14 text-purple" />
-            <div className="relative mx-auto aspect-[1122/1402] w-full max-w-md">
+            <DoodleHeart className="absolute right-0 bottom-[18%] z-10 h-9 w-9 text-pink" />
+            <DoodleSquiggle className="absolute bottom-3 left-[4%] z-10 h-6 w-14 text-purple" />
+            <BrushMaskedPhoto className="relative mx-auto aspect-[1122/1402] w-full max-w-md">
               <Image
                 alt="Curated piercings — septum ring, nostril stud and a stacked ear"
-                className="rounded-2xl object-cover"
+                className="object-cover"
                 fill
                 priority
                 sizes="(max-width: 1024px) 80vw, 45vw"
                 src="/brand/covers/cat-nose.png"
               />
-            </div>
+            </BrushMaskedPhoto>
+            {/* A stroke overlapping the cutout's lower edge, like the mock */}
+            <BrushStroke
+              className="absolute bottom-[2%] left-[10%] z-10 h-[9%] w-[80%] rotate-2"
+              color="var(--color-yellow)"
+              seed={23}
+            />
           </div>
         </div>
       </section>
@@ -123,13 +151,13 @@ export default async function HomePage() {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6" id="collection">
         <div className="relative mx-auto mb-12 w-fit">
           <BrushStroke
-            className="absolute -inset-x-8 top-1/2 h-[150%] -translate-y-1/2"
+            className="absolute -inset-x-10 top-1/2 h-[160%] -translate-y-1/2 -rotate-1"
             color="var(--color-pink)"
             seed={6}
           />
-          <DoodleStar className="absolute -top-5 -right-10 h-7 w-7 text-yellow" />
-          <DoodleTicks className="absolute -top-4 -left-10 h-6 w-7 -scale-x-100 text-pink" />
-          <h2 className="text-marker relative px-6 py-2.5 text-3xl text-white sm:text-4xl">
+          <DoodleStar className="absolute -top-6 -right-12 h-7 w-7 text-yellow" />
+          <DoodleTicks className="absolute -top-5 -left-12 h-6 w-7 -scale-x-100 text-pink" />
+          <h2 className="text-marker relative -skew-x-6 px-6 py-2.5 text-3xl text-white sm:text-4xl">
             Our Collection
           </h2>
         </div>
@@ -140,9 +168,9 @@ export default async function HomePage() {
             return (
               <Link className="group" href={`/category/${cat.slug}`} key={cat.id}>
                 <div
-                  className={`paint-tile relative aspect-square overflow-hidden p-2.5 transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:rotate-1 dark:shadow-[0_0_18px_rgba(255,255,255,0.12)] ${
-                    TILE_COLORS[i % TILE_COLORS.length]
-                  }`}
+                  className={`paint-tile relative aspect-square overflow-hidden p-2.5 transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:rotate-2 ${
+                    TILE_TILTS[i % TILE_TILTS.length]
+                  } ${TILE_GLOWS[i % TILE_GLOWS.length]} ${TILE_COLORS[i % TILE_COLORS.length]}`}
                 >
                   {url && (
                     <Image
@@ -224,6 +252,7 @@ export default async function HomePage() {
               </p>
             </div>
             <DoodleStar className="absolute -top-6 right-0 h-8 w-8 text-pink sm:right-6" />
+            <DoodleHeart className="absolute top-1/2 -right-4 hidden h-8 w-8 -translate-y-1/2 text-ink lg:block dark:text-pink" />
             <DoodleSmiley className="absolute -right-2 -bottom-6 hidden h-9 w-9 text-yellow sm:block" />
           </div>
         </div>

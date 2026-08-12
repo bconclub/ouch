@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-12 14:10 IST · Mockup-fidelity pass: painted cutout hero, brush pills, exact treatments
+
+- Hero photo is now an organic dry-brush cutout (SVG clip path) with strokes wrapping behind and a yellow stroke overlapping its lower edge — no more rectangular frame
+- CTA buttons are rough painted brush-pill shapes (black in light, cyan in dark) instead of clean capsules
+- Headline tightened to the mock: per-line tilts, larger STUDS., thick tapered pink underline, tick doodles flanking "HEY DUDE,"
+- Page-edge neon splash backdrop in dark mode
+- Collection heading skewed marker-italic on the pink band; tiles get per-tile tilts and per-colour neon glow rims in dark
+- Vibe banner: ink heart added at right per mock
+- Footer: "Different." in pink marker with underline + heart, marker-italic Let's Connect / Journal headings, distressed static STAY REAL stamp (was spinning), proper shopping-bag icon in header
+
 ## 2026-08-12 13:30 IST · "Check These Studs" homepage, pixel-close, light + dark
 
 - Homepage rebuilt to the founder's two mockups with a light/dark toggle (smiley button in the header; choice persists, no flash on reload)

@@ -14,9 +14,9 @@ export function CartButton() {
       onClick={openCart}
       type="button"
     >
-      <svg fill="none" height="24" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" width="24">
+      <svg fill="none" height="24" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24" width="24">
         <path
-          d="M6 8h12l-1 12a2 2 0 01-2 2H9a2 2 0 01-2-2L6 8zM9 8V6a3 3 0 016 0v2"
+          d="M5.5 8.5h13l-.9 11a2 2 0 01-2 1.8H8.4a2 2 0 01-2-1.8l-.9-11zM8.8 8.5V7a3.2 3.2 0 016.4 0v1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />

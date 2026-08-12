@@ -6,24 +6,28 @@ import { Logo } from './Logo'
 
 function StayRealStamp() {
   return (
-    <div className="relative h-32 w-32 shrink-0">
-      <svg className="h-full w-full animate-[spin_18s_linear_infinite] text-ink" viewBox="0 0 120 120">
+    <div className="relative h-32 w-32 shrink-0 -rotate-12">
+      <svg className="h-full w-full text-ink" viewBox="0 0 120 120">
         <defs>
-          <path d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" id="stamp-circle" />
+          <path d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0" id="stamp-circle" />
+          <filter height="140%" id="stamp-rough" width="140%" x="-20%" y="-20%">
+            <feTurbulence baseFrequency="0.55" numOctaves="2" result="n" seed="7" type="fractalNoise" />
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="3" />
+          </filter>
         </defs>
-        <circle cx="60" cy="60" fill="none" r="57" stroke="currentColor" strokeWidth="2" />
-        <text fill="currentColor" fontSize="15" fontWeight="700" letterSpacing="3.5">
-          <textPath href="#stamp-circle" startOffset="4%">
-            STAY REAL · STAY YOU ·
-          </textPath>
-        </text>
-      </svg>
-      <svg
-        className="absolute top-1/2 left-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 text-pink"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 21S3 15.5 3 9.5A5.5 5.5 0 0112 5a5.5 5.5 0 019 4.5C21 15.5 12 21 12 21z" />
+        <g filter="url(#stamp-rough)">
+          <circle cx="60" cy="60" fill="none" r="56" stroke="currentColor" strokeDasharray="5 3" strokeWidth="2.5" />
+          <circle cx="60" cy="60" fill="none" r="30" opacity="0.0" />
+          <text fill="currentColor" fontSize="14.5" fontWeight="700" letterSpacing="3.2">
+            <textPath href="#stamp-circle" startOffset="2%">
+              STAY REAL · STAY YOU ·
+            </textPath>
+          </text>
+          <path
+            d="M60 78S44 68.5 44 58.2A9.5 9.5 0 0160 50.5a9.5 9.5 0 0116 7.7C76 68.5 60 78 60 78z"
+            fill="currentColor"
+          />
+        </g>
       </svg>
     </div>
   )
@@ -41,13 +45,19 @@ export async function Footer() {
           <p className="text-poster mt-4 text-[13px] tracking-[0.15em] uppercase">
             Piercings that hit
             <br />
-            <span className="text-pink">different.</span>
+            <span className="text-marker relative inline-block text-[17px] normal-case tracking-normal text-pink">
+              Different.
+              <span className="absolute -bottom-0.5 left-0 h-[3px] w-full rounded-full bg-pink" />
+            </span>
+            <svg className="ml-2 inline-block h-4 w-4 align-middle text-pink" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path d="M12 20S4.5 15 4.5 9.8A4.6 4.6 0 0112 6a4.6 4.6 0 017.5 3.8C19.5 15 12 20 12 20z" />
+            </svg>
           </p>
         </div>
 
         <div>
-          <h3 className="text-poster mb-4 text-[13px] tracking-[0.2em] text-cyan uppercase">
-            Let&apos;s connect
+          <h3 className="text-marker mb-4 -skew-x-6 text-[16px] tracking-wide text-cyan">
+            Let&apos;s Connect
           </h3>
           {/* Contact lines from the brand mockup — confirm they're live before launch */}
           <ul className="space-y-2.5 text-sm text-ink">
@@ -93,7 +103,7 @@ export async function Footer() {
         </div>
 
         <div>
-          <h3 className="text-poster mb-4 text-[13px] tracking-[0.2em] text-pink uppercase">Journal</h3>
+          <h3 className="text-marker mb-4 -skew-x-6 text-[16px] tracking-wide text-pink">Journal</h3>
           <p className="text-sm leading-relaxed text-ink">
             Real people.
             <br />
