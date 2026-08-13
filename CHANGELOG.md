@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-13 18:40 IST · Production storage: uploads to Vercel Blob
+
+- Added the Vercel Blob storage adapter, enabled only when BLOB_READ_WRITE_TOKEN is present — production uploads persist instead of vanishing with each deploy; local dev keeps writing to ./media unchanged
+- Documented the production env vars in .env.example
+- Confirmed live error at oouucchh.com is "missing secret key": PAYLOAD_SECRET and a hosted DATABASE_URL still need to be set in Vercel
+
 ## 2026-08-12 17:45 IST · Fix production build (Vercel)
 
 - Vercel build failed: "missing secret key" while prerendering /checkout. The storefront layout loads header/footer from Payload, so static prerendering needed PAYLOAD_SECRET and a database at build time
