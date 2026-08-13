@@ -27,6 +27,11 @@ const marker = Permanent_Marker({
   weight: '400',
 })
 
+// Header and footer are driven by Payload, so every storefront route is
+// rendered per request. This also keeps the production build from needing a
+// database or secret at build time.
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
   return {

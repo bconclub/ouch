@@ -1,9 +1,13 @@
 import { getPayload, type Where } from 'payload'
 import { cache } from 'react'
 
-import config from '@payload-config'
-
-export const getPayloadClient = cache(async () => getPayload({ config }))
+// Imported lazily so the Payload config (which requires PAYLOAD_SECRET and a
+// reachable database) is only evaluated when a request actually queries it —
+// never at build time.
+export const getPayloadClient = cache(async () => {
+  const config = (await import('@payload-config')).default
+  return getPayload({ config })
+})
 
 export const getSiteSettings = cache(async () => {
   const payload = await getPayloadClient()

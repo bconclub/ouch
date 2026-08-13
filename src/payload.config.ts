@@ -34,7 +34,11 @@ export default buildConfig({
   },
   db: sqliteAdapter({
     client: {
+      // Local dev uses the SQLite file. In production set DATABASE_URL to a
+      // hosted libSQL/Turso URL (libsql://…) plus DATABASE_AUTH_TOKEN — a
+      // serverless filesystem cannot hold the database.
       url: process.env.DATABASE_URL || 'file:./ouch.db',
+      authToken: process.env.DATABASE_AUTH_TOKEN,
     },
   }),
   sharp,

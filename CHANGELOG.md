@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-12 17:45 IST · Fix production build (Vercel)
+
+- Vercel build failed: "missing secret key" while prerendering /checkout. The storefront layout loads header/footer from Payload, so static prerendering needed PAYLOAD_SECRET and a database at build time
+- Storefront routes are now `force-dynamic` (rendered per request) — /cart and /checkout are no longer prerendered
+- Payload config is imported lazily in `lib/queries.ts`, so nothing evaluates it at build time
+- SQLite adapter now accepts DATABASE_AUTH_TOKEN, so a hosted libSQL/Turso database can be used in production without a code change
+- Verified: `next build` succeeds with PAYLOAD_SECRET and DATABASE_URL unset
+
 ## 2026-08-12 16:40 IST · Hero paint explosion + 3D parallax per reference
 
 - New PaintBurst background recreating the reference art: purple/magenta burst left, orange/yellow right, cyan lower-right, white framing arc swashes, drips and spatter on black
