@@ -10,7 +10,7 @@ import {
   DoodleSquiggle,
   DoodleStar,
 } from '@/components/Doodles'
-import { BrushMaskedPhoto, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
+import { BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
 import { getSiteSettings } from '@/lib/queries'
 
@@ -118,7 +118,7 @@ export default async function HomePage() {
               back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
               className="relative mx-auto aspect-[720/900] w-full max-w-sm"
               front={
-                <BrushMaskedPhoto blend className="relative h-full w-full">
+                <div className="relative h-full w-full overflow-hidden rounded-3xl">
                   <Image
                     alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
                     className="object-cover"
@@ -127,7 +127,7 @@ export default async function HomePage() {
                     sizes="(max-width: 1024px) 80vw, 38vw"
                     src="/brand/covers/hero-founder.png"
                   />
-                </BrushMaskedPhoto>
+                </div>
               }
             />
           </div>
