@@ -89,9 +89,9 @@ export default async function HomePage() {
 
             <h1>
               <span className="text-marker block text-xl text-white sm:text-2xl">Piercing jewellery, Bengaluru.</span>
-              <span className="text-poster mt-2 block text-5xl text-white uppercase sm:text-6xl">Minimal.</span>
-              <span className="text-poster block text-6xl text-pink uppercase sm:text-8xl">Premium.</span>
-              <span className="text-poster relative block w-fit text-6xl text-yellow uppercase sm:text-7xl">
+              <span className="text-poster mt-2 block text-4xl text-white sm:text-5xl">Minimal.</span>
+              <span className="text-poster block text-5xl text-pink sm:text-6xl">Premium.</span>
+              <span className="text-poster relative block w-fit text-5xl text-yellow sm:text-6xl">
                 Made to last.
                 <BrushStroke className="absolute -bottom-3 left-0 h-4 w-full" color="var(--color-purple)" seed={71} />
               </span>
@@ -116,16 +116,16 @@ export default async function HomePage() {
           <div className="relative">
             <ParallaxHero
               back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
-              className="relative mx-auto aspect-[720/900] w-full max-w-sm"
+              className="relative mx-auto aspect-[653/1089] w-full max-w-xs lg:max-w-sm"
               front={
-                <div className="relative h-full w-full overflow-hidden rounded-3xl">
+                <div className="relative h-full w-full">
                   <Image
                     alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
-                    className="object-cover"
+                    className="object-contain"
                     fill
                     priority
                     sizes="(max-width: 1024px) 80vw, 38vw"
-                    src="/brand/covers/hero-founder.png"
+                    src="/brand/covers/hero-cutout.png"
                   />
                 </div>
               }

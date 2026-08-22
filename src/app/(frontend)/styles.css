@@ -67,6 +67,13 @@ body {
   color: #fff;
 }
 
+/* One case everywhere: natural capital-and-small lettering, never all-caps */
+*,
+*::before,
+*::after {
+  text-transform: none !important;
+}
+
 /* ---------- Poster type ---------- */
 .text-poster {
   font-family: var(--font-poster);
