@@ -200,6 +200,7 @@ body {
   --band-2-ink: #17141a;
   --band-line: rgba(23, 20, 26, 0.28);
   --band-muted: rgba(23, 20, 26, 0.72);
+  --card-tint: rgba(23, 20, 26, 0.05);
 }
 [data-theme='dark'] {
   --band-1: #0a0a0a;
@@ -208,6 +209,7 @@ body {
   --band-2-ink: #ffffff;
   --band-line: rgba(255, 255, 255, 0.3);
   --band-muted: rgba(255, 255, 255, 0.78);
+  --card-tint: rgba(255, 255, 255, 0.06);
 }
 .band-black {
   background: var(--band-1);

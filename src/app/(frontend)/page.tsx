@@ -9,6 +9,7 @@ import {
   DoodleSmiley,
   DoodleSquiggle,
   DoodleStar,
+  DoodleTicks,
 } from '@/components/Doodles'
 import { BandBlend, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
@@ -34,19 +35,70 @@ const STATS = [
   },
 ]
 
-const ZONES = [
-  { name: 'Septum', href: '/category/septum-vibes', image: '/brand/covers/zone-septum.png', chip: 'bg-pink' },
-  { name: 'Ear', href: '/category/ear-stacks', image: '/brand/covers/zone-ear.png', chip: 'bg-purple' },
-  { name: 'Nose', href: '/category/dainty-nostrils', image: '/brand/covers/zone-nose.png', chip: 'bg-cyan' },
-  { name: 'Body', href: '/category/body-sparks', image: '/brand/covers/zone-body.png', chip: 'bg-orange' },
+const PIERCING_CARDS = [
+  {
+    name: 'Nose',
+    href: '/category/dainty-nostrils',
+    image: '/brand/piercings/nose.png',
+    studs: '/brand/piercings/nose-studs.png',
+    text: 'text-pink',
+    stroke: 'var(--color-pink)',
+    chip: 'bg-pink',
+    includes: ['Nostril', 'High Nostril', 'Double Nostril'],
+  },
+  {
+    name: 'Septum',
+    href: '/category/septum-vibes',
+    image: '/brand/piercings/septum.png',
+    studs: '/brand/piercings/septum-studs.png',
+    text: 'text-purple',
+    stroke: 'var(--color-purple)',
+    chip: 'bg-purple',
+    includes: ['Septum', 'Septum Stacks', 'Vertical Septum'],
+  },
+  {
+    name: 'Ear',
+    href: '/category/ear-stacks',
+    image: '/brand/piercings/ear.png',
+    studs: '/brand/piercings/ear-studs.png',
+    text: 'text-orange',
+    stroke: 'var(--color-orange)',
+    chip: 'bg-orange',
+    includes: ['Lobe', 'Helix', 'Tragus', 'Conch', 'Daith', 'Rook', 'Snug', 'Industrial'],
+  },
+  {
+    name: 'Belly',
+    href: '/category/body-sparks',
+    image: '/brand/piercings/belly.png',
+    studs: '/brand/piercings/belly-studs.png',
+    text: 'text-cyan',
+    stroke: 'var(--color-cyan)',
+    chip: 'bg-cyan',
+    includes: ['Navel'],
+  },
+  {
+    name: 'Body',
+    href: '/category/studs-gems',
+    image: '/brand/piercings/body.png',
+    studs: '/brand/piercings/body-studs.png',
+    text: 'text-lime',
+    stroke: 'var(--color-lime)',
+    chip: 'bg-lime',
+    includes: ['Eyebrow', 'Dermal', 'Nipple'],
+  },
 ]
 
-const STUD_CARDS = [
-  { name: 'Dainty AF', tag: 'Tiny but cute', href: '/category/studs-gems', image: '/brand/covers/studs-dainty.png', chip: 'bg-pink' },
-  { name: 'Hoop Dreams', tag: 'Classic never dies', href: '/category/ear-stacks', image: '/brand/covers/studs-hoops.png', chip: 'bg-purple' },
-  { name: 'Nose Goals', tag: 'Subtle or savage', href: '/category/dainty-nostrils', image: '/brand/covers/studs-nose.png', chip: 'bg-cyan' },
-  { name: 'Spark It Up', tag: 'Little shine gang', href: '/category/studs-gems', image: '/brand/covers/studs-spark.png', chip: 'bg-yellow' },
-  { name: 'Body Love', tag: 'Anywhere. Slay.', href: '/category/body-sparks', image: '/brand/covers/studs-body.png', chip: 'bg-pink' },
+const STUD_TILES = [
+  { name: 'Tiny Ball', image: '/brand/piercings/stud-tiny-ball.png' },
+  { name: 'Bezel Crystal', image: '/brand/piercings/stud-bezel-crystal.png' },
+  { name: 'Opal Stud', image: '/brand/piercings/stud-opal-stud.png' },
+  { name: 'Gold Ball', image: '/brand/piercings/stud-gold-ball.png' },
+  { name: 'Flat Disc', image: '/brand/piercings/stud-flat-disc.png' },
+  { name: 'Triple Dot', image: '/brand/piercings/stud-triple-dot.png' },
+  { name: 'Flower', image: '/brand/piercings/stud-flower.png' },
+  { name: 'Star', image: '/brand/piercings/stud-star.png' },
+  { name: 'Moon', image: '/brand/piercings/stud-moon.png' },
+  { name: 'Pearl', image: '/brand/piercings/stud-pearl.png' },
 ]
 
 const STUD_TRUST = [
@@ -155,122 +207,105 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ============ 01 · Choose your piercing zone ============ */}
+      {/* ============ Piercings — categories (founder's reference design) ============ */}
       <section className="band-alt relative" id="zones">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={31} />
-        <div className="mx-auto grid min-h-[75vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr_210px]">
-          <Reveal className="relative">
-            <h2 className="text-marker mt-1 text-3xl leading-snug lg:text-4xl">
-              Where&apos;s the
-              <br />
-              bling going?
-            </h2>
-            <svg className="mt-3 h-8 w-14 text-current" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 56 32">
-              <path d="M2 6c14 14 30 20 46 20M48 20l6 6-8 3" />
-            </svg>
+        <div className="mx-auto min-h-[75vh] max-w-[90rem] content-center px-4 py-16 sm:px-6">
+          <Reveal className="mb-10 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <h2 className="text-poster relative w-fit text-5xl sm:text-6xl">
+                Piercings
+                <DoodleTicks className="absolute -top-2 -right-8 h-6 w-6 text-pink" />
+              </h2>
+              <p className="mt-2 text-sm font-bold tracking-[0.14em] uppercase">
+                Express it. Wear it. <span className="text-pink">Own it.</span>
+              </p>
+            </div>
+            <div className="flex items-center gap-4">
+              <p className="max-w-xs text-sm opacity-80">
+                Explore different types of piercings and find the one that speaks to you.
+              </p>
+              <DoodleHeart className="h-10 w-10 shrink-0 text-pink" />
+            </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-4 lg:gap-6">
-            {ZONES.map((zone, zi) => (
-              <Reveal delay={zi * 90} key={zone.name}>
-              <Link className="group relative block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg]" href={zone.href}>
-                <div className="relative aspect-[4/5]">
-                  <Image
-                    alt={`${zone.name} piercings`}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    fill
-                    sizes="(max-width: 640px) 45vw, 20vw"
-                    src={zone.image}
-                  />
-                  <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+            {PIERCING_CARDS.map((card, ci) => (
+              <Reveal delay={ci * 90} key={card.name}>
+                <div className="flex h-full flex-col rounded-2xl bg-[var(--card-tint)] p-4 transition-transform duration-300 hover:-translate-y-1.5">
+                  <h3 className="text-poster relative w-fit text-2xl uppercase">
+                    {card.name}
+                    <BrushStroke className="absolute -bottom-1.5 left-0 h-2.5 w-full" color={card.stroke} seed={90 + ci} />
+                  </h3>
+                  <Link className="group relative mt-4 block overflow-hidden rounded-xl" href={card.href}>
+                    <div className="relative aspect-[278/238]">
+                      <Image
+                        alt={`${card.name} piercings`}
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 640px) 90vw, 20vw"
+                        src={card.image}
+                      />
+                    </div>
+                    <span aria-hidden className={`chip-arrow absolute right-3 bottom-3 ${card.chip}`}>→</span>
+                  </Link>
+                  <p className={`mt-4 text-sm font-bold italic ${card.text}`}>Includes</p>
+                  <ul className={`mt-2 grid gap-x-4 gap-y-1 text-[13px] ${card.includes.length > 4 ? 'grid-cols-2' : ''}`}>
+                    {card.includes.map((item) => (
+                      <li className="flex items-baseline gap-2" key={item}>
+                        <span aria-hidden className="opacity-60">•</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-auto pt-4 text-[11px] font-bold tracking-[0.15em] uppercase">Studs we love</p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img alt={`${card.name} studs we love`} className="mt-1 w-full rounded-md" src={card.studs} />
+                  <Link className={`mt-2 inline-flex items-center gap-1.5 text-[13px] font-bold ${card.text}`} href={card.href}>
+                    View studs <span aria-hidden>→</span>
+                  </Link>
                 </div>
-                <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between">
-                  <span className="text-poster text-xl text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] sm:text-2xl">
-                    {zone.name}
-                  </span>
-                  <span aria-hidden className={`chip-arrow transition-transform duration-300 group-hover:translate-x-1 ${zone.chip}`}>→</span>
-                </div>
-              </Link>
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={200}>
-            <p className="text-marker text-lg leading-snug">
-              Pro piercers.
-              <br />
-              Super sterile.
-              <br />
-              Good energy only.
-            </p>
-            <a
-              className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[12px] tracking-wide text-[#0a2a30] uppercase transition-transform hover:scale-105"
-              href={whatsappHref}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Hit us up <span aria-hidden>→</span>
-            </a>
-            <DoodleSquiggle className="mt-4 h-5 w-12 text-current" />
-          </Reveal>
         </div>
       </section>
 
-      {/* ============ 02 · Our studs collection ============ */}
+      {/* ============ Studs we love (founder's reference design) ============ */}
       <section className="band-black relative" id="studs">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-1)" seed={47} />
-        <div className="mx-auto grid min-h-[80vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr_220px]">
-          <Reveal className="relative">
-            <DoodleStar className="absolute -top-9 right-0 h-7 w-7 text-yellow" />
-            <h2 className="text-marker mt-1 text-3xl leading-snug lg:text-4xl">
-              Our studs
-              <br />
-              collection
+        <div className="mx-auto min-h-[70vh] max-w-[90rem] content-center px-4 py-16 sm:px-6">
+          <Reveal className="text-center">
+            <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
+              Studs we love
+              <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-pink)" seed={53} />
+              <DoodleTicks className="absolute top-0 -right-9 h-6 w-6 text-pink" />
             </h2>
-            <p className="mt-3 text-sm opacity-75">Shiny lil things that go with everything.</p>
-            <Link
-              className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-purple px-5 py-2.5 text-[12px] tracking-wide text-white uppercase transition-transform hover:scale-105"
-              href="/shop"
-            >
-              Peep them all <span aria-hidden>→</span>
-            </Link>
+            <p className="mt-4 text-sm opacity-80">Premium quality. Hypoallergenic. Made to last.</p>
           </Reveal>
 
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
-            {STUD_CARDS.map((card, ci) => (
-              <Reveal delay={ci * 80} key={card.name}>
-              <Link className="band-paper group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[1deg]" href={card.href}>
-                <div className="relative m-2 aspect-square overflow-hidden rounded-xl">
-                  <Image
-                    alt={card.name}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    fill
-                    sizes="(max-width: 640px) 45vw, 16vw"
-                    src={card.image}
-                  />
-                </div>
-                <div className="flex items-center justify-between px-3 pb-3">
-                  <span>
-                    <span className="text-poster block text-[15px] uppercase lg:text-base">{card.name}</span>
-                    <span className="text-muted-band block text-[12px] lg:text-[13px]">{card.tag}</span>
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-5 lg:grid-cols-10">
+            {STUD_TILES.map((tile, ti) => (
+              <Reveal delay={ti * 60} key={tile.name}>
+                <Link className="group block rounded-xl bg-[var(--card-tint)] p-3 text-center transition-transform duration-300 hover:-translate-y-1.5" href="/shop">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img alt={tile.name} className="w-full rounded-lg" src={tile.image} />
+                  <span className="mt-2 block text-[11px] font-bold tracking-[0.14em] uppercase">
+                    {tile.name}
                   </span>
-                  <span aria-hidden className={`chip-arrow h-7 w-7 text-sm transition-transform duration-300 group-hover:translate-x-1 ${card.chip}`}>→</span>
-                </div>
-              </Link>
+                </Link>
               </Reveal>
             ))}
           </div>
 
-          <ul className="space-y-5">
-            {STUD_TRUST.map((item, ti) => (
-              <li key={item.text}><Reveal className="flex items-start gap-3" delay={ti * 100}>
-                <span className="mt-0.5 shrink-0 text-yellow">{item.icon}</span>
-                <span className="text-[11px] leading-relaxed font-bold tracking-[0.15em] uppercase">
-                  {item.text}
-                </span>
-              </Reveal></li>
-            ))}
-          </ul>
+          <Reveal className="mt-10 text-center" delay={200}>
+            <Link
+              className="text-poster inline-flex items-center gap-2 rounded-full bg-pink px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
+              href="/shop"
+            >
+              View all studs <span aria-hidden>→</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
