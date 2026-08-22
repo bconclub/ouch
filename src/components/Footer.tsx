@@ -13,8 +13,8 @@ export async function Footer() {
   return (
     <footer id="connect">
       {/* 04 · Hey, let's connect! */}
-      <div className="band-paper relative">
-        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#ece5d6" seed={63} />
+      <div className="band-alt relative">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={63} />
         <div className="mx-auto grid min-h-[65vh] max-w-7xl content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr_1fr_240px]">
           <div className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">
@@ -105,7 +105,7 @@ export async function Footer() {
       <div className="band-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
           <DoodlePeace className="h-6 w-6 text-pink" />
-          <p className="text-center text-[11px] tracking-[0.15em] text-white/70 uppercase">
+          <p className="text-center text-[11px] tracking-[0.15em] opacity-70 uppercase">
             © {new Date().getFullYear()} {settings.storeName}. All rights reserved.
           </p>
           <span className="flex items-center gap-3">

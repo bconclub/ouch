@@ -6,7 +6,6 @@ import React from 'react'
 import { CartButton } from './CartButton'
 import { Logo } from './Logo'
 import { MobileNav } from './MobileNav'
-import { PaintDrip } from './Paint'
 import { ThemeToggle } from './ThemeToggle'
 
 const NAV_LINKS = [
@@ -26,11 +25,6 @@ export function SiteHeader({ storeName }: { storeName: string }) {
           <MobileNav links={NAV_LINKS} />
           <Link aria-label={`${storeName} home`} className="relative text-current" href="/">
             <Logo className="h-8 w-auto sm:h-10" />
-            {/* Dripping paint under the logo — dark theme only, like the mockup */}
-            <PaintDrip
-              className="absolute top-[86%] left-0 hidden h-4 w-full dark:block"
-              color="#ffffff"
-            />
           </Link>
         </div>
 

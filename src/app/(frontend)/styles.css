@@ -188,10 +188,34 @@ body {
   background: var(--color-bg);
 }
 
-/* ---------- Final-layout bands (theme-independent, per the final design) ---------- */
+/* ---------- Layout bands — one theme across the whole page ----------
+   band-black = primary band, band-alt = alternate band. Both flip with the
+   theme toggle: all-light in light mode, all-dark in dark mode.
+   band-paper stays a fixed cream CARD surface in both themes. */
+:root,
+[data-theme='light'] {
+  --band-1: #faf7f0;
+  --band-1-ink: #17141a;
+  --band-2: #ece5d6;
+  --band-2-ink: #17141a;
+  --band-line: rgba(23, 20, 26, 0.28);
+  --band-muted: rgba(23, 20, 26, 0.72);
+}
+[data-theme='dark'] {
+  --band-1: #0a0a0a;
+  --band-1-ink: #ffffff;
+  --band-2: #14111c;
+  --band-2-ink: #ffffff;
+  --band-line: rgba(255, 255, 255, 0.3);
+  --band-muted: rgba(255, 255, 255, 0.78);
+}
 .band-black {
-  background: #0a0a0a;
-  color: #ffffff;
+  background: var(--band-1);
+  color: var(--band-1-ink);
+}
+.band-alt {
+  background: var(--band-2);
+  color: var(--band-2-ink);
 }
 .band-paper {
   background: #ece5d6;
@@ -206,8 +230,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 9999px;
   color: #fff;
   font-weight: 700;

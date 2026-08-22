@@ -87,8 +87,8 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-[-44px] right-[34%] hidden h-9 w-7 text-yellow lg:block" />
 
             <h1>
-              <span className="text-marker anim-fade-up block text-xl text-white sm:text-2xl">Hey bestie, you made it.</span>
-              <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl text-white sm:text-5xl">Good vibes.</span>
+              <span className="text-marker anim-fade-up block text-xl sm:text-2xl">Hey bestie, you made it.</span>
+              <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl sm:text-5xl">Good vibes.</span>
               <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Cool studs.</span>
               <span className="text-poster anim-fade-up anim-d3 relative block w-fit text-5xl text-yellow sm:text-6xl">
                 Happy you.
@@ -96,7 +96,7 @@ export default async function HomePage() {
               </span>
             </h1>
 
-            <p className="anim-fade-up anim-d4 mt-8 max-w-md text-[15px] leading-relaxed text-white sm:text-base">
+            <p className="anim-fade-up anim-d4 mt-8 max-w-md text-[15px] leading-relaxed sm:text-base">
               Studs, hoops and barbells from your friendly neighbourhood piercing folks — safe{' '}
               <span className="mark-highlight font-semibold">implant-grade</span> metals, zero drama,
               all smiles.
@@ -139,15 +139,15 @@ export default async function HomePage() {
                 <span className={stat.color}>{stat.icon}</span>
                 <span>
                   <span className={`text-poster block text-xl ${stat.color}`}>{stat.value}</span>
-                  <span className="block text-[10px] font-bold tracking-[0.18em] text-white uppercase">
+                  <span className="block text-[10px] font-bold tracking-[0.18em] uppercase">
                     {stat.label}
                   </span>
                 </span>
               </div>
             ))}
-            <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-white/70 px-4 py-3">
+            <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-[var(--band-line)] px-4 py-3">
               <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
-              <span className="text-marker text-[15px] leading-snug text-white">
+              <span className="text-marker text-[15px] leading-snug">
                 Safe metals. Happy ears. <span className="text-pink underline">Pinky promise.</span>
               </span>
             </div>
@@ -156,21 +156,21 @@ export default async function HomePage() {
       </section>
 
       {/* ============ 01 · Choose your piercing zone ============ */}
-      <section className="band-paper relative" id="zones">
-        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#ece5d6" seed={31} />
-        <div className="mx-auto grid min-h-[75vh] max-w-7xl content-center items-center gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr_190px]">
+      <section className="band-alt relative" id="zones">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={31} />
+        <div className="mx-auto grid min-h-[75vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr_210px]">
           <Reveal className="relative">
-            <h2 className="text-marker mt-1 text-3xl leading-snug">
+            <h2 className="text-marker mt-1 text-3xl leading-snug lg:text-4xl">
               Where&apos;s the
               <br />
               bling going?
             </h2>
-            <svg className="mt-3 h-8 w-14 text-[#17141a]" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 56 32">
+            <svg className="mt-3 h-8 w-14 text-current" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 56 32">
               <path d="M2 6c14 14 30 20 46 20M48 20l6 6-8 3" />
             </svg>
           </Reveal>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-4 lg:gap-6">
             {ZONES.map((zone, zi) => (
               <Reveal delay={zi * 90} key={zone.name}>
               <Link className="group relative block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg]" href={zone.href}>
@@ -185,7 +185,7 @@ export default async function HomePage() {
                   <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
                 <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between">
-                  <span className="text-poster text-lg text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                  <span className="text-poster text-xl text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] sm:text-2xl">
                     {zone.name}
                   </span>
                   <span aria-hidden className={`chip-arrow transition-transform duration-300 group-hover:translate-x-1 ${zone.chip}`}>→</span>
@@ -211,23 +211,23 @@ export default async function HomePage() {
             >
               Hit us up <span aria-hidden>→</span>
             </a>
-            <DoodleSquiggle className="mt-4 h-5 w-12 text-[#17141a]" />
+            <DoodleSquiggle className="mt-4 h-5 w-12 text-current" />
           </Reveal>
         </div>
       </section>
 
       {/* ============ 02 · Our studs collection ============ */}
       <section className="band-black relative" id="studs">
-        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#0a0a0a" seed={47} />
-        <div className="mx-auto grid min-h-[80vh] max-w-7xl content-center items-center gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr_200px]">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-1)" seed={47} />
+        <div className="mx-auto grid min-h-[80vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr_220px]">
           <Reveal className="relative">
             <DoodleStar className="absolute -top-9 right-0 h-7 w-7 text-yellow" />
-            <h2 className="text-marker mt-1 text-3xl leading-snug text-white">
+            <h2 className="text-marker mt-1 text-3xl leading-snug lg:text-4xl">
               Our studs
               <br />
               collection
             </h2>
-            <p className="mt-3 text-sm text-white/75">Shiny lil things that go with everything.</p>
+            <p className="mt-3 text-sm opacity-75">Shiny lil things that go with everything.</p>
             <Link
               className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-purple px-5 py-2.5 text-[12px] tracking-wide text-white uppercase transition-transform hover:scale-105"
               href="/shop"
@@ -236,7 +236,7 @@ export default async function HomePage() {
             </Link>
           </Reveal>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
             {STUD_CARDS.map((card, ci) => (
               <Reveal delay={ci * 80} key={card.name}>
               <Link className="band-paper group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[1deg]" href={card.href}>
@@ -251,8 +251,8 @@ export default async function HomePage() {
                 </div>
                 <div className="flex items-center justify-between px-3 pb-3">
                   <span>
-                    <span className="text-poster block text-[13px] uppercase">{card.name}</span>
-                    <span className="text-muted-band block text-[11px]">{card.tag}</span>
+                    <span className="text-poster block text-[15px] uppercase lg:text-base">{card.name}</span>
+                    <span className="text-muted-band block text-[12px] lg:text-[13px]">{card.tag}</span>
                   </span>
                   <span aria-hidden className={`chip-arrow h-7 w-7 text-sm transition-transform duration-300 group-hover:translate-x-1 ${card.chip}`}>→</span>
                 </div>
@@ -265,7 +265,7 @@ export default async function HomePage() {
             {STUD_TRUST.map((item, ti) => (
               <li key={item.text}><Reveal className="flex items-start gap-3" delay={ti * 100}>
                 <span className="mt-0.5 shrink-0 text-yellow">{item.icon}</span>
-                <span className="text-[11px] leading-relaxed font-bold tracking-[0.15em] text-white uppercase">
+                <span className="text-[11px] leading-relaxed font-bold tracking-[0.15em] uppercase">
                   {item.text}
                 </span>
               </Reveal></li>
@@ -276,14 +276,14 @@ export default async function HomePage() {
 
       {/* ============ 03 · Walls can feel too (posters) ============ */}
       <section className="band-black" id="posters">
-        <div className="mx-auto grid min-h-[70vh] max-w-7xl content-center items-center gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr]">
+        <div className="mx-auto grid min-h-[70vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr]">
           <Reveal>
-            <h2 className="text-marker mt-1 text-3xl leading-snug text-pink">
+            <h2 className="text-marker mt-1 text-3xl leading-snug text-pink lg:text-4xl">
               Walls can
               <br />
               feel too.
             </h2>
-            <p className="mt-3 text-sm text-white/75">
+            <p className="mt-3 text-sm opacity-75">
               Art that talks back.
               <br />
               Your walls deserve it.
@@ -297,7 +297,7 @@ export default async function HomePage() {
           </Reveal>
 
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
               {POSTERS.map((poster, i) => (
                 <Reveal delay={i * 70} key={poster.text}>
                 <div
@@ -325,7 +325,7 @@ export default async function HomePage() {
                     />
                   )}
                   <div className="absolute inset-0 flex items-center p-4">
-                    <span className={`text-poster text-lg leading-tight uppercase ${poster.textColor} drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]`}>
+                    <span className={`text-poster text-xl leading-tight uppercase lg:text-2xl ${poster.textColor} drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]`}>
                       {poster.text}
                     </span>
                   </div>
@@ -347,9 +347,9 @@ export default async function HomePage() {
               <svg className="h-7 w-7 shrink-0 text-pink" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 26">
                 <path d="M12 1l10 4v7c0 6-4 11-10 13C6 23 2 18 2 12V5z M8 12l3 3 5-6" />
               </svg>
-              <span className="text-poster text-[15px] tracking-wide text-white uppercase">Safe &amp; sound</span>
+              <span className="text-poster text-[15px] tracking-wide uppercase">Safe &amp; sound</span>
             </h3>
-            <ul className="mt-4 space-y-2 text-[13px] text-white/85">
+            <ul className="mt-4 space-y-2 text-[13px] opacity-85">
               <li>✓ Sterile everything</li>
               <li>✓ 100% good vibes, 0% oops</li>
               <li>✓ We gotchu, always</li>
@@ -360,9 +360,9 @@ export default async function HomePage() {
               <svg className="h-7 w-7 shrink-0 text-purple" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 24">
                 <path d="M1 5h16v13H1z M17 9h5l4 4v5h-9 M6 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M21 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
               </svg>
-              <span className="text-poster text-[15px] tracking-wide text-white uppercase">We ship fast</span>
+              <span className="text-poster text-[15px] tracking-wide uppercase">We ship fast</span>
             </h3>
-            <ul className="mt-4 space-y-2 text-[13px] text-white/85">
+            <ul className="mt-4 space-y-2 text-[13px] opacity-85">
               <li>✓ Pan India delivery</li>
               <li>✓ Discreet packaging</li>
               <li>✓ 3–7 days, zoom zoom</li>
@@ -374,11 +374,11 @@ export default async function HomePage() {
                 <rect height="16" rx="3" width="24" x="1" y="2" />
                 <path d="M1 8h24" />
               </svg>
-              <span className="text-poster text-[15px] tracking-wide text-white uppercase">Easy peasy payments</span>
+              <span className="text-poster text-[15px] tracking-wide uppercase">Easy peasy payments</span>
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {PAYMENT_CHIPS.map((chip) => (
-                <span className="rounded-md border border-white/30 px-2.5 py-1 text-[11px] font-bold text-white" key={chip}>
+                <span className="rounded-md border border-[var(--band-line)] px-2.5 py-1 text-[11px] font-bold" key={chip}>
                   {chip}
                 </span>
               ))}
@@ -389,9 +389,9 @@ export default async function HomePage() {
               <svg className="h-7 w-7 shrink-0 text-yellow" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" />
               </svg>
-              <span className="text-poster text-[15px] tracking-wide text-white uppercase">Jewellery care (aka TLC)</span>
+              <span className="text-poster text-[15px] tracking-wide uppercase">Jewellery care (aka TLC)</span>
             </h3>
-            <ul className="mt-4 space-y-2 text-[13px] text-white/85">
+            <ul className="mt-4 space-y-2 text-[13px] opacity-85">
               <li>✓ Lil soap, lil love</li>
               <li>✓ No perfume parties, please</li>
               <li>✓ Keep it cozy &amp; dry</li>
