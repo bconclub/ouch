@@ -16,7 +16,6 @@ export async function Footer() {
       <div className="band-paper">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[220px_1fr_1fr_240px]">
           <div className="relative">
-            <span className="text-marker text-3xl">04</span>
             <h2 className="text-marker mt-1 text-3xl leading-snug">
               Hey, let&apos;s
               <br />

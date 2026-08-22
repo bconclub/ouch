@@ -88,18 +88,19 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-0 right-[12%] h-9 w-7 text-yellow" />
 
             <h1>
-              <span className="text-marker block text-xl text-white sm:text-2xl">Piercing jewellery, Bengaluru.</span>
-              <span className="text-poster mt-2 block text-4xl text-white sm:text-5xl">Minimal.</span>
-              <span className="text-poster block text-5xl text-pink sm:text-6xl">Premium.</span>
+              <span className="text-marker block text-xl text-white sm:text-2xl">Hey you! Welcome to Ouch.</span>
+              <span className="text-poster mt-2 block text-4xl text-white sm:text-5xl">Good vibes.</span>
+              <span className="text-poster block text-5xl text-pink sm:text-6xl">Cool studs.</span>
               <span className="text-poster relative block w-fit text-5xl text-yellow sm:text-6xl">
-                Made to last.
+                Happy you.
                 <BrushStroke className="absolute -bottom-3 left-0 h-4 w-full" color="var(--color-purple)" seed={71} />
               </span>
             </h1>
 
             <p className="mt-8 max-w-md text-[15px] leading-relaxed text-white sm:text-base">
-              Studs, hoops and barbells in <span className="mark-highlight font-semibold">implant-grade</span>{' '}
-              titanium and steel — designed to be worn every day and built to keep their shine.
+              Studs, hoops and barbells from your friendly neighbourhood piercing folks — safe{' '}
+              <span className="mark-highlight font-semibold">implant-grade</span> metals, zero drama,
+              all smiles.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-4">
@@ -118,7 +119,7 @@ export default async function HomePage() {
               back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
               className="relative mx-auto aspect-[653/1089] w-full max-w-xs lg:max-w-sm"
               front={
-                <div className="relative h-full w-full">
+                <div className="relative h-full w-full [mask-image:linear-gradient(to_bottom,black_72%,transparent_99%)]">
                   <Image
                     alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
                     className="object-contain"
@@ -148,7 +149,7 @@ export default async function HomePage() {
             <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-white/70 px-4 py-3">
               <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
               <span className="text-marker text-[15px] leading-snug text-white">
-                Implant-grade metals, <span className="text-pink underline">always.</span>
+                Safe metals. Happy ears. <span className="text-pink underline">Pinky promise.</span>
               </span>
             </div>
           </div>
@@ -159,7 +160,6 @@ export default async function HomePage() {
       <section className="band-paper" id="zones">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[220px_1fr_190px]">
           <div className="relative">
-            <span className="text-marker text-3xl text-pink">01</span>
             <h2 className="text-marker mt-1 text-3xl leading-snug">
               Choose your
               <br />
@@ -219,7 +219,6 @@ export default async function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr_200px]">
           <div className="relative">
             <DoodleStar className="absolute -top-6 right-2 h-7 w-7 text-yellow" />
-            <span className="text-marker text-3xl text-white">02</span>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-white">
               Our studs
               <br />
@@ -274,7 +273,6 @@ export default async function HomePage() {
       <section className="band-black border-t border-white/10" id="posters">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr]">
           <div>
-            <span className="text-marker text-3xl text-pink">03</span>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink">
               Walls can
               <br />
