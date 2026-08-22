@@ -11,7 +11,7 @@ Ship the founder's piercing/jewellery store: Next.js 16 + Payload CMS 3.87.1 sto
 - DB: local SQLite ouch.db (gitignored) — 5 categories (dainty-nostrils, ear-stacks, septum-vibes, body-sparks, studs-gems), 6 products, ALL PRICES PLACEHOLDER
 
 ## State right now
-- On origin/main: 384cb6f "Self-contained Vercel demo: bundle SQLite DB + catalogue images"
+- On origin/main: cb17ea9 (2026-08-22 night): investor-ready polish — happy Gen Z tone site-wide, band blend transitions, cutout hero, checkout fallback (order summary via sessionStorage so WhatsApp handoff works on read-only demo DB)
 - Uncommitted: none · Unpushed: none
 - Work queue: see `.claude/state/todo.md` (refreshed 2026-08-22) — 2 pending, 4 blocked, 0 deferred
 

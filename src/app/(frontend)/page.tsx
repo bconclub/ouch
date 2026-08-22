@@ -34,9 +34,9 @@ const STATS = [
 ]
 
 const ZONES = [
-  { name: 'Ear', href: '/category/ear-stacks', image: '/brand/covers/zone-ear.png', chip: 'bg-pink' },
-  { name: 'Nose', href: '/category/dainty-nostrils', image: '/brand/covers/zone-nose.png', chip: 'bg-purple' },
-  { name: 'Face', href: '/category/studs-gems', image: '/brand/covers/zone-face.png', chip: 'bg-cyan' },
+  { name: 'Septum', href: '/category/septum-vibes', image: '/brand/covers/zone-septum.png', chip: 'bg-pink' },
+  { name: 'Ear', href: '/category/ear-stacks', image: '/brand/covers/zone-ear.png', chip: 'bg-purple' },
+  { name: 'Nose', href: '/category/dainty-nostrils', image: '/brand/covers/zone-nose.png', chip: 'bg-cyan' },
   { name: 'Body', href: '/category/body-sparks', image: '/brand/covers/zone-body.png', chip: 'bg-orange' },
 ]
 
@@ -88,7 +88,7 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-0 right-[12%] h-9 w-7 text-yellow" />
 
             <h1>
-              <span className="text-marker block text-xl text-white sm:text-2xl">Hey you! Welcome to Ouch.</span>
+              <span className="text-marker block text-xl text-white sm:text-2xl">Hey bestie, you made it.</span>
               <span className="text-poster mt-2 block text-4xl text-white sm:text-5xl">Good vibes.</span>
               <span className="text-poster block text-5xl text-pink sm:text-6xl">Cool studs.</span>
               <span className="text-poster relative block w-fit text-5xl text-yellow sm:text-6xl">
