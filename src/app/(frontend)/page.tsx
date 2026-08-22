@@ -80,7 +80,7 @@ export default async function HomePage() {
     <div className="overflow-hidden">
       {/* ============ HERO — It's a whole vibe ============ */}
       <section className="band-black relative">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_1fr_auto] lg:py-16">
+        <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-7xl content-center items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_1fr_auto] lg:py-16">
           {/* Headline + copy + CTAs */}
           <div className="relative">
             <DoodleStar className="absolute -top-12 right-6 hidden h-8 w-8 text-purple lg:block" />
@@ -158,7 +158,7 @@ export default async function HomePage() {
       {/* ============ 01 · Choose your piercing zone ============ */}
       <section className="band-paper relative" id="zones">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#ece5d6" seed={31} />
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[220px_1fr_190px]">
+        <div className="mx-auto grid min-h-[75vh] max-w-7xl content-center items-center gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr_190px]">
           <Reveal className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">
               Where&apos;s the
@@ -219,7 +219,7 @@ export default async function HomePage() {
       {/* ============ 02 · Our studs collection ============ */}
       <section className="band-black relative" id="studs">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#0a0a0a" seed={47} />
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr_200px]">
+        <div className="mx-auto grid min-h-[80vh] max-w-7xl content-center items-center gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr_200px]">
           <Reveal className="relative">
             <DoodleStar className="absolute -top-9 right-0 h-7 w-7 text-yellow" />
             <h2 className="text-marker mt-1 text-3xl leading-snug text-white">
@@ -276,7 +276,7 @@ export default async function HomePage() {
 
       {/* ============ 03 · Walls can feel too (posters) ============ */}
       <section className="band-black" id="posters">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr]">
+        <div className="mx-auto grid min-h-[70vh] max-w-7xl content-center items-center gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr]">
           <Reveal>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink">
               Walls can
@@ -341,7 +341,7 @@ export default async function HomePage() {
 
       {/* ============ INFO · Trust bar ============ */}
       <section className="band-black" id="info">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+        <div className="mx-auto grid min-h-[60vh] max-w-7xl content-center gap-10 px-4 py-16 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
           <Reveal>
             <h3 className="flex items-center gap-2.5">
               <svg className="h-7 w-7 shrink-0 text-pink" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 26">
