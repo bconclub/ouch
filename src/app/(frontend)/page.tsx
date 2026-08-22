@@ -117,7 +117,7 @@ export default async function HomePage() {
           <div className="relative">
             <ParallaxHero
               back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
-              className="relative mx-auto aspect-[653/1089] w-full max-w-xs lg:max-w-sm"
+              className="relative mx-auto aspect-[1011/1531] w-full max-w-xs lg:max-w-sm"
               front={
                 <div className="relative h-full w-full [mask-image:linear-gradient(to_bottom,black_86%,transparent_100%)]">
                   <Image
