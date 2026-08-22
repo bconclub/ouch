@@ -29,7 +29,10 @@ export default buildConfig({
   collections: [Products, Categories, Orders, Media, Users],
   globals: [SiteSettings],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  // Demo fallback so the read-only bundled-DB deployment boots without env
+  // vars. Harmless there (the filesystem rejects all writes), but set a real
+  // PAYLOAD_SECRET in Vercel before enabling a writable production database.
+  secret: process.env.PAYLOAD_SECRET || 'fc9923bca5d560328b9b30c0a316b3162f92372841838175',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },

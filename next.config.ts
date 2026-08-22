@@ -7,6 +7,11 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
+  // Bundle the demo catalogue (SQLite file + upload images) into every
+  // serverless function so the site runs on Vercel without an external DB.
+  outputFileTracingIncludes: {
+    '/**': ['./ouch.db', './media/**'],
+  },
   images: {
     localPatterns: [
       {

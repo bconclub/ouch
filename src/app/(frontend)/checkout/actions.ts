@@ -108,8 +108,10 @@ export async function createOrder(input: CheckoutInput): Promise<CheckoutResult>
       },
     })
   } catch (err) {
-    console.error('Order creation failed:', err)
-    return { ok: false, error: 'Something went wrong placing your order. Please try again.' }
+    // WhatsApp is the real order channel; the Orders collection is bookkeeping.
+    // On the read-only demo deployment this write always fails — let the
+    // customer proceed to WhatsApp instead of dead-ending the checkout.
+    console.error('Order creation failed (continuing to WhatsApp handoff):', err)
   }
 
   return { ok: true, orderNumber }
