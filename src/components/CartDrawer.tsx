@@ -41,7 +41,7 @@ export function CartDrawer() {
 
         {items.length === 0 ? (
           <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
-            <p className="text-muted">Your cart is empty.</p>
+            <p className="text-muted">Nothing in here yet — let&apos;s fix that.</p>
             <Link
               className="btn-vibrant px-6 py-3 text-sm font-semibold tracking-wide uppercase"
               href="/shop"

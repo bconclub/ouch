@@ -12,11 +12,11 @@ export default function CartPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-      <h1 className="font-display mb-8 text-3xl font-bold tracking-tight uppercase">Cart</h1>
+      <h1 className="text-marker mb-8 text-4xl">Your stash</h1>
 
       {items.length === 0 ? (
         <div className="rounded-lg border border-line bg-surface py-20 text-center">
-          <p className="mb-6 text-muted">Your cart is empty.</p>
+          <p className="mb-6 text-muted">Nothing in here yet — let&apos;s fix that.</p>
           <Link
             className="btn-vibrant px-8 py-3 text-sm font-bold tracking-widest uppercase"
             href="/shop"
