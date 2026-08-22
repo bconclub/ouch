@@ -22,9 +22,9 @@
   --color-ink: #17141a;
   --color-muted: #6b6470;
 
-  --font-poster: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-poster: var(--font-start-story), var(--font-space-grotesk), sans-serif;
   --font-body: var(--font-space-grotesk), system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-display: var(--font-start-story), var(--font-space-grotesk), sans-serif;
   --font-script: var(--font-space-grotesk), system-ui, sans-serif;
   --font-serif: var(--font-space-grotesk), system-ui, sans-serif;
 }
@@ -77,14 +77,14 @@ body {
 /* ---------- Poster type ---------- */
 .text-poster {
   font-family: var(--font-poster);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.02;
 }
 
 .text-marker {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: var(--font-poster);
+  font-weight: 400;
 }
 
 /* Highlighter behind a word */

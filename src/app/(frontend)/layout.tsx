@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import React from 'react'
 
@@ -13,6 +14,11 @@ import './styles.css'
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-space-grotesk',
+})
+
+const startStory = localFont({
+  src: '../../fonts/StartStory.ttf',
+  variable: '--font-start-story',
 })
 
 
@@ -37,7 +43,7 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
 
   return (
     <html
-      className={spaceGrotesk.variable}
+      className={`${spaceGrotesk.variable} ${startStory.variable}`}
       data-theme="dark"
       lang="en"
       suppressHydrationWarning
