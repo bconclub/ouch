@@ -135,7 +135,7 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-[-44px] right-[34%] hidden h-9 w-7 text-yellow lg:block" />
 
             <h1>
-              <span className="text-marker anim-fade-up block text-xl sm:text-2xl">Hey bestie, you made it.</span>
+              <span className="text-marker anim-fade-up block text-xl sm:text-2xl">Piercings that hit <span className="text-pink">different.</span></span>
               <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl sm:text-5xl">Good vibes.</span>
               <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Cool studs.</span>
               <span className="text-poster anim-fade-up anim-d3 relative block w-fit text-5xl text-yellow sm:text-6xl">
