@@ -92,8 +92,10 @@ const PIERCING_CARDS = [
    drop files in public/brand/gallery/ (or media) and add them here. */
 const GALLERY = [
   '/brand/gallery/client-01.jpeg',
+  '/brand/gallery/client-05.jpeg',
   '/brand/gallery/client-02.jpeg',
   '/brand/gallery/client-04.jpeg',
+  '/brand/gallery/client-06.jpeg',
   '/brand/gallery/client-03.jpeg',
 ]
 
