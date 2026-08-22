@@ -91,15 +91,10 @@ const PIERCING_CARDS = [
 /* Masonry gallery — the founder's own shots. Swap/extend freely:
    drop files in public/brand/gallery/ (or media) and add them here. */
 const GALLERY = [
-  '/brand/covers/cat-ear.png',
-  '/brand/covers/cat-nose.png',
-  '/brand/covers/cat-sets.png',
-  '/brand/covers/cat-lip.png',
-  '/brand/covers/cat-hoops.png',
-  '/brand/covers/cat-studs.png',
-  '/brand/covers/cat-barbells.png',
-  '/brand/covers/cat-face.png',
-  '/brand/covers/cat-body.png',
+  '/brand/gallery/client-01.jpeg',
+  '/brand/gallery/client-02.jpeg',
+  '/brand/gallery/client-04.jpeg',
+  '/brand/gallery/client-03.jpeg',
 ]
 
 const STUD_TILES = [
