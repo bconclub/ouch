@@ -3,21 +3,23 @@ import Link from 'next/link'
 import React from 'react'
 
 import type { Product } from '@/payload-types'
-import { accentFor, formatPrice, mediaAlt, mediaUrl } from '@/lib/utils'
+import { formatPrice, mediaAlt, mediaUrl } from '@/lib/utils'
+
+const CHIPS = ['bg-pink', 'bg-purple', 'bg-cyan', 'bg-orange', 'bg-yellow']
 
 export function ProductCard({ product }: { product: Product }) {
   const firstImage = product.images?.[0]?.image
   const url = mediaUrl(firstImage, 'card')
   const onSale = product.compareAtPrice != null && product.compareAtPrice > product.price
   const category = typeof product.category === 'object' ? product.category : null
-  const accent = accentFor(typeof product.category === 'object' ? product.category.id : product.id)
+  const chip = CHIPS[(typeof product.category === 'object' ? product.category.id : product.id) % CHIPS.length]
 
   return (
     <Link
-      className={`group block overflow-hidden rounded-2xl border border-line bg-surface transition-all hover:-translate-y-1 hover:shadow-lg ${accent.border}`}
+      className="band-paper group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1"
       href={`/products/${product.slug}`}
     >
-      <div className={`relative aspect-square overflow-hidden ${accent.tile}`}>
+      <div className="relative m-2 aspect-square overflow-hidden rounded-xl bg-white/60">
         {url && (
           <Image
             alt={mediaAlt(firstImage, product.title)}
@@ -28,31 +30,34 @@ export function ProductCard({ product }: { product: Product }) {
           />
         )}
         {onSale && (
-          <span className="absolute top-3 left-3 rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-bold tracking-[0.15em] text-white uppercase">
+          <span className="text-poster absolute top-2.5 left-2.5 rounded-full bg-pink px-2.5 py-1 text-[10px] tracking-widest text-white uppercase">
             Sale
           </span>
         )}
         {!product.inStock && (
-          <span className="absolute top-3 right-3 rounded-full bg-ink/80 px-2.5 py-0.5 text-[11px] font-semibold tracking-[0.15em] text-white uppercase">
+          <span className="text-poster absolute top-2.5 right-2.5 rounded-full bg-[#17141a]/85 px-2.5 py-1 text-[10px] tracking-widest text-white uppercase">
             Sold out
           </span>
         )}
       </div>
-      <div className="p-4">
-        {category && (
-          <div className={`mb-1 text-[11px] font-bold tracking-[0.18em] uppercase ${accent.text}`}>
-            {category.name}
-          </div>
-        )}
-        <h3 className="line-clamp-2 text-sm font-medium">{product.title}</h3>
-        <div className="mt-2 flex items-baseline gap-2">
-          <span className="font-semibold">{formatPrice(product.price)}</span>
-          {onSale && (
-            <span className="text-xs text-muted line-through">
-              {formatPrice(product.compareAtPrice!)}
+      <div className="flex items-center justify-between gap-2 px-3.5 pb-3.5">
+        <span className="min-w-0">
+          {category && (
+            <span className="text-muted-band block text-[10px] font-bold tracking-[0.15em] uppercase">
+              {category.name}
             </span>
           )}
-        </div>
+          <span className="text-poster block truncate text-[13px] uppercase">{product.title}</span>
+          <span className="mt-0.5 flex items-baseline gap-1.5 text-sm font-bold">
+            {formatPrice(product.price)}
+            {onSale && (
+              <span className="text-muted-band text-xs font-normal line-through">
+                {formatPrice(product.compareAtPrice!)}
+              </span>
+            )}
+          </span>
+        </span>
+        <span aria-hidden className={`chip-arrow h-7 w-7 shrink-0 text-sm ${chip}`}>→</span>
       </div>
     </Link>
   )

@@ -76,7 +76,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {category.name}
             </div>
           )}
-          <h1 className="font-display mb-4 text-3xl font-bold tracking-tight">{product.title}</h1>
+          <h1 className="text-poster mb-4 text-3xl uppercase sm:text-4xl">{product.title}</h1>
 
           <ProductPurchase product={product} />
 
@@ -101,9 +101,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {related.length > 0 && (
         <section className="mt-20">
-          <h2 className="font-display mb-8 text-2xl font-bold tracking-tight uppercase">
-            You may also like
-          </h2>
+          <h2 className="text-marker mb-8 text-3xl">You may also like</h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} />
