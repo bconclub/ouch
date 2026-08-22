@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-14 13:00 IST · Space Grotesk site-wide
+
+- Body font switched from Inter to Space Grotesk across the whole site (copy, buttons, forms, lists, prices)
+- Poster (Luckiest Guy) and marker (Permanent Marker) faces kept for the painted brand headlines
+
 ## 2026-08-14 12:30 IST · Final homepage layout, section by section
 
 - Homepage rebuilt to the founder's final design: alternating black/paper bands with numbered sections

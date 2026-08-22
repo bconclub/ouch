@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Luckiest_Guy, Permanent_Marker } from 'next/font/google'
+import { Luckiest_Guy, Permanent_Marker, Space_Grotesk } from 'next/font/google'
 import React from 'react'
 
 import { CartProvider } from '@/lib/cart'
@@ -10,9 +10,9 @@ import { Header } from '@/components/Header'
 import { themeInitScript } from '@/components/ThemeToggle'
 import './styles.css'
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-space-grotesk',
 })
 
 const luckiest = Luckiest_Guy({
@@ -48,7 +48,7 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
 
   return (
     <html
-      className={`${inter.variable} ${luckiest.variable} ${marker.variable}`}
+      className={`${spaceGrotesk.variable} ${luckiest.variable} ${marker.variable}`}
       data-theme="dark"
       lang="en"
       suppressHydrationWarning
