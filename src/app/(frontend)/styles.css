@@ -178,3 +178,28 @@ body {
 .wash-footer {
   background: var(--color-bg);
 }
+
+/* ---------- Final-layout bands (theme-independent, per the final design) ---------- */
+.band-black {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+.band-paper {
+  background: #ece5d6;
+  color: #17141a;
+}
+.band-paper .text-muted-band {
+  color: #6d6659;
+}
+
+/* Small arrow chip — colored pill with an arrow, used on zone/stud cards */
+.chip-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 700;
+}

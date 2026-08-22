@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-08-14 12:30 IST · Final homepage layout, section by section
+
+- Homepage rebuilt to the founder's final design: alternating black/paper bands with numbered sections
+- Hero: "NOT JUST HOLES. IT'S A WHOLE VIBE." with purple stroke, founder cutout on the paint burst, pink LET'S GET PIERCED + outline SHOP STUDS CTAs, stats column (1000+/3000+/5+/Premium) and the peace-sign "hit different" chip
+- 01 CHOOSE YOUR PIERCING ZONE (paper): Ear/Nose/Face/Body photo cards with colored arrow chips, marker headline + arrow doodle, KNOW MORE chip
+- 02 OUR STUDS COLLECTION (black): five paper product cards (Dainty AF, Hoop Dreams, Nose Goals, Spark It Up, Body Love) with taglines + trust bullets (925 silver & gold, hypoallergenic, sterile)
+- 03 WALLS CAN FEEL TOO (black): five poster cards mixing photos and painted slogans, EXPLORE POSTERS chip
+- INFO trust bar: Safe & Sound, We Ship Fast, Easy Peasy Payments (UPI/GPay/Apple Pay/VISA/Mastercard/RuPay chips), Jewellery Care
+- 04 HEY, LET'S CONNECT footer (paper): contact rows, pink DM-us brush blob, purple JOIN THE LOOP panel with subscribe (opens WhatsApp), taped OUCH card; black bottom bar with doodles
+- Header nav: Home · Piercings · Studs · Posters · Info · Contact
+- Category pages: painted banner with cover photo, poster-type name on brush stroke, breadcrumbs, marker piece-count, friendlier empty state
+
 ## 2026-08-13 18:40 IST · Production storage: uploads to Vercel Blob
 
 - Added the Vercel Blob storage adapter, enabled only when BLOB_READ_WRITE_TOKEN is present — production uploads persist instead of vanishing with each deploy; local dev keeps writing to ./media unchanged

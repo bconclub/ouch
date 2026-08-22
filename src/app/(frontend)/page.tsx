@@ -9,137 +9,125 @@ import {
   DoodleSmiley,
   DoodleSquiggle,
   DoodleStar,
-  DoodleTicks,
 } from '@/components/Doodles'
-import {
-  BrushMaskedPhoto,
-  BrushPill,
-  BrushStroke,
-  PageSplashes,
-  PaintBurst,
-  SpraySplash,
-} from '@/components/Paint'
+import { BrushMaskedPhoto, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
-import { getCategories, getSiteSettings } from '@/lib/queries'
-import { mediaAlt, mediaUrl } from '@/lib/utils'
+import { getSiteSettings } from '@/lib/queries'
 
 // Always render fresh so catalogue changes made in the admin appear immediately.
 export const dynamic = 'force-dynamic'
 
-// Colour-washed tile photos matching the mockup's monochrome tiles, keyed by slug.
-const TILE_IMAGES: Record<string, string> = {
-  'dainty-nostrils': '/brand/covers/tile-dainty-nostrils.png',
-  'ear-stacks': '/brand/covers/tile-ear-stacks.png',
-  'septum-vibes': '/brand/covers/tile-septum-vibes.png',
-  'body-sparks': '/brand/covers/tile-body-sparks.png',
-  'studs-gems': '/brand/covers/tile-studs-gems.png',
-}
-
-const TILE_COLORS = ['bg-pink', 'bg-purple', 'bg-cyan', 'bg-orange', 'bg-lime']
-const LABEL_COLORS = ['text-pink', 'text-purple', 'text-cyan', 'text-orange', 'text-lime']
-const PANEL_COLORS = ['dark:bg-pink', 'dark:bg-purple', 'dark:bg-cyan', 'dark:bg-yellow']
-const TILE_TILTS = ['-rotate-1', 'rotate-1', '-rotate-[1.5deg]', 'rotate-[0.5deg]', 'rotate-[1.5deg]']
-const TILE_GLOWS = [
-  'dark:shadow-[0_0_22px_rgba(255,46,136,0.5)]',
-  'dark:shadow-[0_0_22px_rgba(139,47,214,0.55)]',
-  'dark:shadow-[0_0_22px_rgba(34,211,238,0.5)]',
-  'dark:shadow-[0_0_22px_rgba(255,122,26,0.5)]',
-  'dark:shadow-[0_0_22px_rgba(163,230,53,0.5)]',
-]
-
 const STATS = [
-  {
-    value: '1000+',
-    label: 'Happy humans',
-    color: 'text-pink',
-    icon: <DoodleSmiley className="h-8 w-8" />,
-  },
-  {
-    value: '3000+',
-    label: 'Piercings done',
-    color: 'text-purple',
-    icon: <DoodleLightning className="h-8 w-8" />,
-  },
-  {
-    value: '5+',
-    label: 'Years of good vibes',
-    color: 'text-cyan',
-    icon: <DoodleHeart className="h-8 w-8" />,
-  },
+  { value: '1000+', label: 'Happy humans', color: 'text-yellow', icon: <DoodleSmiley className="h-7 w-7" /> },
+  { value: '3000+', label: 'Piercings done', color: 'text-purple', icon: <DoodleLightning className="h-7 w-7" /> },
+  { value: '5+', label: 'Years of good vibes', color: 'text-cyan', icon: <DoodleHeart className="h-7 w-7" /> },
   {
     value: 'Premium',
-    label: '& sterile',
-    color: 'text-orange',
+    label: 'Sterile & safe',
+    color: 'text-yellow',
     icon: (
-      <svg fill="none" height="30" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 26" width="30">
+      <svg fill="none" height="26" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 26" width="26">
         <path d="M7 3h14l5 7-12 14L2 10z M2 10h24 M7 3l7 7 7-7 M14 10v14" />
       </svg>
     ),
   },
 ]
 
+const ZONES = [
+  { name: 'Ear', href: '/category/ear-stacks', image: '/brand/covers/zone-ear.png', chip: 'bg-pink' },
+  { name: 'Nose', href: '/category/dainty-nostrils', image: '/brand/covers/zone-nose.png', chip: 'bg-purple' },
+  { name: 'Face', href: '/category/studs-gems', image: '/brand/covers/zone-face.png', chip: 'bg-cyan' },
+  { name: 'Body', href: '/category/body-sparks', image: '/brand/covers/zone-body.png', chip: 'bg-orange' },
+]
+
+const STUD_CARDS = [
+  { name: 'Dainty AF', tag: 'Tiny but cute', href: '/category/studs-gems', image: '/brand/covers/studs-dainty.png', chip: 'bg-pink' },
+  { name: 'Hoop Dreams', tag: 'Classic never dies', href: '/category/ear-stacks', image: '/brand/covers/studs-hoops.png', chip: 'bg-purple' },
+  { name: 'Nose Goals', tag: 'Subtle or savage', href: '/category/dainty-nostrils', image: '/brand/covers/studs-nose.png', chip: 'bg-cyan' },
+  { name: 'Spark It Up', tag: 'Little shine gang', href: '/category/studs-gems', image: '/brand/covers/studs-spark.png', chip: 'bg-yellow' },
+  { name: 'Body Love', tag: 'Anywhere. Slay.', href: '/category/body-sparks', image: '/brand/covers/studs-body.png', chip: 'bg-pink' },
+]
+
+const STUD_TRUST = [
+  {
+    text: '925 sterling silver & gold options',
+    icon: (
+      <svg fill="none" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 26" width="22">
+        <path d="M7 3h14l5 7-12 14L2 10z M2 10h24" />
+      </svg>
+    ),
+  },
+  { text: 'Hypoallergenic every time', icon: <DoodleSmiley className="h-6 w-6" /> },
+  { text: 'Sterile & safe always', icon: <DoodleStar className="h-6 w-6" /> },
+]
+
+const POSTERS = [
+  { kind: 'photo-text', text: 'Be bold. Be you.', image: '/brand/covers/zone-ear.png', bg: 'bg-purple', textColor: 'text-white' },
+  { kind: 'text', text: 'Pierced to express, not to impress.', bg: 'band-paper', textColor: 'text-purple' },
+  { kind: 'paint-text', text: 'Small piece. Big vibes.', bg: 'bg-pink', textColor: 'text-white' },
+  { kind: 'photo-text', text: 'Your body, your rules.', image: '/brand/covers/cat-sets.png', bg: 'bg-orange', textColor: 'text-white' },
+  { kind: 'paint-text', text: 'Not basic. Always Ouch.', bg: 'bg-cyan', textColor: 'text-white' },
+]
+
+const PAYMENT_CHIPS = ['UPI', 'GPay', 'Apple Pay', 'VISA', 'Mastercard', 'RuPay']
+
 export default async function HomePage() {
-  const [settings, categories] = await Promise.all([getSiteSettings(), getCategories()])
+  const settings = await getSiteSettings()
   const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
 
   return (
-    <div className="relative isolate overflow-hidden">
-      <PageSplashes />
+    <div className="overflow-hidden">
+      {/* ============ HERO — It's a whole vibe ============ */}
+      <section className="band-black relative">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_1fr_auto] lg:py-16">
+          {/* Headline + copy + CTAs */}
+          <div className="relative">
+            <DoodleStar className="absolute -top-4 -left-2 h-8 w-8 text-purple" />
+            <DoodleSmiley className="absolute top-[44%] -left-6 hidden h-9 w-9 text-yellow xl:block" />
+            <DoodleHeart className="absolute bottom-[30%] -left-4 hidden h-7 w-7 text-pink xl:block" />
+            <DoodleLightning className="absolute top-0 right-[12%] h-9 w-7 text-yellow" />
 
-      {/* ============ Hero ============ */}
-      <section className="relative">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pt-4 pb-14 sm:px-6 lg:grid-cols-[1fr_1.05fr] lg:pb-20">
-          <div className="relative order-2 lg:order-1">
-            <DoodleStar className="absolute -top-8 left-0 hidden h-9 w-9 text-purple lg:block" />
-            <DoodleHeart className="absolute top-[42%] -left-7 hidden h-8 w-8 text-pink xl:block" />
-            <DoodleSmiley className="absolute top-[26%] right-2 hidden h-9 w-9 text-cyan lg:block" />
-
-            <h1 className="text-poster text-5xl uppercase sm:text-6xl lg:text-[5.2rem]">
-              <span className="text-marker relative block w-fit text-[0.32em] normal-case tracking-wide">
-                <DoodleTicks className="absolute top-0 -left-7 h-4 w-5 -scale-x-100 text-ink" />
-                Hey dude,
-                <DoodleTicks className="absolute -top-1 -right-7 h-4 w-5 text-ink" />
-              </span>
-              <span className="mt-3 block w-fit -rotate-2 text-pink">Check</span>
-              <span className="block w-fit rotate-1 text-purple dark:text-ink">These</span>
-              <span className="relative block w-fit -rotate-2 text-[1.12em] text-yellow">
-                Studs
-                <span className="text-pink">.</span>
-                <BrushStroke
-                  className="absolute -bottom-4 left-1 h-5 w-[105%] -rotate-1"
-                  color="var(--color-pink)"
-                  seed={13}
-                />
+            <h1>
+              <span className="text-marker block text-2xl text-white sm:text-3xl">Not just holes.</span>
+              <span className="text-poster mt-2 block text-5xl text-white uppercase sm:text-6xl">It&apos;s a</span>
+              <span className="text-poster block -rotate-1 text-6xl text-pink uppercase sm:text-8xl">Whole</span>
+              <span className="text-poster relative block w-fit -rotate-1 text-6xl text-yellow uppercase sm:text-8xl">
+                Vibe.
+                <BrushStroke className="absolute -bottom-3 left-0 h-4 w-full" color="var(--color-purple)" seed={71} />
               </span>
             </h1>
 
-            <p className="mt-10 text-[15px] leading-relaxed text-ink sm:text-base">
-              <span className="dark:text-cyan">Bold pieces. Good vibes.</span>
+            <p className="mt-8 text-[15px] leading-relaxed text-white sm:text-base">
+              Bold pieces.
               <br />
-              Made to <span className="mark-highlight font-semibold">stand out</span>, just like you.
+              Good vibes.
+              <br />
+              Made to <span className="mark-highlight font-semibold">stand out</span> just like you.
             </p>
 
-            <Link
-              className="text-poster relative mt-8 inline-flex items-center gap-3 px-9 py-4 text-[15px] tracking-wide text-bg uppercase transition-transform hover:scale-[1.04] active:scale-95 dark:text-cyan"
-              href="/shop"
-            >
-              <BrushPill className="absolute inset-0 h-full w-full dark:hidden" color="var(--color-ink)" seed={5} />
-              <BrushPill
-                className="absolute inset-0 hidden h-full w-full dark:block"
-                color="var(--color-cyan)"
-                outline
-                seed={6}
-              />
-              <span className="relative">Our Collection</span>
-              <span aria-hidden className="relative">→</span>
-            </Link>
+            <div className="mt-7 flex flex-wrap gap-4">
+              <a
+                className="text-poster inline-flex items-center gap-2 rounded-full bg-pink px-7 py-3.5 text-[13px] tracking-wide text-white uppercase transition-transform hover:scale-[1.04] active:scale-95"
+                href={whatsappHref}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Let&apos;s get pierced <span aria-hidden>→</span>
+              </a>
+              <Link
+                className="text-poster inline-flex items-center gap-2 rounded-full border-2 border-white px-7 py-3.5 text-[13px] tracking-wide text-white uppercase transition-colors hover:bg-white hover:text-[#0a0a0a]"
+                href="/shop"
+              >
+                Shop studs <span aria-hidden>→</span>
+              </Link>
+            </div>
           </div>
 
-          {/* Cutout over the exploding paint burst, with subtle 3D parallax */}
-          <div className="relative order-1 lg:order-2">
+          {/* Founder cutout over the paint burst */}
+          <div className="relative">
             <ParallaxHero
-              back={<PaintBurst className="absolute -inset-x-16 -inset-y-10" />}
-              className="relative mx-auto aspect-[720/900] w-full max-w-md"
+              back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
+              className="relative mx-auto aspect-[720/900] w-full max-w-sm"
               front={
                 <BrushMaskedPhoto blend className="relative h-full w-full">
                   <Image
@@ -147,146 +135,275 @@ export default async function HomePage() {
                     className="object-cover"
                     fill
                     priority
-                    sizes="(max-width: 1024px) 80vw, 45vw"
+                    sizes="(max-width: 1024px) 80vw, 38vw"
                     src="/brand/covers/hero-founder.png"
                   />
                 </BrushMaskedPhoto>
               }
             />
-            <DoodleSmiley className="absolute -top-4 right-[12%] z-10 hidden h-8 w-8 text-yellow dark:block" />
-            <DoodleTicks className="absolute -top-2 right-0 z-10 h-8 w-9 text-ink" />
-            <DoodleLightning className="absolute top-[16%] -right-1 z-10 hidden h-10 w-8 text-yellow sm:block" />
-            <DoodleHeart className="absolute right-0 bottom-[18%] z-10 h-9 w-9 text-pink" />
+          </div>
+
+          {/* Stats column */}
+          <div className="flex flex-row flex-wrap justify-center gap-x-10 gap-y-6 lg:flex-col lg:justify-start lg:gap-7">
+            {STATS.map((stat) => (
+              <div className="flex items-center gap-3" key={stat.label}>
+                <span className={stat.color}>{stat.icon}</span>
+                <span>
+                  <span className={`text-poster block text-xl ${stat.color}`}>{stat.value}</span>
+                  <span className="block text-[10px] font-bold tracking-[0.18em] text-white uppercase">
+                    {stat.label}
+                  </span>
+                </span>
+              </div>
+            ))}
+            <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-white/70 px-4 py-3">
+              <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
+              <span className="text-marker text-[15px] leading-snug text-white">
+                Piercings that hit <span className="text-pink underline">different.</span>
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ============ Our collection ============ */}
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6" id="collection">
-        <div className="relative mx-auto mb-12 w-fit">
-          <BrushStroke
-            className="absolute -inset-x-10 top-1/2 h-[160%] -translate-y-1/2 -rotate-1"
-            color="var(--color-pink)"
-            seed={6}
-          />
-          <DoodleStar className="absolute -top-6 -right-12 h-7 w-7 text-yellow" />
-          <DoodleTicks className="absolute -top-5 -left-12 h-6 w-7 -scale-x-100 text-pink" />
-          <h2 className="text-marker relative -skew-x-6 px-6 py-2.5 text-3xl text-white sm:text-4xl">
-            Our Collection
-          </h2>
-        </div>
+      {/* ============ 01 · Choose your piercing zone ============ */}
+      <section className="band-paper" id="zones">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[220px_1fr_190px]">
+          <div className="relative">
+            <span className="text-marker text-3xl text-pink">01</span>
+            <h2 className="text-marker mt-1 text-3xl leading-snug">
+              Choose your
+              <br />
+              piercing zone
+            </h2>
+            <svg className="mt-3 h-8 w-14 text-[#17141a]" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 56 32">
+              <path d="M2 6c14 14 30 20 46 20M48 20l6 6-8 3" />
+            </svg>
+          </div>
 
-        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
-          {categories.map((cat, i) => {
-            const url = (cat.slug && TILE_IMAGES[cat.slug]) || mediaUrl(cat.image, 'card')
-            return (
-              <Link className="group" href={`/category/${cat.slug}`} key={cat.id}>
-                <div
-                  className={`paint-tile relative aspect-square overflow-hidden p-2.5 transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:rotate-2 ${
-                    TILE_TILTS[i % TILE_TILTS.length]
-                  } ${TILE_GLOWS[i % TILE_GLOWS.length]} ${TILE_COLORS[i % TILE_COLORS.length]}`}
-                >
-                  {url && (
-                    <Image
-                      alt={mediaAlt(cat.image, cat.name)}
-                      className="paint-tile object-cover"
-                      fill
-                      sizes="(max-width: 640px) 45vw, 18vw"
-                      src={url}
-                    />
-                  )}
-                  {/* Dark theme: label painted onto the tile */}
-                  <span className="text-marker absolute right-3 bottom-2.5 left-3 hidden items-center justify-between text-[15px] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] dark:flex">
-                    {cat.name} <span aria-hidden>→</span>
-                  </span>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {ZONES.map((zone) => (
+              <Link className="group relative overflow-hidden rounded-2xl" href={zone.href} key={zone.name}>
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    alt={`${zone.name} piercings`}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 640px) 45vw, 20vw"
+                    src={zone.image}
+                  />
+                  <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
-                {/* Light theme: label under the tile */}
-                <div className="mt-3 dark:hidden">
-                  <h3 className={`text-marker text-[16px] ${LABEL_COLORS[i % LABEL_COLORS.length]}`}>
-                    {cat.name}
-                  </h3>
-                  <span className="text-poster mt-0.5 inline-flex items-center gap-1.5 text-[12px] tracking-[0.15em] text-ink uppercase">
-                    Explore <span aria-hidden>→</span>
+                <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between">
+                  <span className="text-poster text-lg text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                    {zone.name}
                   </span>
+                  <span aria-hidden className={`chip-arrow ${zone.chip}`}>→</span>
                 </div>
               </Link>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* ============ Stats ============ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid grid-cols-2 gap-4 border-y border-line py-10 lg:grid-cols-4 dark:gap-3 dark:border-transparent dark:py-4">
-          {STATS.map((stat, i) => (
-            <div
-              className={`paint-tile flex flex-col items-center px-4 py-4 text-center dark:py-7 ${
-                i > 0 ? 'lg:border-l lg:border-line dark:lg:border-0' : ''
-              } ${PANEL_COLORS[i % PANEL_COLORS.length]}`}
-              key={stat.label}
-            >
-              <div className={`mb-2 ${stat.color} dark:text-white`}>{stat.icon}</div>
-              <div className={`text-poster text-2xl sm:text-3xl ${stat.color} dark:text-white`}>
-                {stat.value}
-              </div>
-              <div className="mt-1 text-[11px] font-bold tracking-[0.2em] text-ink uppercase dark:text-white">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ============ Vibe banner ============ */}
-      <section className="relative mx-auto mt-16 max-w-7xl px-4 sm:px-6" id="vibe">
-        <div className="relative px-2 py-12 sm:px-8">
-          {/* Light: painted pink band with yellow ends */}
-          <BrushStroke
-            className="absolute inset-x-0 top-1/2 h-[125%] w-full -translate-y-1/2 dark:hidden"
-            color="var(--color-pink)"
-            seed={16}
-          />
-          <BrushStroke
-            className="absolute top-1/2 -right-2 h-[80%] w-[26%] -translate-y-1/2 rotate-3 dark:hidden"
-            color="var(--color-yellow)"
-            seed={21}
-          />
-          {/* Dark: neon spray on black */}
-          <SpraySplash className="absolute top-0 left-[4%] hidden h-24 w-24 dark:block" color="var(--color-purple)" seed={14} />
-          <SpraySplash className="absolute right-[6%] bottom-0 hidden h-20 w-20 dark:block" color="var(--color-yellow)" seed={17} />
-
-          <div className="relative flex flex-col items-center gap-x-10 gap-y-6 sm:flex-row sm:justify-center">
-            <DoodlePeace className="h-16 w-16 shrink-0 text-cyan sm:h-20 sm:w-20" />
-            <div className="text-center sm:text-left">
-              <p className="text-marker text-2xl text-[#7a1436] sm:text-3xl dark:text-yellow">
-                Not just holes.
-              </p>
-              <p className="text-poster mt-1 text-3xl text-white uppercase sm:text-5xl dark:text-pink">
-                It&apos;s a whole vibe.
-              </p>
-            </div>
-            <DoodleStar className="absolute -top-6 right-0 h-8 w-8 text-pink sm:right-6" />
-            <DoodleHeart className="absolute top-1/2 -right-4 hidden h-8 w-8 -translate-y-1/2 text-ink lg:block dark:text-pink" />
-            <DoodleSmiley className="absolute -right-2 -bottom-6 hidden h-9 w-9 text-yellow sm:block" />
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* ============ Journal teaser ============ */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6" id="journal">
-        <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto]">
           <div>
-            <h2 className="text-poster text-2xl uppercase sm:text-3xl">Journal</h2>
-            <p className="text-marker mt-3 text-xl text-muted">Real people. Real stories. Real vibes.</p>
+            <p className="text-marker text-lg leading-snug">
+              Professional piercings.
+              <br />
+              Sterile process.
+              <br />
+              Good energy only.
+            </p>
+            <a
+              className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[12px] tracking-wide text-[#0a2a30] uppercase transition-transform hover:scale-105"
+              href={whatsappHref}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Know more <span aria-hidden>→</span>
+            </a>
+            <DoodleSquiggle className="mt-4 h-5 w-12 text-[#17141a]" />
           </div>
-          <a
-            className="text-poster inline-flex w-fit items-center gap-2 rounded-full border-2 border-ink px-7 py-3 text-[14px] text-ink uppercase transition-colors hover:bg-ink hover:text-bg"
-            href={whatsappHref}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Say hello <span aria-hidden>→</span>
-          </a>
+        </div>
+      </section>
+
+      {/* ============ 02 · Our studs collection ============ */}
+      <section className="band-black" id="studs">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr_200px]">
+          <div className="relative">
+            <DoodleStar className="absolute -top-6 right-2 h-7 w-7 text-yellow" />
+            <span className="text-marker text-3xl text-white">02</span>
+            <h2 className="text-marker mt-1 text-3xl leading-snug text-white">
+              Our studs
+              <br />
+              collection
+            </h2>
+            <p className="mt-3 text-sm text-white/75">Minimal. Premium. Made to last.</p>
+            <Link
+              className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-purple px-5 py-2.5 text-[12px] tracking-wide text-white uppercase transition-transform hover:scale-105"
+              href="/shop"
+            >
+              View all studs <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {STUD_CARDS.map((card) => (
+              <Link className="band-paper group overflow-hidden rounded-2xl" href={card.href} key={card.name}>
+                <div className="relative m-2 aspect-square overflow-hidden rounded-xl">
+                  <Image
+                    alt={card.name}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 640px) 45vw, 16vw"
+                    src={card.image}
+                  />
+                </div>
+                <div className="flex items-center justify-between px-3 pb-3">
+                  <span>
+                    <span className="text-poster block text-[13px] uppercase">{card.name}</span>
+                    <span className="text-muted-band block text-[11px]">{card.tag}</span>
+                  </span>
+                  <span aria-hidden className={`chip-arrow h-7 w-7 text-sm ${card.chip}`}>→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <ul className="space-y-5">
+            {STUD_TRUST.map((item) => (
+              <li className="flex items-start gap-3" key={item.text}>
+                <span className="mt-0.5 shrink-0 text-yellow">{item.icon}</span>
+                <span className="text-[11px] leading-relaxed font-bold tracking-[0.15em] text-white uppercase">
+                  {item.text}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ============ 03 · Walls can feel too (posters) ============ */}
+      <section className="band-black border-t border-white/10" id="posters">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr]">
+          <div>
+            <span className="text-marker text-3xl text-pink">03</span>
+            <h2 className="text-marker mt-1 text-3xl leading-snug text-pink">
+              Walls can
+              <br />
+              feel too.
+            </h2>
+            <p className="mt-3 text-sm text-white/75">
+              Posters that speak
+              <br />
+              your vibe.
+            </p>
+            <Link
+              className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[12px] tracking-wide text-[#0a2a30] uppercase transition-transform hover:scale-105"
+              href="/shop"
+            >
+              Explore posters <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              {POSTERS.map((poster, i) => (
+                <div
+                  className={`relative aspect-[3/4] overflow-hidden rounded-xl ${poster.kind === 'text' ? poster.bg : ''} ${
+                    poster.kind !== 'photo-text' && poster.kind !== 'text' ? poster.bg : ''
+                  }`}
+                  key={poster.text}
+                >
+                  {poster.kind === 'photo-text' && poster.image && (
+                    <>
+                      <Image
+                        alt=""
+                        className="object-cover opacity-80"
+                        fill
+                        sizes="(max-width: 640px) 45vw, 16vw"
+                        src={poster.image}
+                      />
+                      <div aria-hidden className={`absolute inset-0 opacity-55 ${poster.bg}`} />
+                    </>
+                  )}
+                  {poster.kind === 'paint-text' && (
+                    <SpraySplash
+                      className="absolute -right-6 -bottom-6 h-28 w-28 opacity-70"
+                      color={i === 2 ? 'var(--color-orange)' : 'var(--color-purple)'}
+                      seed={80 + i}
+                    />
+                  )}
+                  <div className="absolute inset-0 flex items-center p-4">
+                    <span className={`text-poster text-lg leading-tight uppercase ${poster.textColor} drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]`}>
+                      {poster.text}
+                    </span>
+                  </div>
+                  <DoodleHeart className="absolute right-3 bottom-3 h-5 w-5 text-white/80" />
+                </div>
+              ))}
+            </div>
+            <span aria-hidden className="chip-arrow bg-pink absolute top-1/2 -right-4 hidden -translate-y-1/2 lg:flex">→</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ INFO · Trust bar ============ */}
+      <section className="band-black border-t border-white/10" id="info">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+          <div>
+            <h3 className="flex items-center gap-2.5">
+              <svg className="h-7 w-7 shrink-0 text-pink" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 26">
+                <path d="M12 1l10 4v7c0 6-4 11-10 13C6 23 2 18 2 12V5z M8 12l3 3 5-6" />
+              </svg>
+              <span className="text-poster text-[15px] tracking-wide text-white uppercase">Safe &amp; sound</span>
+            </h3>
+            <ul className="mt-4 space-y-2 text-[13px] text-white/85">
+              <li>✓ Sterile process</li>
+              <li>✓ 100% safe piercing</li>
+              <li>✓ Your safety, our promise</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="flex items-center gap-2.5">
+              <svg className="h-7 w-7 shrink-0 text-purple" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 24">
+                <path d="M1 5h16v13H1z M17 9h5l4 4v5h-9 M6 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M21 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+              </svg>
+              <span className="text-poster text-[15px] tracking-wide text-white uppercase">We ship fast</span>
+            </h3>
+            <ul className="mt-4 space-y-2 text-[13px] text-white/85">
+              <li>✓ Pan India delivery</li>
+              <li>✓ Discreet packaging</li>
+              <li>✓ 3–7 working days</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="flex items-center gap-2.5">
+              <svg className="h-7 w-7 shrink-0 text-cyan" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 26 20">
+                <rect height="16" rx="3" width="24" x="1" y="2" />
+                <path d="M1 8h24" />
+              </svg>
+              <span className="text-poster text-[15px] tracking-wide text-white uppercase">Easy peasy payments</span>
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {PAYMENT_CHIPS.map((chip) => (
+                <span className="rounded-md border border-white/30 px-2.5 py-1 text-[11px] font-bold text-white" key={chip}>
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="flex items-center gap-2.5">
+              <svg className="h-7 w-7 shrink-0 text-yellow" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" />
+              </svg>
+              <span className="text-poster text-[15px] tracking-wide text-white uppercase">Jewellery care (aka TLC)</span>
+            </h3>
+            <ul className="mt-4 space-y-2 text-[13px] text-white/85">
+              <li>✓ Clean gently with mild soap</li>
+              <li>✓ Avoid chemicals &amp; perfumes</li>
+              <li>✓ Store in a dry place</li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>

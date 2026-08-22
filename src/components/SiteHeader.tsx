@@ -13,8 +13,9 @@ const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/shop', label: 'Piercings' },
   { href: '/category/studs-gems', label: 'Studs' },
-  { href: '/#vibe', label: 'About' },
-  { href: '/#journal', label: 'Journal' },
+  { href: '/#posters', label: 'Posters' },
+  { href: '/#info', label: 'Info' },
+  { href: '/#connect', label: 'Contact' },
 ]
 
 export function SiteHeader({ storeName }: { storeName: string }) {

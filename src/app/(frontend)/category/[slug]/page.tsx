@@ -1,13 +1,16 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import React, { Suspense } from 'react'
 
+import { BrushStroke, SpraySplash } from '@/components/Paint'
 import { Pagination } from '@/components/Pagination'
 import { ProductCard } from '@/components/ProductCard'
 import { ShopFilters } from '@/components/ShopFilters'
 import { MATERIALS } from '@/collections/Products'
 import { getCategoryBySlug, queryProducts, type ProductQuery } from '@/lib/queries'
-import { accentFor } from '@/lib/utils'
+import { accentFor, mediaAlt, mediaUrl, TILE_IMAGES } from '@/lib/utils'
 
 type SearchParams = { [key: string]: string | string[] | undefined }
 
@@ -49,15 +52,62 @@ export default async function CategoryPage({
 
   const result = await queryProducts(query)
 
+  const accent = accentFor(category.id)
+  const coverUrl = (category.slug && TILE_IMAGES[category.slug]) || mediaUrl(category.image, 'card')
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <h1 className="font-display mb-2 text-3xl font-bold tracking-tight uppercase">
-        <span className={accentFor(category.id).text}>{category.name}</span>
-      </h1>
-      {category.description && <p className="mb-2 max-w-2xl text-muted">{category.description}</p>}
-      <p className="mb-8 text-sm text-muted">
-        {result.totalDocs} product{result.totalDocs === 1 ? '' : 's'}
-      </p>
+      {/* Painted category banner */}
+      <section className="relative mb-10 overflow-hidden rounded-3xl">
+        {coverUrl && (
+          <Image
+            alt={mediaAlt(category.image, category.name)}
+            className="object-cover opacity-45"
+            fill
+            priority
+            sizes="100vw"
+            src={coverUrl}
+          />
+        )}
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-bg via-bg/75 to-bg/20" />
+        <SpraySplash
+          className="absolute -top-6 right-[8%] h-32 w-32 opacity-70"
+          color="var(--color-pink)"
+          seed={61}
+        />
+        <SpraySplash
+          className="absolute -bottom-8 right-[26%] h-28 w-28 opacity-60"
+          color="var(--color-yellow)"
+          seed={62}
+        />
+
+        <div className="relative px-6 py-12 sm:px-10 sm:py-16">
+          <nav className="mb-3 text-[11px] font-bold tracking-[0.2em] text-muted uppercase">
+            <Link className="hover:text-ink" href="/shop">
+              Shop
+            </Link>{' '}
+            / <span className="text-ink">{category.name}</span>
+          </nav>
+          <h1 className="relative w-fit">
+            <BrushStroke
+              className="absolute -inset-x-4 top-1/2 h-[150%] -translate-y-1/2 -rotate-1"
+              color={accent.paint}
+              seed={63}
+            />
+            <span className="text-poster relative block px-4 py-1 text-4xl text-bg uppercase sm:text-5xl">
+              {category.name}
+            </span>
+          </h1>
+          {category.description && (
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink/85">
+              {category.description}
+            </p>
+          )}
+          <p className="text-marker mt-3 text-xl text-ink/70">
+            {result.totalDocs} piece{result.totalDocs === 1 ? '' : 's'}
+          </p>
+        </div>
+      </section>
 
       <Suspense>
         <ShopFilters
@@ -68,8 +118,15 @@ export default async function CategoryPage({
       </Suspense>
 
       {result.docs.length === 0 ? (
-        <div className="rounded-lg border border-line bg-surface py-20 text-center text-muted">
-          No products in this category yet.
+        <div className="rounded-2xl border border-line bg-surface py-20 text-center">
+          <p className="text-marker text-2xl text-ink">Nothing here yet.</p>
+          <p className="mt-2 text-sm text-muted">New pieces drop all the time — check back soon.</p>
+          <Link
+            className="text-poster mt-6 inline-block rounded-full bg-ink px-7 py-3 text-[13px] text-bg uppercase"
+            href="/shop"
+          >
+            Shop everything
+          </Link>
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">

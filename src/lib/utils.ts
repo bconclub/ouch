@@ -5,6 +5,7 @@
 export const ACCENTS = [
   {
     text: 'text-accent',
+    paint: 'var(--color-pink)',
     hoverText: 'hover:text-accent',
     border: 'hover:border-accent',
     cardBorder: 'border-accent/40',
@@ -13,6 +14,7 @@ export const ACCENTS = [
   },
   {
     text: 'text-tangerine',
+    paint: 'var(--color-orange)',
     hoverText: 'hover:text-tangerine',
     border: 'hover:border-tangerine',
     cardBorder: 'border-tangerine/40',
@@ -21,6 +23,7 @@ export const ACCENTS = [
   },
   {
     text: 'text-sun',
+    paint: 'var(--color-yellow)',
     hoverText: 'hover:text-sun',
     border: 'hover:border-sun',
     cardBorder: 'border-sun/50',
@@ -29,6 +32,7 @@ export const ACCENTS = [
   },
   {
     text: 'text-lime',
+    paint: 'var(--color-lime)',
     hoverText: 'hover:text-lime',
     border: 'hover:border-lime',
     cardBorder: 'border-lime/40',
@@ -37,6 +41,7 @@ export const ACCENTS = [
   },
   {
     text: 'text-violet',
+    paint: 'var(--color-purple)',
     hoverText: 'hover:text-violet',
     border: 'hover:border-violet',
     cardBorder: 'border-violet/40',
@@ -45,6 +50,7 @@ export const ACCENTS = [
   },
   {
     text: 'text-coral',
+    paint: 'var(--color-coral)',
     hoverText: 'hover:text-coral',
     border: 'hover:border-coral',
     cardBorder: 'border-coral/40',
@@ -52,6 +58,16 @@ export const ACCENTS = [
     tile: 'bg-coral/10',
   },
 ] as const
+
+
+/** Colour-washed collection tile art, keyed by category slug. */
+export const TILE_IMAGES: Record<string, string> = {
+  'dainty-nostrils': '/brand/covers/tile-dainty-nostrils.png',
+  'ear-stacks': '/brand/covers/tile-ear-stacks.png',
+  'septum-vibes': '/brand/covers/tile-septum-vibes.png',
+  'body-sparks': '/brand/covers/tile-body-sparks.png',
+  'studs-gems': '/brand/covers/tile-studs-gems.png',
+}
 
 /** Deterministic accent for an entity id, stable across pages. */
 export const accentFor = (id: number) => ACCENTS[Math.abs(id) % ACCENTS.length]
