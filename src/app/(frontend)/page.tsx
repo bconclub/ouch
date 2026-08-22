@@ -119,7 +119,7 @@ export default async function HomePage() {
               back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
               className="relative mx-auto aspect-[653/1089] w-full max-w-xs lg:max-w-sm"
               front={
-                <div className="relative h-full w-full [mask-image:linear-gradient(to_bottom,black_72%,transparent_99%)]">
+                <div className="relative h-full w-full [mask-image:linear-gradient(to_bottom,black_86%,transparent_100%)]">
                   <Image
                     alt="The Ouch founder — eyebrow, septum, nostril and labret piercings, tie-dye headband"
                     className="object-contain"
