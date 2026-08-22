@@ -7,7 +7,6 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import { ProductCard } from '@/components/ProductCard'
 import { ProductGallery } from '@/components/ProductGallery'
 import { ProductPurchase } from '@/components/ProductPurchase'
-import { MATERIALS } from '@/collections/Products'
 import { getProductBySlug, queryProducts } from '@/lib/queries'
 import { accentFor, mediaAlt, mediaUrl } from '@/lib/utils'
 
@@ -27,7 +26,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound()
 
   const category = typeof product.category === 'object' ? product.category : null
-  const materialLabel = MATERIALS.find((m) => m.value === product.material)?.label
 
   const galleryImages = (product.images ?? [])
     .map((entry) => {
@@ -45,7 +43,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     : []
 
   const specs: [string, string][] = []
-  if (materialLabel) specs.push(['Material', materialLabel])
+  // Material intentionally not shown — founder is deciding on material messaging.
   if (product.gauge) specs.push(['Gauge', product.gauge])
   if (product.size) specs.push(['Size', product.size])
 

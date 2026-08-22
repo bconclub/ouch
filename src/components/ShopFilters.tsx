@@ -81,19 +81,21 @@ export function ShopFilters({
         </select>
       )}
 
-      <select
-        aria-label="Filter by material"
-        className={selectClass}
-        onChange={(e) => setParam('material', e.target.value)}
-        value={searchParams.get('material') ?? ''}
-      >
-        <option value="">All materials</option>
-        {materials.map((m) => (
-          <option key={m.value} value={m.value}>
-            {m.label}
-          </option>
-        ))}
-      </select>
+      {materials.length > 0 && (
+        <select
+          aria-label="Filter by material"
+          className={selectClass}
+          onChange={(e) => setParam('material', e.target.value)}
+          value={searchParams.get('material') ?? ''}
+        >
+          <option value="">All materials</option>
+          {materials.map((m) => (
+            <option key={m.value} value={m.value}>
+              {m.label}
+            </option>
+          ))}
+        </select>
+      )}
 
       <select
         aria-label="Sort products"

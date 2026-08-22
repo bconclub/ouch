@@ -4,7 +4,6 @@ import React, { Suspense } from 'react'
 import { Pagination } from '@/components/Pagination'
 import { ProductCard } from '@/components/ProductCard'
 import { ShopFilters } from '@/components/ShopFilters'
-import { MATERIALS } from '@/collections/Products'
 import { getCategories, queryProducts, type ProductQuery } from '@/lib/queries'
 
 export const metadata: Metadata = {
@@ -42,7 +41,7 @@ export default async function ShopPage({
       <Suspense>
         <ShopFilters
           categories={categories.map((c) => ({ label: c.name, value: c.slug ?? '' }))}
-          materials={MATERIALS.map((m) => ({ label: m.label, value: m.value }))}
+          materials={[]}
         />
       </Suspense>
 
