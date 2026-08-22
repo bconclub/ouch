@@ -299,3 +299,32 @@ export function PageSplashes() {
     </div>
   )
 }
+
+
+/** Ragged painted edge that lets one color band bleed into the previous one.
+ *  Place absolutely at a section top with a negative top offset; `color` is the
+ *  CURRENT section's band color splashing upward into the section above. */
+export function BandBlend({
+  className = '',
+  color,
+  seed = 1,
+}: {
+  className?: string
+  color: string
+  seed?: number
+}) {
+  const id = `bandblend-${seed}`
+  return (
+    <svg aria-hidden className={className} preserveAspectRatio="none" viewBox="0 0 1200 90">
+      <defs>
+        <filter height="260%" id={id} width="112%" x="-6%" y="-80%">
+          <feTurbulence baseFrequency="0.014 0.06" numOctaves="3" seed={seed} type="fractalNoise" />
+          <feDisplacementMap in="SourceGraphic" scale="58" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+      <g filter={`url(#${id})`}>
+        <rect fill={color} height="95" width="1290" x="-45" y="42" />
+      </g>
+    </svg>
+  )
+}

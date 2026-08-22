@@ -4,7 +4,7 @@ import { getSiteSettings } from '@/lib/queries'
 import { DoodleHeart, DoodleLightning, DoodlePeace, DoodleSmiley } from './Doodles'
 import { Logo } from './Logo'
 import { NewsletterForm } from './NewsletterForm'
-import { BrushStroke } from './Paint'
+import { BandBlend, BrushStroke } from './Paint'
 
 export async function Footer() {
   const settings = await getSiteSettings()
@@ -13,7 +13,8 @@ export async function Footer() {
   return (
     <footer id="connect">
       {/* 04 · Hey, let's connect! */}
-      <div className="band-paper">
+      <div className="band-paper relative">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#ece5d6" seed={63} />
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[220px_1fr_1fr_240px]">
           <div className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">

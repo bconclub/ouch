@@ -16,8 +16,18 @@ export type CheckoutInput = {
   items: CheckoutItem[]
 }
 
+export type OrderSummary = {
+  orderNumber: string
+  customerName: string
+  customerPhone: string
+  customerAddress?: string
+  note?: string
+  total: number
+  items: { title: string; variant?: string; quantity: number; unitPrice: number }[]
+}
+
 export type CheckoutResult =
-  | { ok: true; orderNumber: string }
+  | { ok: true; orderNumber: string; summary: OrderSummary }
   | { ok: false; error: string }
 
 function generateOrderNumber(): string {
@@ -114,5 +124,22 @@ export async function createOrder(input: CheckoutInput): Promise<CheckoutResult>
     console.error('Order creation failed (continuing to WhatsApp handoff):', err)
   }
 
-  return { ok: true, orderNumber }
+  return {
+    ok: true,
+    orderNumber,
+    summary: {
+      orderNumber,
+      customerName: name,
+      customerPhone: phone,
+      customerAddress: input.customerAddress?.trim() || undefined,
+      note: input.note?.trim() || undefined,
+      total,
+      items: lineItems.map(({ title, variant, quantity, unitPrice }) => ({
+        title,
+        variant,
+        quantity,
+        unitPrice,
+      })),
+    },
+  }
 }

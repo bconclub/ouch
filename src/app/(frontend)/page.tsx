@@ -10,7 +10,7 @@ import {
   DoodleSquiggle,
   DoodleStar,
 } from '@/components/Doodles'
-import { BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
+import { BandBlend, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
 import { getSiteSettings } from '@/lib/queries'
 
@@ -57,8 +57,8 @@ const STUD_TRUST = [
       </svg>
     ),
   },
-  { text: 'Hypoallergenic every time', icon: <DoodleSmiley className="h-6 w-6" /> },
-  { text: 'Sterile & safe always', icon: <DoodleStar className="h-6 w-6" /> },
+  { text: 'Hypoallergenic — your skin says thanks', icon: <DoodleSmiley className="h-6 w-6" /> },
+  { text: 'Sterile & safe, for real for real', icon: <DoodleStar className="h-6 w-6" /> },
 ]
 
 const POSTERS = [
@@ -157,13 +157,14 @@ export default async function HomePage() {
       </section>
 
       {/* ============ 01 · Choose your piercing zone ============ */}
-      <section className="band-paper" id="zones">
+      <section className="band-paper relative" id="zones">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#ece5d6" seed={31} />
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[220px_1fr_190px]">
           <div className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">
-              Choose your
+              Where&apos;s the
               <br />
-              piercing zone
+              bling going?
             </h2>
             <svg className="mt-3 h-8 w-14 text-[#17141a]" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 56 32">
               <path d="M2 6c14 14 30 20 46 20M48 20l6 6-8 3" />
@@ -195,9 +196,9 @@ export default async function HomePage() {
 
           <div>
             <p className="text-marker text-lg leading-snug">
-              Professional piercings.
+              Pro piercers.
               <br />
-              Sterile process.
+              Super sterile.
               <br />
               Good energy only.
             </p>
@@ -207,7 +208,7 @@ export default async function HomePage() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Know more <span aria-hidden>→</span>
+              Hit us up <span aria-hidden>→</span>
             </a>
             <DoodleSquiggle className="mt-4 h-5 w-12 text-[#17141a]" />
           </div>
@@ -215,7 +216,8 @@ export default async function HomePage() {
       </section>
 
       {/* ============ 02 · Our studs collection ============ */}
-      <section className="band-black" id="studs">
+      <section className="band-black relative" id="studs">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#0a0a0a" seed={47} />
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr_200px]">
           <div className="relative">
             <DoodleStar className="absolute -top-6 right-2 h-7 w-7 text-yellow" />
@@ -224,12 +226,12 @@ export default async function HomePage() {
               <br />
               collection
             </h2>
-            <p className="mt-3 text-sm text-white/75">Minimal. Premium. Made to last.</p>
+            <p className="mt-3 text-sm text-white/75">Shiny lil things that go with everything.</p>
             <Link
               className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-purple px-5 py-2.5 text-[12px] tracking-wide text-white uppercase transition-transform hover:scale-105"
               href="/shop"
             >
-              View all studs <span aria-hidden>→</span>
+              Peep them all <span aria-hidden>→</span>
             </Link>
           </div>
 
@@ -270,7 +272,7 @@ export default async function HomePage() {
       </section>
 
       {/* ============ 03 · Walls can feel too (posters) ============ */}
-      <section className="band-black border-t border-white/10" id="posters">
+      <section className="band-black" id="posters">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr]">
           <div>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink">
@@ -279,15 +281,15 @@ export default async function HomePage() {
               feel too.
             </h2>
             <p className="mt-3 text-sm text-white/75">
-              Posters that speak
+              Art that talks back.
               <br />
-              your vibe.
+              Your walls deserve it.
             </p>
             <Link
               className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[12px] tracking-wide text-[#0a2a30] uppercase transition-transform hover:scale-105"
               href="/shop"
             >
-              Explore posters <span aria-hidden>→</span>
+              Peep the walls <span aria-hidden>→</span>
             </Link>
           </div>
 
@@ -334,7 +336,7 @@ export default async function HomePage() {
       </section>
 
       {/* ============ INFO · Trust bar ============ */}
-      <section className="band-black border-t border-white/10" id="info">
+      <section className="band-black" id="info">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
           <div>
             <h3 className="flex items-center gap-2.5">
@@ -344,9 +346,9 @@ export default async function HomePage() {
               <span className="text-poster text-[15px] tracking-wide text-white uppercase">Safe &amp; sound</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] text-white/85">
-              <li>✓ Sterile process</li>
-              <li>✓ 100% safe piercing</li>
-              <li>✓ Your safety, our promise</li>
+              <li>✓ Sterile everything</li>
+              <li>✓ 100% good vibes, 0% oops</li>
+              <li>✓ We gotchu, always</li>
             </ul>
           </div>
           <div>
@@ -359,7 +361,7 @@ export default async function HomePage() {
             <ul className="mt-4 space-y-2 text-[13px] text-white/85">
               <li>✓ Pan India delivery</li>
               <li>✓ Discreet packaging</li>
-              <li>✓ 3–7 working days</li>
+              <li>✓ 3–7 days, zoom zoom</li>
             </ul>
           </div>
           <div>
@@ -386,9 +388,9 @@ export default async function HomePage() {
               <span className="text-poster text-[15px] tracking-wide text-white uppercase">Jewellery care (aka TLC)</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] text-white/85">
-              <li>✓ Clean gently with mild soap</li>
-              <li>✓ Avoid chemicals &amp; perfumes</li>
-              <li>✓ Store in a dry place</li>
+              <li>✓ Lil soap, lil love</li>
+              <li>✓ No perfume parties, please</li>
+              <li>✓ Keep it cozy &amp; dry</li>
             </ul>
           </div>
         </div>

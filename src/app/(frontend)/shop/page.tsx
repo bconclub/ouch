@@ -34,9 +34,9 @@ export default async function ShopPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <h1 className="text-marker mb-1 text-4xl">Shop all</h1>
+      <h1 className="text-marker mb-1 text-4xl">The good stuff</h1>
       <p className="text-marker mb-8 text-lg text-muted">
-        {result.totalDocs} piece{result.totalDocs === 1 ? '' : 's'} · minimal. premium. made to last.
+        {result.totalDocs} shiny thing{result.totalDocs === 1 ? '' : 's'} · go on, pick your fave.
       </p>
 
       <Suspense>
@@ -48,7 +48,7 @@ export default async function ShopPage({
 
       {result.docs.length === 0 ? (
         <div className="rounded-lg border border-line bg-surface py-20 text-center text-muted">
-          No products match your filters.
+          Nothing here, bestie — loosen those filters?
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">

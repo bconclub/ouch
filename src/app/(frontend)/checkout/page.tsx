@@ -37,6 +37,11 @@ export default function CheckoutPage() {
     }).catch(() => ({ ok: false as const, error: 'Network error. Please try again.' }))
 
     if (result.ok) {
+      try {
+        sessionStorage.setItem(`ouch-order-${result.orderNumber}`, JSON.stringify(result.summary))
+      } catch {
+        // storage full/blocked — server copy (when present) still renders
+      }
       router.push(`/order/${result.orderNumber}`)
     } else {
       setError(result.error)
@@ -121,10 +126,10 @@ export default function CheckoutPage() {
             disabled={submitting}
             type="submit"
           >
-            {submitting ? 'Placing order…' : 'Place order'}
+            {submitting ? 'Sending it…' : 'Send my order'}
           </button>
           <p className="text-center text-xs text-muted">
-            After placing your order you&apos;ll be taken to WhatsApp to confirm it with us. Payment
+            After this you&apos;ll hop over to WhatsApp to confirm with us — payment
             is arranged in chat.
           </p>
         </form>
