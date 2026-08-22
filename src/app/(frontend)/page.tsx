@@ -44,7 +44,7 @@ const PIERCING_CARDS = [
     text: 'text-pink',
     stroke: 'var(--color-pink)',
     chip: 'bg-pink',
-    includes: ['Nostril', 'High Nostril', 'Double Nostril'],
+    includes: ['Nostril (Single / Double)', 'Bridge', 'High Nostril'],
   },
   {
     name: 'Septum',
@@ -64,7 +64,7 @@ const PIERCING_CARDS = [
     text: 'text-orange',
     stroke: 'var(--color-orange)',
     chip: 'bg-orange',
-    includes: ['Lobe', 'Helix', 'Tragus', 'Conch', 'Daith', 'Rook', 'Snug', 'Industrial'],
+    includes: ['Lobe', 'Helix'],
   },
   {
     name: 'Belly',
@@ -77,28 +77,24 @@ const PIERCING_CARDS = [
     includes: ['Navel'],
   },
   {
-    name: 'Body',
+    name: 'Eyebrow',
     href: '/category/studs-gems',
-    image: '/brand/piercings/body.png',
-    studs: '/brand/piercings/body-studs.png',
+    image: '/brand/piercings/eyebrow.png',
+    studs: '/brand/piercings/eyebrow-studs.png',
     text: 'text-lime',
     stroke: 'var(--color-lime)',
     chip: 'bg-lime',
-    includes: ['Eyebrow', 'Dermal', 'Nipple'],
+    includes: ['Eyebrow'],
   },
 ]
 
 const STUD_TILES = [
-  { name: 'Tiny Ball', image: '/brand/piercings/stud-tiny-ball.png' },
-  { name: 'Bezel Crystal', image: '/brand/piercings/stud-bezel-crystal.png' },
-  { name: 'Opal Stud', image: '/brand/piercings/stud-opal-stud.png' },
-  { name: 'Gold Ball', image: '/brand/piercings/stud-gold-ball.png' },
-  { name: 'Flat Disc', image: '/brand/piercings/stud-flat-disc.png' },
-  { name: 'Triple Dot', image: '/brand/piercings/stud-triple-dot.png' },
-  { name: 'Flower', image: '/brand/piercings/stud-flower.png' },
   { name: 'Star', image: '/brand/piercings/stud-star.png' },
+  { name: 'Bezel Crystal', image: '/brand/piercings/stud-bezel-crystal.png' },
+  { name: 'Tiny Ball', image: '/brand/piercings/stud-tiny-ball.png' },
+  { name: 'Opal Stud', image: '/brand/piercings/stud-opal-stud.png' },
+  { name: 'Flower', image: '/brand/piercings/stud-flower.png' },
   { name: 'Moon', image: '/brand/piercings/stud-moon.png' },
-  { name: 'Pearl', image: '/brand/piercings/stud-pearl.png' },
 ]
 
 const STUD_TRUST = [
@@ -268,49 +264,61 @@ export default async function HomePage() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ============ Studs we love (founder's reference design) ============ */}
-      <section className="band-black relative" id="studs">
-        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-1)" seed={47} />
-        <div className="mx-auto min-h-[70vh] max-w-[90rem] content-center px-4 py-16 sm:px-6">
-          <Reveal className="text-center">
-            <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
-              Studs we love
-              <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-pink)" seed={53} />
-              <DoodleTicks className="absolute top-0 -right-9 h-6 w-6 text-pink" />
-            </h2>
-            <p className="mt-4 text-sm opacity-80">Premium quality. Hypoallergenic. Made to last.</p>
-          </Reveal>
-
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-5 lg:grid-cols-10">
-            {STUD_TILES.map((tile, ti) => (
-              <Reveal delay={ti * 60} key={tile.name}>
-                <Link className="group block rounded-xl bg-[var(--card-tint)] p-3 text-center transition-transform duration-300 hover:-translate-y-1.5" href="/shop">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt={tile.name} className="w-full rounded-lg" src={tile.image} />
-                  <span className="mt-2 block text-[11px] font-bold tracking-[0.14em] uppercase">
-                    {tile.name}
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
+          {/* Bottom row: ear placements + studs we love (per the reference) */}
+          <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_1.5fr_1.9fr] lg:gap-6" id="studs">
+            <Reveal className="flex flex-col justify-center rounded-2xl bg-[var(--card-tint)] p-6">
+              <h3 className="text-poster relative w-fit text-2xl uppercase">
+                Ear piercings
+                <DoodleTicks className="absolute top-0 -right-7 h-5 w-5 text-pink" />
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed opacity-80">
+                Classic placements
+                <br />
+                that never go out
+                <br />
+                of style.
+              </p>
+              <div className="mt-4 flex items-center gap-4">
+                <DoodleStar className="h-8 w-8 text-purple" />
+                <DoodleTicks className="h-6 w-6 rotate-180 text-current" />
+              </div>
+            </Reveal>
+            <Reveal className="overflow-hidden rounded-2xl" delay={100}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img alt="Ear piercing placements — helix, second helix, lobe" className="h-full w-full object-cover" src="/brand/piercings/ear-diagram.png" />
+            </Reveal>
+            <Reveal className="rounded-2xl bg-[var(--card-tint)] p-6" delay={200}>
+              <h3 className="text-poster relative w-fit text-2xl uppercase">
+                Studs we love
+                <DoodleTicks className="absolute top-0 -right-7 h-5 w-5 text-pink" />
+              </h3>
+              <p className="mt-1.5 text-[13px] opacity-80">Premium quality. Hypoallergenic. Made to last.</p>
+              <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-6">
+                {STUD_TILES.map((tile) => (
+                  <Link className="group block text-center" href="/shop" key={tile.name}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img alt={tile.name} className="w-full rounded-lg transition-transform duration-300 group-hover:-translate-y-1" src={tile.image} />
+                    <span className="mt-1.5 block text-[10px] font-bold tracking-[0.12em] uppercase">
+                      {tile.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+              <Link
+                className="text-poster mt-5 inline-flex items-center gap-2 rounded-full bg-pink px-6 py-3 text-[13px] tracking-wide text-white uppercase transition-transform hover:scale-105"
+                href="/shop"
+              >
+                View all studs <span aria-hidden>→</span>
+              </Link>
+            </Reveal>
           </div>
-
-          <Reveal className="mt-10 text-center" delay={200}>
-            <Link
-              className="text-poster inline-flex items-center gap-2 rounded-full bg-pink px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
-              href="/shop"
-            >
-              View all studs <span aria-hidden>→</span>
-            </Link>
-          </Reveal>
         </div>
       </section>
 
       {/* ============ 03 · Walls can feel too (posters) ============ */}
-      <section className="band-black" id="posters">
+      <section className="band-black relative" id="posters">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-1)" seed={47} />
         <div className="mx-auto grid min-h-[70vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr]">
           <Reveal>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink lg:text-4xl">
