@@ -88,6 +88,20 @@ const PIERCING_CARDS = [
   },
 ]
 
+/* Masonry gallery — the founder's own shots. Swap/extend freely:
+   drop files in public/brand/gallery/ (or media) and add them here. */
+const GALLERY = [
+  '/brand/covers/cat-ear.png',
+  '/brand/covers/cat-nose.png',
+  '/brand/covers/cat-sets.png',
+  '/brand/covers/cat-lip.png',
+  '/brand/covers/cat-hoops.png',
+  '/brand/covers/cat-studs.png',
+  '/brand/covers/cat-barbells.png',
+  '/brand/covers/cat-face.png',
+  '/brand/covers/cat-body.png',
+]
+
 const STUD_TILES = [
   { name: 'Star', image: '/brand/piercings/stud-star.png' },
   { name: 'Bezel Crystal', image: '/brand/piercings/stud-bezel-crystal.png' },
@@ -315,9 +329,37 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ============ 03 · Walls can feel too (posters) ============ */}
-      <section className="band-black relative" id="posters">
+      {/* ============ Gallery — the founder's own shots, masonry ============ */}
+      <section className="band-black relative" id="gallery">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-1)" seed={47} />
+        <div className="mx-auto min-h-[70vh] max-w-[90rem] content-center px-4 py-16 sm:px-6">
+          <Reveal className="mb-10 text-center">
+            <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
+              Straight from the studio.
+              <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-cyan)" seed={81} />
+            </h2>
+            <p className="mt-4 text-sm opacity-80">Real pokes. Real people. Real shiny.</p>
+          </Reveal>
+          <div className="columns-2 gap-4 sm:columns-3 lg:gap-5 [&>*]:mb-4 lg:[&>*]:mb-5">
+            {GALLERY.map((src, gi) => (
+              <Reveal delay={(gi % 3) * 90} key={src}>
+                <div className="group overflow-hidden rounded-2xl">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    alt="From the Ouch studio"
+                    className="w-full transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src={src}
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 03 · Walls can feel too (posters) ============ */}
+      <section className="band-black" id="posters">
         <div className="mx-auto grid min-h-[70vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr]">
           <Reveal>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink lg:text-4xl">
