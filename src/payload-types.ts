@@ -174,7 +174,7 @@ export interface Product {
    * Which section of the shop this belongs in.
    */
   category: number | Category;
-  material?: ('titanium' | 'surgical-steel' | 'gold' | 'niobium' | 'silicone' | 'other') | null;
+  material?: ('silver' | 'titanium' | 'surgical-steel' | 'gold' | 'niobium' | 'silicone' | 'other') | null;
   /**
    * e.g. 16g (1.2mm)
    */

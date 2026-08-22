@@ -3,6 +3,7 @@ import type { CollectionConfig } from 'payload'
 import { slugField } from '@/fields/slug'
 
 export const MATERIALS = [
+  { label: '925 Silver', value: 'silver' },
   { label: 'Titanium', value: 'titanium' },
   { label: 'Surgical Steel', value: 'surgical-steel' },
   { label: 'Gold', value: 'gold' },

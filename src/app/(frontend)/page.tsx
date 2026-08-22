@@ -145,9 +145,8 @@ export default async function HomePage() {
             </h1>
 
             <p className="anim-fade-up anim-d4 mt-8 max-w-md text-[15px] leading-relaxed sm:text-base">
-              Studs, hoops and barbells from your friendly neighbourhood piercing folks — safe{' '}
-              <span className="mark-highlight font-semibold">implant-grade</span> metals, zero drama,
-              all smiles.
+              Pure <span className="mark-highlight font-semibold">925 silver</span> studs, hoops and
+              barbells. Kind to your skin, easy to love.
             </p>
 
             <div className="anim-fade-up anim-d5 mt-7 flex flex-wrap gap-4">
@@ -196,7 +195,7 @@ export default async function HomePage() {
             <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-[var(--band-line)] px-4 py-3">
               <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
               <span className="text-marker text-[15px] leading-snug">
-                Safe metals. Happy ears. <span className="text-pink underline">Pinky promise.</span>
+                925 silver. Happy skin. <span className="text-pink underline">Zero itch.</span>
               </span>
             </div>
           </div>
@@ -393,8 +392,8 @@ export default async function HomePage() {
               <span className="text-poster text-[15px] tracking-wide uppercase">Safe &amp; sound</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
+              <li>✓ Hypoallergenic 925 silver</li>
               <li>✓ Sterile everything</li>
-              <li>✓ 100% good vibes, 0% oops</li>
               <li>✓ We gotchu, always</li>
             </ul>
           </Reveal>
