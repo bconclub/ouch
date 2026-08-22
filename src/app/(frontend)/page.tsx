@@ -88,34 +88,23 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-0 right-[12%] h-9 w-7 text-yellow" />
 
             <h1>
-              <span className="text-marker block text-2xl text-white sm:text-3xl">Not just holes.</span>
-              <span className="text-poster mt-2 block text-5xl text-white uppercase sm:text-6xl">It&apos;s a</span>
-              <span className="text-poster block -rotate-1 text-6xl text-pink uppercase sm:text-8xl">Whole</span>
-              <span className="text-poster relative block w-fit -rotate-1 text-6xl text-yellow uppercase sm:text-8xl">
-                Vibe.
+              <span className="text-marker block text-xl text-white sm:text-2xl">Piercing jewellery, Bengaluru.</span>
+              <span className="text-poster mt-2 block text-5xl text-white uppercase sm:text-6xl">Minimal.</span>
+              <span className="text-poster block text-6xl text-pink uppercase sm:text-8xl">Premium.</span>
+              <span className="text-poster relative block w-fit text-6xl text-yellow uppercase sm:text-7xl">
+                Made to last.
                 <BrushStroke className="absolute -bottom-3 left-0 h-4 w-full" color="var(--color-purple)" seed={71} />
               </span>
             </h1>
 
-            <p className="mt-8 text-[15px] leading-relaxed text-white sm:text-base">
-              Bold pieces.
-              <br />
-              Good vibes.
-              <br />
-              Made to <span className="mark-highlight font-semibold">stand out</span> just like you.
+            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-white sm:text-base">
+              Studs, hoops and barbells in <span className="mark-highlight font-semibold">implant-grade</span>{' '}
+              titanium and steel — designed to be worn every day and built to keep their shine.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-4">
-              <a
-                className="text-poster inline-flex items-center gap-2 rounded-full bg-pink px-7 py-3.5 text-[13px] tracking-wide text-white uppercase transition-transform hover:scale-[1.04] active:scale-95"
-                href={whatsappHref}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Let&apos;s get pierced <span aria-hidden>→</span>
-              </a>
               <Link
-                className="text-poster inline-flex items-center gap-2 rounded-full border-2 border-white px-7 py-3.5 text-[13px] tracking-wide text-white uppercase transition-colors hover:bg-white hover:text-[#0a0a0a]"
+                className="text-poster inline-flex items-center gap-2 rounded-full bg-pink px-7 py-3.5 text-[13px] tracking-wide text-white uppercase transition-transform hover:scale-[1.04] active:scale-95"
                 href="/shop"
               >
                 Shop studs <span aria-hidden>→</span>
@@ -159,7 +148,7 @@ export default async function HomePage() {
             <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-white/70 px-4 py-3">
               <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
               <span className="text-marker text-[15px] leading-snug text-white">
-                Piercings that hit <span className="text-pink underline">different.</span>
+                Implant-grade metals, <span className="text-pink underline">always.</span>
               </span>
             </div>
           </div>

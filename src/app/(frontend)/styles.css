@@ -22,11 +22,10 @@
   --color-ink: #17141a;
   --color-muted: #6b6470;
 
-  --font-poster: var(--font-luckiest), system-ui, sans-serif;
-  --font-marker: var(--font-marker), cursive;
+  --font-poster: var(--font-space-grotesk), system-ui, sans-serif;
   --font-body: var(--font-space-grotesk), system-ui, sans-serif;
-  --font-display: var(--font-luckiest), system-ui, sans-serif;
-  --font-script: var(--font-marker), cursive;
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-script: var(--font-space-grotesk), system-ui, sans-serif;
   --font-serif: var(--font-space-grotesk), system-ui, sans-serif;
 }
 
@@ -71,12 +70,14 @@ body {
 /* ---------- Poster type ---------- */
 .text-poster {
   font-family: var(--font-poster);
-  letter-spacing: 0.01em;
-  line-height: 0.92;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
 }
 
 .text-marker {
-  font-family: var(--font-marker);
+  font-family: var(--font-body);
+  font-weight: 600;
 }
 
 /* Highlighter behind a word */
@@ -160,7 +161,8 @@ body {
   color: transparent;
 }
 .text-script {
-  font-family: var(--font-marker);
+  font-family: var(--font-body);
+  font-weight: 600;
 }
 .text-script-big {
   font-family: var(--font-poster);

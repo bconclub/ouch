@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Luckiest_Guy, Permanent_Marker, Space_Grotesk } from 'next/font/google'
+import { Space_Grotesk } from 'next/font/google'
 import React from 'react'
 
 import { CartProvider } from '@/lib/cart'
@@ -15,17 +15,6 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 })
 
-const luckiest = Luckiest_Guy({
-  subsets: ['latin'],
-  variable: '--font-luckiest',
-  weight: '400',
-})
-
-const marker = Permanent_Marker({
-  subsets: ['latin'],
-  variable: '--font-marker',
-  weight: '400',
-})
 
 // Header and footer are driven by Payload, so every storefront route is
 // rendered per request. This also keeps the production build from needing a
@@ -48,7 +37,7 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
 
   return (
     <html
-      className={`${spaceGrotesk.variable} ${luckiest.variable} ${marker.variable}`}
+      className={spaceGrotesk.variable}
       data-theme="dark"
       lang="en"
       suppressHydrationWarning
