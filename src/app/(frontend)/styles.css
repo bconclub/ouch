@@ -275,3 +275,13 @@ body {
   .anim-fade-up,
   .anim-pop { animation: none; }
 }
+
+
+/* Hide scrollbars on swipe carousels */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

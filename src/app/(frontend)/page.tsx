@@ -235,9 +235,9 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+          <div className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-5 lg:gap-6 lg:overflow-visible lg:pb-0">
             {PIERCING_CARDS.map((card, ci) => (
-              <Reveal delay={ci * 90} key={card.name}>
+              <Reveal className="w-[82%] shrink-0 snap-center sm:w-[46%] lg:w-auto" delay={ci * 90} key={card.name}>
                 <div className="flex h-full flex-col rounded-2xl bg-[var(--card-tint)] p-4 transition-transform duration-300 hover:-translate-y-1.5">
                   <h3 className="text-poster relative w-fit text-2xl uppercase">
                     {card.name}
