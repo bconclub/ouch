@@ -16,7 +16,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <Link
-      className="band-paper group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1"
+      className="band-paper group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg]"
       href={`/products/${product.slug}`}
     >
       <div className="relative m-2 aspect-square overflow-hidden rounded-xl bg-white/60">
@@ -57,7 +57,7 @@ export function ProductCard({ product }: { product: Product }) {
             )}
           </span>
         </span>
-        <span aria-hidden className={`chip-arrow h-7 w-7 shrink-0 text-sm ${chip}`}>→</span>
+        <span aria-hidden className={`chip-arrow h-7 w-7 shrink-0 text-sm transition-transform duration-300 group-hover:translate-x-1 ${chip}`}>→</span>
       </div>
     </Link>
   )

@@ -12,6 +12,7 @@ import {
 } from '@/components/Doodles'
 import { BandBlend, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
+import { Reveal } from '@/components/Reveal'
 import { getSiteSettings } from '@/lib/queries'
 
 // Always render fresh so catalogue changes made in the admin appear immediately.
@@ -82,28 +83,26 @@ export default async function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_1fr_auto] lg:py-16">
           {/* Headline + copy + CTAs */}
           <div className="relative">
-            <DoodleStar className="absolute -top-4 -left-2 h-8 w-8 text-purple" />
-            <DoodleSmiley className="absolute top-[44%] -left-6 hidden h-9 w-9 text-yellow xl:block" />
-            <DoodleHeart className="absolute bottom-[30%] -left-4 hidden h-7 w-7 text-pink xl:block" />
-            <DoodleLightning className="absolute top-0 right-[12%] h-9 w-7 text-yellow" />
+            <DoodleStar className="absolute -top-12 right-6 hidden h-8 w-8 text-purple lg:block" />
+            <DoodleLightning className="absolute top-[-44px] right-[34%] hidden h-9 w-7 text-yellow lg:block" />
 
             <h1>
-              <span className="text-marker block text-xl text-white sm:text-2xl">Hey bestie, you made it.</span>
-              <span className="text-poster mt-2 block text-4xl text-white sm:text-5xl">Good vibes.</span>
-              <span className="text-poster block text-5xl text-pink sm:text-6xl">Cool studs.</span>
-              <span className="text-poster relative block w-fit text-5xl text-yellow sm:text-6xl">
+              <span className="text-marker anim-fade-up block text-xl text-white sm:text-2xl">Hey bestie, you made it.</span>
+              <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl text-white sm:text-5xl">Good vibes.</span>
+              <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Cool studs.</span>
+              <span className="text-poster anim-fade-up anim-d3 relative block w-fit text-5xl text-yellow sm:text-6xl">
                 Happy you.
                 <BrushStroke className="absolute -bottom-3 left-0 h-4 w-full" color="var(--color-purple)" seed={71} />
               </span>
             </h1>
 
-            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-white sm:text-base">
+            <p className="anim-fade-up anim-d4 mt-8 max-w-md text-[15px] leading-relaxed text-white sm:text-base">
               Studs, hoops and barbells from your friendly neighbourhood piercing folks — safe{' '}
               <span className="mark-highlight font-semibold">implant-grade</span> metals, zero drama,
               all smiles.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-4">
+            <div className="anim-fade-up anim-d5 mt-7 flex flex-wrap gap-4">
               <Link
                 className="text-poster inline-flex items-center gap-2 rounded-full bg-pink px-7 py-3.5 text-[13px] tracking-wide text-white uppercase transition-transform hover:scale-[1.04] active:scale-95"
                 href="/shop"
@@ -114,7 +113,7 @@ export default async function HomePage() {
           </div>
 
           {/* Founder cutout over the paint burst */}
-          <div className="relative">
+          <div className="anim-pop anim-d2 relative">
             <ParallaxHero
               back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
               className="relative mx-auto aspect-[1011/1531] w-full max-w-xs lg:max-w-sm"
@@ -134,7 +133,7 @@ export default async function HomePage() {
           </div>
 
           {/* Stats column */}
-          <div className="flex flex-row flex-wrap justify-center gap-x-10 gap-y-6 lg:flex-col lg:justify-start lg:gap-7">
+          <div className="anim-fade-up anim-d4 flex flex-row flex-wrap justify-center gap-x-10 gap-y-6 lg:flex-col lg:justify-start lg:gap-7">
             {STATS.map((stat) => (
               <div className="flex items-center gap-3" key={stat.label}>
                 <span className={stat.color}>{stat.icon}</span>
@@ -160,7 +159,7 @@ export default async function HomePage() {
       <section className="band-paper relative" id="zones">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#ece5d6" seed={31} />
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[220px_1fr_190px]">
-          <div className="relative">
+          <Reveal className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">
               Where&apos;s the
               <br />
@@ -169,11 +168,12 @@ export default async function HomePage() {
             <svg className="mt-3 h-8 w-14 text-[#17141a]" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 56 32">
               <path d="M2 6c14 14 30 20 46 20M48 20l6 6-8 3" />
             </svg>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {ZONES.map((zone) => (
-              <Link className="group relative overflow-hidden rounded-2xl" href={zone.href} key={zone.name}>
+            {ZONES.map((zone, zi) => (
+              <Reveal delay={zi * 90} key={zone.name}>
+              <Link className="group relative block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg]" href={zone.href}>
                 <div className="relative aspect-[4/5]">
                   <Image
                     alt={`${zone.name} piercings`}
@@ -188,13 +188,14 @@ export default async function HomePage() {
                   <span className="text-poster text-lg text-white uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
                     {zone.name}
                   </span>
-                  <span aria-hidden className={`chip-arrow ${zone.chip}`}>→</span>
+                  <span aria-hidden className={`chip-arrow transition-transform duration-300 group-hover:translate-x-1 ${zone.chip}`}>→</span>
                 </div>
               </Link>
+              </Reveal>
             ))}
           </div>
 
-          <div>
+          <Reveal delay={200}>
             <p className="text-marker text-lg leading-snug">
               Pro piercers.
               <br />
@@ -211,7 +212,7 @@ export default async function HomePage() {
               Hit us up <span aria-hidden>→</span>
             </a>
             <DoodleSquiggle className="mt-4 h-5 w-12 text-[#17141a]" />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -219,8 +220,8 @@ export default async function HomePage() {
       <section className="band-black relative" id="studs">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="#0a0a0a" seed={47} />
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr_200px]">
-          <div className="relative">
-            <DoodleStar className="absolute -top-6 right-2 h-7 w-7 text-yellow" />
+          <Reveal className="relative">
+            <DoodleStar className="absolute -top-9 right-0 h-7 w-7 text-yellow" />
             <h2 className="text-marker mt-1 text-3xl leading-snug text-white">
               Our studs
               <br />
@@ -233,11 +234,12 @@ export default async function HomePage() {
             >
               Peep them all <span aria-hidden>→</span>
             </Link>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {STUD_CARDS.map((card) => (
-              <Link className="band-paper group overflow-hidden rounded-2xl" href={card.href} key={card.name}>
+            {STUD_CARDS.map((card, ci) => (
+              <Reveal delay={ci * 80} key={card.name}>
+              <Link className="band-paper group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[1deg]" href={card.href}>
                 <div className="relative m-2 aspect-square overflow-hidden rounded-xl">
                   <Image
                     alt={card.name}
@@ -252,20 +254,21 @@ export default async function HomePage() {
                     <span className="text-poster block text-[13px] uppercase">{card.name}</span>
                     <span className="text-muted-band block text-[11px]">{card.tag}</span>
                   </span>
-                  <span aria-hidden className={`chip-arrow h-7 w-7 text-sm ${card.chip}`}>→</span>
+                  <span aria-hidden className={`chip-arrow h-7 w-7 text-sm transition-transform duration-300 group-hover:translate-x-1 ${card.chip}`}>→</span>
                 </div>
               </Link>
+              </Reveal>
             ))}
           </div>
 
           <ul className="space-y-5">
-            {STUD_TRUST.map((item) => (
-              <li className="flex items-start gap-3" key={item.text}>
+            {STUD_TRUST.map((item, ti) => (
+              <li key={item.text}><Reveal className="flex items-start gap-3" delay={ti * 100}>
                 <span className="mt-0.5 shrink-0 text-yellow">{item.icon}</span>
                 <span className="text-[11px] leading-relaxed font-bold tracking-[0.15em] text-white uppercase">
                   {item.text}
                 </span>
-              </li>
+              </Reveal></li>
             ))}
           </ul>
         </div>
@@ -274,7 +277,7 @@ export default async function HomePage() {
       {/* ============ 03 · Walls can feel too (posters) ============ */}
       <section className="band-black" id="posters">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[220px_1fr]">
-          <div>
+          <Reveal>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink">
               Walls can
               <br />
@@ -291,16 +294,16 @@ export default async function HomePage() {
             >
               Peep the walls <span aria-hidden>→</span>
             </Link>
-          </div>
+          </Reveal>
 
           <div className="relative">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {POSTERS.map((poster, i) => (
+                <Reveal delay={i * 70} key={poster.text}>
                 <div
-                  className={`relative aspect-[3/4] overflow-hidden rounded-xl ${poster.kind === 'text' ? poster.bg : ''} ${
+                  className={`relative aspect-[3/4] overflow-hidden rounded-xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg] ${poster.kind === 'text' ? poster.bg : ''} ${
                     poster.kind !== 'photo-text' && poster.kind !== 'text' ? poster.bg : ''
                   }`}
-                  key={poster.text}
                 >
                   {poster.kind === 'photo-text' && poster.image && (
                     <>
@@ -328,6 +331,7 @@ export default async function HomePage() {
                   </div>
                   <DoodleHeart className="absolute right-3 bottom-3 h-5 w-5 text-white/80" />
                 </div>
+                </Reveal>
               ))}
             </div>
             <span aria-hidden className="chip-arrow bg-pink absolute top-1/2 -right-4 hidden -translate-y-1/2 lg:flex">→</span>
@@ -338,7 +342,7 @@ export default async function HomePage() {
       {/* ============ INFO · Trust bar ============ */}
       <section className="band-black" id="info">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
-          <div>
+          <Reveal>
             <h3 className="flex items-center gap-2.5">
               <svg className="h-7 w-7 shrink-0 text-pink" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 26">
                 <path d="M12 1l10 4v7c0 6-4 11-10 13C6 23 2 18 2 12V5z M8 12l3 3 5-6" />
@@ -350,8 +354,8 @@ export default async function HomePage() {
               <li>✓ 100% good vibes, 0% oops</li>
               <li>✓ We gotchu, always</li>
             </ul>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={100}>
             <h3 className="flex items-center gap-2.5">
               <svg className="h-7 w-7 shrink-0 text-purple" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 24">
                 <path d="M1 5h16v13H1z M17 9h5l4 4v5h-9 M6 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M21 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
@@ -363,8 +367,8 @@ export default async function HomePage() {
               <li>✓ Discreet packaging</li>
               <li>✓ 3–7 days, zoom zoom</li>
             </ul>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={200}>
             <h3 className="flex items-center gap-2.5">
               <svg className="h-7 w-7 shrink-0 text-cyan" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 26 20">
                 <rect height="16" rx="3" width="24" x="1" y="2" />
@@ -379,8 +383,8 @@ export default async function HomePage() {
                 </span>
               ))}
             </div>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={300}>
             <h3 className="flex items-center gap-2.5">
               <svg className="h-7 w-7 shrink-0 text-yellow" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" />
@@ -392,7 +396,7 @@ export default async function HomePage() {
               <li>✓ No perfume parties, please</li>
               <li>✓ Keep it cozy &amp; dry</li>
             </ul>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>
