@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk } from 'next/font/google'
+import Script from 'next/script'
 import React from 'react'
 
 import { CartProvider } from '@/lib/cart'
@@ -7,7 +8,6 @@ import { getSiteSettings } from '@/lib/queries'
 import { CartDrawer } from '@/components/CartDrawer'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { themeInitScript } from '@/components/ThemeToggle'
 import './styles.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -43,7 +43,9 @@ export default async function StorefrontLayout(props: { children: React.ReactNod
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {/* Static file: App Router only supports beforeInteractive scripts with src,
+            and an inline <script> in the React tree breaks hydration. */}
+        <Script src="/theme-init.js" strategy="beforeInteractive" />
       </head>
       <body>
         <CartProvider>
