@@ -25,22 +25,19 @@ export async function Footer() {
             <DoodleHeart className="mt-3 h-8 w-8 text-pink" />
           </div>
 
-          {/* The Ouch card — a business card that isn't a business card */}
-          <div className="relative mx-auto w-full max-w-2xl -rotate-2 text-[#17141a] transition-transform duration-300 [filter:drop-shadow(0_18px_40px_rgba(0,0,0,0.3))] hover:rotate-1 lg:col-span-2">
-            <div className="card-torn bg-[#f6f1e6] p-9">
-            <a className="flex flex-col items-center gap-2 text-center" href="/card">
+          {/* Connect card — same frosted language as /card */}
+          <div className="mx-auto w-full max-w-2xl lg:col-span-2">
+            <a className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left" href="/card">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="Scan me" className="h-48 w-48 rounded-lg" src="/brand/qr-site.png" />
-              <p className="text-poster text-[11px] tracking-[0.16em] uppercase">Scan me, dude</p>
-              <p className="text-poster mt-1 text-[11px] tracking-[0.14em] uppercase">
-                Peace. Love. <span className="text-pink">Piercings.</span>
-              </p>
+              <img alt="Scan for our contact card" className="block h-44 w-44 shrink-0" src="/brand/qr-site.png" />
+              <span>
+                <Logo className="mx-auto h-9 w-auto sm:mx-0" />
+                <span className="text-poster mt-2.5 block text-[13px] tracking-[0.14em] uppercase">
+                  Peace. Love. <span className="text-pink">Piercings.</span>
+                </span>
+
+              </span>
             </a>
-            </div>
-            <span aria-hidden className="absolute -top-2.5 left-12 h-6 w-20 rotate-3 bg-[#d8d2c2]/85" />
-            <span aria-hidden className="absolute -bottom-2 right-14 h-6 w-16 -rotate-6 bg-[#d8d2c2]/85" />
-            <DoodleLightning className="absolute -top-5 right-8 h-7 w-6 text-yellow" />
-            <DoodleSmiley className="absolute right-40 -bottom-5 h-8 w-8 text-pink" />
           </div>
 
           <div className="rounded-2xl bg-purple p-6 text-white">

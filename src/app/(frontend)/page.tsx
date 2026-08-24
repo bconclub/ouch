@@ -151,7 +151,7 @@ export default async function HomePage() {
               <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl sm:text-5xl">Peace.</span>
               <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Love.</span>
               <span className="text-poster anim-fade-up anim-d3 relative block w-fit text-5xl text-yellow sm:text-6xl">
-                <WordCycle words={['Piercings.', 'Studs.', 'Hoops.', 'Sparkle.']} />
+                <WordCycle words={['Piercings.', 'Studs.', 'Hope.', 'Sparkle.', 'Hoops.', 'Magic.']} />
                 <BrushStroke className="absolute -bottom-3 left-0 h-4 w-full" color="var(--color-purple)" seed={71} />
               </span>
             </h1>
