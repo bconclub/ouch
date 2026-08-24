@@ -24,16 +24,6 @@ const STATS = [
   { value: '100+', label: 'Happy humans', color: 'text-yellow', icon: <DoodleSmiley className="h-7 w-7" /> },
   { value: '100+', label: 'Piercings done', color: 'text-purple', icon: <DoodleLightning className="h-7 w-7" /> },
   { value: '3+', label: 'Years of good vibes', color: 'text-cyan', icon: <DoodleHeart className="h-7 w-7" /> },
-  {
-    value: 'Premium',
-    label: 'Sterile & safe',
-    color: 'text-yellow',
-    icon: (
-      <svg fill="none" height="26" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 26" width="26">
-        <path d="M7 3h14l5 7-12 14L2 10z M2 10h24 M7 3l7 7 7-7 M14 10v14" />
-      </svg>
-    ),
-  },
 ]
 
 const PIERCING_CARDS = [
@@ -199,7 +189,7 @@ export default async function HomePage() {
             <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-[var(--band-line)] px-4 py-3">
               <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
               <span className="text-marker text-[15px] leading-snug">
-                Happy skin. Zero itch. <span className="text-pink underline">Pinky promise.</span>
+                You&apos;ll love it. <span className="text-pink underline">Pinky promise.</span>
               </span>
             </div>
           </div>
