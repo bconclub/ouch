@@ -29,48 +29,17 @@ export async function Footer() {
           <div className="relative mx-auto w-full max-w-2xl -rotate-1 rounded-xl bg-[#f6f1e6] p-7 text-[#17141a] shadow-[0_16px_44px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:rotate-0 lg:col-span-2">
             <span aria-hidden className="absolute -top-2.5 left-10 h-6 w-20 rotate-3 bg-[#d8d2c2]/80" />
             <span aria-hidden className="absolute -bottom-2.5 right-12 h-6 w-16 -rotate-6 bg-[#d8d2c2]/80" />
-            <div className="flex flex-wrap items-center gap-7">
-              <div className="min-w-0 flex-1">
-                <Logo className="h-11 w-auto" variant="ink" />
-                <p className="text-poster mt-2 text-[12px] tracking-[0.14em] uppercase">
+            <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:justify-center sm:gap-10 sm:text-left">
+              <div>
+                <Logo className="mx-auto h-12 w-auto sm:mx-0" variant="ink" />
+                <p className="text-poster mt-2.5 text-[13px] tracking-[0.14em] uppercase">
                   Peace. Love. <span className="text-pink">Piercings.</span>
                 </p>
-                <ul className="mt-5 space-y-2.5 text-sm">
-                  <li>
-                    <a className="inline-flex items-center gap-2.5 font-semibold hover:text-pink" href="https://oouucchh.com">
-                      <svg fill="none" height="16" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" /></svg>
-                      oouucchh.com
-                    </a>
-                  </li>
-                  <li>
-                    <a className="inline-flex items-center gap-2.5 hover:text-pink" href="mailto:oouucchhed@gmail.com">
-                      <svg fill="none" height="16" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16"><rect height="16" rx="3" width="20" x="2" y="4" /><path d="M2 7l10 6 10-6" /></svg>
-                      oouucchhed@gmail.com
-                    </a>
-                  </li>
-                  <li>
-                    <a className="inline-flex items-center gap-2.5 hover:text-pink" href={whatsappHref} rel="noopener noreferrer" target="_blank">
-                      <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 24 24" width="16"><path d="M21 16.5c0 1.4-1.1 2.5-2.5 2.5C10 19 5 14 5 5.5 5 4.1 6.1 3 7.5 3L10 5.5 8.5 8.5c1 2.5 2.5 4 5 5l3-1.5z" /></svg>
-                      {settings.whatsappNumber}
-                    </a>
-                  </li>
-                  <li>
-                    <a className="inline-flex items-center gap-2.5 hover:text-pink" href={settings.instagramUrl || 'https://instagram.com/oouucchhed'} rel="noopener noreferrer" target="_blank">
-                      <svg fill="none" height="16" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16"><rect height="18" rx="5" width="18" x="3" y="3" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none" /></svg>
-                      @oouucchh
-                    </a>
-                  </li>
-                  <li className="inline-flex items-center gap-2.5">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="16"><path d="M12 22s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" /><circle cx="12" cy="10" r="2.5" /></svg>
-                    Bengaluru, India
-                  </li>
-                </ul>
               </div>
-              <div className="mx-auto text-center">
+              <div className="text-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt="Scan to save Ouch as a contact — phone, email, website" className="h-36 w-36 rounded-lg border-4 border-[#17141a]/10" src="/brand/qr-site.png" />
-                <p className="text-poster mt-2 text-[10px] tracking-[0.16em] uppercase">Scan me — save my contact</p>
-                <DoodlePeace className="mx-auto mt-2 h-7 w-7 text-purple" />
+                <img alt="Scan me" className="h-40 w-40" src="/brand/qr-site.png" />
+                <p className="text-poster mt-1.5 text-[11px] tracking-[0.16em] uppercase">Scan me, dude</p>
               </div>
             </div>
             <DoodleLightning className="absolute -top-4 right-6 h-7 w-6 text-yellow" />
