@@ -8,19 +8,8 @@ const INSTAGRAM = 'oouucchhed'
 
 const ACTIONS = [
   {
-    label: 'Call us',
-    sub: PHONE_PRETTY,
-    href: `tel:${PHONE}`,
-    chip: 'bg-cyan',
-    icon: (
-      <svg fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 24 24" width="20">
-        <path d="M21 16.5c0 1.4-1.1 2.5-2.5 2.5C10 19 5 14 5 5.5 5 4.1 6.1 3 7.5 3L10 5.5 8.5 8.5c1 2.5 2.5 4 5 5l3-1.5z" />
-      </svg>
-    ),
-  },
-  {
     label: 'WhatsApp',
-    sub: 'fastest way, dude',
+    sub: 'say hi, we reply fast',
     href: `https://wa.me/${PHONE.replace('+', '')}?text=${encodeURIComponent('Hey Ouch! 🤘')}`,
     chip: 'bg-lime',
     icon: (
