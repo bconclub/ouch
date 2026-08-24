@@ -14,6 +14,7 @@ import {
 import { BandBlend, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
 import { Reveal } from '@/components/Reveal'
+import { WordCycle } from '@/components/WordCycle'
 import { getSiteSettings } from '@/lib/queries'
 
 // Always render fresh so catalogue changes made in the admin appear immediately.
@@ -150,7 +151,7 @@ export default async function HomePage() {
               <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl sm:text-5xl">Peace.</span>
               <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Love.</span>
               <span className="text-poster anim-fade-up anim-d3 relative block w-fit text-5xl text-yellow sm:text-6xl">
-                Piercings.
+                <WordCycle words={['Piercings.', 'Studs.', 'Hoops.', 'Sparkle.']} />
                 <BrushStroke className="absolute -bottom-3 left-0 h-4 w-full" color="var(--color-purple)" seed={71} />
               </span>
             </h1>
@@ -478,6 +479,37 @@ export default async function HomePage() {
               <li>✓ No perfume parties, please</li>
               <li>✓ Keep it cozy &amp; dry</li>
             </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ Partner with us — jeweller friends ============ */}
+      <section className="band-black relative" id="partners">
+        <div className="mx-auto min-h-[45vh] max-w-5xl content-center px-4 py-16 text-center sm:px-6">
+          <Reveal>
+            <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
+              Jeweller friends wanted.
+              <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
+              You make beautiful silver things? Let&apos;s sell them together — you craft, we
+              showcase, everyone wins. Commission-style, zero drama, all handshakes.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">You craft it</span>
+              <span aria-hidden>→</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We showcase it</span>
+              <span aria-hidden>→</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We split it, fair &amp; square</span>
+            </div>
+            <a
+              className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
+              href={`${whatsappHref}?text=${encodeURIComponent("Hey Ouch! I'm a jeweller and I'd love to partner up 🤝")}`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Partner with us <span aria-hidden>→</span>
+            </a>
           </Reveal>
         </div>
       </section>
