@@ -92,12 +92,12 @@ const GALLERY = [
 ]
 
 const STUD_TILES = [
-  { name: 'Star', image: '/brand/piercings/stud-star.png' },
-  { name: 'Bezel Crystal', image: '/brand/piercings/stud-bezel-crystal.png' },
-  { name: 'Tiny Ball', image: '/brand/piercings/stud-tiny-ball.png' },
-  { name: 'Opal Stud', image: '/brand/piercings/stud-opal-stud.png' },
-  { name: 'Flower', image: '/brand/piercings/stud-flower.png' },
-  { name: 'Moon', image: '/brand/piercings/stud-moon.png' },
+  { name: 'Rose Curve', image: '/brand/piercings/stud-rose-bar.png' },
+  { name: 'Silver Curve', image: '/brand/piercings/stud-silver-bar.png' },
+  { name: 'Champagne', image: '/brand/piercings/stud-champagne.png' },
+  { name: 'Opal Duo', image: '/brand/piercings/stud-opal-duo.png' },
+  { name: 'Green Round', image: '/brand/piercings/stud-green-round.png' },
+  { name: 'Beaded Bar', image: '/brand/piercings/stud-beaded-bar.png' },
 ]
 
 const STUD_TRUST = [
