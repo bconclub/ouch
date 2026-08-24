@@ -189,7 +189,7 @@ export default async function HomePage() {
             <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-[var(--band-line)] px-4 py-3">
               <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
               <span className="text-marker text-[15px] leading-snug">
-                <span className="text-white">You&apos;ll look unreal.</span>{' '}
+                <span className="text-white">Unreal.</span>{' '}
                 <span className="text-pink underline">Pinky promise.</span>
               </span>
             </div>
