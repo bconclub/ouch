@@ -26,9 +26,8 @@ export async function Footer() {
           </div>
 
           {/* The Ouch card — a business card that isn't a business card */}
-          <div className="relative mx-auto w-full max-w-2xl -rotate-1 rounded-xl bg-[#f6f1e6] p-7 text-[#17141a] shadow-[0_16px_44px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:rotate-0 lg:col-span-2">
-            <span aria-hidden className="absolute -top-2.5 left-10 h-6 w-20 rotate-3 bg-[#d8d2c2]/80" />
-            <span aria-hidden className="absolute -bottom-2.5 right-12 h-6 w-16 -rotate-6 bg-[#d8d2c2]/80" />
+          <div className="relative mx-auto w-full max-w-2xl -rotate-2 text-[#17141a] transition-transform duration-300 [filter:drop-shadow(0_18px_40px_rgba(0,0,0,0.3))] hover:rotate-1 lg:col-span-2">
+            <div className="card-torn bg-[#f6f1e6] p-9">
             <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:justify-center sm:gap-10 sm:text-left">
               <div>
                 <Logo className="mx-auto h-12 w-auto sm:mx-0" variant="ink" />
@@ -42,8 +41,11 @@ export async function Footer() {
                 <p className="text-poster mt-1.5 text-[11px] tracking-[0.16em] uppercase">Scan me, dude</p>
               </div>
             </div>
-            <DoodleLightning className="absolute -top-4 right-6 h-7 w-6 text-yellow" />
-            <DoodleSmiley className="absolute right-40 -bottom-4 h-8 w-8 text-pink" />
+            </div>
+            <span aria-hidden className="absolute -top-2.5 left-12 h-6 w-20 rotate-3 bg-[#d8d2c2]/85" />
+            <span aria-hidden className="absolute -bottom-2 right-14 h-6 w-16 -rotate-6 bg-[#d8d2c2]/85" />
+            <DoodleLightning className="absolute -top-5 right-8 h-7 w-6 text-yellow" />
+            <DoodleSmiley className="absolute right-40 -bottom-5 h-8 w-8 text-pink" />
           </div>
 
           <div className="rounded-2xl bg-purple p-6 text-white">
