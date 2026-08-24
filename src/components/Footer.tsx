@@ -3,6 +3,7 @@ import React from 'react'
 import { getSiteSettings } from '@/lib/queries'
 import { DoodleHeart, DoodleLightning, DoodlePeace, DoodleSmiley } from './Doodles'
 import { Logo } from './Logo'
+import { InfoBar } from './InfoBar'
 import { NewsletterForm } from './NewsletterForm'
 import { BandBlend } from './Paint'
 
@@ -76,6 +77,9 @@ export async function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Safe & sound / shipping / payments / aftercare — after the card */}
+      <InfoBar />
 
       {/* Bottom bar */}
       <div className="band-black">
