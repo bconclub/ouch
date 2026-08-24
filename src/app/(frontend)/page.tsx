@@ -341,6 +341,8 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <PostersSection />
+
       {/* ============ Partner with us — jeweller friends ============ */}
       <section className="band-black relative" id="partners">
         <div className="mx-auto min-h-[45vh] max-w-5xl content-center px-4 py-16 text-center sm:px-6">
@@ -371,8 +373,6 @@ export default async function HomePage() {
           </Reveal>
         </div>
       </section>
-
-      <PostersSection />
     </div>
   )
 }
