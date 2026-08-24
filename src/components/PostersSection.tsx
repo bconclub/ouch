@@ -31,6 +31,9 @@ export function PostersSection() {
               <br />
               Your walls deserve it.
             </p>
+            <p className="text-marker mt-3 text-[15px] text-cyan">
+              By the way — every poster is <span className="text-pink">₹333</span>. Flat.
+            </p>
             <Link
               className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[12px] tracking-wide text-[#0a2a30] uppercase transition-transform hover:scale-105"
               href="/shop"
