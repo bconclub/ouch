@@ -4,6 +4,7 @@ import { getSiteSettings } from '@/lib/queries'
 import { DoodleHeart, DoodleLightning, DoodlePeace, DoodleSmiley } from './Doodles'
 import { Logo } from './Logo'
 import { NewsletterForm } from './NewsletterForm'
+import { PostersSection } from './PostersSection'
 import { BandBlend } from './Paint'
 
 export async function Footer() {
@@ -26,10 +27,13 @@ export async function Footer() {
           </div>
 
           {/* Connect card — same frosted language as /card */}
-          <div className="mx-auto w-full max-w-2xl lg:col-span-2">
-            <a className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left" href="/card">
+          <div className="mx-auto w-full max-w-2xl [perspective:1200px] lg:col-span-2">
+            <a
+              className="flex flex-col items-center gap-6 text-center transition-transform duration-500 [transform:rotateY(-16deg)_rotateX(6deg)] hover:[transform:rotateY(0deg)_rotateX(0deg)] sm:flex-row sm:items-center sm:gap-12 sm:text-left"
+              href="/card"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="Scan for our contact card" className="block h-44 w-44 shrink-0" src="/brand/qr-site.png" />
+              <img alt="Scan for our contact card" className="block h-44 w-44 shrink-0 [filter:drop-shadow(0_18px_28px_rgba(255,255,255,0.12))]" src="/brand/qr-site.png" />
               <span>
                 <Logo className="mx-auto h-9 w-auto sm:mx-0" />
                 <span className="text-poster mt-2.5 block text-[13px] tracking-[0.14em] uppercase">
@@ -65,6 +69,9 @@ export async function Footer() {
           </span>
         </div>
       </div>
+
+      {/* Posters — the last thing on the page */}
+      <PostersSection />
     </footer>
   )
 }
