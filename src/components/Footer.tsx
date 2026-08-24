@@ -4,7 +4,6 @@ import { getSiteSettings } from '@/lib/queries'
 import { DoodleHeart, DoodleLightning, DoodlePeace, DoodleSmiley } from './Doodles'
 import { Logo } from './Logo'
 import { InfoBar } from './InfoBar'
-import { NewsletterForm } from './NewsletterForm'
 import { BandBlend } from './Paint'
 
 export async function Footer() {
@@ -16,7 +15,7 @@ export async function Footer() {
       {/* 04 · Hey, let's connect! */}
       <div className="band-alt relative">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={63} />
-        <div className="mx-auto grid min-h-[65vh] max-w-7xl content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[200px_2fr_320px]">
+        <div className="mx-auto grid min-h-[65vh] max-w-7xl content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr]">
           <div className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">
               Hey, let&apos;s
@@ -27,7 +26,7 @@ export async function Footer() {
           </div>
 
           {/* Connect card — same frosted language as /card */}
-          <div className="mx-auto w-full max-w-2xl [perspective:1200px] lg:col-span-2">
+          <div className="mx-auto w-full max-w-2xl [perspective:1200px]">
             <a
               className="flex flex-col items-center gap-6 text-center transition-transform duration-500 [transform:rotateY(-16deg)_rotateX(6deg)] hover:[transform:rotateY(0deg)_rotateX(0deg)] sm:flex-row sm:items-center sm:gap-12 sm:text-left"
               href="/card"
@@ -64,16 +63,6 @@ export async function Footer() {
                 Our card <span aria-hidden>→</span>
               </a>
             </div>
-          </div>
-
-          <div className="rounded-2xl bg-purple p-6 text-white">
-            <h3 className="text-poster text-lg tracking-wide uppercase">Join the loop</h3>
-            <p className="mt-2 text-[13px] leading-relaxed text-white/85">
-              New drops. Piercing tips.
-              <br />
-              Special offers. Good vibes.
-            </p>
-            <NewsletterForm whatsappHref={whatsappHref} />
           </div>
         </div>
       </div>
