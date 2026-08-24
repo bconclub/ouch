@@ -4,6 +4,7 @@ import React from 'react'
 import { PosterCard } from '@/components/PosterCard'
 import { Reveal } from '@/components/Reveal'
 import { BrushStroke } from '@/components/Paint'
+import { orderPosters } from '@/lib/posterOrder'
 import { queryProducts } from '@/lib/queries'
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 
 export default async function PostersPage() {
   const result = await queryProducts({ category: 'posters', limit: 48 })
+  const posters = orderPosters(result.docs)
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
@@ -32,7 +34,7 @@ export default async function PostersPage() {
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-7 sm:grid-cols-3 lg:grid-cols-4 lg:gap-12">
-          {result.docs.map((poster) => (
+          {posters.map((poster) => (
             <PosterCard key={poster.id} product={poster} />
           ))}
         </div>

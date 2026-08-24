@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { PosterCard } from './PosterCard'
+import { orderPosters } from '@/lib/posterOrder'
 import { queryProducts } from '@/lib/queries'
 
 import { DoodleHeart } from './Doodles'
@@ -18,8 +19,8 @@ const POSTERS = [
 ]
 
 export async function PostersSection() {
-  const real = await queryProducts({ category: 'posters', limit: 5 }).catch(() => null)
-  const posters = real?.docs ?? []
+  const real = await queryProducts({ category: 'posters', limit: 48 }).catch(() => null)
+  const posters = orderPosters(real?.docs ?? []).slice(0, 5)
 
   return (
     <>
