@@ -1,12 +1,16 @@
 import type { Product } from '@/payload-types'
 
 /**
- * Running order for the poster wall, measured from the artwork itself:
- * dark and vibrant prints lead (scored on saturation minus lightness), and
- * the wall flows from black-and-loud down to the soft pale pieces.
- * Anything not listed keeps its natural (newest-first) position at the end.
+ * Wild Soul always opens the wall — it is the signature piece. Everything
+ * after it reshuffles on every visit, but never at random: each print was
+ * measured for saturation and lightness, and the loud/dark pieces are
+ * interleaved one-for-one with the quiet/pale ones, so the order is fresh
+ * each refresh while the vibrant prints stay spread evenly across the grid
+ * instead of clumping into a block.
  */
-const ORDER = [
+const LEAD = 'Wild Soul'
+
+const LOUD = new Set([
   'Dream Big Start Small',
   'Butterfly Scream',
   'Shine Ur Vibe',
@@ -14,20 +18,29 @@ const ORDER = [
   'Spiral Garden',
   'Sun Moon Spiral',
   'Zero Given',
-  'Let Joy Find You',
-  'Progress Not Perfection',
-  'Make Space For What Matters',
-  'Trust The Flow',
-  'You Are Enough',
-  'Be Kind',
-  'Grow Anyway',
-  'Every Day Is A New Beginning',
-]
+])
+
+function shuffle<T>(items: T[]): T[] {
+  const a = [...items]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
 
 export function orderPosters(posters: Product[]): Product[] {
-  const rank = (p: Product) => {
-    const i = ORDER.indexOf(p.title)
-    return i === -1 ? ORDER.length : i
+  const lead = posters.find((p) => p.title === LEAD)
+  const rest = posters.filter((p) => p.title !== LEAD)
+  const loud = shuffle(rest.filter((p) => LOUD.has(p.title)))
+  const quiet = shuffle(rest.filter((p) => !LOUD.has(p.title)))
+
+  // Lead with a loud one, then alternate; whichever list runs out first,
+  // the remainder simply follows.
+  const out: Product[] = lead ? [lead] : []
+  for (let i = 0; i < Math.max(loud.length, quiet.length); i++) {
+    if (loud[i]) out.push(loud[i])
+    if (quiet[i]) out.push(quiet[i])
   }
-  return [...posters].sort((a, b) => rank(a) - rank(b))
+  return out
 }
