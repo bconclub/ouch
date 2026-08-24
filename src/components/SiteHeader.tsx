@@ -10,8 +10,7 @@ import { ThemeToggle } from './ThemeToggle'
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
-  { href: '/shop', label: 'Piercings' },
-  { href: '/category/studs-gems', label: 'Studs' },
+  { href: '/shop', label: 'Studs' },
   { href: '/posters', label: 'Posters' },
   { href: '/partners', label: 'Partner' },
   { href: '/#connect', label: 'Contact' },

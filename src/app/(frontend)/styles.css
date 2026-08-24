@@ -304,7 +304,12 @@ body {
    site at once. Slightly smaller than browser default so more of each
    section fits on screen without touching a single component. */
 html {
-  font-size: 15px;
+  font-size: 14px;
+}
+@media (min-width: 1280px) {
+  html {
+    font-size: 15px;
+  }
 }
 @media (min-width: 1536px) {
   html {
