@@ -55,7 +55,7 @@ export async function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a className="inline-flex items-center gap-2.5 hover:text-pink" href={settings.instagramUrl || 'https://instagram.com/oouucchh'} rel="noopener noreferrer" target="_blank">
+                    <a className="inline-flex items-center gap-2.5 hover:text-pink" href={settings.instagramUrl || 'https://instagram.com/oouucchhed'} rel="noopener noreferrer" target="_blank">
                       <svg fill="none" height="16" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16"><rect height="18" rx="5" width="18" x="3" y="3" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none" /></svg>
                       @oouucchh
                     </a>
