@@ -85,7 +85,6 @@ export default function CardPage() {
         <p className="text-poster mt-2 text-[12px] tracking-[0.16em] uppercase">
           Peace. Love. <span className="text-pink">Piercings.</span>
         </p>
-        <p className="mt-1 text-[13px] text-white/70">Rare silver studs &amp; hoops · Bengaluru</p>
 
         <div className="mt-6 space-y-3">
           {ACTIONS.map((a) => (
