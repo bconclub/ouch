@@ -348,12 +348,12 @@ export default async function HomePage() {
         <div className="mx-auto min-h-[45vh] max-w-5xl content-center px-4 py-16 text-center sm:px-6">
           <Reveal>
             <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
-              Partner with us.
+              Show &amp; Sell
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
-              You make beautiful silver things? Let&apos;s sell them together — you craft, we
-              showcase, everyone wins. Commission-style, zero drama, all handshakes.
+              You show us what you make, we put it on the wall and sell it with you. For the small
+              jewellers of Bengaluru whose best work nobody gets to see.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
               <span className="rounded-full border border-[var(--band-line)] px-4 py-2">You craft it</span>
@@ -362,14 +362,12 @@ export default async function HomePage() {
               <span aria-hidden>→</span>
               <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We split it, fair &amp; square</span>
             </div>
-            <a
+            <Link
               className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
-              href={`${whatsappHref}?text=${encodeURIComponent("Hey Ouch! I'm a jeweller and I'd love to partner up 🤝")}`}
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/partners"
             >
-              Partner with us <span aria-hidden>→</span>
-            </a>
+              Show us your work <span aria-hidden>→</span>
+            </Link>
           </Reveal>
         </div>
       </section>
