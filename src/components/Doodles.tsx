@@ -128,3 +128,20 @@ export function PaintChip({
     </span>
   )
 }
+
+export function DoodleGem({ className = '' }: { className?: string }) {
+  return (
+    <svg aria-hidden className={className} fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.6" viewBox="0 0 24 24">
+      <path d="M6 3h12l4 6-10 12L2 9z" />
+      <path d="M2 9h20M8 9l4 12M16 9l-4 12M6 3l2 6M18 3l-2 6" strokeWidth="1.2" />
+    </svg>
+  )
+}
+
+export function DoodleSparkleSmall({ className = '' }: { className?: string }) {
+  return (
+    <svg aria-hidden className={className} fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 0c.7 6.4 4.9 10.6 12 12-7.1 1.4-11.3 5.6-12 12-.7-6.4-4.9-10.6-12-12C7.1 10.6 11.3 6.4 12 0z" />
+    </svg>
+  )
+}

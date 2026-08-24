@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import React from 'react'
 
-import { DoodleHeart, DoodlePeace, DoodleStar } from '@/components/Doodles'
+import { DoodleGem, DoodleHeart, DoodlePeace, DoodleSparkleSmall, DoodleStar } from '@/components/Doodles'
 import { BrushStroke } from '@/components/Paint'
 import { Reveal } from '@/components/Reveal'
 import { getSiteSettings } from '@/lib/queries'
@@ -17,18 +17,21 @@ const STEPS = [
     title: 'Your hands',
     body: 'Silver nobody else is making. Odd shapes, old techniques, one-offs — the weirder the better.',
     chip: 'bg-pink',
+    gem: 'text-pink',
   },
   {
     n: '02',
     title: 'Our wall',
     body: 'Photos, a page of your own, your name on every piece. People finally see what you make.',
     chip: 'bg-purple',
+    gem: 'text-purple',
   },
   {
     n: '03',
     title: 'Fair share',
     body: 'When it sells, the money is shared. No stall rent, no upfront fee, nothing to lose.',
     chip: 'bg-cyan',
+    gem: 'text-cyan',
   },
 ]
 
@@ -46,13 +49,22 @@ export default async function PartnersPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <Reveal className="text-center">
+      <Reveal className="relative text-center">
+        {/* the gems themselves, scattered like they have been unearthed */}
+        <DoodleGem className="absolute top-2 left-[6%] hidden h-10 w-10 text-cyan opacity-70 sm:block" />
+        <DoodleGem className="absolute top-16 right-[8%] hidden h-14 w-14 text-pink opacity-60 sm:block" />
+        <DoodleGem className="absolute top-40 left-[14%] hidden h-8 w-8 text-yellow opacity-50 lg:block" />
+        <DoodleSparkleSmall className="absolute top-8 right-[26%] h-4 w-4 text-yellow" />
+        <DoodleSparkleSmall className="absolute top-28 left-[30%] h-3 w-3 text-cyan" />
+        <DoodleSparkleSmall className="absolute top-1 right-[14%] h-3 w-3 text-pink" />
+
         <h1 className="text-poster relative mx-auto w-fit text-5xl sm:text-6xl">
-          Hidden Gems
+          Hidden <span className="text-pink">Gems</span>
+          <DoodleGem className="absolute -top-7 -right-9 h-8 w-8 rotate-12 text-purple" />
           <BrushStroke className="absolute -bottom-2 left-0 h-3.5 w-full" color="var(--color-orange)" seed={99} />
         </h1>
         <p className="text-marker mx-auto mt-6 max-w-xl text-lg leading-relaxed">
-          The Bengaluru jewellers nobody&apos;s talking about. Yet.
+          Real makers. Real silver. Nobody&apos;s talking about them. Yet.
         </p>
         <p className="mx-auto mt-3 max-w-lg text-sm opacity-75">
           This city is full of people making beautiful silver in small shops, and almost nobody
@@ -72,7 +84,10 @@ export default async function PartnersPage() {
         {STEPS.map((step, i) => (
           <Reveal delay={i * 100} key={step.n}>
             <div className="h-full rounded-2xl bg-[var(--card-tint)] p-6">
-              <span className={`chip-arrow ${step.chip} text-[13px] font-bold`}>{step.n}</span>
+              <span className="flex items-center gap-2.5">
+                <DoodleGem className={`h-7 w-7 ${step.gem}`} />
+                <span className="text-poster text-[13px] opacity-60">{step.n}</span>
+              </span>
               <h2 className="text-poster mt-4 text-xl">{step.title}</h2>
               <p className="mt-2 text-sm leading-relaxed opacity-80">{step.body}</p>
             </div>
@@ -82,12 +97,12 @@ export default async function PartnersPage() {
 
       <Reveal className="mt-16 rounded-2xl bg-[var(--card-tint)] p-8">
         <h2 className="text-marker text-2xl">
-          This is for you if&hellip; <DoodleStar className="ml-1 inline h-6 w-6 text-yellow" />
+          You&apos;re one of them if&hellip; <DoodleStar className="ml-1 inline h-6 w-6 text-yellow" />
         </h2>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {FOR_YOU.map((line) => (
             <li className="flex items-start gap-2.5 text-sm" key={line}>
-              <span aria-hidden className="text-pink">✦</span>
+              <DoodleGem className="mt-0.5 h-4 w-4 shrink-0 text-pink" />
               {line}
             </li>
           ))}

@@ -298,3 +298,16 @@ body {
     0.5% 21%
   );
 }
+
+/* ---------- Global scale ----------
+   Everything is sized in rem, so nudging the root size zooms the whole
+   site at once. Slightly smaller than browser default so more of each
+   section fits on screen without touching a single component. */
+html {
+  font-size: 15px;
+}
+@media (min-width: 1536px) {
+  html {
+    font-size: 16px;
+  }
+}
