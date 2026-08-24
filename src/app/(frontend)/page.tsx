@@ -189,7 +189,8 @@ export default async function HomePage() {
             <div className="mt-1 flex max-w-56 items-center gap-3 rounded-xl border-2 border-[var(--band-line)] px-4 py-3">
               <DoodlePeace className="h-9 w-9 shrink-0 text-purple" />
               <span className="text-marker text-[15px] leading-snug">
-                You&apos;ll love it. <span className="text-pink underline">Pinky promise.</span>
+                <span className="text-white">You&apos;ll love it.</span>{' '}
+                <span className="text-pink underline">Pinky promise.</span>
               </span>
             </div>
           </div>
@@ -227,10 +228,10 @@ export default async function HomePage() {
                     <BrushStroke className="absolute -bottom-1.5 left-0 h-2.5 w-full" color={card.stroke} seed={90 + ci} />
                   </h3>
                   <Link className="group relative mt-4 block overflow-hidden rounded-xl" href={card.href}>
-                    <div className="relative aspect-[278/238]">
+                    <div className="relative aspect-[4/3]">
                       <Image
                         alt={`${card.name} piercings`}
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="scale-[1.12] object-cover transition-transform duration-500 group-hover:scale-[1.2]"
                         fill
                         sizes="(max-width: 640px) 90vw, 20vw"
                         src={card.image}
@@ -249,7 +250,7 @@ export default async function HomePage() {
                   </ul>
                   <p className="mt-auto pt-4 text-[11px] font-bold tracking-[0.15em] uppercase">Studs we love</p>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt={`${card.name} studs we love`} className="mt-1 w-full rounded-md" src={card.studs} />
+                  <span className="mt-1 block overflow-hidden rounded-md"><img alt={`${card.name} studs we love`} className="w-full scale-105 object-cover" src={card.studs} /></span>
                   <Link className={`mt-2 inline-flex items-center gap-1.5 text-[13px] font-bold ${card.text}`} href={card.href}>
                     View studs <span aria-hidden>→</span>
                   </Link>
@@ -279,7 +280,7 @@ export default async function HomePage() {
             </Reveal>
             <Reveal className="overflow-hidden rounded-2xl" delay={100}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="Ear piercing placements — helix, second helix, lobe" className="h-full w-full object-cover" src="/brand/piercings/ear-diagram.png" />
+              <img alt="Ear piercing placements — helix, second helix, lobe" className="h-full w-full scale-105 object-cover" src="/brand/piercings/ear-diagram.png" />
             </Reveal>
             <Reveal className="rounded-2xl bg-[var(--card-tint)] p-6" delay={200}>
               <h3 className="text-poster relative w-fit text-2xl uppercase">
@@ -292,7 +293,7 @@ export default async function HomePage() {
                 {STUD_TILES.map((tile) => (
                   <Link className="group block text-center" href="/shop" key={tile.name}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img alt={tile.name} className="w-full rounded-lg transition-transform duration-300 group-hover:-translate-y-1" src={tile.image} />
+                    <span className="block aspect-square overflow-hidden rounded-lg"><img alt={tile.name} className="h-full w-full scale-110 object-cover transition-transform duration-300 group-hover:scale-125" src={tile.image} /></span>
                     <span className="mt-1.5 block text-[10px] font-bold tracking-[0.12em] uppercase">
                       {tile.name}
                     </span>
@@ -328,7 +329,7 @@ export default async function HomePage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     alt="From the Ouch studio"
-                    className="w-full transition-transform duration-500 group-hover:scale-105"
+                    className="w-full scale-[1.02] transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     src={src}
                   />
