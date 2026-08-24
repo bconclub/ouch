@@ -28,7 +28,7 @@ export default async function PostersPage() {
       </Reveal>
 
       {result.docs.length === 0 ? (
-        <div className="rounded-2xl border border-line bg-surface py-20 text-center">
+        <div className="rounded-2xl border border-line bg-surface py-14 text-center">
           <p className="text-marker text-lg">Fresh prints landing soon.</p>
           <p className="mt-2 text-sm text-muted">Come back in a bit — good things take a minute.</p>
         </div>

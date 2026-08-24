@@ -123,7 +123,7 @@ export default async function HomePage() {
     <div className="overflow-hidden">
       {/* ============ HERO — It's a whole vibe ============ */}
       <section className="band-black relative">
-        <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-7xl content-center items-center gap-6 px-4 py-8 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.05fr_1fr_auto] lg:py-16">
+        <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-7xl content-center items-center gap-6 px-4 py-8 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.05fr_1fr_auto] lg:py-12">
           {/* Headline + copy + CTAs */}
           <div className="relative">
             <DoodleStar className="absolute -top-12 right-6 hidden h-8 w-8 text-purple lg:block" />
@@ -201,8 +201,8 @@ export default async function HomePage() {
       {/* ============ Piercings — categories (founder's reference design) ============ */}
       <section className="band-alt relative" id="zones">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={31} />
-        <div className="mx-auto min-h-[75vh] max-w-[90rem] content-center px-4 py-16 sm:px-6">
-          <Reveal className="mb-10 flex flex-wrap items-end justify-between gap-6">
+        <div className="mx-auto max-w-[90rem] content-center px-4 py-12 sm:px-6">
+          <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-6">
             <div>
               <h2 className="text-poster relative w-fit text-5xl sm:text-6xl">
                 Piercings
@@ -315,7 +315,7 @@ export default async function HomePage() {
       {/* ============ Gallery — the founder's own shots, masonry ============ */}
       <section className="band-black relative" id="gallery">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-1)" seed={47} />
-        <div className="mx-auto min-h-[70vh] max-w-[90rem] content-center px-4 py-16 sm:px-6">
+        <div className="mx-auto max-w-[90rem] content-center px-4 py-12 sm:px-6">
           <Reveal className="mb-10 text-center">
             <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
               Straight from the studio.
@@ -345,7 +345,7 @@ export default async function HomePage() {
 
       {/* ============ Partner with us — jeweller friends ============ */}
       <section className="band-black relative" id="partners">
-        <div className="mx-auto min-h-[45vh] max-w-5xl content-center px-4 py-16 text-center sm:px-6">
+        <div className="mx-auto max-w-5xl content-center px-4 py-12 text-center sm:px-6">
           <Reveal>
             <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
               Partner with us.

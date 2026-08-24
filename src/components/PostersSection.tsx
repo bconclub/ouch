@@ -26,7 +26,7 @@ export async function PostersSection() {
     <>
       {/* ============ 03 · Walls can feel too (posters) ============ */}
       <section className="band-black" id="posters">
-        <div className="mx-auto grid min-h-[70vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr]">
+        <div className="mx-auto grid max-w-[90rem] content-center items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[250px_1fr]">
           <Reveal>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink lg:text-4xl">
               Peace

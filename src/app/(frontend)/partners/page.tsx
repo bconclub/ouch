@@ -71,6 +71,9 @@ export default async function PartnersPage() {
           pieces, we photograph them, put them on the shop with your name on them, and share what
           they sell for. You make — we handle the rest.
         </p>
+        <p className="text-marker mx-auto mt-4 max-w-lg text-[15px] text-cyan">
+          Jewellery only — the posters are ours.
+        </p>
         <a
           className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
           href={chat}
@@ -81,7 +84,7 @@ export default async function PartnersPage() {
         </a>
       </Reveal>
 
-      <div className="mt-16 grid gap-6 sm:grid-cols-3">
+      <div className="mt-12 grid gap-6 sm:grid-cols-3">
         {STEPS.map((step, i) => (
           <Reveal delay={i * 100} key={step.n}>
             <div className="h-full rounded-2xl bg-[var(--card-tint)] p-6">
@@ -96,7 +99,7 @@ export default async function PartnersPage() {
         ))}
       </div>
 
-      <Reveal className="mt-16 rounded-2xl bg-[var(--card-tint)] p-8">
+      <Reveal className="mt-12 rounded-2xl bg-[var(--card-tint)] p-8">
         <h2 className="text-marker text-2xl">
           You&apos;re one of them if&hellip; <DoodleStar className="ml-1 inline h-6 w-6 text-yellow" />
         </h2>
@@ -110,7 +113,7 @@ export default async function PartnersPage() {
         </ul>
       </Reveal>
 
-      <Reveal className="mt-14 text-center" delay={100}>
+      <Reveal className="mt-12 text-center" delay={100}>
         <DoodlePeace className="mx-auto h-10 w-10 text-purple" />
         <p className="text-marker mt-4 text-xl">No contracts. No jargon. A chat over tea works.</p>
         <p className="mt-2 text-sm opacity-75">

@@ -15,7 +15,7 @@ export async function Footer() {
       {/* 04 · Hey, let's connect! */}
       <div className="band-alt relative">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={63} />
-        <div className="mx-auto grid min-h-[70vh] max-w-7xl content-center items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[240px_1fr] lg:gap-16">
+        <div className="mx-auto grid max-w-7xl content-center items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[240px_1fr] lg:gap-12">
           <div className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">
               Hey, let&apos;s

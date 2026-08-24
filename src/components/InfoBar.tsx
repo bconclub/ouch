@@ -8,7 +8,7 @@ const PAYMENT_CHIPS = ['UPI', 'GPay', 'Apple Pay', 'VISA', 'Mastercard', 'RuPay'
 export function InfoBar() {
   return (
       <section className="band-black" id="info">
-        <div className="mx-auto grid min-h-[60vh] max-w-7xl content-center gap-10 px-4 py-16 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl content-center gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
           <Reveal>
             <h3 className="flex items-center gap-2.5">
               <svg className="h-7 w-7 shrink-0 text-pink" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 26">
