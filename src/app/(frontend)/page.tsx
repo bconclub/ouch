@@ -21,9 +21,9 @@ import { getSiteSettings } from '@/lib/queries'
 export const dynamic = 'force-dynamic'
 
 const STATS = [
-  { value: '1000+', label: 'Happy humans', color: 'text-yellow', icon: <DoodleSmiley className="h-7 w-7" /> },
-  { value: '3000+', label: 'Piercings done', color: 'text-purple', icon: <DoodleLightning className="h-7 w-7" /> },
-  { value: '5+', label: 'Years of good vibes', color: 'text-cyan', icon: <DoodleHeart className="h-7 w-7" /> },
+  { value: '100+', label: 'Happy humans', color: 'text-yellow', icon: <DoodleSmiley className="h-7 w-7" /> },
+  { value: '100+', label: 'Piercings done', color: 'text-purple', icon: <DoodleLightning className="h-7 w-7" /> },
+  { value: '3+', label: 'Years of good vibes', color: 'text-cyan', icon: <DoodleHeart className="h-7 w-7" /> },
   {
     value: 'Premium',
     label: 'Sterile & safe',
