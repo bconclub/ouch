@@ -28,14 +28,14 @@ export async function PostersSection() {
         <div className="mx-auto grid min-h-[70vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr]">
           <Reveal>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink lg:text-4xl">
-              Paper
+              Peace
               <br />
-              cuts.
+              on paper.
             </h2>
             <p className="mt-3 text-sm opacity-75">
-              The good kind
+              Good vibes
               <br />
-              of ouch.
+              for your walls.
             </p>
             <p className="text-marker mt-3 text-[15px] text-cyan">
               Every print <span className="text-pink">₹333</span>. Flat.
