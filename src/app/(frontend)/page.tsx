@@ -122,7 +122,7 @@ export default async function HomePage() {
     <div className="overflow-hidden">
       {/* ============ HERO — It's a whole vibe ============ */}
       <section className="band-black relative">
-        <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-7xl content-center items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_1fr_auto] lg:py-16">
+        <div className="mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-7xl content-center items-center gap-6 px-4 py-8 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.05fr_1fr_auto] lg:py-16">
           {/* Headline + copy + CTAs */}
           <div className="relative">
             <DoodleStar className="absolute -top-12 right-6 hidden h-8 w-8 text-purple lg:block" />
@@ -154,10 +154,10 @@ export default async function HomePage() {
           </div>
 
           {/* Founder cutout over the paint burst */}
-          <div className="anim-pop anim-d2 relative">
+          <div className="anim-pop anim-d2 relative min-h-0">
             <ParallaxHero
               back={<PaintBurst className="absolute -inset-x-14 -inset-y-8" />}
-              className="relative mx-auto aspect-[1035/1512] w-full max-w-xs lg:max-w-sm"
+              className="relative mx-auto aspect-[1035/1512] max-h-[40svh] w-auto max-w-[68vw] sm:max-h-[48svh] lg:max-h-[62svh] lg:max-w-sm"
               front={
                 <div className="relative h-full w-full [mask-image:linear-gradient(to_bottom,black_86%,transparent_100%)]">
                   <Image
@@ -174,7 +174,7 @@ export default async function HomePage() {
           </div>
 
           {/* Stats column */}
-          <div className="anim-fade-up anim-d4 flex flex-row flex-wrap justify-center gap-x-10 gap-y-6 lg:flex-col lg:justify-start lg:gap-7">
+          <div className="anim-fade-up anim-d4 flex flex-row flex-wrap justify-center gap-x-8 gap-y-3 sm:gap-x-10 sm:gap-y-6 lg:flex-col lg:justify-start lg:gap-7">
             {STATS.map((stat) => (
               <div className="flex items-center gap-3" key={stat.label}>
                 <span className={stat.color}>{stat.icon}</span>
