@@ -2,6 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { queryProducts } from '@/lib/queries'
+import { formatPrice, mediaAlt, mediaUrl } from '@/lib/utils'
+
 import { DoodleHeart } from './Doodles'
 import { BandBlend, BrushStroke, SpraySplash } from './Paint'
 import { Reveal } from './Reveal'
@@ -14,7 +17,10 @@ const POSTERS = [
   { kind: 'paint-text', text: 'Not basic. Always Ouch.', bg: 'bg-cyan', textColor: 'text-white' },
 ]
 
-export function PostersSection() {
+export async function PostersSection() {
+  const real = await queryProducts({ category: 'posters' }).catch(() => null)
+  const posters = real?.docs ?? []
+
   return (
     <>
       {/* ============ 03 · Walls can feel too (posters) ============ */}
@@ -44,7 +50,35 @@ export function PostersSection() {
 
           <div className="relative">
             <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
-              {POSTERS.map((poster, i) => (
+              {posters.length > 0
+                ? posters.map((poster, i) => {
+                    const url = mediaUrl(poster.images?.[0]?.image, 'card')
+                    return (
+                      <Reveal delay={i * 70} key={poster.id}>
+                        <Link
+                          className="group block overflow-hidden rounded-xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg]"
+                          href={`/products/${poster.slug}`}
+                        >
+                          <span className="relative block aspect-[3/4] overflow-hidden rounded-xl">
+                            {url && (
+                              <Image
+                                alt={mediaAlt(poster.images?.[0]?.image, poster.title)}
+                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                fill
+                                sizes="(max-width: 640px) 45vw, 16vw"
+                                src={url}
+                              />
+                            )}
+                          </span>
+                          <span className="mt-2 flex items-baseline justify-between gap-2">
+                            <span className="text-poster truncate text-[13px] uppercase">{poster.title}</span>
+                            <span className="text-[13px] font-bold text-pink">{formatPrice(poster.price)}</span>
+                          </span>
+                        </Link>
+                      </Reveal>
+                    )
+                  })
+                : POSTERS.map((poster, i) => (
                 <Reveal delay={i * 70} key={poster.text}>
                 <div
                   className={`relative aspect-[3/4] overflow-hidden rounded-xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg] ${poster.kind === 'text' ? poster.bg : ''} ${
