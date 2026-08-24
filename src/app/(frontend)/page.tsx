@@ -13,6 +13,7 @@ import {
 } from '@/components/Doodles'
 import { BandBlend, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
+import { PostersSection } from '@/components/PostersSection'
 import { Reveal } from '@/components/Reveal'
 import { WordCycle } from '@/components/WordCycle'
 import { getSiteSettings } from '@/lib/queries'
@@ -431,6 +432,8 @@ export default async function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      <PostersSection />
     </div>
   )
 }

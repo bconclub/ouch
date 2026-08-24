@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/shop', label: 'Piercings' },
   { href: '/category/studs-gems', label: 'Studs' },
-  { href: '/#posters', label: 'Posters' },
+  { href: '/posters', label: 'Posters' },
   { href: '/#info', label: 'Info' },
   { href: '/#connect', label: 'Contact' },
 ]

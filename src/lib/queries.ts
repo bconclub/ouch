@@ -63,15 +63,28 @@ export type ProductQuery = {
   search?: string
   sort?: 'newest' | 'price-asc' | 'price-desc'
   page?: number
+  /** Jewellery and posters are separate shops — exclude posters by default. */
+  excludeCategory?: string
 }
 
-export async function queryProducts({ category, material, search, sort, page }: ProductQuery) {
+export async function queryProducts({
+  category,
+  material,
+  search,
+  sort,
+  page,
+  excludeCategory,
+}: ProductQuery) {
   const payload = await getPayloadClient()
 
   const and: Where[] = []
   if (category) {
     const cat = await getCategoryBySlug(category)
     and.push({ category: { equals: cat?.id ?? -1 } })
+  }
+  if (excludeCategory) {
+    const ex = await getCategoryBySlug(excludeCategory)
+    if (ex) and.push({ category: { not_equals: ex.id } })
   }
   if (material) {
     and.push({ material: { equals: material } })

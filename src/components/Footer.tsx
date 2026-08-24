@@ -4,7 +4,6 @@ import { getSiteSettings } from '@/lib/queries'
 import { DoodleHeart, DoodleLightning, DoodlePeace, DoodleSmiley } from './Doodles'
 import { Logo } from './Logo'
 import { NewsletterForm } from './NewsletterForm'
-import { PostersSection } from './PostersSection'
 import { BandBlend } from './Paint'
 
 export async function Footer() {
@@ -69,9 +68,6 @@ export async function Footer() {
           </span>
         </div>
       </div>
-
-      {/* Posters — the last thing on the page */}
-      <PostersSection />
     </footer>
   )
 }
