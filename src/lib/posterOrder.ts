@@ -1,29 +1,26 @@
 import type { Product } from '@/payload-types'
 
 /**
- * Running order for the poster wall, derived from the artwork itself: each
- * print's luminance and saturation were measured, the most colourful lead,
- * and the true dark-background prints are slotted between them so the grid
- * alternates bright / dark all the way down.
+ * Running order for the poster wall, measured from the artwork itself:
+ * dark and vibrant prints lead (scored on saturation minus lightness), and
+ * the wall flows from black-and-loud down to the soft pale pieces.
  * Anything not listed keeps its natural (newest-first) position at the end.
  */
 const ORDER = [
-  'Butterfly Scream',
   'Dream Big Start Small',
-  'Wild Soul',
-  'Zero Given',
-  'Progress Not Perfection',
+  'Butterfly Scream',
   'Shine Ur Vibe',
-  'Let Joy Find You',
-  'Sun Moon Spiral',
-  'Trust The Flow',
+  'Wild Soul',
   'Spiral Garden',
+  'Sun Moon Spiral',
+  'Zero Given',
+  'Let Joy Find You',
+  'Progress Not Perfection',
   'Make Space For What Matters',
+  'Trust The Flow',
   'You Are Enough',
   'Be Kind',
   'Grow Anyway',
-  'Focus On The Good',
-  'Breathe Let Go Be Here',
   'Every Day Is A New Beginning',
 ]
 
