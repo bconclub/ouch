@@ -31,10 +31,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
   return {
     title: {
-      default: `${settings.storeName} — Piercings that hit different`,
+      default: `${settings.storeName} — Peace. Love. Piercings.`,
       template: `%s — ${settings.storeName}`,
     },
-    description: settings.tagline ?? 'Bold pieces. Good vibes. Made to stand out, just like you.',
+    description: settings.tagline ?? 'Peace. Love. Piercings.',
   }
 }
 
