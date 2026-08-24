@@ -15,7 +15,7 @@ export async function Footer() {
       {/* 04 · Hey, let's connect! */}
       <div className="band-alt relative">
         <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={63} />
-        <div className="mx-auto grid min-h-[65vh] max-w-7xl content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[220px_1fr]">
+        <div className="mx-auto grid min-h-[70vh] max-w-7xl content-center items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[240px_1fr] lg:gap-16">
           <div className="relative">
             <h2 className="text-marker mt-1 text-3xl leading-snug">
               Hey, let&apos;s
@@ -28,7 +28,7 @@ export async function Footer() {
           {/* Connect card — same frosted language as /card */}
           <div className="mx-auto w-full max-w-2xl [perspective:1200px]">
             <a
-              className="flex flex-col items-center gap-6 text-center transition-transform duration-500 [transform:rotateY(-16deg)_rotateX(6deg)] hover:[transform:rotateY(0deg)_rotateX(0deg)] sm:flex-row sm:items-center sm:gap-12 sm:text-left"
+              className="flex flex-col items-center gap-8 text-center transition-transform duration-500 [transform:rotateY(-12deg)_rotateX(4deg)] hover:[transform:rotateY(0deg)_rotateX(0deg)] sm:flex-row sm:items-center sm:gap-14 sm:text-left"
               href="/card"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -44,7 +44,7 @@ export async function Footer() {
               </span>
             </a>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
+            <div className="mt-10 flex flex-wrap justify-center gap-4 sm:justify-start">
               <a
                 className="text-poster inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-7 py-3.5 text-[13px] tracking-wide text-black uppercase transition-transform hover:scale-105"
                 href={`${whatsappHref}?text=${encodeURIComponent('Hey Ouch! 🤘')}`}

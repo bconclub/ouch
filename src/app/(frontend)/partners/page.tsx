@@ -7,7 +7,7 @@ import { Reveal } from '@/components/Reveal'
 import { getSiteSettings } from '@/lib/queries'
 
 export const metadata: Metadata = {
-  title: 'Hidden Gems',
+  title: 'Partner with us',
   description: 'The Bengaluru jewellers nobody is talking about yet. We give their work a wall, a name and an audience.',
 }
 
@@ -59,16 +59,17 @@ export default async function PartnersPage() {
         <DoodleSparkleSmall className="absolute top-1 right-[14%] h-3 w-3 text-pink" />
 
         <h1 className="text-poster relative mx-auto w-fit text-5xl sm:text-6xl">
-          Hidden <span className="text-pink">Gems</span>
+          Partner <span className="text-pink">with us</span>
           <DoodleGem className="absolute -top-7 -right-9 h-8 w-8 rotate-12 text-purple" />
           <BrushStroke className="absolute -bottom-2 left-0 h-3.5 w-full" color="var(--color-orange)" seed={99} />
         </h1>
         <p className="text-marker mx-auto mt-6 max-w-xl text-lg leading-relaxed">
-          Real makers. Real silver. Nobody&apos;s talking about them. Yet.
+          We sell your jewellery for you. You keep making it.
         </p>
         <p className="mx-auto mt-3 max-w-lg text-sm opacity-75">
-          This city is full of people making beautiful silver in small shops, and almost nobody
-          gets to see it. We give that work a wall, a name and an audience.
+          Bengaluru is full of small jewellers whose work almost nobody gets to see. Send us your
+          pieces, we photograph them, put them on the shop with your name on them, and share what
+          they sell for. You make — we handle the rest.
         </p>
         <a
           className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"

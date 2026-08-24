@@ -234,7 +234,7 @@ export default async function HomePage() {
                         alt={`${card.name} piercings`}
                         className="scale-[1.12] object-cover transition-transform duration-500 group-hover:scale-[1.2]"
                         fill
-                        sizes="(max-width: 640px) 90vw, 20vw"
+                        sizes="(max-width: 640px) 82vw, (max-width: 1024px) 46vw, 20vw"
                         src={card.image}
                       />
                     </div>
@@ -294,7 +294,7 @@ export default async function HomePage() {
                 {STUD_TILES.map((tile) => (
                   <Link className="group block text-center" href="/shop" key={tile.name}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <span className="block aspect-square overflow-hidden rounded-lg"><img alt={tile.name} className="h-full w-full scale-110 object-cover transition-transform duration-300 group-hover:scale-125" src={tile.image} /></span>
+                    <span className="block overflow-hidden rounded-lg"><img alt={tile.name} className="block w-full transition-transform duration-300 group-hover:scale-105" src={tile.image} /></span>
                     <span className="mt-1.5 block text-[10px] font-bold tracking-[0.12em] uppercase">
                       {tile.name}
                     </span>
@@ -348,12 +348,12 @@ export default async function HomePage() {
         <div className="mx-auto min-h-[45vh] max-w-5xl content-center px-4 py-16 text-center sm:px-6">
           <Reveal>
             <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
-              Hidden Gems
+              Partner with us.
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
-              The Bengaluru jewellers nobody&apos;s talking about. Yet. We give their work a wall,
-              a name and an audience.
+              Small jewellers of Bengaluru: we sell your pieces for you. Photos, your name on every
+              piece, and a fair share of what it sells for.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
               <span className="rounded-full border border-[var(--band-line)] px-4 py-2">Your hands</span>
@@ -366,7 +366,7 @@ export default async function HomePage() {
               className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
               href="/partners"
             >
-              Meet the makers <span aria-hidden>→</span>
+              How it works <span aria-hidden>→</span>
             </Link>
           </Reveal>
         </div>
