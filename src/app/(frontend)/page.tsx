@@ -139,8 +139,8 @@ export default async function HomePage() {
             </h1>
 
             <p className="anim-fade-up anim-d4 mt-8 max-w-md text-[15px] leading-relaxed sm:text-base">
-              Studs, hoops and barbells — <span className="mark-highlight font-semibold">kind to your skin</span>,
-              easy to love.
+              Rare little pieces you won&apos;t see anywhere else —{' '}
+              <span className="mark-highlight font-semibold">kind to your skin</span>, easy to love.
             </p>
 
             <div className="anim-fade-up anim-d5 mt-7 flex flex-wrap gap-4">
