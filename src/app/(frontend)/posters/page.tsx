@@ -7,7 +7,7 @@ import { BrushStroke } from '@/components/Paint'
 import { queryProducts } from '@/lib/queries'
 
 export const metadata: Metadata = {
-  title: 'Wall Posters',
+  title: 'Paper Cuts',
 }
 
 export default async function PostersPage() {
@@ -17,11 +17,11 @@ export default async function PostersPage() {
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
       <Reveal className="mb-10">
         <h1 className="text-poster relative w-fit text-4xl sm:text-5xl">
-          Wall posters
+          Paper cuts.
           <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-cyan)" seed={88} />
         </h1>
         <p className="text-marker mt-4 text-lg">
-          Art that talks back. Every poster <span className="text-pink">₹333</span>. Flat.
+          The good kind of ouch. Every print <span className="text-pink">₹333</span>. Flat.
         </p>
       </Reveal>
 

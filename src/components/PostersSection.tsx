@@ -28,17 +28,17 @@ export async function PostersSection() {
         <div className="mx-auto grid min-h-[70vh] max-w-[90rem] content-center items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[250px_1fr]">
           <Reveal>
             <h2 className="text-marker mt-1 text-3xl leading-snug text-pink lg:text-4xl">
-              Walls can
+              Paper
               <br />
-              feel too.
+              cuts.
             </h2>
             <p className="mt-3 text-sm opacity-75">
-              Art that talks back.
+              The good kind
               <br />
-              Your walls deserve it.
+              of ouch.
             </p>
             <p className="text-marker mt-3 text-[15px] text-cyan">
-              By the way — every poster is <span className="text-pink">₹333</span>. Flat.
+              Every print <span className="text-pink">₹333</span>. Flat.
             </p>
             <Link
               className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[12px] tracking-wide text-[#0a2a30] uppercase transition-transform hover:scale-105"
