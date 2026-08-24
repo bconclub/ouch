@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import React from 'react'
 
-import { ProductCard } from '@/components/ProductCard'
+import { PosterCard } from '@/components/PosterCard'
 import { Reveal } from '@/components/Reveal'
 import { BrushStroke } from '@/components/Paint'
 import { queryProducts } from '@/lib/queries'
@@ -31,9 +31,9 @@ export default async function PostersPage() {
           <p className="mt-2 text-sm text-muted">Come back in a bit — good things take a minute.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+        <div className="grid grid-cols-2 gap-7 sm:grid-cols-3 lg:grid-cols-4 lg:gap-12">
           {result.docs.map((poster) => (
-            <ProductCard key={poster.id} portrait product={poster} />
+            <PosterCard key={poster.id} product={poster} />
           ))}
         </div>
       )}
