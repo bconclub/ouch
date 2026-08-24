@@ -39,7 +39,7 @@ export async function Footer() {
                   Peace. Love. <span className="text-pink">Piercings.</span>
                 </span>
                 <span className="text-marker mt-3 block text-[15px] opacity-80">
-                  Scan to save us, or just say hi 👇
+                  Scan to save us, or just say hi 🌸
                 </span>
               </span>
             </a>
