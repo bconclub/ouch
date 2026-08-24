@@ -28,18 +28,13 @@ export async function Footer() {
           {/* The Ouch card — a business card that isn't a business card */}
           <div className="relative mx-auto w-full max-w-2xl -rotate-2 text-[#17141a] transition-transform duration-300 [filter:drop-shadow(0_18px_40px_rgba(0,0,0,0.3))] hover:rotate-1 lg:col-span-2">
             <div className="card-torn bg-[#f6f1e6] p-9">
-            <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:justify-between sm:gap-16 sm:px-6 sm:text-left">
-              <div className="text-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt="Scan me" className="h-40 w-40" src="/brand/qr-site.png" />
-                <p className="text-poster mt-1.5 text-[11px] tracking-[0.16em] uppercase">Scan me, dude</p>
-              </div>
-              <div className="sm:text-right">
-                <Logo className="mx-auto h-8 w-auto sm:mr-0 sm:ml-auto" variant="ink" />
-                <p className="text-poster mt-2 text-[11px] tracking-[0.14em] uppercase">
-                  Peace. Love. <span className="text-pink">Piercings.</span>
-                </p>
-              </div>
+            <div className="flex flex-col items-center gap-2 text-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img alt="Scan me" className="h-48 w-48 rounded-lg" src="/brand/qr-site.png" />
+              <p className="text-poster text-[11px] tracking-[0.16em] uppercase">Scan me, dude</p>
+              <p className="text-poster mt-1 text-[11px] tracking-[0.14em] uppercase">
+                Peace. Love. <span className="text-pink">Piercings.</span>
+              </p>
             </div>
             </div>
             <span aria-hidden className="absolute -top-2.5 left-12 h-6 w-20 rotate-3 bg-[#d8d2c2]/85" />
