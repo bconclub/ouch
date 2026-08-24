@@ -7,7 +7,14 @@ import { formatPrice, mediaAlt, mediaUrl } from '@/lib/utils'
 
 const CHIPS = ['bg-pink', 'bg-purple', 'bg-cyan', 'bg-orange', 'bg-yellow']
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({
+  product,
+  portrait = false,
+}: {
+  product: Product
+  /** Posters are prints — show them in full portrait, not a square crop. */
+  portrait?: boolean
+}) {
   const firstImage = product.images?.[0]?.image
   const url = mediaUrl(firstImage, 'card')
   const onSale = product.compareAtPrice != null && product.compareAtPrice > product.price
@@ -19,11 +26,11 @@ export function ProductCard({ product }: { product: Product }) {
       className="band-paper group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-1deg]"
       href={`/products/${product.slug}`}
     >
-      <div className="relative m-2 aspect-square overflow-hidden rounded-xl bg-white/60">
+      <div className={`relative m-2 overflow-hidden rounded-xl bg-white/60 ${portrait ? 'aspect-[3/4]' : 'aspect-square'}`}>
         {url && (
           <Image
             alt={mediaAlt(firstImage, product.title)}
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`transition-transform duration-500 group-hover:scale-105 ${portrait ? 'object-contain' : 'object-cover'}`}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             src={url}

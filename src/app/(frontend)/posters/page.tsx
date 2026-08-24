@@ -33,7 +33,7 @@ export default async function PostersPage() {
       ) : (
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
           {result.docs.map((poster) => (
-            <ProductCard key={poster.id} product={poster} />
+            <ProductCard key={poster.id} portrait product={poster} />
           ))}
         </div>
       )}
