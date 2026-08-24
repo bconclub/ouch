@@ -68,8 +68,8 @@ export async function Footer() {
               </div>
               <div className="mx-auto text-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt="Scan to visit oouucchh.com" className="h-36 w-36 rounded-lg border-4 border-[#17141a]/10" src="/brand/qr-site.png" />
-                <p className="text-poster mt-2 text-[10px] tracking-[0.16em] uppercase">Scan me, dude</p>
+                <img alt="Scan to save Ouch as a contact — phone, email, website" className="h-36 w-36 rounded-lg border-4 border-[#17141a]/10" src="/brand/qr-site.png" />
+                <p className="text-poster mt-2 text-[10px] tracking-[0.16em] uppercase">Scan me — save my contact</p>
                 <DoodlePeace className="mx-auto mt-2 h-7 w-7 text-purple" />
               </div>
             </div>
