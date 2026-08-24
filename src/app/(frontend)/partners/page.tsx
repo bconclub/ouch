@@ -8,28 +8,28 @@ import { getSiteSettings } from '@/lib/queries'
 
 export const metadata: Metadata = {
   title: 'Partner with us',
-  description: 'The Bengaluru jewellers nobody is talking about yet. We give their work a wall, a name and an audience.',
+  description: 'For small jewellers of Bengaluru: you craft rare silver, we curate it and sell it with your name on every piece. Jewellery only.',
 }
 
 const STEPS = [
   {
     n: '01',
-    title: 'Your hands',
-    body: 'Silver nobody else is making. Odd shapes, old techniques, one-offs — the weirder the better.',
+    title: 'You craft it',
+    body: 'Rare silver nobody else is making. Odd shapes, old techniques, one-offs — the weirder the better.',
     chip: 'bg-pink',
     gem: 'text-pink',
   },
   {
     n: '02',
-    title: 'Our wall',
-    body: 'Photos, a page of your own, your name on every piece. People finally see what you make.',
+    title: 'We curate it',
+    body: 'We pick the pieces, photograph them properly and list them with your name on every one.',
     chip: 'bg-purple',
     gem: 'text-purple',
   },
   {
     n: '03',
-    title: 'Fair share',
-    body: 'When it sells, the money is shared. No stall rent, no upfront fee, nothing to lose.',
+    title: 'We split it',
+    body: 'When it sells, the money is shared, fair and square. No stall rent, no upfront fee, nothing to lose.',
     chip: 'bg-cyan',
     gem: 'text-cyan',
   },
@@ -64,7 +64,7 @@ export default async function PartnersPage() {
           <BrushStroke className="absolute -bottom-2 left-0 h-3.5 w-full" color="var(--color-orange)" seed={99} />
         </h1>
         <p className="text-marker mx-auto mt-6 max-w-xl text-lg leading-relaxed">
-          We sell your jewellery for you. You keep making it.
+          For the small jewellers of Bengaluru. You keep making it — we curate and sell it.
         </p>
         <p className="mx-auto mt-3 max-w-lg text-sm opacity-75">
           Bengaluru is full of small jewellers whose work almost nobody gets to see. Send us your
@@ -72,7 +72,7 @@ export default async function PartnersPage() {
           they sell for. You make — we handle the rest.
         </p>
         <p className="text-marker mx-auto mt-4 max-w-lg text-[15px] text-cyan">
-          Jewellery only — the posters are ours.
+          Jewellery only — the posters are ours, not a partner category.
         </p>
         <a
           className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
