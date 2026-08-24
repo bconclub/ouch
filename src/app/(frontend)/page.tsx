@@ -488,7 +488,7 @@ export default async function HomePage() {
         <div className="mx-auto min-h-[45vh] max-w-5xl content-center px-4 py-16 text-center sm:px-6">
           <Reveal>
             <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
-              Jeweller friends wanted.
+              Partner with us.
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
