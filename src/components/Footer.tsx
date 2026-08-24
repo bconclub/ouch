@@ -43,9 +43,9 @@ export async function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a className="inline-flex items-center gap-2.5 hover:text-pink" href="mailto:hello@ouchjewellery.com">
+                    <a className="inline-flex items-center gap-2.5 hover:text-pink" href="mailto:oouucchhed@gmail.com">
                       <svg fill="none" height="16" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16"><rect height="16" rx="3" width="20" x="2" y="4" /><path d="M2 7l10 6 10-6" /></svg>
-                      hello@ouchjewellery.com
+                      oouucchhed@gmail.com
                     </a>
                   </li>
                   <li>
