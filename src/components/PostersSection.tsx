@@ -18,7 +18,7 @@ const POSTERS = [
 ]
 
 export async function PostersSection() {
-  const real = await queryProducts({ category: 'posters' }).catch(() => null)
+  const real = await queryProducts({ category: 'posters', limit: 5 }).catch(() => null)
   const posters = real?.docs ?? []
 
   return (

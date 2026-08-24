@@ -65,6 +65,7 @@ export type ProductQuery = {
   page?: number
   /** Jewellery and posters are separate shops — exclude posters by default. */
   excludeCategory?: string
+  limit?: number
 }
 
 export async function queryProducts({
@@ -74,6 +75,7 @@ export async function queryProducts({
   sort,
   page,
   excludeCategory,
+  limit,
 }: ProductQuery) {
   const payload = await getPayloadClient()
 
@@ -103,7 +105,7 @@ export async function queryProducts({
     collection: 'products',
     where: and.length ? { and } : undefined,
     depth: 2,
-    limit: 12,
+    limit: limit ?? 12,
     page: page ?? 1,
     sort: sortMap[sort ?? 'newest'],
   })

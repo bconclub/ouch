@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 }
 
 export default async function PostersPage() {
-  const result = await queryProducts({ category: 'posters' })
+  const result = await queryProducts({ category: 'posters', limit: 48 })
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
