@@ -1,28 +1,30 @@
 import type { Product } from '@/payload-types'
 
 /**
- * Hand-picked running order for the poster wall: lead with a bold, colourful
- * piece, then alternate loud and soft so the grid never clumps into one mood.
+ * Running order for the poster wall, derived from the artwork itself: each
+ * print's luminance and saturation were measured, the most colourful lead,
+ * and the true dark-background prints are slotted between them so the grid
+ * alternates bright / dark all the way down.
  * Anything not listed keeps its natural (newest-first) position at the end.
  */
 const ORDER = [
-  'Wild Soul',
-  'Dream Big Start Small',
-  'Trust The Flow',
-  'Shine Ur Vibe',
-  'Make Space For What Matters',
-  'Let Joy Find You',
-  'Zero Given',
-  'Be Kind',
   'Butterfly Scream',
-  'Breathe Let Go Be Here',
-  'Sun Moon Spiral',
-  'You Are Enough',
-  'Spiral Garden',
-  'Grow Anyway',
-  'Every Day Is A New Beginning',
-  'Focus On The Good',
+  'Dream Big Start Small',
+  'Wild Soul',
+  'Zero Given',
   'Progress Not Perfection',
+  'Shine Ur Vibe',
+  'Let Joy Find You',
+  'Sun Moon Spiral',
+  'Trust The Flow',
+  'Spiral Garden',
+  'Make Space For What Matters',
+  'You Are Enough',
+  'Be Kind',
+  'Grow Anyway',
+  'Focus On The Good',
+  'Breathe Let Go Be Here',
+  'Every Day Is A New Beginning',
 ]
 
 export function orderPosters(posters: Product[]): Product[] {
