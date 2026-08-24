@@ -352,21 +352,21 @@ export default async function HomePage() {
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
-              The Bengaluru jewellers nobody&apos;s talking about. Yet. Show us what you make and
-              we&apos;ll put it on the wall — with your name on it.
+              The Bengaluru jewellers nobody&apos;s talking about. Yet. We give their work a wall,
+              a name and an audience.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
-              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">You craft it</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">Your hands</span>
               <span aria-hidden>→</span>
-              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We showcase it</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">Our wall</span>
               <span aria-hidden>→</span>
-              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We split it, fair &amp; square</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">Fair share</span>
             </div>
             <Link
               className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
               href="/partners"
             >
-              Show us your work <span aria-hidden>→</span>
+              Meet the makers <span aria-hidden>→</span>
             </Link>
           </Reveal>
         </div>
