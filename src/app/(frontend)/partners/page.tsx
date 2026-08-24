@@ -7,8 +7,8 @@ import { Reveal } from '@/components/Reveal'
 import { getSiteSettings } from '@/lib/queries'
 
 export const metadata: Metadata = {
-  title: 'Show & Sell',
-  description: 'Small jewellers of Bengaluru: show us your work, we put it on the wall and sell it with you.',
+  title: 'Hidden Gems',
+  description: 'The Bengaluru jewellers nobody is talking about yet. Show us your work and we will put it on the wall with your name on it.',
 }
 
 const STEPS = [
@@ -48,15 +48,15 @@ export default async function PartnersPage() {
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <Reveal className="text-center">
         <h1 className="text-poster relative mx-auto w-fit text-5xl sm:text-6xl">
-          Show &amp; Sell
+          Hidden Gems
           <BrushStroke className="absolute -bottom-2 left-0 h-3.5 w-full" color="var(--color-orange)" seed={99} />
         </h1>
         <p className="text-marker mx-auto mt-6 max-w-xl text-lg leading-relaxed">
-          You show us what you make. We put it on the wall and sell it with you.
+          The Bengaluru jewellers nobody&apos;s talking about. Yet.
         </p>
         <p className="mx-auto mt-3 max-w-lg text-sm opacity-75">
-          Bengaluru is full of small jewellers making beautiful silver that nobody gets to see.
-          That&apos;s the whole problem we&apos;re trying to fix.
+          This city is full of people making beautiful silver in small shops, and almost nobody
+          gets to see it. Show us what you make — we&apos;ll put it on the wall with your name on it.
         </p>
         <a
           className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"

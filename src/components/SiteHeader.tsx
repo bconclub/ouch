@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { href: '/shop', label: 'Piercings' },
   { href: '/category/studs-gems', label: 'Studs' },
   { href: '/posters', label: 'Posters' },
-  { href: '/partners', label: 'Show & Sell' },
+  { href: '/partners', label: 'Hidden Gems' },
   { href: '/#connect', label: 'Contact' },
 ]
 

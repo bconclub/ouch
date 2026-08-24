@@ -348,12 +348,12 @@ export default async function HomePage() {
         <div className="mx-auto min-h-[45vh] max-w-5xl content-center px-4 py-16 text-center sm:px-6">
           <Reveal>
             <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
-              Show &amp; Sell
+              Hidden Gems
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
-              You show us what you make, we put it on the wall and sell it with you. For the small
-              jewellers of Bengaluru whose best work nobody gets to see.
+              The Bengaluru jewellers nobody&apos;s talking about. Yet. Show us what you make and
+              we&apos;ll put it on the wall — with your name on it.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
               <span className="rounded-full border border-[var(--band-line)] px-4 py-2">You craft it</span>
