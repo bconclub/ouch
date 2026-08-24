@@ -12,7 +12,8 @@ const PRICE = 333
 function titleFromFile(file: string): string {
   const base = path.basename(file).replace(/\.[a-z]+$/i, '')
   const cleaned = base.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim()
-  return cleaned.replace(/\b\w/g, (c) => c.toUpperCase())
+  // Capitalise word starts, but leave letters after an apostrophe alone (Won't, You're)
+  return cleaned.replace(/(^|\s)(\w)/g, (_m, pre, c) => pre + c.toUpperCase())
 }
 
 function slugify(s: string): string {
