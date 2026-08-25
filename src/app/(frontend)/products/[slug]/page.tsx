@@ -80,9 +80,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <ProductPurchase product={product} />
 
           {isPoster && (
-            <p className="text-marker mt-5 text-[15px] text-cyan">
-              The watermark is only on the preview — your print arrives clean.
-            </p>
+            <div className="mt-5 rounded-2xl border border-line p-4">
+              <p className="text-marker text-[15px] text-cyan">A printed poster, posted to you.</p>
+              <ul className="mt-2 space-y-1 text-[13px] opacity-80">
+                <li>✓ Printed on good matte paper, rolled in a tube</li>
+                <li>✓ No watermark on the real thing — that&apos;s only on the preview here</li>
+                <li>✓ Pan India delivery, 3–7 days</li>
+              </ul>
+            </div>
           )}
 
           {specs.length > 0 && (
