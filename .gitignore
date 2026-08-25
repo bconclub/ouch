@@ -55,3 +55,6 @@ ouch.db
 
 # build skill state
 .claude/state/
+
+# clean, unwatermarked artwork — never published
+/private-originals

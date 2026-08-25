@@ -26,6 +26,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound()
 
   const category = typeof product.category === 'object' ? product.category : null
+  const isPoster = category?.slug === 'posters'
 
   const galleryImages = (product.images ?? [])
     .map((entry) => {
@@ -77,6 +78,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <h1 className="text-poster mb-4 text-3xl uppercase sm:text-4xl">{product.title}</h1>
 
           <ProductPurchase product={product} />
+
+          {isPoster && (
+            <p className="text-marker mt-5 text-[15px] text-cyan">
+              The watermark is only on the preview — your print arrives clean.
+            </p>
+          )}
 
           {specs.length > 0 && (
             <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 border-t border-line pt-6 text-sm sm:grid-cols-3">
