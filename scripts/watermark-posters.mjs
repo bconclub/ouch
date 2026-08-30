@@ -32,6 +32,13 @@ const PLACE = {
 }
 
 function overlaySvg(W, H, ly) {
+  // One big logo is enough on its own; the small diagonal repeats appear
+  // only when there is no big logo (founder's rule — never both).
+  if (ly !== false) {
+    const logoW = Math.round(W * 0.62), logoH = Math.round(logoW * 0.30)
+    const logo = `<image x="${(W - logoW) / 2}" y="${Math.round(H * ly - logoH / 2)}" width="${logoW}" height="${logoH}" opacity="0.62" xlink:href="data:image/png;base64,${logoB64}"/>`
+    return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${logo}</svg>`
+  }
   const marks = []
   const stepX = Math.round(W * 0.38), stepY = Math.round(H * 0.16)
   let row = 0
@@ -41,12 +48,7 @@ function overlaySvg(W, H, ly) {
       marks.push(`<text x="${x}" y="${y}" text-anchor="middle" font-family="Start Story" font-size="${Math.round(W * 0.05)}" fill="#ffffff" fill-opacity="0.3" transform="rotate(-28 ${x} ${y})">OUCH · oouucchh.com</text>`)
     }
   }
-  let logo = ''
-  if (ly !== false) {
-    const logoW = Math.round(W * 0.62), logoH = Math.round(logoW * 0.30)
-    logo = `<image x="${(W - logoW) / 2}" y="${Math.round(H * ly - logoH / 2)}" width="${logoW}" height="${logoH}" opacity="0.62" xlink:href="data:image/png;base64,${logoB64}"/>`
-  }
-  return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${marks.join('')}${logo}</svg>`
+  return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${marks.join('')}</svg>`
 }
 
 const rows = execSync(
