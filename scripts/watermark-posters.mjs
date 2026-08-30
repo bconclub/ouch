@@ -11,10 +11,12 @@ import { execSync } from 'child_process'
 const ORIG = 'private-originals/posters'
 const logoB64 = fs.readFileSync('public/brand/logo-white.png').toString('base64')
 
-// ly = logo vertical centre (fraction of height); false = art has its own logo.
-// New posters default to 0.5 — add an entry here if that sits on the artwork's words.
+// ly = logo vertical centre (fraction of height). Exactly ONE mark per poster
+// (founder's rule): placed where it respects the art, evident, and central
+// enough that no crop removes it. New posters default to 0.5 — add an entry
+// here if that sits on the artwork's words.
 const PLACE = {
-  'Wild Soul': false,
+  'Wild Soul': 0.84,
   'Butterfly Scream': 0.5,
   'Spiral Garden': 0.5,
   'Let Joy Find You': 0.82,
@@ -33,23 +35,9 @@ const PLACE = {
 }
 
 function overlaySvg(W, H, ly) {
-  // One big logo is enough on its own; the small diagonal repeats appear
-  // only when there is no big logo (founder's rule — never both).
-  if (ly !== false) {
-    const logoW = Math.round(W * 0.62), logoH = Math.round(logoW * 0.30)
-    const logo = `<image x="${(W - logoW) / 2}" y="${Math.round(H * ly - logoH / 2)}" width="${logoW}" height="${logoH}" opacity="0.62" xlink:href="data:image/png;base64,${logoB64}"/>`
-    return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${logo}</svg>`
-  }
-  const marks = []
-  const stepX = Math.round(W * 0.38), stepY = Math.round(H * 0.16)
-  let row = 0
-  for (let y = Math.round(stepY / 2); y < H + stepY; y += stepY, row++) {
-    const off = (row % 2) ? Math.round(stepX / 2) : 0
-    for (let x = off - stepX; x < W + stepX; x += stepX) {
-      marks.push(`<text x="${x}" y="${y}" text-anchor="middle" font-family="Start Story" font-size="${Math.round(W * 0.05)}" fill="#ffffff" fill-opacity="0.3" transform="rotate(-28 ${x} ${y})">OUCH · oouucchh.com</text>`)
-    }
-  }
-  return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${marks.join('')}</svg>`
+  const logoW = Math.round(W * 0.62), logoH = Math.round(logoW * 0.30)
+  const logo = `<image x="${(W - logoW) / 2}" y="${Math.round(H * ly - logoH / 2)}" width="${logoW}" height="${logoH}" opacity="0.62" xlink:href="data:image/png;base64,${logoB64}"/>`
+  return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${logo}</svg>`
 }
 
 const rows = execSync(
