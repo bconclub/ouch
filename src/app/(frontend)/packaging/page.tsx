@@ -87,11 +87,11 @@ export default function PackagingPage() {
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {[
-            ['card-a.png', 'Card — &ldquo;Congrats. You have taste.&rdquo;', '90 × 50 mm'],
-            ['card-b.png', 'Card — &ldquo;Small thing. Big flex.&rdquo;', '90 × 50 mm'],
-            ['card-c.png', 'Card — &ldquo;Wear it like you stole it.&rdquo;', '90 × 50 mm'],
-            ['card-d.png', 'Card — &ldquo;Warning: people will ask.&rdquo;', '90 × 50 mm'],
-            ['card-e.png', 'Card — &ldquo;This one found you.&rdquo;', '90 × 50 mm'],
+            ['card-a.png', 'Card — “Congrats. You have taste.”', '90 × 50 mm'],
+            ['card-b.png', 'Card — “Small thing. Big flex.”', '90 × 50 mm'],
+            ['card-c.png', 'Card — “Wear it like you stole it.”', '90 × 50 mm'],
+            ['card-d.png', 'Card — “Warning: people will ask.”', '90 × 50 mm'],
+            ['card-e.png', 'Card — “This one found you.”', '90 × 50 mm'],
             ['card-back.png', 'Thank you card — back', 'write the maker&apos;s name by hand'],
             ['sticker.png', 'Sticker', '40 mm round'],
             ['pouch-print.png', 'Pouch print / stamp', 'for the pouch or a rubber stamp'],
