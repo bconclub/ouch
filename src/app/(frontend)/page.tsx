@@ -354,8 +354,7 @@ export default async function HomePage() {
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed opacity-85">
               We started here and we&apos;re staying here for now. Pieces picked from small
-              jewellers in this city, delivered across it the same day. One city, done properly,
-              beats everywhere done badly.
+              jewellers in this city, delivered across it the same day. One city, done with love.
             </p>
             <p className="text-marker mt-3 text-[15px] text-pink">Rest of India — soon 🤞</p>
           </Reveal>
