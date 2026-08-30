@@ -57,12 +57,12 @@ export function InfoBar() {
               <svg className="h-7 w-7 shrink-0 text-yellow" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" />
               </svg>
-              <span className="text-poster text-[15px] tracking-wide uppercase">Jewellery care (aka TLC)</span>
+              <span className="text-poster text-[15px] tracking-wide uppercase">Any questions?</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ Lil soap, lil love, lil patience</li>
-              <li>✓ No perfume parties, pretty please</li>
-              <li>✓ Keep it cosy and dry, like a cat</li>
+              <li>✓ Ask us anything, anytime</li>
+              <li>✓ We answer like a friend, not a form</li>
+              <li>✓ No robots, no scripts 🎶</li>
             </ul>
           </Reveal>
         </div>

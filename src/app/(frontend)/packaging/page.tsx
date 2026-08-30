@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 }
 
-/** The five things that go in every order, from the founder's own plan. */
+/** The four things that go in every order. No care card on purpose — no
+ *  instructions means no promises to argue about later. */
 const INSIDE = [
   { n: '1', title: 'Jewellery pouch', body: 'Soft canvas drawstring pouch with the logo.', cost: '₹18–30', chip: 'bg-pink' },
   { n: '2', title: 'Jewellery card', body: 'Stud sits securely on a lilac card.', cost: '₹3–6', chip: 'bg-purple' },
-  { n: '3', title: 'Care card', body: 'Simple care instructions, yellow.', cost: '₹3–6', chip: 'bg-yellow' },
-  { n: '4', title: 'Thank you note', body: 'A little note for a big smile, pink.', cost: '₹3–6', chip: 'bg-cyan' },
-  { n: '5', title: 'Sticker', body: 'Black round sticker, seals everything with love.', cost: '₹1–3', chip: 'bg-orange' },
+  { n: '3', title: 'Thank you note', body: 'A little note for a big smile, pink.', cost: '₹3–6', chip: 'bg-cyan' },
+  { n: '4', title: 'Sticker', body: 'Black round sticker, seals everything with love.', cost: '₹1–3', chip: 'bg-orange' },
 ]
 
 const COLOURS = [
@@ -40,6 +40,7 @@ const OPEN = [
   'Printed pouches or plain pouches + hand stamp? Stamp is cheaper and no two look alike.',
   'All five colours from the start, or begin with two and add later?',
   'Cards printed in a batch of 100, or handwritten while the numbers are small?',
+  'No care card by choice — keep it that way unless a customer actually asks.',
   'Poster tubes — separate supplier, decide after poster delivery opens.',
 ]
 
@@ -99,7 +100,7 @@ export default function PackagingPage() {
           ))}
         </div>
         <p className="text-marker mt-5 text-lg">
-          Roughly <span className="text-pink">₹30–50</span> per order, all five together.
+          Roughly <span className="text-pink">₹25–45</span> per order, all four together.
         </p>
       </Reveal>
 
