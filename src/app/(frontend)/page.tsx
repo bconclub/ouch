@@ -357,6 +357,7 @@ export default async function HomePage() {
               jewellers in this city, delivered across it the same day. One city, done with love.
             </p>
             <p className="text-marker mt-3 text-[15px] text-pink">Rest of India — soon 🤞</p>
+            <p className="text-marker mt-1 text-[14px] opacity-70">Packed slowly, hummed over 🎶</p>
           </Reveal>
         </div>
       </section>

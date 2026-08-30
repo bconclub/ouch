@@ -75,7 +75,8 @@ export async function Footer() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
           <DoodlePeace className="h-6 w-6 text-pink" />
           <p className="text-center text-[11px] tracking-[0.15em] opacity-70 uppercase">
-            © {new Date().getFullYear()} {settings.storeName}. All rights reserved.
+            © {new Date().getFullYear()} {settings.storeName}. Made in Bengaluru with a ukulele
+            playing somewhere 🎶
           </p>
           <span className="flex items-center gap-3">
             <DoodleLightning className="h-5 w-4 text-yellow" />
