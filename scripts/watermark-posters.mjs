@@ -21,6 +21,7 @@ const PLACE = {
   // already carries a painted Ouch logo, set false — the art's own logo is
   // the one, and no watermark is added on top.
   'Wild Soul': false,
+  'Butterfly Scream': false,
 }
 
 function overlaySvg(W, H, place) {
