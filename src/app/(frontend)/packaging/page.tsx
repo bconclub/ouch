@@ -12,12 +12,11 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 }
 
-/** Three things per order, deliberately. No care card, no claims — fewer
- *  promises now means nothing to argue about later. */
+/** Three things per order. Simple on purpose, happy on purpose. */
 const INSIDE = [
-  { n: '1', title: 'Zip pouch', body: 'Small clear zip bag. The piece is sealed and cannot fall out.', cost: '₹1–3', chip: 'bg-cyan' },
-  { n: '2', title: 'Thank you note', body: 'A little note for a big smile. Names the maker.', cost: '₹3–6', chip: 'bg-pink' },
-  { n: '3', title: 'Sticker', body: 'Seals the pouch or the note. That is the whole branding.', cost: '₹1–3', chip: 'bg-orange' },
+  { n: '1', title: 'Clear pouch', body: 'Little zip pouch so the piece travels safe and sound.', cost: '₹1–3', chip: 'bg-cyan' },
+  { n: '2', title: 'Thank you card', body: 'A happy little note, with the maker&apos;s name on it.', cost: '₹3–6', chip: 'bg-pink' },
+  { n: '3', title: 'Logo sticker', body: 'Seals it shut and makes it feel like a gift.', cost: '₹1–3', chip: 'bg-orange' },
 ]
 
 const COLOURS = [
@@ -37,9 +36,8 @@ const VENDORS = [
 
 const OPEN = [
   'Printed pouches or plain pouches + hand stamp? Stamp is cheaper and no two look alike.',
-  'Colours later — plain first, and only if it stays simple.',
+  'Colours later — plain first, keep it easy.',
   'Cards printed in a batch of 100, or handwritten while the numbers are small?',
-  'No care card by choice — keep it that way unless a customer actually asks.',
   'Poster tubes — separate supplier, decide after poster delivery opens.',
 ]
 
@@ -89,7 +87,7 @@ export default function PackagingPage() {
       <Reveal className="mt-12">
         <h2 className="text-marker text-2xl">What&apos;s inside every order</h2>
         <p className="mt-2 text-sm opacity-75">
-          Three things. Nothing else. A pouch can come later if it ever feels needed.
+          Three things, and they do the whole job. Simple, happy, done.
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {INSIDE.map((item) => (
@@ -103,6 +101,22 @@ export default function PackagingPage() {
         </div>
         <p className="text-marker mt-5 text-lg">
           Roughly <span className="text-pink">₹5–12</span> per order, all three together.
+        </p>
+      </Reveal>
+
+      <Reveal className="mt-12 rounded-2xl bg-[var(--card-tint)] p-6">
+        <h2 className="text-marker text-2xl">What the thank you card says</h2>
+        <div className="mt-5 rounded-2xl bg-[#f6f1e6] px-6 py-8 text-center text-[#17141a]">
+          <p className="text-poster text-2xl">Looks like you own it 🤘</p>
+          <p className="text-marker mt-3 text-[15px]">
+            Made by <span className="text-pink">[maker&apos;s name]</span>, Bengaluru.
+          </p>
+          <p className="text-marker mt-1 text-[15px] opacity-70">One of a few. Now yours.</p>
+          <p className="text-poster mt-4 text-[12px] tracking-[0.14em]">peace, love and piercings.</p>
+        </div>
+        <p className="mt-4 text-sm opacity-75">
+          Other lines that work: &ldquo;Wear it loud&rdquo; · &ldquo;This one found you&rdquo; ·
+          &ldquo;Go on, show it off&rdquo;
         </p>
       </Reveal>
 
