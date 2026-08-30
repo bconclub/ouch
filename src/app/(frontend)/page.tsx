@@ -374,15 +374,15 @@ export default async function HomePage() {
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
-              You make it, we curate it, your name goes on it. Everyone wins.
+              If you make or stock silver in Bengaluru, we can list a few of your pieces with your name on them.
             </p>
             <p className="text-marker mt-3 text-[15px] text-cyan">Jewellery only — the posters are ours.</p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
-              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">You craft it</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">You make it</span>
               <span aria-hidden>→</span>
-              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We curate it</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We list it</span>
               <span aria-hidden>→</span>
-              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We split it, fair &amp; square</span>
+              <span className="rounded-full border border-[var(--band-line)] px-4 py-2">We share what it sells for</span>
             </div>
             <Link
               className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"

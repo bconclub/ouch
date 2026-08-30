@@ -9,38 +9,38 @@ import { getSiteSettings } from '@/lib/queries'
 
 export const metadata: Metadata = {
   title: 'Partner with us',
-  description: 'For small jewellers of Bengaluru: you craft rare silver, we curate it and sell it with your name on every piece. Jewellery only.',
+  description: 'For small jewellers in Bengaluru: we list a few of your silver pieces with your name on them and share what they sell for.',
 }
 
 const STEPS = [
   {
     n: '01',
-    title: 'You craft it',
-    body: 'Rare silver nobody else is making. Odd shapes, old techniques, one-offs — the weirder the better.',
+    title: 'You make it',
+    body: 'Silver pieces you make or stock. Simple or unusual, whatever you have.',
     chip: 'bg-pink',
     gem: 'text-pink',
   },
   {
     n: '02',
-    title: 'We curate it',
-    body: 'We pick the pieces, photograph them properly and list them with your name on every one.',
+    title: 'We list it',
+    body: 'We photograph the pieces and put them on the site with your name on them.',
     chip: 'bg-purple',
     gem: 'text-purple',
   },
   {
     n: '03',
-    title: 'We split it',
-    body: 'When it sells, the money is shared, fair and square. No stall rent, no upfront fee, nothing to lose.',
+    title: 'We share it',
+    body: 'When something sells, we share the money. Nothing to pay upfront.',
     chip: 'bg-cyan',
     gem: 'text-cyan',
   },
 ]
 
 const FOR_YOU = [
-  'You run a small shop and your best pieces sit in a drawer',
-  'You make by hand and hate selling',
-  'You have one-of-a-kind pieces nobody has seen',
-  'You are somewhere in Bengaluru and nobody has seen your best work yet',
+  'You have a small shop in Bengaluru',
+  'You would rather make than sell online',
+  'You have pieces you would like more people to see',
+  'You want to try it without paying anything upfront',
 ]
 
 export default async function PartnersPage() {
@@ -65,12 +65,11 @@ export default async function PartnersPage() {
           <BrushStroke className="absolute -bottom-2 left-0 h-3.5 w-full" color="var(--color-orange)" seed={99} />
         </h1>
         <p className="text-marker mx-auto mt-6 max-w-xl text-lg leading-relaxed">
-          For the small jewellers of Bengaluru. You keep making it — we curate and sell it.
+          For the small jewellers of Bengaluru. You make it. We list it. We share what it sells for.
         </p>
         <p className="mx-auto mt-3 max-w-lg text-sm opacity-75">
-          Bengaluru is full of small jewellers whose work almost nobody gets to see. Send us your
-          pieces, we photograph them, put them on the shop with your name on them, and share what
-          they sell for. You make — we handle the rest.
+          We are a small online shop in Bengaluru. If you make or stock silver jewellery, we can list a
+          few of your pieces with your name on them and share what they sell for.
         </p>
         <p className="text-marker mx-auto mt-4 max-w-lg text-[15px] text-cyan">
           Jewellery only — the posters are ours, not a partner category.
@@ -102,7 +101,7 @@ export default async function PartnersPage() {
 
       <Reveal className="mt-12 rounded-2xl bg-[var(--card-tint)] p-8">
         <h2 className="text-marker text-2xl">
-          You&apos;re one of them if&hellip; <DoodleStar className="ml-1 inline h-6 w-6 text-yellow" />
+          This might suit you if&hellip; <DoodleStar className="ml-1 inline h-6 w-6 text-yellow" />
         </h2>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {FOR_YOU.map((line) => (
@@ -116,9 +115,9 @@ export default async function PartnersPage() {
 
       <Reveal className="mt-12 text-center" delay={100}>
         <DoodlePeace className="mx-auto h-10 w-10 text-purple" />
-        <p className="text-marker mt-4 text-xl">No contracts. No jargon. A chat over chai works.</p>
+        <p className="text-marker mt-4 text-xl">No contracts. Just a chat first.</p>
         <p className="mt-2 text-sm opacity-75">
-          One photo of a piece you&apos;re proud of. That&apos;s the whole application.
+          Send one photo of a piece. That is all we need to start.
         </p>
         <a
           className="text-poster mt-6 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-sm tracking-wide text-black uppercase transition-transform hover:scale-105"
