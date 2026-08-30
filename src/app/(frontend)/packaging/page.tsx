@@ -78,6 +78,34 @@ export default function PackagingPage() {
         </p>
       </Reveal>
 
+      {/* the real artwork, built from the logo file */}
+      <Reveal className="mt-10">
+        <h2 className="text-marker text-2xl">The artwork — ready to print</h2>
+        <p className="mt-2 text-sm opacity-75">
+          Made with the real logo file and Start Story. 300dpi. Hand these straight to the printer.
+        </p>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          {[
+            ['card-front.png', 'Thank you card — front', '90 × 50 mm'],
+            ['card-back.png', 'Thank you card — back', 'write the maker&apos;s name by hand'],
+            ['sticker.png', 'Sticker', '40 mm round'],
+            ['pouch-print.png', 'Pouch print / stamp', 'for the pouch or a rubber stamp'],
+          ].map(([file, title, note]) => (
+            <div className="rounded-2xl bg-[var(--card-tint)] p-4" key={file}>
+              <div className="overflow-hidden rounded-xl bg-[#f6f1e6]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img alt={title} className="w-full" src={`/brand/packaging/${file}`} />
+              </div>
+              <p className="text-poster mt-3 text-[15px]">{title}</p>
+              <p className="text-[13px] opacity-70" dangerouslySetInnerHTML={{ __html: note }} />
+              <a className="text-marker mt-2 inline-block text-[13px] text-pink" href={`/brand/packaging/${file}`} download>
+                Download →
+              </a>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
       {/* the founder's own plan */}
       <Reveal className="mt-10 overflow-hidden rounded-2xl">
         {/* eslint-disable-next-line @next/next/no-img-element */}
