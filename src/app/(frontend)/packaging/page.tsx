@@ -58,6 +58,18 @@ export default function PackagingPage() {
         </p>
       </Reveal>
 
+      {/* the whole package at a glance */}
+      <Reveal className="mt-10">
+        <div className="overflow-hidden rounded-2xl">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img alt="The full Ouch package: clear pouch with logo seal, thank you card front and back, smiley sticker" className="w-full" src="/brand/packaging/package-mockup.png" />
+        </div>
+        <p className="mt-3 text-sm opacity-75">
+          The whole order in one picture — pouch sealed with the round sticker, a card, and a
+          smiley to keep.
+        </p>
+      </Reveal>
+
       {/* the correct brand mark — the mockup's logo is only a sketch */}
       <Reveal className="mt-10 rounded-2xl border border-line p-8">
         <p className="text-marker text-sm text-pink">Use this exact logo on everything</p>
