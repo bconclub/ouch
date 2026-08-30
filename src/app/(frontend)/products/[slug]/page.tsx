@@ -103,7 +103,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <ul className="mt-2 space-y-1 text-[13px] opacity-80">
                 <li>✓ Printed on good matte paper, rolled in a tube</li>
                 <li>✓ No watermark on the real thing — that&apos;s only on the preview here</li>
-                <li>✓ Bengaluru delivery ₹49 — same day if you order by 4pm</li>
+                <li>✓ Bengaluru delivery — we&apos;ll sort it out on WhatsApp</li>
               </ul>
             </div>
           )}

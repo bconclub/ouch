@@ -32,7 +32,7 @@ export function InfoBar() {
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
               <li>✓ Order by 4pm, wear it tonight</li>
               <li>✓ Studs — delivery free, on us</li>
-              <li>✓ Posters — ₹49 flat</li>
+              <li>✓ Posters — ask us, we&apos;ll work it out</li>
               <li>✓ Rest of India — soon 🤞</li>
             </ul>
           </Reveal>
