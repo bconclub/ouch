@@ -130,7 +130,9 @@ export default async function HomePage() {
             <DoodleLightning className="absolute top-[-44px] right-[34%] hidden h-9 w-7 text-yellow lg:block" />
 
             <h1>
-              <span className="text-marker anim-fade-up block text-xl sm:text-2xl">Hey dude.</span>
+              <span className="text-marker anim-fade-up block text-xl sm:text-2xl">
+                Hey dude. <span className="text-cyan">Bengaluru only, for now.</span>
+              </span>
               <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl sm:text-5xl">Peace.</span>
               <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Love.</span>
               <span className="text-poster anim-fade-up anim-d3 relative block w-fit text-5xl text-yellow sm:text-6xl">
@@ -338,6 +340,25 @@ export default async function HomePage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ============ Bengaluru. For Bengaluru. ============ */}
+      <section className="band-alt relative" id="local">
+        <BandBlend className="pointer-events-none absolute inset-x-0 -top-12 z-10 h-14 w-full" color="var(--band-2)" seed={71} />
+        <div className="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6">
+          <Reveal>
+            <h2 className="text-poster relative mx-auto w-fit text-4xl sm:text-5xl">
+              Bengaluru. For Bengaluru.
+              <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-cyan)" seed={73} />
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed opacity-85">
+              We started here and we&apos;re staying here for now. Pieces picked from small
+              jewellers in this city, delivered across it the same day. One city, done properly,
+              beats everywhere done badly.
+            </p>
+            <p className="text-marker mt-3 text-[15px] text-pink">Rest of India — soon 🤞</p>
+          </Reveal>
         </div>
       </section>
 
