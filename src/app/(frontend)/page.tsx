@@ -13,7 +13,6 @@ import {
 } from '@/components/Doodles'
 import { BandBlend, BrushStroke, PaintBurst, SpraySplash } from '@/components/Paint'
 import { ParallaxHero } from '@/components/ParallaxHero'
-import { FaceMap } from '@/components/FaceMap'
 import { PostersSection } from '@/components/PostersSection'
 import { Reveal } from '@/components/Reveal'
 import { WordCycle } from '@/components/WordCycle'
@@ -219,10 +218,6 @@ export default async function HomePage() {
               </p>
               <DoodleHeart className="h-10 w-10 shrink-0 text-pink" />
             </div>
-          </Reveal>
-
-          <Reveal className="mb-12">
-            <FaceMap />
           </Reveal>
 
           <div className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-5 lg:gap-6 lg:overflow-visible lg:pb-0">
