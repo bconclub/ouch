@@ -89,7 +89,7 @@ export default function PackagingPage() {
           {[
             ['card-a.png', 'Card — “Congrats. You have taste.”', '90 × 50 mm'],
             ['card-b.png', 'Card — “Small thing. Big flex.”', '90 × 50 mm'],
-            ['card-c.png', 'Card — “Wear it like you stole it.”', '90 × 50 mm'],
+            ['card-c.png', 'Card — “Compliments incoming.”', '90 × 50 mm'],
             ['card-d.png', 'Card — “Warning: people will ask.”', '90 × 50 mm'],
             ['card-e.png', 'Card — “This one found you.”', '90 × 50 mm'],
             ['card-back.png', 'Thank you card — back', 'write the maker&apos;s name by hand'],
@@ -142,8 +142,8 @@ export default function PackagingPage() {
           <p className="text-poster mt-4 text-[12px] tracking-[0.14em]">peace, love and piercings.</p>
         </div>
         <p className="mt-4 text-sm opacity-75">
-          Five fronts printed: Congrats. You have taste. · Small thing. Big flex. · Wear it like
-          you stole it. · Warning: people will ask. · This one found you.
+          Five fronts printed: Congrats. You have taste. · Small thing. Big flex. · Compliments
+          incoming. · Warning: people will ask. · This one found you.
         </p>
       </Reveal>
 
