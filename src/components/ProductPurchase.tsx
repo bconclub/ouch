@@ -4,9 +4,9 @@ import React, { useMemo, useState } from 'react'
 
 import type { Product } from '@/payload-types'
 import { useCart } from '@/lib/cart'
-import { formatPrice, mediaUrl } from '@/lib/utils'
+import { formatPrice, isPriceOnAsk, mediaUrl, priceLabel } from '@/lib/utils'
 
-export function ProductPurchase({ product }: { product: Product }) {
+export function ProductPurchase({ product, whatsappHref }: { product: Product; whatsappHref?: string }) {
   const { addItem } = useCart()
   const variants = product.variants ?? []
   const [selected, setSelected] = useState<number | null>(variants.length > 0 ? 0 : null)
@@ -22,11 +22,12 @@ export function ProductPurchase({ product }: { product: Product }) {
   }, [product])
 
   const onSale = product.compareAtPrice != null && product.compareAtPrice > unitPrice
+  const onAsk = isPriceOnAsk(unitPrice)
 
   return (
     <div>
       <div className="mb-6 flex items-baseline gap-3">
-        <span className="font-display text-3xl font-bold">{formatPrice(unitPrice)}</span>
+        <span className={`text-poster text-3xl ${onAsk ? 'text-cyan' : ''}`}>{priceLabel(unitPrice)}</span>
         {onSale && (
           <span className="text-lg text-muted line-through">
             {formatPrice(product.compareAtPrice!)}
@@ -66,6 +67,22 @@ export function ProductPurchase({ product }: { product: Product }) {
         </div>
       )}
 
+      {onAsk ? (
+        <div>
+          <p className="text-sm leading-relaxed opacity-80">
+            Hand-picked stock — we price each piece when it lands. Ping us and we&apos;ll send you
+            a photo, the price and how soon you can have it.
+          </p>
+          <a
+            className="text-poster mt-4 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-sm tracking-wide text-black uppercase transition-transform hover:scale-105"
+            href={`${whatsappHref ?? 'https://wa.me/917259956780'}?text=${encodeURIComponent(`Hey Ouch! What's the price on "${product.title}"? 🤘`)}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Ask on WhatsApp <span aria-hidden>→</span>
+          </a>
+        </div>
+      ) : (
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center rounded border border-line">
           <button
@@ -107,6 +124,7 @@ export function ProductPurchase({ product }: { product: Product }) {
           {available ? 'Add to cart' : 'Sold out'}
         </button>
       </div>
+      )}
     </div>
   )
 }

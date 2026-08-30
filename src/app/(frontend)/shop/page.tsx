@@ -37,7 +37,7 @@ export default async function ShopPage({
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <h1 className="text-marker mb-1 text-4xl">The good stuff</h1>
       <p className="text-marker mb-8 text-lg text-muted">
-        {result.totalDocs} shiny thing{result.totalDocs === 1 ? '' : 's'} · go on, pick your fave.
+        Hand-picked one at a time. Ask us about any piece and we'll send the price, a photo and how soon it can be yours.
       </p>
 
       <Suspense>

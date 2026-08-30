@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import type { Product } from '@/payload-types'
-import { formatPrice, mediaAlt, mediaUrl } from '@/lib/utils'
+import { formatPrice, isPriceOnAsk, mediaAlt, mediaUrl, priceLabel } from '@/lib/utils'
 
 const CHIPS = ['bg-pink', 'bg-purple', 'bg-cyan', 'bg-orange', 'bg-yellow']
 
@@ -56,7 +56,9 @@ export function ProductCard({
           )}
           <span className="text-poster block truncate text-[13px] uppercase">{product.title}</span>
           <span className="mt-0.5 flex items-baseline gap-1.5 text-sm font-bold">
-            {formatPrice(product.price)}
+            <span className={isPriceOnAsk(product.price) ? 'text-cyan' : undefined}>
+              {priceLabel(product.price)}
+            </span>
             {onSale && (
               <span className="text-muted-band text-xs font-normal line-through">
                 {formatPrice(product.compareAtPrice!)}

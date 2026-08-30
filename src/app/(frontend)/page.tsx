@@ -289,7 +289,7 @@ export default async function HomePage() {
                 <DoodleTicks className="absolute top-0 -right-7 h-5 w-5 text-pink" />
               </h3>
               <p className="mt-1.5 text-[13px] opacity-80">Premium quality. Hypoallergenic. Made to last.</p>
-              <p className="text-marker mt-1 text-[13px] text-pink">Rare finds only — once they&apos;re gone, they&apos;re gone.</p>
+              <p className="text-marker mt-1 text-[13px] text-pink">Rare finds only — ask us about any piece.</p>
               <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-6">
                 {STUD_TILES.map((tile) => (
                   <Link className="group block text-center" href="/shop" key={tile.name}>

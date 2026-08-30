@@ -80,6 +80,13 @@ const inr = new Intl.NumberFormat('en-IN', {
 
 export const formatPrice = (amount: number): string => inr.format(amount)
 
+/** A piece priced 0 is hand-picked stock we haven't set a price for yet —
+ *  it shows an enquiry instead of a number, so we never quote what we can't honour. */
+export const isPriceOnAsk = (amount: number | null | undefined): boolean => !amount
+
+export const priceLabel = (amount: number | null | undefined): string =>
+  isPriceOnAsk(amount) ? 'Ask us' : formatPrice(amount as number)
+
 export type MediaLike =
   | number
   | null

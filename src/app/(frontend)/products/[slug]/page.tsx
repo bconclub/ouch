@@ -7,7 +7,7 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import { ProductCard } from '@/components/ProductCard'
 import { ProductGallery } from '@/components/ProductGallery'
 import { ProductPurchase } from '@/components/ProductPurchase'
-import { getProductBySlug, queryProducts } from '@/lib/queries'
+import { getProductBySlug, getSiteSettings, queryProducts } from '@/lib/queries'
 import { accentFor, mediaAlt, mediaUrl } from '@/lib/utils'
 
 export async function generateMetadata({
@@ -22,8 +22,9 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const product = await getProductBySlug(slug)
+  const [product, settings] = await Promise.all([getProductBySlug(slug), getSiteSettings()])
   if (!product) notFound()
+  const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
 
   const category = typeof product.category === 'object' ? product.category : null
   const isPoster = category?.slug === 'posters'
@@ -77,7 +78,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           )}
           <h1 className="text-poster mb-4 text-3xl uppercase sm:text-4xl">{product.title}</h1>
 
-          <ProductPurchase product={product} />
+          <ProductPurchase product={product} whatsappHref={whatsappHref} />
 
           {isPoster && (
             <div className="mt-5 rounded-2xl border border-line p-4">
