@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 
+import { PosterCard } from '@/components/PosterCard'
 import { ProductCard } from '@/components/ProductCard'
 import { ProductGallery } from '@/components/ProductGallery'
 import { ProductPurchase } from '@/components/ProductPurchase'
@@ -149,7 +150,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <h2 className="text-marker mb-8 text-3xl">You may also like</h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {related.map((p) => (
-              <ProductCard key={p.id} product={p} />
+              isPoster ? <PosterCard key={p.id} product={p} /> : <ProductCard key={p.id} product={p} />
             ))}
           </div>
         </section>
