@@ -11,10 +11,11 @@ import { execSync } from 'child_process'
 const ORIG = 'private-originals/posters'
 const logoB64 = fs.readFileSync('public/brand/logo-white.png').toString('base64')
 
-// ly = logo vertical centre (fraction of height). Exactly ONE mark per poster
-// (founder's rule): placed where it respects the art, evident, and central
-// enough that no crop removes it. New posters default to 0.5 — add an entry
-// here if that sits on the artwork's words.
+// Exactly ONE logo watermark per poster (founder's rule): always the logo,
+// never removed, never repeated. Entries are ly (vertical centre, fraction of
+// height) or [ly, scale] where scale is logo width as a fraction of poster
+// width (default 0.62). Place and size it to respect each artwork; keep it
+// central enough that no crop removes it. New posters default to centre.
 const PLACE = {
   'Wild Soul': 0.84,
   'Butterfly Scream': 0.5,
@@ -34,8 +35,9 @@ const PLACE = {
   'Today I Choose Joy': 0.6,
 }
 
-function overlaySvg(W, H, ly) {
-  const logoW = Math.round(W * 0.62), logoH = Math.round(logoW * 0.30)
+function overlaySvg(W, H, place) {
+  const [ly, scale] = Array.isArray(place) ? place : [place, 0.62]
+  const logoW = Math.round(W * scale), logoH = Math.round(logoW * 0.30)
   const logo = `<image x="${(W - logoW) / 2}" y="${Math.round(H * ly - logoH / 2)}" width="${logoW}" height="${logoH}" opacity="0.62" xlink:href="data:image/png;base64,${logoB64}"/>`
   return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${logo}</svg>`
 }
