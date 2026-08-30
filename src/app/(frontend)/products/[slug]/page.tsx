@@ -89,7 +89,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </p>
           )}
 
-          <ProductPurchase product={product} whatsappHref={whatsappHref} />
+          {isPoster ? (
+            <div className="rounded-2xl bg-[var(--card-tint)] p-5">
+              <p className="text-poster text-2xl">Coming soon 🖌️</p>
+              <p className="mt-2 text-sm opacity-80">
+                Prints and prices land together. Say hi and we&apos;ll tell you the day it opens.
+              </p>
+              <a
+                className="text-poster mt-4 inline-flex items-center gap-2 rounded-full bg-pink px-6 py-3 text-[13px] tracking-wide text-white uppercase"
+                href={contactHref(settings.whatsappNumber, `Hey Ouch! Tell me when "${product.title}" is ready 🖌️`)}
+              >
+                Tell me when <span aria-hidden>→</span>
+              </a>
+            </div>
+          ) : (
+            <ProductPurchase product={product} whatsappHref={whatsappHref} />
+          )}
 
           {!isPoster && (
             <p className="text-marker mt-5 text-[15px] text-yellow">
