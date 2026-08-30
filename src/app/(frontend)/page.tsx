@@ -376,7 +376,7 @@ export default async function HomePage() {
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
               If you make or stock silver in Bengaluru, we can list a few of your pieces with your name on them.
             </p>
-            <p className="text-marker mt-3 text-[15px] text-cyan">Jewellery only — the posters are ours.</p>
+            <p className="text-marker mt-3 text-[15px] text-cyan">Jewellery only. The posters are ours.</p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
               <span className="rounded-full border border-[var(--band-line)] px-4 py-2">You make it</span>
               <span aria-hidden>→</span>

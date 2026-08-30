@@ -72,7 +72,7 @@ export default async function PartnersPage() {
           few of your pieces with your name on them and share what they sell for.
         </p>
         <p className="text-marker mx-auto mt-4 max-w-lg text-[15px] text-cyan">
-          Jewellery only — the posters are ours, not a partner category.
+          Jewellery only. The posters are ours.
         </p>
         <a
           className="text-poster mt-8 inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-sm tracking-wide text-white uppercase transition-transform hover:scale-105"
