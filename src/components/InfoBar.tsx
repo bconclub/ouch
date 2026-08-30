@@ -17,9 +17,9 @@ export function InfoBar() {
               <span className="text-poster text-[15px] tracking-wide uppercase">How we do it</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ Picked in person, one by one</li>
-              <li>✓ Sealed in a little pouch for you</li>
-              <li>✓ Ask us before you buy, always 🤞</li>
+              <li>✓ Picked in person</li>
+              <li>✓ Sealed in a lil pouch</li>
+              <li>✓ Ask before you buy 🤞</li>
             </ul>
           </Reveal>
           <Reveal delay={100}>
@@ -30,9 +30,9 @@ export function InfoBar() {
               <span className="text-poster text-[15px] tracking-wide uppercase">A day. Two, tops.</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ 24–48 hours, anywhere in Bengaluru</li>
-              <li>✓ Studs — delivery free, always</li>
-              <li>✓ Posters — ask us, we&apos;ll work it out</li>
+              <li>✓ 24–48 hrs, anywhere in Bengaluru</li>
+              <li>✓ Studs — delivery on us</li>
+              <li>✓ Posters — ask us</li>
               <li>✓ Rest of India — soon 🤞</li>
             </ul>
           </Reveal>
@@ -60,8 +60,8 @@ export function InfoBar() {
               <span className="text-poster text-[15px] tracking-wide uppercase">Just ask, dude</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ Ask us anything, anytime</li>
-              <li>✓ We answer like a friend, not a form</li>
+              <li>✓ Ask us anything</li>
+              <li>✓ We answer like a friend</li>
               <li>✓ No robots, no scripts 🎶</li>
             </ul>
           </Reveal>

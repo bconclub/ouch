@@ -37,7 +37,7 @@ export default async function ShopPage({
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <h1 className="text-marker mb-1 text-4xl">The good stuff</h1>
       <p className="text-marker mb-8 text-lg text-muted">
-        Hand-picked one at a time, with far too much thinking. Ask about any piece and we'll send the price, a photo and how soon it can be yours.
+        Hand-picked, one at a time. Ask about any piece — we'll send the price and a photo.
       </p>
 
       <div className="mb-6 rounded-2xl bg-[var(--card-tint)] p-5">
@@ -45,10 +45,10 @@ export default async function ShopPage({
           How this works <span className="text-pink">🤞</span>
         </p>
         <ul className="mt-3 space-y-1.5 text-sm opacity-85">
-          <li>✓ We hunt little jewellers around Bengaluru and pick what we fall for</li>
-          <li>✓ Sometimes that&apos;s three of a piece. Sometimes it&apos;s one. That&apos;s the fun of it</li>
-          <li>✓ The number you see is the number we actually have</li>
-          <li>✓ When it&apos;s gone, it&apos;s gone — and something new turns up</li>
+          <li>✓ We hunt little jewellers, we pick what we love</li>
+          <li>✓ Sometimes three. Sometimes one. That&apos;s the fun</li>
+          <li>✓ The number you see is what we have</li>
+          <li>✓ Gone means gone. Something new turns up</li>
         </ul>
       </div>
 

@@ -132,7 +132,7 @@ export default async function HomePage() {
 
             <h1>
               <span className="text-marker anim-fade-up block text-xl sm:text-2xl">
-                Hey dude. <span className="text-cyan">Bengaluru only, for now.</span>
+                Hey you. <span className="text-cyan">Bengaluru, for now.</span>
               </span>
               <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl sm:text-5xl">Peace.</span>
               <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Love.</span>
@@ -143,8 +143,8 @@ export default async function HomePage() {
             </h1>
 
             <p className="anim-fade-up anim-d4 mt-8 max-w-md text-[15px] leading-relaxed sm:text-base">
-              Rare little pieces you won&apos;t see anywhere else —{' '}
-              <span className="mark-highlight font-semibold">kind to your skin</span>, easy to love.
+              Little pieces. Picked by hand.{' '}
+              <span className="mark-highlight font-semibold">Easy to love.</span>
             </p>
 
             <div className="anim-fade-up anim-d5 mt-7 flex flex-wrap gap-4">
@@ -217,7 +217,7 @@ export default async function HomePage() {
             </div>
             <div className="flex items-center gap-4">
               <p className="max-w-xs text-sm opacity-80">
-                Find the spot that&apos;s calling you. No wrong answers here.
+                Where&apos;s it going? No wrong answers.
               </p>
               <DoodleHeart className="h-10 w-10 shrink-0 text-pink" />
             </div>
@@ -291,8 +291,8 @@ export default async function HomePage() {
                 Studs we love
                 <DoodleTicks className="absolute top-0 -right-7 h-5 w-5 text-pink" />
               </h3>
-              <p className="mt-1.5 text-[13px] opacity-80">Little pieces we fell for, brought back for you.</p>
-              <p className="text-marker mt-1 text-[13px] text-pink">Ask us anything, we love a chat.</p>
+              <p className="mt-1.5 text-[13px] opacity-80">Stuff we fell for. Now yours.</p>
+              <p className="text-marker mt-1 text-[13px] text-pink">Ask us anything 🤞</p>
               <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-6">
                 {STUD_TILES.map((tile) => (
                   <Link className="group block text-center" href="/shop" key={tile.name}>
@@ -324,7 +324,7 @@ export default async function HomePage() {
               Straight from the studio.
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-cyan)" seed={81} />
             </h2>
-            <p className="mt-4 text-sm opacity-80">Real people. Real sparkle. Real happy.</p>
+            <p className="mt-4 text-sm opacity-80">Real people. Real sparkle.</p>
           </Reveal>
           <div className="columns-2 gap-4 sm:columns-3 lg:gap-5 [&>*]:mb-4 lg:[&>*]:mb-5">
             {GALLERY.map((src, gi) => (
@@ -354,8 +354,8 @@ export default async function HomePage() {
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-cyan)" seed={73} />
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed opacity-85">
-              We started here and we&apos;re staying a while. Pieces picked from small jewellers around
-              this city, carried across it in a day or two. One city, plenty of love.
+              Picked from small jewellers around this city. Carried across it in a day or two.
+              One city, plenty of love.
             </p>
             <p className="text-marker mt-3 text-[15px] text-pink">Rest of India — soon 🤞</p>
             <p className="text-marker mt-1 text-[14px] opacity-70">Packed slowly, hummed over 🎶</p>
@@ -374,8 +374,7 @@ export default async function HomePage() {
               <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-orange)" seed={97} />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed opacity-85">
-              For the small jewellers of Bengaluru. You craft rare silver, we curate it, photograph
-              it and sell it with your name on every piece. Everyone wins.
+              You make it, we curate it, your name goes on it. Everyone wins.
             </p>
             <p className="text-marker mt-3 text-[15px] text-cyan">Jewellery only — the posters are ours.</p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-[12px] font-bold tracking-[0.14em] uppercase opacity-80">
