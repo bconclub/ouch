@@ -8,7 +8,6 @@ import { BrushStroke, SpraySplash } from '@/components/Paint'
 import { Pagination } from '@/components/Pagination'
 import { ProductCard } from '@/components/ProductCard'
 import { ShopFilters } from '@/components/ShopFilters'
-import { MATERIALS } from '@/collections/Products'
 import { getCategoryBySlug, queryProducts, type ProductQuery } from '@/lib/queries'
 import { accentFor, mediaAlt, mediaUrl, TILE_IMAGES } from '@/lib/utils'
 
@@ -112,7 +111,7 @@ export default async function CategoryPage({
       <Suspense>
         <ShopFilters
           categories={[]}
-          materials={MATERIALS.map((m) => ({ label: m.label, value: m.value }))}
+          materials={[]}
           showCategory={false}
         />
       </Suspense>
@@ -120,7 +119,7 @@ export default async function CategoryPage({
       {result.docs.length === 0 ? (
         <div className="rounded-2xl border border-line bg-surface py-20 text-center">
           <p className="text-marker text-2xl text-ink">Nothing here yet.</p>
-          <p className="mt-2 text-sm text-muted">New pieces drop all the time — check back soon.</p>
+          <p className="mt-2 text-sm text-muted">Something new turns up soon 🤞</p>
           <Link
             className="text-poster mt-6 inline-block rounded-full bg-ink px-7 py-3 text-[13px] text-bg uppercase"
             href="/shop"

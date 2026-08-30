@@ -94,7 +94,7 @@ export default function CardPage() {
           ))}
         </div>
 
-        <p className="text-marker mt-6 text-[12px] text-white/55">Hey dude. Thanks for scanning — you&apos;re lovely 🤘</p>
+        <p className="text-marker mt-6 text-[12px] text-white/55">Hey you. Thanks for scanning 🤘</p>
       </div>
     </main>
   )
