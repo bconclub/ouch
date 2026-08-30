@@ -74,7 +74,7 @@ export default function PackagingPage() {
           <li>✓ Never redraw or retype the logo. Always use the file.</li>
         </ul>
         <p className="mt-4 text-sm opacity-70">
-          The logo in the plan below is a rough sketch. Give the printer this block, not that one.
+          Always print from the logo file. Never redraw it.
         </p>
       </Reveal>
 
@@ -104,12 +104,6 @@ export default function PackagingPage() {
             </div>
           ))}
         </div>
-      </Reveal>
-
-      {/* the founder's own plan */}
-      <Reveal className="mt-10 overflow-hidden rounded-2xl">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img alt="Packaging plan" className="w-full" src="/brand/packaging-plan.webp" />
       </Reveal>
 
       <Reveal className="mt-12">
