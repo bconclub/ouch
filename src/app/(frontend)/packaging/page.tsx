@@ -136,7 +136,7 @@ export default function PackagingPage() {
         <div className="mt-5 rounded-2xl bg-[#f6f1e6] px-6 py-8 text-center text-[#17141a]">
           <p className="text-poster text-2xl">Congrats. You have taste. 🤘</p>
           <p className="text-marker mt-3 text-[15px]">
-            Made by <span className="text-pink">[maker&apos;s name]</span>, Bengaluru.
+            Found for you. From <span className="text-pink">[maker&apos;s name]</span>, Bengaluru.
           </p>
           <p className="text-marker mt-1 text-[15px] opacity-70">One of a few. Now yours.</p>
           <p className="text-poster mt-4 text-[12px] tracking-[0.14em]">peace, love and piercings.</p>
