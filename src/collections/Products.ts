@@ -219,6 +219,17 @@ export const Products: CollectionConfig = {
       },
     },
     {
+      name: 'stockCount',
+      type: 'number',
+      label: 'How many left',
+      min: 0,
+      admin: {
+        description:
+          'Exact number in hand. Shown to customers as "only N left" so nothing is overpromised. Leave empty to say nothing.',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'inStock',
       type: 'checkbox',
       defaultValue: true,

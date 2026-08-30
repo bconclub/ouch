@@ -93,7 +93,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
           {!isPoster && (
             <p className="text-marker mt-5 text-[15px] text-yellow">
-              One small batch. Once it&apos;s gone, it&apos;s gone for good.
+              {typeof product.stockCount === 'number' && product.stockCount > 0
+                ? `Only ${product.stockCount} of these. Once they're gone, they're gone for good.`
+                : "One small batch. Once it's gone, it's gone for good."}
             </p>
           )}
 

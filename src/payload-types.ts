@@ -217,6 +217,10 @@ export interface Product {
    */
   categoryName?: string | null;
   /**
+   * Exact number in hand. Shown to customers as "only N left" so nothing is overpromised. Leave empty to say nothing.
+   */
+  stockCount?: number | null;
+  /**
    * Untick to show "Sold out" and stop it being ordered.
    */
   inStock?: boolean | null;
@@ -483,6 +487,7 @@ export interface ProductsSelect<T extends boolean = true> {
         id?: T;
       };
   categoryName?: T;
+  stockCount?: T;
   inStock?: T;
   featured?: T;
   updatedAt?: T;

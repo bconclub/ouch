@@ -58,6 +58,9 @@ export function ProductCard({
           {product.maker && (
             <span className="text-muted-band block truncate text-[11px]">by {product.maker}</span>
           )}
+          {typeof product.stockCount === 'number' && product.stockCount > 0 && product.stockCount <= 5 && (
+            <span className="block text-[11px] font-bold text-pink">only {product.stockCount} left</span>
+          )}
           <span className="mt-0.5 flex items-baseline gap-1.5 text-sm font-bold">
             <span className={isPriceOnAsk(product.price) ? 'text-cyan' : undefined}>
               {priceLabel(product.price)}
