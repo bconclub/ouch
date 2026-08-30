@@ -9,11 +9,11 @@ import { MobileNav } from './MobileNav'
 import { ThemeToggle } from './ThemeToggle'
 
 const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/shop', label: 'Studs' },
-  { href: '/posters', label: 'Posters' },
-  { href: '/partners', label: 'Partner' },
-  { href: '/#connect', label: 'Contact' },
+  { href: '/', label: 'Home 🏠' },
+  { href: '/shop', label: 'Studs 💎' },
+  { href: '/posters', label: 'Posters 🖼️' },
+  { href: '/partners', label: 'Partner 🤝' },
+  { href: '/#connect', label: 'Card 💌' },
 ]
 
 export function SiteHeader({ storeName }: { storeName: string }) {

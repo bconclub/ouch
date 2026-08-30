@@ -76,6 +76,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {category.name}
             </div>
           )}
+          {!isPoster && (
+            <span className="text-poster mb-3 inline-flex items-center gap-2 rounded-full bg-pink px-4 py-1.5 text-[11px] tracking-[0.14em] text-white uppercase">
+              ✦ One batch only
+            </span>
+          )}
           <h1 className="text-poster mb-2 text-3xl uppercase sm:text-4xl">{product.title}</h1>
 
           {product.maker && (
