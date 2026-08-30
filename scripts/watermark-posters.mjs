@@ -29,6 +29,7 @@ const PLACE = {
   'Progress Not Perfection': 0.8,
   'Make Space For What Matters': 0.85,
   'Every Day Is A New Beginning': 0.8,
+  'Today I Choose Joy': 0.6,
 }
 
 function overlaySvg(W, H, ly) {
