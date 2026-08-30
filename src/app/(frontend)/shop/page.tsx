@@ -49,8 +49,7 @@ export default async function ShopPage({
         </p>
         <p className="mt-2 text-sm opacity-80">
           Not sure what fits your piercing? Send us a photo on WhatsApp — we&apos;ll tell you
-          straight. Studs come with <span className="font-semibold">free same-day delivery in
-          Bengaluru</span>.
+          straight. Studs come with <span className="font-semibold">free delivery — a day, two tops</span>.
         </p>
       </div>
 

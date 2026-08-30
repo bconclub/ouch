@@ -27,11 +27,11 @@ export function InfoBar() {
               <svg className="h-7 w-7 shrink-0 text-purple" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 24">
                 <path d="M1 5h16v13H1z M17 9h5l4 4v5h-9 M6 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M21 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
               </svg>
-              <span className="text-poster text-[15px] tracking-wide uppercase">Bengaluru, same day</span>
+              <span className="text-poster text-[15px] tracking-wide uppercase">A day. Two, tops.</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ Order by 4pm, wear it tonight</li>
-              <li>✓ Studs — delivery free, on us</li>
+              <li>✓ 24–48 hours, anywhere in Bengaluru</li>
+              <li>✓ Studs — delivery free, always</li>
               <li>✓ Posters — ask us, we&apos;ll work it out</li>
               <li>✓ Rest of India — soon 🤞</li>
             </ul>
