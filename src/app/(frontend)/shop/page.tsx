@@ -40,6 +40,20 @@ export default async function ShopPage({
         Hand-picked one at a time. Ask us about any piece and we'll send the price, a photo and how soon it can be yours.
       </p>
 
+      <div className="mb-8 rounded-2xl border border-line p-5">
+        <p className="text-marker text-lg">
+          New to this? A <span className="text-pink">stud</span> is the little one that sits flat —
+          a tiny ball, a gem, a shape. A <span className="text-purple">hoop</span> is the ring that
+          goes around. A <span className="text-cyan">barbell</span> is the straight bar with a ball
+          at each end.
+        </p>
+        <p className="mt-2 text-sm opacity-80">
+          Not sure what fits your piercing? Send us a photo on WhatsApp — we&apos;ll tell you
+          straight. Studs come with <span className="font-semibold">free same-day delivery in
+          Bengaluru</span>.
+        </p>
+      </div>
+
       <Suspense>
         <ShopFilters
           categories={categories

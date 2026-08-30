@@ -73,6 +73,9 @@ export function ProductPurchase({ product, whatsappHref }: { product: Product; w
             Hand-picked stock — we price each piece when it lands. Ping us and we&apos;ll send you
             a photo, the price and how soon you can have it.
           </p>
+          <p className="text-marker mt-2 text-[15px] text-cyan">
+            Free same-day delivery in Bengaluru. Order by 4pm, wear it tonight.
+          </p>
           <a
             className="text-poster mt-4 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-sm tracking-wide text-black uppercase transition-transform hover:scale-105"
             href={`${whatsappHref ?? 'https://wa.me/917259956780'}?text=${encodeURIComponent(`Hey Ouch! What's the price on "${product.title}"? 🤘`)}`}
