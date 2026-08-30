@@ -40,7 +40,7 @@ const FOR_YOU = [
   'You run a small shop and your best pieces sit in a drawer',
   'You make by hand and hate selling',
   'You have one-of-a-kind pieces nobody has seen',
-  'You are somewhere in Bengaluru and tired of being invisible',
+  'You are somewhere in Bengaluru and nobody has seen your best work yet',
 ]
 
 export default async function PartnersPage() {
@@ -116,7 +116,7 @@ export default async function PartnersPage() {
 
       <Reveal className="mt-12 text-center" delay={100}>
         <DoodlePeace className="mx-auto h-10 w-10 text-purple" />
-        <p className="text-marker mt-4 text-xl">No contracts. No jargon. A chat over tea works.</p>
+        <p className="text-marker mt-4 text-xl">No contracts. No jargon. A chat over chai works.</p>
         <p className="mt-2 text-sm opacity-75">
           One photo of a piece you&apos;re proud of. That&apos;s the whole application.
         </p>

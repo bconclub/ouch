@@ -17,9 +17,9 @@ export function InfoBar() {
               <span className="text-poster text-[15px] tracking-wide uppercase">Safe &amp; sound</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ Hypoallergenic, always</li>
-              <li>✓ Sterile everything</li>
-              <li>✓ We gotchu, always</li>
+              <li>✓ Hypoallergenic — your skin stays happy</li>
+              <li>✓ Sterile everything, every time</li>
+              <li>✓ We gotchu, always 🤞</li>
             </ul>
           </Reveal>
           <Reveal delay={100}>
@@ -60,9 +60,9 @@ export function InfoBar() {
               <span className="text-poster text-[15px] tracking-wide uppercase">Jewellery care (aka TLC)</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ Lil soap, lil love</li>
-              <li>✓ No perfume parties, please</li>
-              <li>✓ Keep it cozy &amp; dry</li>
+              <li>✓ Lil soap, lil love, lil patience</li>
+              <li>✓ No perfume parties, pretty please</li>
+              <li>✓ Keep it cosy and dry, like a cat</li>
             </ul>
           </Reveal>
         </div>

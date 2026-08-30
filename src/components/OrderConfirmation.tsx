@@ -30,7 +30,7 @@ export function OrderConfirmation({
           </svg>
         </div>
         <h1 className="text-poster text-3xl">
-          Woo! Order placed<span className="text-accent">!</span>
+          Woohoo! Order placed<span className="text-accent">!</span>
         </h1>
         <p className="mt-2 text-muted">
           Order <span className="font-mono text-ink">{orderNumber}</span>
@@ -59,8 +59,8 @@ export function OrderConfirmation({
 
       <div className="mt-8 text-center">
         <p className="mb-4 text-sm text-muted">
-          Last step, promise — ping us your order on WhatsApp and we&apos;ll sort payment and
-          shipping right there in chat. Easy peasy.
+          Last step, promise — send us your order and we&apos;ll sort payment and delivery right
+          there in chat. Easy peasy, lemon squeezy.
         </p>
         <a
           className="inline-flex items-center gap-3 rounded-full bg-[#25D366] px-8 py-4 text-sm font-bold tracking-widest text-black transition-opacity hover:opacity-90"

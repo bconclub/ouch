@@ -37,7 +37,7 @@ export default async function ShopPage({
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <h1 className="text-marker mb-1 text-4xl">The good stuff</h1>
       <p className="text-marker mb-8 text-lg text-muted">
-        Hand-picked one at a time. Ask us about any piece and we'll send the price, a photo and how soon it can be yours.
+        Hand-picked one at a time, with far too much thinking. Ask about any piece and we'll send the price, a photo and how soon it can be yours.
       </p>
 
       <div className="mb-8 rounded-2xl border border-line p-5">
@@ -64,7 +64,7 @@ export default async function ShopPage({
 
       {result.docs.length === 0 ? (
         <div className="rounded-lg border border-line bg-surface py-20 text-center text-muted">
-          Nothing here, bestie — loosen those filters?
+          Nothing here yet — loosen the filters and try again 🌸
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
