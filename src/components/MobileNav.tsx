@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-type NavLink = { href: string; label: string }
+type NavLink = { href: string; label: string; tag?: string }
 
 export function MobileNav({ links }: { links: NavLink[] }) {
   const [open, setOpen] = useState(false)
@@ -47,6 +47,11 @@ export function MobileNav({ links }: { links: NavLink[] }) {
               onClick={() => setOpen(false)}
             >
               {link.label}
+              {link.tag && (
+                <span className="text-marker ml-2 rounded-full bg-yellow px-2 py-0.5 text-[11px] text-[#17141a]">
+                  {link.tag}
+                </span>
+              )}
             </Link>
           ))}
         </nav>

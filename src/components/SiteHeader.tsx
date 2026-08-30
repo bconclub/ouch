@@ -11,7 +11,7 @@ import { ThemeToggle } from './ThemeToggle'
 const NAV_LINKS = [
   { href: '/', label: 'Home 🏠' },
   { href: '/shop', label: 'Studs 💎' },
-  { href: '/posters', label: 'Posters 🖼️' },
+  { href: '/posters', label: 'Posters 🖼️', tag: "It's cooking" },
   { href: '/partners', label: 'Partner 🤝' },
   { href: '/#connect', label: 'Card 💌' },
 ]
@@ -37,6 +37,11 @@ export function SiteHeader({ storeName }: { storeName: string }) {
               key={link.label}
             >
               {link.label}
+              {'tag' in link && (
+                <span className="text-marker ml-1.5 rounded-full bg-yellow px-2 py-0.5 align-middle text-[10px] normal-case text-[#17141a]">
+                  {link.tag}
+                </span>
+              )}
               {i === 0 && (
                 <span className="mt-0.5 block h-[3px] w-full rounded-full bg-pink dark:bg-yellow" />
               )}

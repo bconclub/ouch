@@ -26,7 +26,7 @@ export default async function PostersPage() {
           Real printed posters. Every print <span className="text-pink">₹333</span>. Flat.
         </p>
         <p className="text-marker mt-2 text-[15px] text-cyan">
-          Delivery starting soon — drop us a note and we&apos;ll tell you the day it opens. 🤞
+          Still cooking — drop us a note and we&apos;ll tell you the day it&apos;s served. 🍳
         </p>
       </Reveal>
 
