@@ -103,15 +103,15 @@ const STUD_TILES = [
 
 const STUD_TRUST = [
   {
-    text: '925 sterling silver & gold options',
+    text: 'Picked one by one, in person',
     icon: (
       <svg fill="none" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 28 26" width="22">
         <path d="M7 3h14l5 7-12 14L2 10z M2 10h24" />
       </svg>
     ),
   },
-  { text: 'Hypoallergenic — your skin says thanks', icon: <DoodleSmiley className="h-6 w-6" /> },
-  { text: 'Sterile & safe, for real for real', icon: <DoodleStar className="h-6 w-6" /> },
+  { text: 'Small batches, from small shops', icon: <DoodleSmiley className="h-6 w-6" /> },
+  { text: 'Sealed in a little pouch, just for you', icon: <DoodleStar className="h-6 w-6" /> },
 ]
 
 const PAYMENT_CHIPS = ['UPI', 'GPay', 'Apple Pay', 'VISA', 'Mastercard', 'RuPay']
@@ -291,8 +291,8 @@ export default async function HomePage() {
                 Studs we love
                 <DoodleTicks className="absolute top-0 -right-7 h-5 w-5 text-pink" />
               </h3>
-              <p className="mt-1.5 text-[13px] opacity-80">Premium quality. Hypoallergenic. Made to last.</p>
-              <p className="text-marker mt-1 text-[13px] text-pink">Rare finds only — ask us anything, we love a chat.</p>
+              <p className="mt-1.5 text-[13px] opacity-80">Little pieces we fell for, brought back for you.</p>
+              <p className="text-marker mt-1 text-[13px] text-pink">Ask us anything, we love a chat.</p>
               <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-6">
                 {STUD_TILES.map((tile) => (
                   <Link className="group block text-center" href="/shop" key={tile.name}>

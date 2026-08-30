@@ -14,12 +14,12 @@ export function InfoBar() {
               <svg className="h-7 w-7 shrink-0 text-pink" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 26">
                 <path d="M12 1l10 4v7c0 6-4 11-10 13C6 23 2 18 2 12V5z M8 12l3 3 5-6" />
               </svg>
-              <span className="text-poster text-[15px] tracking-wide uppercase">Safe &amp; sound</span>
+              <span className="text-poster text-[15px] tracking-wide uppercase">How we do it</span>
             </h3>
             <ul className="mt-4 space-y-2 text-[13px] opacity-85">
-              <li>✓ Hypoallergenic — your skin stays happy</li>
-              <li>✓ Sterile everything, every time</li>
-              <li>✓ We gotchu, always 🤞</li>
+              <li>✓ Picked in person, one by one</li>
+              <li>✓ Sealed in a little pouch for you</li>
+              <li>✓ Ask us before you buy, always 🤞</li>
             </ul>
           </Reveal>
           <Reveal delay={100}>
