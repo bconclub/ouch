@@ -82,11 +82,16 @@ export default function PackagingPage() {
       <Reveal className="mt-10">
         <h2 className="text-marker text-2xl">The artwork — ready to print</h2>
         <p className="mt-2 text-sm opacity-75">
-          Made with the real logo file and Start Story. 300dpi. Hand these straight to the printer.
+          Made with the real logo file and Start Story. 300dpi. Five different card fronts — print
+          all five and drop a random one in each order, so nobody gets the same card twice.
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {[
-            ['card-front.png', 'Thank you card — front', '90 × 50 mm'],
+            ['card-a.png', 'Card — &ldquo;Congrats. You have taste.&rdquo;', '90 × 50 mm'],
+            ['card-b.png', 'Card — &ldquo;Small thing. Big flex.&rdquo;', '90 × 50 mm'],
+            ['card-c.png', 'Card — &ldquo;Wear it like you stole it.&rdquo;', '90 × 50 mm'],
+            ['card-d.png', 'Card — &ldquo;Warning: people will ask.&rdquo;', '90 × 50 mm'],
+            ['card-e.png', 'Card — &ldquo;This one found you.&rdquo;', '90 × 50 mm'],
             ['card-back.png', 'Thank you card — back', 'write the maker&apos;s name by hand'],
             ['sticker.png', 'Sticker', '40 mm round'],
             ['pouch-print.png', 'Pouch print / stamp', 'for the pouch or a rubber stamp'],
@@ -129,7 +134,7 @@ export default function PackagingPage() {
       <Reveal className="mt-12 rounded-2xl bg-[var(--card-tint)] p-6">
         <h2 className="text-marker text-2xl">What the thank you card says</h2>
         <div className="mt-5 rounded-2xl bg-[#f6f1e6] px-6 py-8 text-center text-[#17141a]">
-          <p className="text-poster text-2xl">Looks like you own it 🤘</p>
+          <p className="text-poster text-2xl">Congrats. You have taste. 🤘</p>
           <p className="text-marker mt-3 text-[15px]">
             Made by <span className="text-pink">[maker&apos;s name]</span>, Bengaluru.
           </p>
@@ -137,8 +142,8 @@ export default function PackagingPage() {
           <p className="text-poster mt-4 text-[12px] tracking-[0.14em]">peace, love and piercings.</p>
         </div>
         <p className="mt-4 text-sm opacity-75">
-          Other lines that work: &ldquo;Wear it loud&rdquo; · &ldquo;This one found you&rdquo; ·
-          &ldquo;Go on, show it off&rdquo;
+          Five fronts printed: Congrats. You have taste. · Small thing. Big flex. · Wear it like
+          you stole it. · Warning: people will ask. · This one found you.
         </p>
       </Reveal>
 
