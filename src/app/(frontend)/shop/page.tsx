@@ -40,6 +40,18 @@ export default async function ShopPage({
         Hand-picked one at a time, with far too much thinking. Ask about any piece and we'll send the price, a photo and how soon it can be yours.
       </p>
 
+      <div className="mb-6 rounded-2xl bg-[var(--card-tint)] p-5">
+        <p className="text-marker text-lg">
+          How this works <span className="text-pink">🤞</span>
+        </p>
+        <ul className="mt-3 space-y-1.5 text-sm opacity-85">
+          <li>✓ We hunt little jewellers around Bengaluru and pick what we fall for</li>
+          <li>✓ Sometimes that&apos;s three of a piece. Sometimes it&apos;s one. That&apos;s the fun of it</li>
+          <li>✓ The number you see is the number we actually have</li>
+          <li>✓ When it&apos;s gone, it&apos;s gone — and something new turns up</li>
+        </ul>
+      </div>
+
       <div className="mb-8 rounded-2xl border border-line p-5">
         <p className="text-marker text-lg">
           New to this? A <span className="text-pink">stud</span> is the little one that sits flat —

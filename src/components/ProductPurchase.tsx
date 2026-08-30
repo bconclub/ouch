@@ -124,7 +124,7 @@ export function ProductPurchase({ product, whatsappHref }: { product: Product; w
           }
           type="button"
         >
-          {available ? 'Add to cart' : 'Sold out'}
+          {available ? 'Add to cart' : 'All gone 🌸'}
         </button>
       </div>
       )}
