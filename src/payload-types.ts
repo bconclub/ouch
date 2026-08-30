@@ -174,6 +174,10 @@ export interface Product {
    * Which section of the shop this belongs in.
    */
   category: number | Category;
+  /**
+   * The jeweller or artisan who made this. Shown on the piece.
+   */
+  maker?: string | null;
   material?: ('silver' | 'titanium' | 'surgical-steel' | 'gold' | 'niobium' | 'silicone' | 'other') | null;
   /**
    * e.g. 16g (1.2mm)
@@ -464,6 +468,7 @@ export interface ProductsSelect<T extends boolean = true> {
       };
   description?: T;
   category?: T;
+  maker?: T;
   material?: T;
   gauge?: T;
   size?: T;

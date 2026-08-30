@@ -76,9 +76,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {category.name}
             </div>
           )}
-          <h1 className="text-poster mb-4 text-3xl uppercase sm:text-4xl">{product.title}</h1>
+          <h1 className="text-poster mb-2 text-3xl uppercase sm:text-4xl">{product.title}</h1>
+
+          {product.maker && (
+            <p className="text-marker mb-4 text-[15px]">
+              Made by <span className="text-pink">{product.maker}</span>
+            </p>
+          )}
 
           <ProductPurchase product={product} whatsappHref={whatsappHref} />
+
+          {!isPoster && (
+            <p className="text-marker mt-5 text-[15px] text-yellow">
+              One small batch. Once it&apos;s gone, it&apos;s gone for good.
+            </p>
+          )}
 
           {isPoster && (
             <div className="mt-5 rounded-2xl border border-line p-4">

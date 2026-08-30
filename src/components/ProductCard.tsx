@@ -55,6 +55,9 @@ export function ProductCard({
             </span>
           )}
           <span className="text-poster block truncate text-[13px] uppercase">{product.title}</span>
+          {product.maker && (
+            <span className="text-muted-band block truncate text-[11px]">by {product.maker}</span>
+          )}
           <span className="mt-0.5 flex items-baseline gap-1.5 text-sm font-bold">
             <span className={isPriceOnAsk(product.price) ? 'text-cyan' : undefined}>
               {priceLabel(product.price)}

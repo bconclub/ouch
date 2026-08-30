@@ -100,6 +100,15 @@ export const Products: CollectionConfig = {
               type: 'row',
               fields: [
                 {
+                  name: 'maker',
+                  type: 'text',
+                  label: 'Made by',
+                  admin: {
+                    width: '50%',
+                    description: 'The jeweller or artisan who made this. Shown on the piece.',
+                  },
+                },
+                {
                   name: 'material',
                   type: 'select',
                   options: [...MATERIALS],
