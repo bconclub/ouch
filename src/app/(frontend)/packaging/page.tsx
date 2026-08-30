@@ -92,7 +92,7 @@ export default function PackagingPage() {
             ['card-c.png', 'Card — “Compliments incoming.”', '90 × 50 mm'],
             ['card-d.png', 'Card — “Warning: people will ask.”', '90 × 50 mm'],
             ['card-e.png', 'Card — “This one found you.”', '90 × 50 mm'],
-            ['card-back.png', 'Thank you card — back', 'write the maker&apos;s name by hand'],
+            ['card-back.png', 'Thank you card — back', 'write the maker&apos;s name on the line'],
             ['sticker.png', 'Sticker', '40 mm round'],
             ['pouch-print.png', 'Pouch print / stamp', 'for the pouch or a rubber stamp'],
           ].map(([file, title, note]) => (
