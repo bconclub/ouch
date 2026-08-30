@@ -92,7 +92,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
           {isPoster ? (
             <div className="rounded-2xl bg-[var(--card-tint)] p-5">
-              <p className="text-poster text-2xl">Coming soon 🖌️</p>
+              <p className="text-poster text-2xl">Fresh paint. Still drying. 🖌️</p>
               <p className="mt-2 text-sm opacity-80">
                 Prints and prices land together. Say hi and we&apos;ll tell you the day it opens.
               </p>
