@@ -313,7 +313,7 @@ async function run() {
     data: {
       storeName: 'Ouch',
       tagline: 'Self-expression, curated.',
-      whatsappNumber: '+917259956780',
+      whatsappNumber: '',
       announcement: 'Free shipping on orders over ₹999',
       currencySymbol: '₹',
     },

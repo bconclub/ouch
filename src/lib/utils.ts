@@ -114,3 +114,18 @@ export function mediaAlt(media: MediaLike, fallback = ''): string {
   if (!media || typeof media === 'number') return fallback
   return media.alt || fallback
 }
+
+
+/** Until a business WhatsApp number exists, every "talk to us" button goes to
+ *  email — the founder's personal number must never appear on the site. */
+export const OUCH_EMAIL = 'oouucchhed@gmail.com'
+
+export function contactHref(whatsappNumber?: string | null, message?: string): string {
+  const digits = (whatsappNumber ?? '').replace(/[^\d]/g, '')
+  if (digits.length >= 10) {
+    return `https://wa.me/${digits}${message ? `?text=${encodeURIComponent(message)}` : ''}`
+  }
+  const subject = encodeURIComponent('Hey Ouch!')
+  const body = message ? `&body=${encodeURIComponent(message)}` : ''
+  return `mailto:${OUCH_EMAIL}?subject=${subject}${body}`
+}

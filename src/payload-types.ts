@@ -652,7 +652,7 @@ export interface SiteSetting {
   storeName: string;
   tagline?: string | null;
   /**
-   * WhatsApp number orders are sent to, with country code (e.g. +917259956780).
+   * Business WhatsApp number, with country code. Leave empty and every contact button falls back to email.
    */
   whatsappNumber: string;
   /**

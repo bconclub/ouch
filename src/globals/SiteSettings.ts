@@ -21,10 +21,10 @@ export const SiteSettings: GlobalConfig = {
       name: 'whatsappNumber',
       type: 'text',
       required: true,
-      defaultValue: '+917259956780',
+      defaultValue: '',
       admin: {
         description:
-          'WhatsApp number orders are sent to, with country code (e.g. +917259956780).',
+          'Business WhatsApp number, with country code. Leave empty and every contact button falls back to email.',
       },
     },
     {

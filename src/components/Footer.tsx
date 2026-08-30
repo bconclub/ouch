@@ -1,3 +1,4 @@
+import { contactHref } from '@/lib/utils'
 import React from 'react'
 
 import { getSiteSettings } from '@/lib/queries'
@@ -8,7 +9,7 @@ import { BandBlend } from './Paint'
 
 export async function Footer() {
   const settings = await getSiteSettings()
-  const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
+  const whatsappHref = contactHref(settings.whatsappNumber)
 
   return (
     <footer id="connect">

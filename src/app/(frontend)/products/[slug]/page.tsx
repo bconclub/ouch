@@ -8,7 +8,7 @@ import { ProductCard } from '@/components/ProductCard'
 import { ProductGallery } from '@/components/ProductGallery'
 import { ProductPurchase } from '@/components/ProductPurchase'
 import { getProductBySlug, getSiteSettings, queryProducts } from '@/lib/queries'
-import { accentFor, mediaAlt, mediaUrl } from '@/lib/utils'
+import { contactHref, accentFor, mediaAlt, mediaUrl } from '@/lib/utils'
 
 export async function generateMetadata({
   params,
@@ -24,7 +24,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params
   const [product, settings] = await Promise.all([getProductBySlug(slug), getSiteSettings()])
   if (!product) notFound()
-  const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
+  const whatsappHref = contactHref(settings.whatsappNumber)
 
   const category = typeof product.category === 'object' ? product.category : null
   const isPoster = category?.slug === 'posters'
@@ -103,7 +103,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <ul className="mt-2 space-y-1 text-[13px] opacity-80">
                 <li>✓ Printed on good matte paper, rolled in a tube</li>
                 <li>✓ No watermark on the real thing — that&apos;s only on the preview here</li>
-                <li>✓ Bengaluru delivery — we&apos;ll sort it out on WhatsApp</li>
+                <li>✓ Delivery starting soon — ask us and we&apos;ll let you know</li>
               </ul>
             </div>
           )}

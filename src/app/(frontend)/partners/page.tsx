@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { contactHref } from '@/lib/utils'
 import React from 'react'
 
 import { DoodleGem, DoodleHeart, DoodlePeace, DoodleSparkleSmall, DoodleStar } from '@/components/Doodles'
@@ -44,7 +45,7 @@ const FOR_YOU = [
 
 export default async function PartnersPage() {
   const settings = await getSiteSettings()
-  const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
+  const whatsappHref = contactHref(settings.whatsappNumber)
   const chat = `${whatsappHref}?text=${encodeURIComponent("Hey Ouch! I make jewellery — here's a piece I'm proud of 🤝")}`
 
   return (

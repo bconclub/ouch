@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { contactHref } from '@/lib/utils'
 import React from 'react'
 
 import {
@@ -117,7 +118,7 @@ const PAYMENT_CHIPS = ['UPI', 'GPay', 'Apple Pay', 'VISA', 'Mastercard', 'RuPay'
 
 export default async function HomePage() {
   const settings = await getSiteSettings()
-  const whatsappHref = `https://wa.me/${settings.whatsappNumber.replace(/[^\d]/g, '')}`
+  const whatsappHref = contactHref(settings.whatsappNumber)
 
   return (
     <div className="overflow-hidden">

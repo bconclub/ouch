@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react'
 
 import type { Product } from '@/payload-types'
 import { useCart } from '@/lib/cart'
-import { formatPrice, isPriceOnAsk, mediaUrl, priceLabel } from '@/lib/utils'
+import { contactHref, formatPrice, isPriceOnAsk, mediaUrl, priceLabel } from '@/lib/utils'
 
 export function ProductPurchase({ product, whatsappHref }: { product: Product; whatsappHref?: string }) {
   const { addItem } = useCart()
@@ -78,7 +78,7 @@ export function ProductPurchase({ product, whatsappHref }: { product: Product; w
           </p>
           <a
             className="text-poster mt-4 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-sm tracking-wide text-black uppercase transition-transform hover:scale-105"
-            href={`${whatsappHref ?? 'https://wa.me/917259956780'}?text=${encodeURIComponent(`Hey Ouch! What's the price on "${product.title}"? 🤘`)}`}
+            href={contactHref(undefined, `Hey Ouch! What's the price on "${product.title}"? 🤘`)}
             rel="noopener noreferrer"
             target="_blank"
           >
