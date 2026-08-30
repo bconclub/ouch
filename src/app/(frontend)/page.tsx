@@ -217,7 +217,7 @@ export default async function HomePage() {
             </div>
             <div className="flex items-center gap-4">
               <p className="max-w-xs text-sm opacity-80">
-                Where&apos;s it going? No wrong answers.
+                Where&apos;s it going? Every answer is a good one.
               </p>
               <DoodleHeart className="h-10 w-10 shrink-0 text-pink" />
             </div>
@@ -273,9 +273,9 @@ export default async function HomePage() {
               <p className="mt-3 text-sm leading-relaxed opacity-80">
                 Classic placements
                 <br />
-                that never go out
+                that stay in style
                 <br />
-                of style.
+                forever.
               </p>
               <div className="mt-4 flex items-center gap-4">
                 <DoodleStar className="h-8 w-8 text-purple" />

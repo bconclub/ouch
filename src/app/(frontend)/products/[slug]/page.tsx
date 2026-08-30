@@ -104,7 +104,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <p className="text-marker text-[15px] text-cyan">A printed poster, posted to you.</p>
               <ul className="mt-2 space-y-1 text-[13px] opacity-80">
                 <li>✓ Printed on good matte paper, rolled in a tube</li>
-                <li>✓ No watermark on the real thing — that&apos;s only on the preview here</li>
+                <li>✓ The real print is clean art, edge to edge — the logo lives only on this preview</li>
                 <li>✓ Delivery starting soon — ask us and we&apos;ll let you know</li>
               </ul>
             </div>

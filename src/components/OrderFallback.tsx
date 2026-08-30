@@ -47,7 +47,7 @@ export function OrderFallback({
       <div className="py-16 text-center">
         <h1 className="text-poster mb-3 text-3xl">Hmm, can&apos;t find that one.</h1>
         <p className="mx-auto mb-6 max-w-md text-sm text-muted">
-          No stress — if you just placed an order, ping us on WhatsApp and we&apos;ll sort you out
+          All good — if you just placed an order, ping us on WhatsApp and we&apos;ll sort you out
           in a minute.
         </p>
         <a

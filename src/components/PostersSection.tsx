@@ -12,10 +12,10 @@ import { Reveal } from './Reveal'
 
 const POSTERS = [
   { kind: 'photo-text', text: 'Be bold. Be you.', image: '/brand/covers/zone-ear.png', bg: 'bg-purple', textColor: 'text-white' },
-  { kind: 'text', text: 'Pierced to express, not to impress.', bg: 'band-paper', textColor: 'text-purple' },
+  { kind: 'text', text: 'Pierced to express. That&apos;s the whole vibe.', bg: 'band-paper', textColor: 'text-purple' },
   { kind: 'paint-text', text: 'Small piece. Big vibes.', bg: 'bg-pink', textColor: 'text-white' },
   { kind: 'photo-text', text: 'Your body, your rules.', image: '/brand/covers/cat-sets.png', bg: 'bg-orange', textColor: 'text-white' },
-  { kind: 'paint-text', text: 'Not basic. Always Ouch.', bg: 'bg-cyan', textColor: 'text-white' },
+  { kind: 'paint-text', text: 'Always you. Always Ouch.', bg: 'bg-cyan', textColor: 'text-white' },
 ]
 
 export async function PostersSection() {

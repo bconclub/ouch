@@ -68,7 +68,7 @@ export async function createOrder(input: CheckoutInput): Promise<CheckoutResult>
       .catch(() => null)
 
     if (!product || product._status !== 'published') {
-      return { ok: false, error: 'One of the items in your cart is no longer available.' }
+      return { ok: false, error: 'One of your picks just found another home — they go fast. Pick a twin on the shop page.' }
     }
     if (!product.inStock) {
       return { ok: false, error: `"${product.title}" is sold out.` }
