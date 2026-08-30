@@ -132,7 +132,7 @@ export default async function HomePage() {
 
             <h1>
               <span className="text-marker anim-fade-up block text-xl sm:text-2xl">
-                Hey you. <span className="text-cyan">Bengaluru, for now.</span>
+                Hey you.
               </span>
               <span className="text-poster anim-fade-up anim-d1 mt-2 block text-4xl sm:text-5xl">Peace.</span>
               <span className="text-poster anim-fade-up anim-d2 block text-5xl text-pink sm:text-6xl">Love.</span>
