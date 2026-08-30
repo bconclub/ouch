@@ -60,6 +60,26 @@ export default function PackagingPage() {
         </p>
       </Reveal>
 
+      {/* the correct brand mark — the mockup's logo is only a sketch */}
+      <Reveal className="mt-10 rounded-2xl border border-line p-8">
+        <p className="text-marker text-sm text-pink">Use this exact logo on everything</p>
+        <div className="mt-5 rounded-2xl bg-[#f6f1e6] px-6 py-8 text-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img alt="Ouch" className="mx-auto h-14 w-auto" src="/brand/logo.png" />
+          <p className="text-poster mt-3 text-[15px] tracking-[0.1em] text-[#17141a]">
+            peace, love and piercings.
+          </p>
+        </div>
+        <ul className="mt-5 space-y-1.5 text-sm opacity-85">
+          <li>✓ Logo file: <span className="font-mono text-[13px]">/brand/logo.png</span> (dark) · <span className="font-mono text-[13px]">/brand/logo-white.png</span> (light)</li>
+          <li>✓ Tagline font: Start Story — the same font as the website</li>
+          <li>✓ Never redraw or retype the logo. Always use the file.</li>
+        </ul>
+        <p className="mt-4 text-sm opacity-70">
+          The logo in the plan below is a rough sketch. Give the printer this block, not that one.
+        </p>
+      </Reveal>
+
       {/* the founder's own plan */}
       <Reveal className="mt-10 overflow-hidden rounded-2xl">
         {/* eslint-disable-next-line @next/next/no-img-element */}
