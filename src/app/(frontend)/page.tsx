@@ -217,7 +217,7 @@ export default async function HomePage() {
             </div>
             <div className="flex items-center gap-4">
               <p className="max-w-xs text-sm opacity-80">
-                Explore different types of piercings and find the one that speaks to you.
+                Find the spot that&apos;s calling you. No wrong answers here.
               </p>
               <DoodleHeart className="h-10 w-10 shrink-0 text-pink" />
             </div>
