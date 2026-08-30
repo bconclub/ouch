@@ -17,8 +17,10 @@ const logoB64 = fs.readFileSync('public/brand/logo-white.png').toString('base64'
 // width (default 0.62). Place and size it to respect each artwork; keep it
 // central enough that no crop removes it. New posters default to centre.
 const PLACE = {
-  // Founder (2026-08-30): the logo sits in the MIDDLE of every poster.
-  // Add [ly, scale] overrides only if the founder asks for one.
+  // Founder (2026-08-30): ONE logo per poster, in the middle. If the artwork
+  // already carries a painted Ouch logo, set false — the art's own logo is
+  // the one, and no watermark is added on top.
+  'Wild Soul': false,
 }
 
 function overlaySvg(W, H, place) {
@@ -40,6 +42,15 @@ for (const f of fs.readdirSync(ORIG)) {
   const [filename, w, h, card, thumb] = row
   const W = +w, H = +h
   const ly = base in PLACE ? PLACE[base] : 0.5
+  if (ly === false) {
+    // the artwork's own painted logo is the watermark — ship it clean
+    const main = await sharp(path.join(ORIG, f)).rotate().resize(W, H, { fit: 'cover' }).jpeg({ quality: 82 }).toBuffer()
+    fs.writeFileSync(path.join('media', filename), main)
+    if (card) fs.writeFileSync(path.join('media', card), await sharp(main).resize(768, 768, { fit: 'cover' }).jpeg({ quality: 82 }).toBuffer())
+    if (thumb) fs.writeFileSync(path.join('media', thumb), await sharp(main).resize(400, 400, { fit: 'cover' }).jpeg({ quality: 80 }).toBuffer())
+    done++
+    continue
+  }
   // sharp applies resize before composite regardless of call order, so the
   // overlay is rasterised to final size first (two-pass rule).
   const overlay = await sharp(Buffer.from(overlaySvg(W, H, ly))).resize(W, H, { fit: 'fill' }).png().toBuffer()
