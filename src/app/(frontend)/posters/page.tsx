@@ -23,7 +23,7 @@ export default async function PostersPage() {
           <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-cyan)" seed={88} />
         </h1>
         <p className="text-marker mt-4 text-lg">
-          Real printed posters. Every print <span className="text-pink">₹333</span>. Flat.
+          Real printed posters. Price lands with the launch. <span className="text-pink">Soon.</span>
         </p>
         <p className="text-marker mt-2 text-[15px] text-cyan">
           Still cooking — drop us a note and we&apos;ll tell you the day it&apos;s served. 🍳

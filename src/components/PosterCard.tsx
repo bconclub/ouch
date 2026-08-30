@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import type { Product } from '@/payload-types'
-import { formatPrice, mediaAlt, mediaUrl } from '@/lib/utils'
+import { mediaAlt, mediaUrl } from '@/lib/utils'
 
 /** Posters hang like art: thin frame, real shadow, no product-card chrome. */
 export function PosterCard({ product }: { product: Product }) {
@@ -34,7 +34,7 @@ export function PosterCard({ product }: { product: Product }) {
 
       <span className="mt-4 flex items-baseline justify-between gap-3">
         <span className="text-poster text-[15px]">{product.title}</span>
-        <span className="text-[15px] font-bold text-pink">{formatPrice(product.price)}</span>
+        <span className="text-marker rounded-full bg-yellow px-2.5 py-0.5 text-[11px] text-[#17141a]">It&apos;s cooking</span>
       </span>
     </Link>
   )
