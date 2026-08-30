@@ -1,77 +1,100 @@
 import type { Metadata } from 'next'
 import React from 'react'
 
-import { DoodleHeart } from '@/components/Doodles'
+import { DoodleHeart, DoodlePeace } from '@/components/Doodles'
 import { BrushStroke } from '@/components/Paint'
 import { Reveal } from '@/components/Reveal'
 
 /** Private working page — not linked from the site, not indexed.
- *  A shared place to think about packaging before anything is decided. */
+ *  Everything packaging lives here until it is decided. */
 export const metadata: Metadata = {
   title: 'Packaging — internal',
   robots: { index: false, follow: false, nocache: true },
 }
 
-const IDEAS = [
-  {
-    n: '01',
-    title: 'The box',
-    body: 'Small kraft box, roughly 6×6×3 cm. Bought plain, stamped by hand with the Ouch logo so no two are identical.',
-    chip: 'bg-pink',
-  },
-  {
-    n: '02',
-    title: 'The card inside',
-    body: 'A handwritten card naming the jeweller who made the piece, their shop, and that it was one of a small batch. This is the part nobody else does.',
-    chip: 'bg-purple',
-  },
-  {
-    n: '03',
-    title: 'The wrap',
-    body: 'Tissue or butter paper, one sticker to seal it. Cheap, quiet, feels considered when it opens.',
-    chip: 'bg-cyan',
-  },
-  {
-    n: '04',
-    title: 'Posters',
-    body: 'Rolled in a tube with a paper band. Separate from the jewellery packaging — different shape, different job.',
-    chip: 'bg-orange',
-  },
+/** The five things that go in every order, from the founder's own plan. */
+const INSIDE = [
+  { n: '1', title: 'Jewellery pouch', body: 'Soft canvas drawstring pouch with the logo.', cost: '₹18–30', chip: 'bg-pink' },
+  { n: '2', title: 'Jewellery card', body: 'Stud sits securely on a lilac card.', cost: '₹3–6', chip: 'bg-purple' },
+  { n: '3', title: 'Care card', body: 'Simple care instructions, yellow.', cost: '₹3–6', chip: 'bg-yellow' },
+  { n: '4', title: 'Thank you note', body: 'A little note for a big smile, pink.', cost: '₹3–6', chip: 'bg-cyan' },
+  { n: '5', title: 'Sticker', body: 'Black round sticker, seals everything with love.', cost: '₹1–3', chip: 'bg-orange' },
+]
+
+const COLOURS = [
+  ['Black Classic', 'Bold. Edgy. Always Ouch.', 'bg-[#141414]'],
+  ['Pink Pop', 'Bright. Playful. Full of love.', 'bg-pink'],
+  ['Lilac Vibes', 'Soft. Calm. Aesthetic.', 'bg-purple'],
+  ['Sunshine Day', 'Warm. Happy. Positive.', 'bg-yellow'],
+  ['Ocean Mood', 'Fresh. Fun. Free.', 'bg-cyan'],
 ]
 
 const VENDORS = [
-  ['Chickpet / SP Road', 'Walk in, buy 50 boxes cash. Cheapest for small runs.'],
-  ['Rubber stamp shop, Chickpet', 'Logo stamp, roughly ₹250 one-time. Then every box is stamped by hand.'],
-  ['Packman / Bigsmall (online)', 'Kraft boxes ~₹15–25 each, delivered. Good if walking around is not possible.'],
-  ['Local print shop', 'Cards and stickers in small runs, cheaper than online for 100 pieces.'],
+  ['Chickpet / SP Road', 'Pouches, boxes, sticker sheets. Walk in, buy 50 cash. Cheapest for small runs.'],
+  ['Rubber stamp shop, Chickpet', 'Logo stamp, roughly ₹250 once. Then stamp pouches and cards by hand.'],
+  ['Local print shop', 'The three cards in one run — cheaper than online at 100 pieces.'],
+  ['Packman / Bigsmall (online)', 'Kraft mailers and pouches delivered, if walking around is not possible.'],
+]
+
+const OPEN = [
+  'Printed pouches or plain pouches + hand stamp? Stamp is cheaper and no two look alike.',
+  'All five colours from the start, or begin with two and add later?',
+  'Cards printed in a batch of 100, or handwritten while the numbers are small?',
+  'Poster tubes — separate supplier, decide after poster delivery opens.',
 ]
 
 export default function PackagingPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
       <Reveal>
         <p className="text-marker text-sm text-pink">Private page — not linked, not searchable</p>
         <h1 className="text-poster relative mt-2 w-fit text-4xl sm:text-5xl">
-          Packaging
+          Our packaging
           <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-pink)" seed={41} />
         </h1>
-        <p className="mt-5 text-[15px] leading-relaxed opacity-85">
-          Somewhere to keep the packaging thinking while it is still being decided. Nothing here is
-          final and nothing here is public.
+        <p className="text-marker mt-4 text-lg">
+          Simple. Thoughtful. <span className="text-pink">Unapologetically Ouch.</span>
+        </p>
+        <p className="mt-3 max-w-xl text-[15px] leading-relaxed opacity-85">
+          Everything needed to deliver a happy experience. No extras, just the right details.
         </p>
       </Reveal>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
-        {IDEAS.map((idea, i) => (
-          <Reveal delay={i * 90} key={idea.n}>
-            <div className="h-full rounded-2xl bg-[var(--card-tint)] p-6">
-              <span className={`chip-arrow ${idea.chip} text-[13px] font-bold`}>{idea.n}</span>
-              <h2 className="text-poster mt-4 text-xl">{idea.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed opacity-80">{idea.body}</p>
+      {/* the founder's own plan */}
+      <Reveal className="mt-10 overflow-hidden rounded-2xl">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img alt="Packaging plan" className="w-full" src="/brand/packaging-plan.webp" />
+      </Reveal>
+
+      <Reveal className="mt-12">
+        <h2 className="text-marker text-2xl">What&apos;s inside every order</h2>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {INSIDE.map((item) => (
+            <div className="rounded-2xl bg-[var(--card-tint)] p-5" key={item.n}>
+              <span className={`chip-arrow ${item.chip} text-[13px] font-bold`}>{item.n}</span>
+              <h3 className="text-poster mt-3 text-lg">{item.title}</h3>
+              <p className="mt-1 text-sm opacity-80">{item.body}</p>
+              <p className="text-marker mt-2 text-[15px] text-cyan">{item.cost} each</p>
             </div>
-          </Reveal>
-        ))}
-      </div>
+          ))}
+        </div>
+        <p className="text-marker mt-5 text-lg">
+          Roughly <span className="text-pink">₹30–50</span> per order, all five together.
+        </p>
+      </Reveal>
+
+      <Reveal className="mt-12">
+        <h2 className="text-marker text-2xl">Colour moods</h2>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {COLOURS.map(([name, note, bg]) => (
+            <div className="rounded-2xl bg-[var(--card-tint)] p-4" key={name}>
+              <span className={`block h-14 w-full rounded-xl ${bg}`} />
+              <p className="text-poster mt-3 text-[15px]">{name}</p>
+              <p className="mt-1 text-[13px] opacity-75">{note}</p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
 
       <Reveal className="mt-12 rounded-2xl bg-[var(--card-tint)] p-6">
         <h2 className="text-marker text-2xl">Where to buy</h2>
@@ -85,11 +108,25 @@ export default function PackagingPage() {
         </ul>
       </Reveal>
 
-      <Reveal className="mt-10 text-center" delay={100}>
-        <DoodleHeart className="mx-auto h-8 w-8 text-pink" />
-        <p className="text-marker mt-3 text-lg">
-          The card is the idea. The box just carries it.
+      <Reveal className="mt-8 rounded-2xl border border-line p-6">
+        <h2 className="text-marker text-2xl">Still to decide</h2>
+        <ul className="mt-4 space-y-2 text-sm opacity-85">
+          {OPEN.map((q) => (
+            <li className="flex items-start gap-2.5" key={q}>
+              <span aria-hidden className="text-pink">•</span>
+              {q}
+            </li>
+          ))}
+        </ul>
+      </Reveal>
+
+      <Reveal className="mt-12 text-center" delay={100}>
+        <DoodlePeace className="mx-auto h-9 w-9 text-purple" />
+        <p className="text-marker mt-3 text-xl">Small package, big happy energy 🎶</p>
+        <p className="mt-2 text-sm opacity-75">
+          The card is the idea — the maker&apos;s name in the box. The rest just carries it.
         </p>
+        <DoodleHeart className="mx-auto mt-5 h-7 w-7 text-pink" />
       </Reveal>
     </div>
   )
