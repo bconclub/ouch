@@ -17,22 +17,8 @@ const logoB64 = fs.readFileSync('public/brand/logo-white.png').toString('base64'
 // width (default 0.62). Place and size it to respect each artwork; keep it
 // central enough that no crop removes it. New posters default to centre.
 const PLACE = {
-  'Wild Soul': 0.84,
-  'Butterfly Scream': 0.5,
-  'Spiral Garden': 0.5,
-  'Let Joy Find You': 0.82,
-  'Sun Moon Spiral': 0.5,
-  'Zero Given': 0.5,
-  'Shine Ur Vibe': 0.5,
-  'Trust The Flow': 0.82,
-  'Be Kind': 0.14,
-  'You Are Enough': 0.78,
-  'Dream Big Start Small': 0.1,
-  'Grow Anyway': 0.8,
-  'Progress Not Perfection': 0.8,
-  'Make Space For What Matters': 0.85,
-  'Every Day Is A New Beginning': 0.8,
-  'Today I Choose Joy': 0.6,
+  // Founder (2026-08-30): the logo sits in the MIDDLE of every poster.
+  // Add [ly, scale] overrides only if the founder asks for one.
 }
 
 function overlaySvg(W, H, place) {
