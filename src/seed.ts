@@ -62,7 +62,6 @@ async function makePlaceholder(label: string, index: number, outDir: string): Pr
   <circle cx="806" cy="412" r="16" fill="#f5b81c"/>
   <circle cx="398" cy="640" r="12" fill="#8b5cf6"/>
   <text x="600" y="560" font-family="Georgia, serif" font-size="150" font-weight="600" fill="#1c1410" text-anchor="middle" dominant-baseline="middle">${initials}</text>
-  <text x="600" y="1080" font-family="Helvetica, Arial, sans-serif" font-size="48" letter-spacing="16" fill="#1c1410" opacity="0.45" text-anchor="middle">OUCH</text>
 </svg>`
   const file = path.join(outDir, `${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`)
   await sharp(Buffer.from(svg)).png().toFile(file)
