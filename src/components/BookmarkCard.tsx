@@ -11,13 +11,14 @@ export function BookmarkCard({ product }: { product: Product }) {
 
   return (
     <Link className="group block" href={`/products/${product.slug}`}>
-      <span className="block overflow-hidden rounded-[3px] bg-[#141414] p-[4px] shadow-[0_12px_30px_rgba(0,0,0,0.4)] ring-1 ring-white/10 transition-all duration-500 group-hover:-translate-y-1.5">
-        <span className="relative block aspect-[1/4] overflow-hidden">
+      {/* frame first, art inside — the strip is never cropped by the border */}
+      <span className="block overflow-hidden rounded-[4px] border border-white/15 bg-[#141414] p-[6px] shadow-[0_12px_30px_rgba(0,0,0,0.4)] transition-all duration-500 group-hover:-translate-y-1.5">
+        <span className="relative block aspect-[273/1000] overflow-hidden rounded-[2px]">
           {url && (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
               alt={mediaAlt(first, product.title)}
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              className="absolute inset-0 h-full w-full object-contain"
               loading="lazy"
               src={url}
             />
