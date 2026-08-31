@@ -25,9 +25,15 @@ const PLACE = {
 }
 
 function overlaySvg(W, H, place) {
-  const [ly, scale] = Array.isArray(place) ? place : [place, 0.62]
+  // Tall thin strips (bookmarks) get a smaller, gently tilted stamp so the
+  // mark reads as part of the design instead of sitting on the art.
+  const isStrip = H / W > 2.5
+  const [ly, scale] = Array.isArray(place) ? place : [place, isStrip ? 0.4 : 0.62]
   const logoW = Math.round(W * scale), logoH = Math.round(logoW * 0.30)
-  const logo = `<image x="${(W - logoW) / 2}" y="${Math.round(H * ly - logoH / 2)}" width="${logoW}" height="${logoH}" opacity="0.62" xlink:href="data:image/png;base64,${logoB64}"/>`
+  const x = (W - logoW) / 2, y = Math.round(H * ly - logoH / 2)
+  const tilt = isStrip ? ` transform="rotate(-18 ${W / 2} ${H * ly})"` : ''
+  const opacity = isStrip ? 0.5 : 0.62
+  const logo = `<image x="${x}" y="${y}" width="${logoW}" height="${logoH}" opacity="${opacity}"${tilt} xlink:href="data:image/png;base64,${logoB64}"/>`
   return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">${logo}</svg>`
 }
 
