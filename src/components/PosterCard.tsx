@@ -34,7 +34,7 @@ export function PosterCard({ product }: { product: Product }) {
 
       <span className="mt-4 flex items-baseline justify-between gap-3">
         <span className="text-poster text-[15px]">{product.title}</span>
-        <span className="text-marker rounded-full bg-yellow px-2.5 py-0.5 text-[11px] text-[#17141a]">It&apos;s cooking</span>
+        <span className="text-marker rounded-full bg-yellow px-2.5 py-0.5 text-[11px] text-[#17141a]">Something&apos;s cooking</span>
       </span>
     </Link>
   )

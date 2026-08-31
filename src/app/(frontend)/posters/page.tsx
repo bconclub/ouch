@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import React from 'react'
 
+import { BookmarkCard } from '@/components/BookmarkCard'
 import { PosterCard } from '@/components/PosterCard'
 import { Reveal } from '@/components/Reveal'
 import { BrushStroke } from '@/components/Paint'
@@ -12,8 +13,12 @@ export const metadata: Metadata = {
 }
 
 export default async function PostersPage() {
-  const result = await queryProducts({ category: 'posters', limit: 48 })
+  const [result, bookmarksResult] = await Promise.all([
+    queryProducts({ category: 'posters', limit: 48 }),
+    queryProducts({ category: 'bookmarks', limit: 48 }),
+  ])
   const posters = orderPosters(result.docs)
+  const bookmarks = bookmarksResult.docs
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
@@ -41,6 +46,23 @@ export default async function PostersPage() {
             <PosterCard key={poster.id} product={poster} />
           ))}
         </div>
+      )}
+
+      {bookmarks.length > 0 && (
+        <Reveal className="mt-16">
+          <h2 className="text-poster relative w-fit text-3xl sm:text-4xl">
+            Little reminders.
+            <BrushStroke className="absolute -bottom-2 left-0 h-3 w-full" color="var(--color-yellow)" seed={53} />
+          </h2>
+          <p className="text-marker mt-3 text-[15px]">
+            Bookmarks with big feelings. One for your book, one for a friend.
+          </p>
+          <div className="mt-6 grid grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-6 lg:gap-6">
+            {bookmarks.map((b) => (
+              <BookmarkCard key={b.id} product={b} />
+            ))}
+          </div>
+        </Reveal>
       )}
     </div>
   )

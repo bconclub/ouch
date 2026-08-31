@@ -64,7 +64,7 @@ export type ProductQuery = {
   sort?: 'newest' | 'price-asc' | 'price-desc'
   page?: number
   /** Jewellery and posters are separate shops — exclude posters by default. */
-  excludeCategory?: string
+  excludeCategory?: string | string[]
   limit?: number
 }
 
@@ -85,8 +85,10 @@ export async function queryProducts({
     and.push({ category: { equals: cat?.id ?? -1 } })
   }
   if (excludeCategory) {
-    const ex = await getCategoryBySlug(excludeCategory)
-    if (ex) and.push({ category: { not_equals: ex.id } })
+    for (const slug of Array.isArray(excludeCategory) ? excludeCategory : [excludeCategory]) {
+      const ex = await getCategoryBySlug(slug)
+      if (ex) and.push({ category: { not_equals: ex.id } })
+    }
   }
   if (material) {
     and.push({ material: { equals: material } })

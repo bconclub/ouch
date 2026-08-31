@@ -62,9 +62,9 @@ export function ProductCard({
             <span className="block text-[11px] font-bold text-pink">only {product.stockCount} left</span>
           )}
           <span className="mt-0.5 flex items-baseline gap-1.5 text-sm font-bold">
-            {category?.slug === 'posters' ? (
+            {category?.slug === 'posters' || category?.slug === 'bookmarks' ? (
               <span className="text-marker rounded-full bg-yellow px-2.5 py-0.5 text-[11px] text-[#17141a]">
-                It&apos;s cooking
+                Something&apos;s cooking
               </span>
             ) : (
               <>

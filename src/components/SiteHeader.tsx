@@ -11,7 +11,7 @@ import { ThemeToggle } from './ThemeToggle'
 const NAV_LINKS = [
   { href: '/', label: 'Home 🏠' },
   { href: '/shop', label: 'Studs 💎' },
-  { href: '/posters', label: 'Posters 🖌️', tag: "It's cooking" },
+  { href: '/posters', label: 'Posters 🖌️', tag: "Something's cooking" },
   { href: '/partners', label: 'Partner 🤝' },
   { href: '/#connect', label: 'Card 💌' },
 ]

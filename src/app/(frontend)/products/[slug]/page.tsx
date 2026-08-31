@@ -28,7 +28,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const whatsappHref = contactHref(settings.whatsappNumber)
 
   const category = typeof product.category === 'object' ? product.category : null
-  const isPoster = category?.slug === 'posters'
+  const isPoster = category?.slug === 'posters' || category?.slug === 'bookmarks'
 
   const galleryImages = (product.images ?? [])
     .map((entry) => {

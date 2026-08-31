@@ -28,7 +28,7 @@ export default async function ShopPage({
     sort: (first(params.sort) as ProductQuery['sort']) ?? 'newest',
     page: Number(first(params.page)) || 1,
     // Posters live in their own shop at /posters
-    excludeCategory: first(params.category) ? undefined : 'posters',
+    excludeCategory: first(params.category) ? undefined : ['posters', 'bookmarks'],
   }
 
   const [categories, result] = await Promise.all([getCategories(), queryProducts(query)])
@@ -68,7 +68,7 @@ export default async function ShopPage({
       <Suspense>
         <ShopFilters
           categories={categories
-            .filter((c) => c.slug !== 'posters')
+            .filter((c) => c.slug !== 'posters' && c.slug !== 'bookmarks')
             .map((c) => ({ label: c.name, value: c.slug ?? '' }))}
           materials={[]}
         />
