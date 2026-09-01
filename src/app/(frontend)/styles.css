@@ -50,6 +50,26 @@
   --color-muted: #a79fb4;
 }
 
+/* Neon is built for black. Wherever the surface is cream — the whole light
+   version, and the paper bands in either version — the same hues need depth to
+   stay readable. Only TEXT darkens; backgrounds keep the bright paint. */
+[data-theme='light'] .text-yellow,
+.band-paper .text-yellow {
+  color: #a67c00;
+}
+[data-theme='light'] .text-cyan,
+.band-paper .text-cyan {
+  color: #0e7490;
+}
+[data-theme='light'] .text-lime,
+.band-paper .text-lime {
+  color: #4d7c0f;
+}
+[data-theme='light'] .text-orange,
+.band-paper .text-orange {
+  color: #c2410c;
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--color-bg);
