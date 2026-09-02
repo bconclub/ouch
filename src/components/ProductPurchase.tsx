@@ -4,9 +4,18 @@ import React, { useMemo, useState } from 'react'
 
 import type { Product } from '@/payload-types'
 import { useCart } from '@/lib/cart'
+import { hasWhatsApp } from '@/lib/whatsapp'
 import { contactHref, formatPrice, isPriceOnAsk, mediaUrl, priceLabel } from '@/lib/utils'
 
-export function ProductPurchase({ product, whatsappHref }: { product: Product; whatsappHref?: string }) {
+export function ProductPurchase({
+  product,
+  whatsappHref,
+  whatsappNumber,
+}: {
+  product: Product
+  whatsappHref?: string
+  whatsappNumber?: string | null
+}) {
   const { addItem } = useCart()
   const variants = product.variants ?? []
   const [selected, setSelected] = useState<number | null>(variants.length > 0 ? 0 : null)
@@ -23,6 +32,7 @@ export function ProductPurchase({ product, whatsappHref }: { product: Product; w
 
   const onSale = product.compareAtPrice != null && product.compareAtPrice > unitPrice
   const onAsk = isPriceOnAsk(unitPrice)
+  const onWhatsApp = hasWhatsApp(whatsappNumber)
 
   return (
     <div>
@@ -77,12 +87,14 @@ export function ProductPurchase({ product, whatsappHref }: { product: Product; w
             Free delivery across Bengaluru. A day. Two, tops.
           </p>
           <a
-            className="text-poster mt-4 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-sm tracking-wide text-black uppercase transition-transform hover:scale-105"
-            href={contactHref(undefined, `Hey Ouch! What's the price on "${product.title}"? 🤘`)}
+            className={`text-poster mt-4 inline-flex items-center gap-2.5 rounded-full px-8 py-4 text-sm tracking-wide uppercase transition-transform hover:scale-105 ${
+              onWhatsApp ? 'bg-[#25D366] text-black' : 'bg-pink text-white'
+            }`}
+            href={contactHref(whatsappNumber, `Hey Ouch! What's the price on "${product.title}"? 🤘`)}
             rel="noopener noreferrer"
             target="_blank"
           >
-            Ask on WhatsApp <span aria-hidden>→</span>
+            {onWhatsApp ? 'Ask on WhatsApp' : 'Ask us'} <span aria-hidden>→</span>
           </a>
         </div>
       ) : (

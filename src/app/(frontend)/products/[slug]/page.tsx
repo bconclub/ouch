@@ -104,7 +104,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </a>
             </div>
           ) : (
-            <ProductPurchase product={product} whatsappHref={whatsappHref} />
+            <ProductPurchase
+              product={product}
+              whatsappHref={whatsappHref}
+              whatsappNumber={settings.whatsappNumber}
+            />
           )}
 
           {!isPoster && (

@@ -5,7 +5,7 @@ import { ClearCartOnMount } from '@/components/ClearCartOnMount'
 import { OrderConfirmation } from '@/components/OrderConfirmation'
 import { OrderFallback } from '@/components/OrderFallback'
 import { getPayloadClient, getSiteSettings } from '@/lib/queries'
-import { buildOrderMessage, buildWhatsAppUrl } from '@/lib/whatsapp'
+import { buildOrderMessage, buildWhatsAppUrl, hasWhatsApp } from '@/lib/whatsapp'
 
 export const metadata: Metadata = {
   title: 'Order confirmed',
@@ -68,6 +68,7 @@ export default async function OrderConfirmationPage({
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6">
       <ClearCartOnMount />
       <OrderConfirmation
+        onWhatsApp={hasWhatsApp(settings.whatsappNumber)}
         items={order.items.map((i) => ({
           title: i.title,
           variant: i.variant,

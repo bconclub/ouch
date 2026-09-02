@@ -1,4 +1,4 @@
-import { formatPrice } from './utils'
+import { contactHref, formatPrice } from './utils'
 
 export type OrderForMessage = {
   orderNumber: string
@@ -35,7 +35,13 @@ export function buildOrderMessage(order: OrderForMessage, storeName = 'Ouch'): s
   return lines.join('\n')
 }
 
-export function buildWhatsAppUrl(phoneNumber: string, message: string): string {
-  const digits = phoneNumber.replace(/[^\d]/g, '')
-  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`
+/** Until the business number exists, this quietly becomes an email link —
+ *  never a wa.me/ with no number behind it. */
+export function buildWhatsAppUrl(phoneNumber: string | null | undefined, message: string): string {
+  return contactHref(phoneNumber, message)
+}
+
+/** True once a real business number is saved in settings. */
+export function hasWhatsApp(phoneNumber?: string | null): boolean {
+  return (phoneNumber ?? '').replace(/[^\d]/g, '').length >= 10
 }

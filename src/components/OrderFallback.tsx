@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 import { ClearCartOnMount } from '@/components/ClearCartOnMount'
 import { OrderConfirmation, type ConfirmationItem } from '@/components/OrderConfirmation'
-import { buildOrderMessage, buildWhatsAppUrl } from '@/lib/whatsapp'
+import { buildOrderMessage, buildWhatsAppUrl, hasWhatsApp } from '@/lib/whatsapp'
 
 type StoredOrder = {
   orderNumber: string
@@ -74,6 +74,7 @@ export function OrderFallback({
     <>
       <ClearCartOnMount />
       <OrderConfirmation
+        onWhatsApp={hasWhatsApp(whatsappNumber)}
         items={order.items}
         orderNumber={order.orderNumber}
         total={order.total}
